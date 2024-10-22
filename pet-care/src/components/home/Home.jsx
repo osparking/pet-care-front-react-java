@@ -1,5 +1,7 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
+import d5 from "../../assets/images/d5.jpg";
+import vett from "../../assets/images/vett.jpg";
+import {Col, Row, Button, Card, Container} from 'react-bootstrap';
 
 const Home = () => {
   return (
