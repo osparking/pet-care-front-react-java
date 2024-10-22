@@ -1,11 +1,16 @@
 import React from 'react'
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <div>
-        홈 성분으로부터의 열렬한 환영!
-      
-    </div>
+    <Container>
+      <Row>
+        <Col>
+        </Col>
+        <Col>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
