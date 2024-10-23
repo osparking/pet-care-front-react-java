@@ -7,12 +7,12 @@ const Home = () => {
   return (
     <Container className="home-container mt-5">
       <Row>
-        <Col md={6} className='mb-5'>
+        <Col md={6} className='mb-3'>
         <Card>
             <Card.Img
               variant='top'
               src={d5}
-              alt='저희 소개'/>
+              alt='저희 소개' className='hero-image'/>
             <Card.Body>
               <h2 className='text-info'>저희들 소개</h2>
               <Card.Title>당신의 털복숭이 친구를 친절히 보살펴요</Card.Title>
@@ -35,16 +35,16 @@ const Home = () => {
             </Card.Body>
           </Card>        
         </Col>
-        <Col md={6} className='mb-5'>
+        <Col md={6} className='mb-3'>
           <Card>
             <Card.Img 
               variant='top'
               src={vett}
-              alt='저희들 소개' />
+              alt='저희들 소개' className='hero-image'/>
             <Card.Body>
               <h2 className='text-info'>서비스 주제</h2>
               <Card.Title>저희들 직무</Card.Title>
-              <ListGroup variant='flush' className='services-list'>
+              <ListGroup className='services-list'>
                 <ListGroup.Item>애완동물 건강 검진</ListGroup.Item>
                 <ListGroup.Item>긴급 상황 수술</ListGroup.Item>
                 <ListGroup.Item>팻 백신 주사</ListGroup.Item>
@@ -61,7 +61,7 @@ const Home = () => {
           </Card>
         </Col>
       </Row>
-      <div className='card'>
+      <div className='card mb-5'>
         <h4>
           환자/고객이 말하는 저희 그룹{" "}
           <span className='text-info'> 팻 관리 및 치료</span> 수의사들
