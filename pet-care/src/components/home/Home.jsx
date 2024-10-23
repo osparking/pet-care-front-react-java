@@ -61,6 +61,14 @@ const Home = () => {
           </Card>
         </Col>
       </Row>
+      <div className='card'>
+        <h4>
+          환자/고객이 말하는 저희 그룹{" "}
+          <span className='text-info'> 팻 관리 및 치료</span> 수의사들
+        </h4>
+        <hr />
+        <p className="text-center">저희가 경험한 팻 관리 및 치료 그룹의 수의사들은 이렇습니다.</p>
+      </div>
     </Container>
   );
 }
