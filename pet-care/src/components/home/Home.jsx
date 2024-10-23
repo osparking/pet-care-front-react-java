@@ -5,9 +5,9 @@ import {Col, Row, Button, Card, Container, ListGroup} from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <Container>
+    <Container className="home-container mt-5">
       <Row>
-        <Col>
+        <Col md={6} className='mb-5'>
         <Card>
             <Card.Img
               variant='top'
@@ -35,7 +35,7 @@ const Home = () => {
             </Card.Body>
           </Card>        
         </Col>
-        <Col>
+        <Col md={6} className='mb-5'>
           <Card>
             <Card.Img 
               variant='top'
@@ -44,7 +44,7 @@ const Home = () => {
             <Card.Body>
               <h2 className='text-info'>서비스 주제</h2>
               <Card.Title>저희들 직무</Card.Title>
-              <ListGroup variant='flush'>
+              <ListGroup variant='flush' className='services-list'>
                 <ListGroup.Item>애완동물 건강 검진</ListGroup.Item>
                 <ListGroup.Item>긴급 상황 수술</ListGroup.Item>
                 <ListGroup.Item>팻 백신 주사</ListGroup.Item>
