@@ -15,7 +15,7 @@ const BackgroundImageSlider = () => {
     <div className="background-slider">
       <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
         {backgrounds.map((background, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item className="carousel-item" key={index}>
             <img
               className="d-block w-100"
               src={background}

@@ -359,8 +359,8 @@ input[type="radio"] {
 }
 
 .hero-image {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
