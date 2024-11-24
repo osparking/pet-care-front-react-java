@@ -1,6 +1,6 @@
-import React from "react";
-import Carousel from "react-bootstrap";
-import bg from "../../assets/images/bg.png";
+import React, { useState } from "react";
+import { Carousel } from "react-bootstrap";
+import bg from "../../assets/images/bg.jpg";
 import bg1 from "../../assets/images/bg1.png";
 import bg3 from "../../assets/images/bg3.png";
 
