@@ -20,7 +20,7 @@ const NavBar = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <NavDropdown title="Account" id="basic-nav-dropdown">
+            <NavDropdown title="계정" id="basic-nav-dropdown">
               <NavDropdown.Item to={"/user-dashboard"} as={Link}>
                 등록
               </NavDropdown.Item>
