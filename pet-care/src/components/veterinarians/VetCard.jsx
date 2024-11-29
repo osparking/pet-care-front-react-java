@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import placeholder from "../../assets/images/placeholder.jpg";
 
 const VetCard = ({ vet }) => {
