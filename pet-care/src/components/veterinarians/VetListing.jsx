@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import VetCard from "./VetCard";
 import { getVets } from "./VetService";
