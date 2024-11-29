@@ -1,4 +1,5 @@
-import React, { Accordion, Col } from "react";
+import React from "react";
+import { Accordion, Card, Col } from "react-bootstrap";
 import placeholder from "../../assets/images/placeholder.jpg";
 
 const VetCard = ({ vet }) => {
