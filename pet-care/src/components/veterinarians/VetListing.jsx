@@ -12,7 +12,7 @@ const VetListing = () => {
   useEffect(() => {
     getVets()
       .then((data) => {
-        setVets(data);
+        setVets(data.data);
       })
       .catch((error) => {
         setErrorMsg(error.message);
