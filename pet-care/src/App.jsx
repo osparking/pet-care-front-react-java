@@ -8,12 +8,14 @@ import {
 import "./App.css";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
+import VetListing from "./components/veterinarians/VetListing";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
+        <Route path="/doctors" element={<VetListing />} />
       </Route>
     )
   );

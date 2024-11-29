@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import VetCard from "./VetCard";
-import getVets from "./getVets";
+import { getVets } from "./VetService";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
