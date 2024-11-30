@@ -34,13 +34,9 @@ const VetListing = () => {
         </Container>
       </Col>
       <Col>
-        <Container>
-          <Row>
-            {vets.map((vet, index) => (
-              <VetCard key={index} vet={vet} />
-            ))}
-          </Row>
-        </Container>
+        {vets.map((vet, index) => (
+          <VetCard key={index} vet={vet} />
+        ))}
       </Col>
     </Row>
   );
