@@ -1,6 +1,7 @@
 import React from "react";
 import { Accordion, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ImageUser from "../common/ImageUser";
 
 const VetCard = ({ vet }) => {
   return (
@@ -10,7 +11,7 @@ const VetCard = ({ vet }) => {
           <Accordion.Header>
             <div clasName="d-flex align-items-center">
               <Link>
-                <ImageUser photoUser = {vet.photo} />
+                <ImageUser photoUser={vet.photo} />
               </Link>
             </div>
             <div>
