@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Card } from "react-bootstrap";
-import placeholder from "../../assets/images/placeholder.jpg";";
+import placeholder from "../../assets/images/placeholder.jpg";
 
 const ImageUser = ({ photoUser, altText = "수의사 얼굴" }) => {
   return (
