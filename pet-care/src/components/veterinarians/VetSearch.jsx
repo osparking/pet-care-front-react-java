@@ -11,10 +11,17 @@ const VetSearch = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setSearchKey({...searchKey, [name]: value });
+    setSearchKey({ ...searchKey, [name]: value });
   };
 
-  
+  const handleDateTimeToggle = (e) => {
+    const ifChecked = e.target.checked;
+    setShowDateTime(ifChecked);
+    if (ifChecked) {
+      setSearchKey({ ...searchKey, date: null, time: null });
+    }
+  };
+
   return <div></div>;
 };
 
