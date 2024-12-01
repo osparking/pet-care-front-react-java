@@ -8,6 +8,12 @@ const VetSearch = () => {
   });
 
   const [showDateTime, setShowDateTime] = useState(false);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setSearchKey({...searchKey, [name]: value });
+  };
+
   
   return <div></div>;
 };
