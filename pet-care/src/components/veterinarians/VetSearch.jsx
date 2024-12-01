@@ -1,6 +1,6 @@
 import React from "react";
 
-const VetSearch = () => {
+const VetSearch = ({onSearchResult}) => {
   const [searchKey, setSearchKey] = useState({
     date: null,
     time: null,
@@ -36,6 +36,7 @@ const VetSearch = () => {
     }
     try {
       const response = await findAvailableVets(searchParams);
+      onSearchResult(response.data);
     } catch (err) {}
   };
 
