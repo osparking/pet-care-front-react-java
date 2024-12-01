@@ -21,15 +21,15 @@ const VetCard = ({ vet }) => {
               <Card.Title>
                 <h6>전문분야: {vet.specialization}</h6>
               </Card.Title>
-              <Card.Title className="review rating-stars">
+              <Card.Text className="review rating-stars">
                 리뷰: 별 여러 개
-              </Card.Title>
-              <Link to={""}>진료 예약</Link>
+              </Card.Text>
+              <Link to={""} className="link">진료 예약</Link>
             </div>
           </Accordion.Header>
           <Accordion.Body>
             <div>
-              <Link to={""} clasName="link-2">
+              <Link to={""} className="link-2">
                 사람들이 어떻게 평가하고 있는가?
               </Link>
               {""}
