@@ -1,6 +1,7 @@
+import format from "date-fns";
 import React from "react";
 
-const VetSearch = ({onSearchResult}) => {
+const VetSearch = ({ onSearchResult }) => {
   const [searchKey, setSearchKey] = useState({
     date: null,
     time: null,
@@ -8,6 +9,7 @@ const VetSearch = ({onSearchResult}) => {
   });
 
   const [showDateTime, setShowDateTime] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
