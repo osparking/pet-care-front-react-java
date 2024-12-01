@@ -22,6 +22,23 @@ const VetSearch = () => {
     }
   };
 
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    // 수의사 검색 논리 구현
+    let searchParams = { specialization: searchKey.specialties };
+    if (searchKey.date) {
+      const formattedDate = format(searchKey.date, "yyyy-MM-dd");
+      searchParams.date = formattedDate;
+    }
+    if (searchKey.time) {
+      const formattedTime = format(searchKey.time, "HH:mm");
+      searchParams.time = formattedTime;
+    }
+    try {
+      const response = await findAvailableVets(searchParams);
+    } catch (err) {}
+  };
+
   return <div></div>;
 };
 
