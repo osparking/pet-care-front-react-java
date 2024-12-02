@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const UseMsgAlerts = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  return {
+    successMsg,
+    errorMsg,
+    setSuccessMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  };
+};
 
-export default UseMsgAlerts
+export default UseMsgAlerts;
