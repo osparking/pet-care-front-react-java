@@ -1,5 +1,6 @@
 import format from "date-fns";
 import React from "react";
+import { Form } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const VetSearch = ({ onSearchResult }) => {
@@ -58,7 +59,14 @@ const VetSearch = ({ onSearchResult }) => {
     onSearchResult([]);
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <h3>수의사 검색</h3>
+      <Form>
+        <Form.Group></Form.Group>
+      </Form>
+    </div>
+  );
 };
 
 export default VetSearch;
