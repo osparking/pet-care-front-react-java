@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import VetCard from "./VetCard";
+import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
 
 const VetListing = () => {
@@ -23,6 +24,8 @@ const VetListing = () => {
     return <p>저희는 현재 수의사가 없습니다.</p>;
   }
 
+  const handleSearchResult = (searchResult) => {};
+
   return (
     <Container>
       <Row className="justify-content-center">
@@ -31,7 +34,9 @@ const VetListing = () => {
       <Row className="justify-content-center">
         <Col md={4}>
           <Row>
-            <h5>여기서 검색하세요</h5>
+            <h5>
+              <VetSearch onSearchResult={handleSearchResult} />
+            </h5>
           </Row>
         </Col>
         <Col>
