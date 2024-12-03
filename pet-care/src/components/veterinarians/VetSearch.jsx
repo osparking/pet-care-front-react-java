@@ -103,6 +103,20 @@ const VetSearch = ({ onSearchResult }) => {
                       placeholderText="날짜 선택"
                     />
                   </Form.Group>
+                  <Form.Group className='mb-3'>
+                    <Form.Label className='searchText'>시간</Form.Label>
+                    <DatePicker
+                      selected={searchKey.time}
+                      onChange={handleTimeChange}
+                      showTimeSelect
+                      showTimeSelectOnly
+                      timeIntervals={30}
+                      dateFormat='HH:mm'
+                      className='form-control'
+                      placeholderText='시간 선택'
+                      required
+                    />
+                  </Form.Group>
                 </React.Fragment>
               )}
             </Col>
