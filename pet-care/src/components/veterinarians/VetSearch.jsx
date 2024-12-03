@@ -41,7 +41,11 @@ const VetSearch = ({ onSearchResult }) => {
     try {
       const response = await findAvailableVets(searchParams);
       onSearchResult(response.data);
-    } catch (err) {}
+      setShowErrorAlert(false);
+    } catch (err) {
+      setErrorMsg(err.message);
+      setShowErrorAlert(true);
+    }
   };
 
   return <div></div>;
