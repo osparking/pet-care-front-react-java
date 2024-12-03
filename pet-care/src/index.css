@@ -154,3 +154,10 @@ h6 {
   background-position: center;
   margin: 10px;
 }
+
+/* Start search component*/
+.searchText {
+  color: #daa520;
+  font-size: 14px;
+  margin-right: 10px;
+}
