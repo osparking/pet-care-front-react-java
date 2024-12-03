@@ -62,7 +62,7 @@ const VetSearch = ({ onSearchResult }) => {
   return (
     <div>
       <h3>수의사 검색</h3>
-      <Form>
+      <Form onSubmit={handleSearch}>
         <Form.Group>
           <Form.Label>전문분야</Form.Label>
           <Form.Control
@@ -122,6 +122,19 @@ const VetSearch = ({ onSearchResult }) => {
             </Col>
           </Row>
         </fieldset>
+        <div className='d-flex justify-content-center mb-4'>
+          <Button type='submit' variant='outline-primary'>
+            Search
+          </Button>
+          <div className='mx-2'>
+            <Button
+              type='button'
+              variant='outline-info'
+              onClick={handleClearSearch}>
+              Clear Search
+            </Button>
+          </div>
+        </div>
       </Form>
     </div>
   );
