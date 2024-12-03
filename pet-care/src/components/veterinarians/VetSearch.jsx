@@ -1,5 +1,6 @@
 import format from "date-fns";
 import React from "react";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const VetSearch = ({ onSearchResult }) => {
   const [searchKey, setSearchKey] = useState({
@@ -9,7 +10,8 @@ const VetSearch = ({ onSearchResult }) => {
   });
 
   const [showDateTime, setShowDateTime] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
+    UseMsgAlerts();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
