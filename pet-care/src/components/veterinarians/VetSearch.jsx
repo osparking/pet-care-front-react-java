@@ -89,7 +89,22 @@ const VetSearch = ({ onSearchResult }) => {
                   onChange={handleDateTimeFieldsToggle}
                 />
               </Form.Group>
-              // showDateTime ...
+              {showDateTime && (
+                <React.Fragment>
+                  <legend>날짜 및 시간 포함</legend>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="searchText">날짜</Form.Label>
+                    <DatePicker
+                      selected={searchKey.date}
+                      onChange={handleDateChange}
+                      dateFormat="yyyy-MM-dd"
+                      minDate={new Date()}
+                      className="form-control"
+                      placeholderText="날짜 선택"
+                    />
+                  </Form.Group>
+                </React.Fragment>
+              )}
             </Col>
           </Row>
         </fieldset>
