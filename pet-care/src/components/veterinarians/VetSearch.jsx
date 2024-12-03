@@ -87,7 +87,7 @@ const VetSearch = ({ onSearchResult }) => {
                   type="checkbox"
                   label="가능한 날짜 및 시간 포함"
                   checked={showDateTime}
-                  onChange={handleDateTimeFieldsToggle}
+                  onChange={handleDateTimeToggle}
                 />
               </Form.Group>
               {showDateTime && (
