@@ -48,6 +48,16 @@ const VetSearch = ({ onSearchResult }) => {
     }
   };
 
+  const handleClearSearch = () => {
+    setSearchKey({
+      date: null,
+      time: null,
+      specialties: "",
+    });
+    setShowDateTime(false);
+    onSearchResult([]);
+  };
+
   return <div></div>;
 };
 
