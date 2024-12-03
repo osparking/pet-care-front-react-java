@@ -1,6 +1,7 @@
 import format from "date-fns";
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
+import DatePicker from "react-datepicker";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const VetSearch = ({ onSearchResult }) => {
@@ -103,17 +104,17 @@ const VetSearch = ({ onSearchResult }) => {
                       placeholderText="날짜 선택"
                     />
                   </Form.Group>
-                  <Form.Group className='mb-3'>
-                    <Form.Label className='searchText'>시간</Form.Label>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="searchText">시간</Form.Label>
                     <DatePicker
                       selected={searchKey.time}
                       onChange={handleTimeChange}
                       showTimeSelect
                       showTimeSelectOnly
                       timeIntervals={30}
-                      dateFormat='HH:mm'
-                      className='form-control'
-                      placeholderText='시간 선택'
+                      dateFormat="HH:mm"
+                      className="form-control"
+                      placeholderText="시간 선택"
                       required
                     />
                   </Form.Group>
@@ -122,15 +123,16 @@ const VetSearch = ({ onSearchResult }) => {
             </Col>
           </Row>
         </fieldset>
-        <div className='d-flex justify-content-center mb-4'>
-          <Button type='submit' variant='outline-primary'>
+        <div className="d-flex justify-content-center mb-4">
+          <Button type="submit" variant="outline-primary">
             Search
           </Button>
-          <div className='mx-2'>
+          <div className="mx-2">
             <Button
-              type='button'
-              variant='outline-info'
-              onClick={handleClearSearch}>
+              type="button"
+              variant="outline-info"
+              onClick={handleClearSearch}
+            >
               Clear Search
             </Button>
           </div>
