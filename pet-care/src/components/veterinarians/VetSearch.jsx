@@ -69,13 +69,30 @@ const VetSearch = ({ onSearchResult }) => {
             as="select"
             name="specialties"
             value={searchKey.specialties}
-            onChange={handleInputChange}>
-              <option value="">- 전문분야 선택 -</option>
-              <option value="surgeon">외과수술</option>
-              <option value="urologist">비뇨기과</option>
-              <option value="other">기타</option>
-            </Form.Control>
+            onChange={handleInputChange}
+          >
+            <option value="">- 전문분야 선택 -</option>
+            <option value="surgeon">외과수술</option>
+            <option value="urologist">비뇨기과</option>
+            <option value="other">기타</option>
+          </Form.Control>
         </Form.Group>
+
+        <fieldset>
+          <Row className="mb-3">
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Check
+                  type="checkbox"
+                  label="가능한 날짜 및 시간 포함"
+                  checked={showDateTime}
+                  onChange={handleDateTimeFieldsToggle}
+                />
+              </Form.Group>
+              // showDateTime ...
+            </Col>
+          </Row>
+        </fieldset>
       </Form>
     </div>
   );
