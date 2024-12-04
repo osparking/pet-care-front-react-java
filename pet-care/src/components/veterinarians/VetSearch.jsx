@@ -134,7 +134,7 @@ const VetSearch = ({ onSearchResult }) => {
         </fieldset>
         <div className="d-flex justify-content-center mb-4">
           <Button type="submit" variant="outline-primary">
-            Search
+            검색
           </Button>
           <div className="mx-2">
             <Button
@@ -142,7 +142,7 @@ const VetSearch = ({ onSearchResult }) => {
               variant="outline-info"
               onClick={handleClearSearch}
             >
-              Clear Search
+              조건 지우기
             </Button>
           </div>
         </div>
