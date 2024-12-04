@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const VetSearch = ({ onSearchResult }) => {
