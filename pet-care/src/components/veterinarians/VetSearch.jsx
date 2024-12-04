@@ -61,7 +61,7 @@ const VetSearch = ({ onSearchResult }) => {
   };
 
   return (
-    <div>
+    <section className="stickyFormContainer">
       <h3>수의사 검색</h3>
       <Form onSubmit={handleSearch}>
         <Form.Group>
@@ -138,7 +138,7 @@ const VetSearch = ({ onSearchResult }) => {
           </div>
         </div>
       </Form>
-    </div>
+    </section>
   );
 };
 
