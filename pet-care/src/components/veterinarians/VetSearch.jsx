@@ -28,6 +28,14 @@ const VetSearch = ({ onSearchResult }) => {
     }
   };
 
+  const handleDateChange = (date) => {
+    setSearchKey({...searchKey, date });
+  };
+
+  const handleTimeChange = (time) => {
+    setSearchKey({...searchKey, time });
+  };
+
   const handleSearch = async (e) => {
     e.preventDefault();
     // 수의사 검색 논리 구현
