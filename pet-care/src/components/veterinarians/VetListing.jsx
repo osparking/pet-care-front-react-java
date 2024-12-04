@@ -33,13 +33,9 @@ const VetListing = () => {
       </Row>
       <Row className="justify-content-center">
         <Col md={4}>
-          <Row>
-            <h5>
-              <VetSearch onSearchResult={handleSearchResult} />
-            </h5>
-          </Row>
+          <VetSearch onSearchResult={handleSearchResult} />
         </Col>
-        <Col>
+        <Col md={7}>
           {vets.map((vet, index) => (
             <VetCard key={index} vet={vet} />
           ))}

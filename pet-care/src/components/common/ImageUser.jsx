@@ -8,7 +8,7 @@ const ImageUser = ({ photoUser, altText = "수의사 얼굴" }) => {
       {photoUser ? (
         <Card.Img
           src={`data:image/png;base64, ${photoUser}`}
-          clasName="user-image"
+          className="user-image"
           alt={altText}
         />
       ) : (
