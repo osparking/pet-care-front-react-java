@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 
-export default function AlertMessage({type, message}) {
+export default function AlertMessage({ type, message }) {
+  if (!message) return null;
   return (
-    <div>
-      
-    </div>
-  )
+    <Alert varient={type} dismissible>
+      {message}
+    </Alert>
+  );
 }
