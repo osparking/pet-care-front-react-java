@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const VetSearch = ({ onSearchResult }) => {
@@ -30,11 +31,11 @@ const VetSearch = ({ onSearchResult }) => {
   };
 
   const handleDateChange = (date) => {
-    setSearchKey({...searchKey, date });
+    setSearchKey({ ...searchKey, date });
   };
 
   const handleTimeChange = (time) => {
-    setSearchKey({...searchKey, time });
+    setSearchKey({ ...searchKey, time });
   };
 
   const handleSearch = async (e) => {
@@ -147,6 +148,11 @@ const VetSearch = ({ onSearchResult }) => {
           </div>
         </div>
       </Form>
+      <div>
+        {showErrorAlert && (
+          <AlertMessage type={"danger"} message={errorMsg} />
+        )}
+      </div>
     </section>
   );
 };
