@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { findAvailableVets } from "./VetService";
 
 const VetSearch = ({ onSearchResult }) => {
   const [searchKey, setSearchKey] = useState({
