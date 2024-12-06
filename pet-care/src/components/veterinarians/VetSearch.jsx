@@ -11,7 +11,7 @@ const VetSearch = ({ onSearchResult }) => {
   const [searchKey, setSearchKey] = useState({
     date: null,
     time: null,
-    specialty: "",
+    specialization: "",
   });
 
   const [showDateTime, setShowDateTime] = useState(false);
