@@ -83,8 +83,8 @@ const VetSearch = ({ onSearchResult }) => {
             onChange={handleInputChange}
           >
             <option value="">- 전문분야 선택 -</option>
-            <option value="surgeon">외과수술</option>
-            <option value="urologist">비뇨기과</option>
+            <option value="pet_dentist">애견치과</option>
+            <option value="pet_urologist">애견비뇨</option>
             <option value="other">기타</option>
           </Form.Control>
         </Form.Group>
@@ -149,9 +149,7 @@ const VetSearch = ({ onSearchResult }) => {
         </div>
       </Form>
       <div>
-        {showErrorAlert && (
-          <AlertMessage type={"danger"} message={errorMsg} />
-        )}
+        {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       </div>
     </section>
   );
