@@ -42,7 +42,7 @@ const VetSearch = ({ onSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     // 수의사 검색 논리 구현
-    let searchParams = { specialization: searchKey.specialty };
+    let searchParams = { specialization: searchKey.specialization };
     if (searchKey.date) {
       const formattedDate = format(searchKey.date, "yyyy-MM-dd");
       searchParams.date = formattedDate;
@@ -65,7 +65,7 @@ const VetSearch = ({ onSearchResult }) => {
     setSearchKey({
       date: null,
       time: null,
-      specialty: "",
+      specialization: "",
     });
     setShowDateTime(false);
     onSearchResult([]);
@@ -80,7 +80,7 @@ const VetSearch = ({ onSearchResult }) => {
           <Form.Control
             as="select"
             name="specialization"
-            value={searchKey.specialty}
+            value={searchKey.specialization}
             onChange={handleInputChange}
           >
             <option value="">- 전문분야 선택 -</option>
