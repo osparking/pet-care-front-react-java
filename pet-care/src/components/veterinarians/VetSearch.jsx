@@ -56,7 +56,7 @@ const VetSearch = ({ onSearchResult }) => {
       onSearchResult(response.data);
       setShowErrorAlert(false);
     } catch (err) {
-      setErrorMsg(err.message);
+      setErrorMsg(err.response.data.message);
       setShowErrorAlert(true);
     }
   };
@@ -79,7 +79,7 @@ const VetSearch = ({ onSearchResult }) => {
           <Form.Label>전문분야</Form.Label>
           <Form.Control
             as="select"
-            name="specialty"
+            name="specialization"
             value={searchKey.specialty}
             onChange={handleInputChange}
           >
