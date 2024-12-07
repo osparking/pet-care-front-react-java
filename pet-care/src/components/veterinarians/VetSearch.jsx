@@ -87,6 +87,7 @@ const VetSearch = ({ onSearchResult }) => {
             <option value="">- 전문분야 선택 -</option>
             <option value="애견치과">애견치과</option>
             <option value="애견비뇨">애견비뇨</option>
+            <option value="이비인후">이비인후</option>
             <option value={VET_SPEC_OTHER}>{VET_SPEC_OTHER}</option>
           </Form.Control>
         </Form.Group>
