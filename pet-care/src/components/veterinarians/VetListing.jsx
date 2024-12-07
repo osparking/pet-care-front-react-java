@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import AlertMessage from "../common/AlertMessage";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetCard from "./VetCard";
 import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
@@ -9,7 +11,8 @@ import { getVets } from "./VetService";
 const VetListing = () => {
   const [vets, setVets] = useState([]);
   const [allVets, setAllVets] = useState([]);
-  const [errorMsg, setErrorMsg] = useState("");
+  const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
+    UseMsgAlerts();
 
   useEffect(() => {
     getVets()
@@ -18,15 +21,21 @@ const VetListing = () => {
         setAllVets(data.data);
       })
       .catch((error) => {
-        setErrorMsg(error.message);
+        setErrorMsg(error.response.data.message);
+        setShowErrorAlert(true);
       });
   }, []);
 
   if (vets.length === 0) {
-    return <p>저희는 현재 수의사가 없습니다.</p>;
+    return showErrorAlert ? (
+      <AlertMessage type={"danger"} message={errorMsg} />
+    ) : (
+      <p>저희는 현재 수의사가 없습니다.</p>
+    );
   }
 
   const handleSearchResult = (foundVets) => {
+    setShowErrorAlert(false);
     if (foundVets === null) {
       setVets(allVets);
     } else {
