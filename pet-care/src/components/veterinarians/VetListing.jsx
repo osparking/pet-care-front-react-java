@@ -8,12 +8,14 @@ import { getVets } from "./VetService";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
+  const [allVets, setAllVets] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     getVets()
       .then((data) => {
         setVets(data.data);
+        setAllVets(data.data);
       })
       .catch((error) => {
         setErrorMsg(error.message);
