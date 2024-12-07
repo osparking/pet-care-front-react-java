@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const AddItemModal = ({show, closer, saver, label}) => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const AddItemModal = ({ show, closer, saver, label }) => {
+  const [itemValue, setItemValue] = useState("");
+  const handleSaveItem = () => {
+    saver(itemValue);
+    setItemValue("");
+    closer();
+  };
+  return <div></div>;
+};
 
-export default AddItemModal
+export default AddItemModal;
