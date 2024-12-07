@@ -69,7 +69,7 @@ const VetSearch = ({ onSearchResult }) => {
       specialization: "",
     });
     setShowDateTime(false);
-    onSearchResult([]);
+    onSearchResult(null);
   };
 
   return (
