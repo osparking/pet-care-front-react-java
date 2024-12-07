@@ -26,7 +26,13 @@ const VetListing = () => {
     return <p>저희는 현재 수의사가 없습니다.</p>;
   }
 
-  const handleSearchResult = (searchResult) => {};
+  const handleSearchResult = (foundVets) => {
+    if (foundVets === null) {
+      setVets(allVets);
+    } else {
+      setVets(foundVets);
+    }
+  };
 
   return (
     <Container>
