@@ -8,6 +8,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { findAvailableVets } from "./VetService";
 
 const VetSearch = ({ onSearchResult }) => {
+  const VET_SPEC_OTHER = "기타";
   const [searchKey, setSearchKey] = useState({
     date: null,
     time: null,
@@ -84,9 +85,9 @@ const VetSearch = ({ onSearchResult }) => {
             onChange={handleInputChange}
           >
             <option value="">- 전문분야 선택 -</option>
-            <option value="pet_dentist">애견치과</option>
-            <option value="pet_urologist">애견비뇨</option>
-            <option value="other">기타</option>
+            <option value="애견치과">애견치과</option>
+            <option value="애견비뇨">애견비뇨</option>
+            <option value={VET_SPEC_OTHER}>{VET_SPEC_OTHER}</option>
           </Form.Control>
         </Form.Group>
 
