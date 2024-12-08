@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import AddItemModal from "../modals/AddItemModal";
 
 const PetColor = ({ value, onChange }) => {
   const [petColors, setPetColors] = useState([]);
@@ -36,6 +37,12 @@ const PetColor = ({ value, onChange }) => {
           <option value="white">흰색</option>
         </Form.Control>
       </Form.Group>
+      <AddItemModal
+        show={showModal}
+        closer={() => setShowModal(false)}
+        saver={handleSaveNewColor}
+        label={"색상"}
+      />
     </React.Fragment>
   );
 };
