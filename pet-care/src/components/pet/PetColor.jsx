@@ -24,7 +24,17 @@ const PetColor = ({ value, onChange }) => {
   return (
     <React.Fragment>
       <Form.Group>
-        <Form.Control></Form.Control>
+        <Form.Control
+          as="select"
+          name="petColor"
+          value={value}
+          required
+          onChange={handleColorChange}
+        >
+          <option value="">- 색상 -</option>
+          <option value="add-new-item">색상 추가</option>
+          <option value="white">흰색</option>
+        </Form.Control>
       </Form.Group>
     </React.Fragment>
   );
