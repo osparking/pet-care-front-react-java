@@ -8,6 +8,10 @@ const AddItemModal = ({ show, closer, saver, label }) => {
     setItemValue("");
     closer();
   };
+  const handle이름변화 = (e) => {
+    setItemValue(e.target.value);
+  };
+
   return (
     <Modal show={show} onHide={handleHide}>
       <Modal.Header closeButton>
@@ -21,7 +25,7 @@ const AddItemModal = ({ show, closer, saver, label }) => {
               type="text"
               value={itemValue}
               placeholder={`새 ${label.toLowerCase()}을 입력하라`}
-              onChange={(e) => setItemValue(e.target.value)}
+              onChange={handle이름변화}
             ></Form.Control>
           </Form.Group>
         </Form>
