@@ -1,4 +1,6 @@
 import React from "react";
+import PetColor from "./PetColor";
+import { Form, Col } from "react-bootstrap";
 
 const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
   return (
@@ -24,8 +26,12 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           required
         />
       </Form.Group>
+      <Form.Group as={Col}>
+        <PetColor value={pet.petColor} onChange={handleInputChange} />
+      </Form.Group>
     </fieldset>
   );
 };
 
 export default PetEntry;
+
