@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const PetColor = ({value, onChange}) => {
-  return (
-    <div>PetColor</div>
-  )
-}
+const PetColor = ({ value, onChange }) => {
+  const [petColors, setPetColors] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
-export default PetColor
+  // 1. 색상 변화 처리
+  // 2. 새 항목 저장 처리
+
+  return <div>PetColor</div>;
+};
+
+export default PetColor;
