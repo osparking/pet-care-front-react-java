@@ -5,7 +5,15 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
     <fieldset>
       <legend className="legend">{`팻 #${색인 + 1} 정보`}</legend>
       <Form.Group>
-        <Form.Control></Form.Control>
+        <Form.Control
+          type="text"
+          name="petName"
+          id={`petName-${index}`}
+          value={pet.petName}
+          placeHolder="팻 이름 입력"
+          onChange={handle값변화}
+          required
+        />
       </Form.Group>
     </fieldset>
   );
