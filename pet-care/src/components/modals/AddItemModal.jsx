@@ -26,7 +26,7 @@ const AddItemModal = ({ show, closer, saver, label }) => {
               value={itemValue}
               placeholder={`새 ${label.toLowerCase()}을 입력하라`}
               onChange={handle이름변화}
-            ></Form.Control>
+            />
           </Form.Group>
         </Form>
       </Modal.Body>
