@@ -9,8 +9,10 @@ const AddItemModal = ({ show, closer, saver, label }) => {
     closer();
   };
   return (
-    <Modal>
-      <Modal.Header></Modal.Header>
+    <Modal show={show} onHide={handleHide}>
+      <Modal.Header closeButton>
+        <Modal.Title>새 {label} 추가</Modal.Title>
+      </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group>
