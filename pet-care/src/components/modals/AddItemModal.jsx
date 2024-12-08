@@ -26,7 +26,14 @@ const AddItemModal = ({ show, closer, saver, label }) => {
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Modal.Footer></Modal.Footer>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handle추가}>
+          추가
+        </Button>
+        <Button variant="danger" onClick={handle닫기}>
+          닫기
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };
