@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 
 const PetColor = ({ value, onChange }) => {
   const [petColors, setPetColors] = useState([]);
@@ -20,7 +21,13 @@ const PetColor = ({ value, onChange }) => {
     }
   };
 
-  return <div>PetColor</div>;
+  return (
+    <React.Fragment>
+      <Form.Group>
+        <Form.Control></Form.Control>
+      </Form.Group>
+    </React.Fragment>
+  );
 };
 
 export default PetColor;
