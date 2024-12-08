@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 
 const AddItemModal = ({ show, closer, saver, label }) => {
   const [itemValue, setItemValue] = useState("");
-  const handleSaveItem = () => {
+  const handle추가 = () => {
     saver(itemValue);
     setItemValue("");
     closer();
