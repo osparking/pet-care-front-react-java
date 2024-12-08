@@ -14,6 +14,15 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           onChange={handle값변화}
           required
         />
+        <Form.Control
+          type="number"
+          name="petAge"
+          id="petAge"
+          value={pet.petAge}
+          placeHolder="팻 나이 입력"
+          onChange={handle값변화}
+          required
+        />
       </Form.Group>
     </fieldset>
   );
