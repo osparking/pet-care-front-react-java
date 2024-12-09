@@ -40,6 +40,20 @@ const BookAppointment = () => {
     setFormData((prevState) => ({ ...prevState, pets: newPets }));
   };
 
+  const addPet = () => {
+    const newPet = {
+      name: "",
+      type: "",
+      color: "",
+      breed: "",
+      age: "",
+    };
+    setFormData((prevState) => ({
+      ...prevState,
+      pets: [...prevState.pets, newPet],
+    }));
+  };
+
   return <div>BookAppointment</div>;
 };
 
