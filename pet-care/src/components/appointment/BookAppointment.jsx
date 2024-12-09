@@ -15,6 +15,15 @@ const BookAppointment = () => {
       },
     ],
   });
+
+  const dateChanged = (date) => {
+    setFormData({ ...formData, date });
+  };
+
+  const timeChanged = (newTime) => {
+    setFormData((prevState) => ({ ...prevState, time: newTime }));
+  };
+
   return <div>BookAppointment</div>;
 };
 
