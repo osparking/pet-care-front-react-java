@@ -24,6 +24,12 @@ const BookAppointment = () => {
     setFormData((prevState) => ({ ...prevState, time: newTime }));
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  
   return <div>BookAppointment</div>;
 };
 
