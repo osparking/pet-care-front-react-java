@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, Form, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
-import { FaMinus } from "react-icons/fa";
+import { Button, Col, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { FaMinusSquare } from "react-icons/fa";
 import PetBreed from "./PetBreed";
 import PetColor from "./PetColor";
 import PetType from "./PetType";
@@ -51,7 +51,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
         <div className="d-flex justify-content-end mt-2">
           <OverlayTrigger overlay={<Tooltip>팻 제거</Tooltip>}>
             <Button variant="danger" size="sm" onClick={() => removePet(index)}>
-              <FaMinus />
+              <FaMinusSquare />
             </Button>
           </OverlayTrigger>
         </div>
