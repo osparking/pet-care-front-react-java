@@ -60,6 +60,17 @@ const BookAppointment = () => {
     setFormData((prevState) => ({ ...prevState, pets: newPets }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const pets = formData.pets.map((pet) => ({
+      name: pet.name,
+      type: pet.type,
+      color: pet.color,
+      breed: pet.breed,
+      age: pet.age,
+    }));
+  };
+
   return <div>BookAppointment</div>;
 };
 
