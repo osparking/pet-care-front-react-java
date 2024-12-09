@@ -29,7 +29,17 @@ const BookAppointment = () => {
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  
+  /**
+   * 이 코드는 강사와 다르다. 그러나 index 로 바로 접근하니 보다 효율적일 것임.
+   * 동영상 코드는 21:37초에 표시됨.
+   */
+  const handlePetChange = (index, e) => {
+    const { name, value } = e.target;
+    const newPets = [...formData.pets];
+    newPets[index][name] = value;
+    setFormData((prevState) => ({ ...prevState, pets: newPets }));
+  };
+
   return <div>BookAppointment</div>;
 };
 
