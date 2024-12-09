@@ -54,6 +54,12 @@ const BookAppointment = () => {
     }));
   };
 
+  const removePet = (index, e) => {
+    const newPets = [...formData.pets];
+    newPets.splice(index, 1);
+    setFormData((prevState) => ({ ...prevState, pets: newPets }));
+  };
+
   return <div>BookAppointment</div>;
 };
 
