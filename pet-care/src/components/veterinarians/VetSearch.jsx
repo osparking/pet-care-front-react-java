@@ -32,12 +32,12 @@ const VetSearch = ({ onSearchResult }) => {
     }
   };
 
-  const handleDateChange = (date) => {
-    setSearchKey({ ...searchKey, date });
+  const handleDateChange = (newDate) => {
+    setFormData((prevState) => ({ ...prevState, date: newDate }));
   };
 
-  const handleTimeChange = (time) => {
-    setSearchKey({ ...searchKey, time });
+  const handleTimeChange = (newTime) => {
+    setFormData((prevState) => ({ ...prevState, time: newTime }));
   };
 
   const handleSearch = async (e) => {

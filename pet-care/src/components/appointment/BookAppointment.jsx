@@ -16,8 +16,8 @@ const BookAppointment = () => {
     ],
   });
 
-  const dateChanged = (date) => {
-    setFormData({ ...formData, date });
+  const dateChanged = (newDate) => {
+    setFormData((prevState) => ({ ...prevState, date: newDate }));
   };
 
   const timeChanged = (newTime) => {
