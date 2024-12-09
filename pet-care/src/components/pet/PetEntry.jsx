@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Col, Form, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
+import { FaMinus } from "react-icons/fa";
 import PetBreed from "./PetBreed";
 import PetColor from "./PetColor";
 import PetType from "./PetType";
