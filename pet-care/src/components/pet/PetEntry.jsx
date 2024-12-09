@@ -1,6 +1,7 @@
 import React from "react";
+import { Col, Form } from "react-bootstrap";
 import PetColor from "./PetColor";
-import { Form, Col } from "react-bootstrap";
+import PetType from "./PetType";
 
 const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
   return (
@@ -26,12 +27,26 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           required
         />
       </Form.Group>
-      <Form.Group as={Col}>
+      <Form.Group as={Col} className="mb-2">
         <PetColor value={pet.petColor} onChange={handleInputChange} />
       </Form.Group>
+      <fieldset className="field-set">
+        <legend className="legend">팻 유형 및 품종</legend>
+        <Form.Group as={Row} className="mb-2 d-flex">
+          <Col>
+            <PetType value={pet.PetType} onChange={handleInputChange} />
+          </Col>
+          <Col>
+            <PetBreed
+              petType={pet.petType}
+              value={pet.petBreed}
+              onChange={handleInputChange}
+            />
+          </Col>
+        </Form.Group>
+      </fieldset>
     </fieldset>
   );
 };
 
 export default PetEntry;
-
