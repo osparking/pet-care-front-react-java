@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import PetBreed from "./PetBreed";
 import PetColor from "./PetColor";
 import PetType from "./PetType";
 
@@ -45,6 +46,15 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           </Col>
         </Form.Group>
       </fieldset>
+      {canRemove && (
+        <div className="d-flex justify-content-end mt-2">
+          <OverlayTrigger overlay={<Tooltip>팻 제거</Tooltip>}>
+            <Button variant="danger" size="sm" onClick={() => removePet(index)}>
+              <FaMinus />
+            </Button>
+          </OverlayTrigger>
+        </div>
+      )}
     </fieldset>
   );
 };
