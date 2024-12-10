@@ -95,6 +95,15 @@ const BookAppointment = () => {
       },
       pets: pets,
     };
+
+    try {
+      const response = await bookAppointment(senderId, recipientId, request);
+      setSuccessMsg(response.data.message);
+      setShowSuccessAlert(true);
+    } catch (err) {
+      setErrorMsg(err.response.data.message);
+      setShowErrorAlert(true);
+    }
   };
 
   return <div>BookAppointment</div>;
