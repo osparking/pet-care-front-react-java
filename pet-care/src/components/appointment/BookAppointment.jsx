@@ -1,4 +1,5 @@
 import React from "react";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { dateTimeFormatter } from "../utils//utilities";
 
 const BookAppointment = () => {
@@ -29,6 +30,17 @@ const BookAppointment = () => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
+
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
 
   /**
    * 이 코드는 강사와 다르다. 그러나 index 로 바로 접근하니 보다 효율적일 것임.
