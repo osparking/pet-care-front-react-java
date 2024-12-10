@@ -1,5 +1,5 @@
-import { format } from "date-fns";
 import React from "react";
+import { dateTimeFormatter } from "../utils//utilities";
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
@@ -63,6 +63,10 @@ const BookAppointment = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const { date, time } = formData;
+    const { formattedDate, formattedTime } = dateTimeFormatter(date, time);
+
     const pets = formData.pets.map((pet) => ({
       name: pet.name,
       type: pet.type,
@@ -70,9 +74,6 @@ const BookAppointment = () => {
       breed: pet.breed,
       age: pet.age,
     }));
-    const formattedDate = format(formData.date, "yyyy-MM-dd");
-    console.log("formattedDate : ", formattedDate);
-    const formattedTime = format(formData.time, "HH:mm");
 
     const request = {
       appointment: {
