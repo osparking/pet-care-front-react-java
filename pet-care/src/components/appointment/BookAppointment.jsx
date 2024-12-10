@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { dateTimeFormatter } from "../utils//utilities";
 
@@ -17,6 +18,8 @@ const BookAppointment = () => {
       },
     ],
   });
+
+  const { recipientId } = useParams();
 
   const dateChanged = (newDate) => {
     setFormData((prevState) => ({ ...prevState, date: newDate }));
