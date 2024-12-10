@@ -133,9 +133,9 @@ const BookAppointment = () => {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col lg={8} md={10} sm={12}>
-          <Form>
-            <Card>
-              <Card.Header></Card.Header>
+          <Form onSubmit={handleSubmit}>
+            <Card className="shadow mb-5">
+              <Card.Header>진료 예약 폼</Card.Header>
               <Card.Body></Card.Body>
             </Card>
           </Form>
