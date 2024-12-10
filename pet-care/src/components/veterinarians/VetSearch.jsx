@@ -1,10 +1,10 @@
-import { format } from "date-fns";
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { dateTimeFormatter } from "../utils//utilities";
 import { findAvailableVets } from "./VetService";
 
 const VetSearch = ({ onSearchResult }) => {
@@ -43,15 +43,17 @@ const VetSearch = ({ onSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     // 수의사 검색 논리 구현
+    const { date, time } = searchKey;
+    const { formattedDate, formattedTime } = dateTimeFormatter(date, time);
+
     let searchParams = { specialization: searchKey.specialization };
     if (searchKey.date) {
-      const formattedDate = format(searchKey.date, "yyyy-MM-dd");
       searchParams.date = formattedDate;
     }
     if (searchKey.time) {
-      const formattedTime = format(searchKey.time, "HH:mm");
       searchParams.time = formattedTime;
     }
+
     try {
       const response = await findAvailableVets(searchParams);
       onSearchResult(response.data);
