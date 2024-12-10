@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React from "react";
 
 const BookAppointment = () => {
@@ -69,6 +70,18 @@ const BookAppointment = () => {
       breed: pet.breed,
       age: pet.age,
     }));
+    const formattedDate = format(formData.date, "yyyy-MM-dd");
+    console.log("formattedDate : ", formattedDate);
+    const formattedTime = format(formData.time, "HH:mm");
+
+    const request = {
+      appointment: {
+        date: formattedDate,
+        time: formattedTime,
+        reason: formData.reason,
+      },
+      pets: pets,
+    };
   };
 
   return <div>BookAppointment</div>;
