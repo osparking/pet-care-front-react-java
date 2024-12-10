@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { dateTimeFormatter } from "../utils//utilities";
@@ -128,7 +129,20 @@ const BookAppointment = () => {
     };
   };
 
-  return <div>BookAppointment</div>;
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Form>
+            <Card>
+              <Card.Header></Card.Header>
+              <Card.Body></Card.Body>
+            </Card>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default BookAppointment;
