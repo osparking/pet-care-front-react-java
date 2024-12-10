@@ -130,9 +130,9 @@ const BookAppointment = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col lg={8} md={10} sm={12}>
           <Form>
             <Card>
               <Card.Header></Card.Header>
