@@ -18,7 +18,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/doctors" element={<VetListing />} />
         <Route
-          path="/book-appointment/recipientId/new-appointment"
+          path="/book-appointment/:recipientId/new-appointment"
           element={<BookAppointment />}
         />
       </Route>
