@@ -134,7 +134,7 @@ const BookAppointment = () => {
   return (
     <Container className="mt-5">
       <Row className="justify-content-center">
-        <Col lg={8} md={10} sm={12}>
+        <Col lg={6} md={10} sm={12}>
           <Form onSubmit={handleSubmit}>
             <Card className="shadow mb-5">
               <Card.Header as="h5" className="text-center">
