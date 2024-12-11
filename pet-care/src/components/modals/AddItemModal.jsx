@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
 
 const AddItemModal = ({ show, closer, saver, label }) => {
   const [itemValue, setItemValue] = useState("");
@@ -13,7 +13,7 @@ const AddItemModal = ({ show, closer, saver, label }) => {
   };
 
   return (
-    <Modal show={show} onHide={handleHide}>
+    <Modal show={show} onHide={closer}>
       <Modal.Header closeButton>
         <Modal.Title>새 {label} 추가</Modal.Title>
       </Modal.Header>
@@ -34,7 +34,7 @@ const AddItemModal = ({ show, closer, saver, label }) => {
         <Button variant="secondary" onClick={handle추가}>
           추가
         </Button>
-        <Button variant="danger" onClick={handle닫기}>
+        <Button variant="danger" onClick={closer}>
           닫기
         </Button>
       </Modal.Footer>

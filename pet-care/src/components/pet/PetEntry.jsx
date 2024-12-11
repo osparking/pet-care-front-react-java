@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Col, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Form,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { FaMinusSquare } from "react-icons/fa";
 import PetBreed from "./PetBreed";
 import PetColor from "./PetColor";
