@@ -189,7 +189,7 @@ const BookAppointment = () => {
                     index={index}
                     handleInputChange={(e) => handlePetChange(index, e)}
                     removePet={removePet}
-                    canRemove={formData.pets.length > 0}
+                    canRemove={formData.pets.length > 1}
                   />
                 ))}
               </Card.Body>
