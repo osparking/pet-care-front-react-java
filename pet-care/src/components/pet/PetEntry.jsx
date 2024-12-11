@@ -45,7 +45,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
       <Form.Group as={Col} className="mb-2">
         <PetColor value={pet.petColor} onChange={handleInputChange} />
       </Form.Group>
-      <fieldset className="field-set">
+      <fieldset className="field-set mb-4">
         <legend className="legend">팻 유형 및 품종</legend>
         <Form.Group as={Row} className="mb-2 d-flex">
           <Col>
