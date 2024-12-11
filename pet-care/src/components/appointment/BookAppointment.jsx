@@ -143,7 +143,7 @@ const BookAppointment = () => {
                 <fieldset className="field-set mb-4">
                   <legend className="text-center">예약 날짜, 시간</legend>
                   <Form.Group as={Row} className="mb-4">
-                    <Col>
+                    <Col md={6}>
                       <DatePicker
                         selected={formData.date}
                         onChange={dateChanged}
@@ -151,6 +151,20 @@ const BookAppointment = () => {
                         minDate={new Date()}
                         className="form-control"
                         placeholderText="날짜 선택"
+                        required
+                      />
+                    </Col>
+                    <Col sm={6}>
+                      <DatePicker
+                        selected={formData.time}
+                        onChange={timeChanged}
+                        showTimeSelect
+                        showTimeSelectOnly
+                        timeIntervals={30}
+                        dateFormat="HH:mm"
+                        minDate={new Date()}
+                        className="form-control"
+                        placeholderText="시간 선택"
                         required
                       />
                     </Col>
