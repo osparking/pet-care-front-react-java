@@ -137,12 +137,12 @@ const BookAppointment = () => {
         <Col lg={8} md={10} sm={12}>
           <Form onSubmit={handleSubmit}>
             <Card className="shadow mb-5">
-              <Card.Header as="h4" className="text-center">
+              <Card.Header as="h5" className="text-center">
                 진료 예약 폼
               </Card.Header>
               <Card.Body>
                 <fieldset className="field-set mb-4">
-                  <legend className="text-center">예약 날짜, 시간</legend>
+                  <legend as="h5" className="text-center">예약 날짜, 시간</legend>
                   <Form.Group as={Row} className="mb-4">
                     <Col md={6}>
                       <DatePicker
@@ -182,7 +182,7 @@ const BookAppointment = () => {
                     required
                   />
                 </Form.Group>
-                <h4 className="text-center">진료 대상 애완 동물</h4>
+                <h5 className="text-center">진료 대상 애완 동물</h5>
                 {formData.pets.map((pet, index) => (
                   <PetEntry
                     key={index}
