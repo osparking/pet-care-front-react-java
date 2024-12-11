@@ -16,7 +16,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           id={`petName-${index}`}
           value={pet.petName}
           placeHolder="팻 이름 입력"
-          onChange={handle값변화}
+          onChange={handleInputChange}
           required
         />
         <Form.Control
@@ -25,7 +25,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           id="petAge"
           value={pet.petAge}
           placeHolder="팻 나이 입력"
-          onChange={handle값변화}
+          onChange={handleInputChange}
           required
         />
       </Form.Group>
