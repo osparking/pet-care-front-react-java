@@ -171,7 +171,7 @@ const BookAppointment = () => {
                     </Col>
                   </Form.Group>
                 </fieldset>
-                <Form.Group>
+                <Form.Group className="mb-4">
                   <Form.Label>예약 사유</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -182,6 +182,7 @@ const BookAppointment = () => {
                     required
                   />
                 </Form.Group>
+                <h4 className="text-center">진료 대상 애완 동물</h4>
                 {formData.pets.map((pet, index) => (
                   <PetEntry
                     key={index}
