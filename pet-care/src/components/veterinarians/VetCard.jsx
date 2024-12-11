@@ -24,7 +24,10 @@ const VetCard = ({ vet }) => {
               <Card.Text className="review rating-stars">
                 리뷰: 별 여러 개
               </Card.Text>
-              <Link to={`/book-appointment/${ved.id}/new-appointment`} className="link">
+              <Link
+                to={`/book-appointment/${vet.id}/new-appointment`}
+                className="link"
+              >
                 진료 예약
               </Link>
             </div>
