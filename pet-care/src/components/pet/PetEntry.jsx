@@ -14,7 +14,7 @@ import PetType from "./PetType";
 
 const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
   return (
-    <fieldset>
+    <fieldset className="field-set mt-3">
       <legend className="legend">{`팻 #${index + 1} 정보`}</legend>
       <fieldset className="mb-2">
         <Form.Group as={Row}>
