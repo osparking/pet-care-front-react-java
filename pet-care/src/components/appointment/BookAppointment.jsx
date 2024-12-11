@@ -3,6 +3,7 @@ import { Card, Col, Container, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import PetEntry from "../Pet/PetEntry";
 import { dateTimeFormatter } from "../utils//utilities";
 
 const BookAppointment = () => {
@@ -181,6 +182,16 @@ const BookAppointment = () => {
                     required
                   />
                 </Form.Group>
+                {formData.pets.map((pet, index) => (
+                  <PetEntry
+                    key={index}
+                    pet={pet}
+                    index={index}
+                    handleInputChange={(e) => handlePetChange(index, e)}
+                    removePet={removePet}
+                    canRemove={formData.pets.length > 0}
+                  />
+                ))}
               </Card.Body>
             </Card>
           </Form>
