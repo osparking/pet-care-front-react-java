@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Form, Row } from "react-bootstrap";
+import DatePicker from "react-datepicker";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { dateTimeFormatter } from "../utils//utilities";
@@ -139,8 +140,21 @@ const BookAppointment = () => {
                 진료 예약 폼
               </Card.Header>
               <Card.Body>
-                <fieldset>
-                  <legend>예약 날짜, 시간</legend>
+                <fieldset className="field-set mb-4">
+                  <legend className="text-center">예약 날짜, 시간</legend>
+                  <Form.Group as={Row} className="mb-4">
+                    <Col>
+                      <DatePicker
+                        selected={formData.date}
+                        onChange={dateChanged}
+                        dateFormat="yyyy-MM-dd"
+                        minDate={new Date()}
+                        className="form-control"
+                        placeholderText="날짜 선택"
+                        required
+                      />
+                    </Col>
+                  </Form.Group>
                 </fieldset>
               </Card.Body>
             </Card>
