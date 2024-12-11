@@ -22,7 +22,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           name="petName"
           id={`petName-${index}`}
           value={pet.petName}
-          placeHolder="팻 이름 입력"
+          placeholder="팻 이름 입력"
           onChange={handleInputChange}
           required
         />
@@ -31,7 +31,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           name="petAge"
           id="petAge"
           value={pet.petAge}
-          placeHolder="팻 나이 입력"
+          placeholder="팻 나이 입력"
           onChange={handleInputChange}
           required
         />
