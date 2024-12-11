@@ -170,6 +170,17 @@ const BookAppointment = () => {
                     </Col>
                   </Form.Group>
                 </fieldset>
+                <Form.Group>
+                  <Form.Label>예약 사유</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="reason"
+                    onChange={handleInputChange}
+                    value={formData.reason}
+                    required
+                  />
+                </Form.Group>
               </Card.Body>
             </Card>
           </Form>
