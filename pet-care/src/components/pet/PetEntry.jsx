@@ -16,26 +16,32 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
   return (
     <fieldset>
       <legend className="legend">{`팻 #${index + 1} 정보`}</legend>
-      <Form.Group>
-        <Form.Control
-          type="text"
-          name="petName"
-          id={`petName-${index}`}
-          value={pet.petName}
-          placeholder="팻 이름 입력"
-          onChange={handleInputChange}
-          required
-        />
-        <Form.Control
-          type="number"
-          name="petAge"
-          id="petAge"
-          value={pet.petAge}
-          placeholder="팻 나이 입력"
-          onChange={handleInputChange}
-          required
-        />
-      </Form.Group>
+      <fieldset className="mb-2">
+        <Form.Group as={Row}>
+          <Col md={6}>
+            <Form.Control
+              type="text"
+              name="petName"
+              id={`petName-${index}`}
+              value={pet.petName}
+              placeholder="팻 이름 입력"
+              onChange={handleInputChange}
+              required
+            />
+          </Col>
+          <Col md={6}>
+            <Form.Control
+              type="number"
+              name="petAge"
+              id="petAge"
+              value={pet.petAge}
+              placeholder="팻 나이 입력"
+              onChange={handleInputChange}
+              required
+            />
+          </Col>
+        </Form.Group>
+      </fieldset>
       <Form.Group as={Col} className="mb-2">
         <PetColor value={pet.petColor} onChange={handleInputChange} />
       </Form.Group>
