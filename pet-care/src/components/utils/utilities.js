@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { format } from "date-fns";
+import { useEffect, useState } from "react";
 
 export const useAlertWithTimeout = (
   initialVisibility = false,
@@ -18,9 +18,9 @@ export const useAlertWithTimeout = (
   return [isVisible, setIsVisible];
 };
 
-export const dateTimeFormatter(date, time) => {
+export const dateTimeFormatter = (date, time) => {
   const formattedDate = format(date, "yyyy-MM-dd");
   const formattedTime = format(time, "HH:mm");
 
-  return {formattedDate, formattedTime};
-}
+  return { formattedDate, formattedTime };
+};
