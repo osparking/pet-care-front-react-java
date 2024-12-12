@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { Card, Col, Container, Form, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  OverlayTrigger,
+  Row,
+} from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import { FaPlusSquare } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetEntry from "../Pet/PetEntry";
@@ -142,7 +151,9 @@ const BookAppointment = () => {
               </Card.Header>
               <Card.Body>
                 <fieldset className="field-set mb-4">
-                  <legend as="h5" className="text-center">예약 날짜, 시간</legend>
+                  <legend as="h5" className="text-center">
+                    예약 날짜, 시간
+                  </legend>
                   <Form.Group as={Row} className="mb-4">
                     <Col md={6}>
                       <DatePicker
@@ -193,6 +204,28 @@ const BookAppointment = () => {
                     canRemove={formData.pets.length > 1}
                   />
                 ))}
+                <div className="d-flex justify-content-center mb-3">
+                  <OverlayTrigger overlay={<Tooltip>팻 추가</Tooltip>}>
+                    <Button size="sm" onClick={addPet} className="me-2">
+                      <FaPlusSquare />
+                    </Button>
+                  </OverlayTrigger>
+                  <Button
+                    type="submit"
+                    variant="outline-primary"
+                    size="sm"
+                    className="me-2"
+                  >
+                    예약
+                  </Button>
+                  <Button
+                    variant="outline-info"
+                    size="sm"
+                    onClick={handleReset}
+                  >
+                    리셋
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Form>
