@@ -19,7 +19,7 @@ const AddItemModal = ({ show, closer, saver, label }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group>
+          <Form.Group className="mb-1">
             <Form.Label>{label} 명</Form.Label>
             <Form.Control
               type="text"
