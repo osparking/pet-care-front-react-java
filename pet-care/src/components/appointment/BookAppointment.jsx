@@ -120,25 +120,25 @@ const BookAppointment = () => {
       setErrorMsg(err.response.data.message);
       setShowErrorAlert(true);
     }
+  };
 
-    const handleReset = () => {
-      setFormData({
-        date: "",
-        time: "",
-        reason: "",
-        pets: [
-          {
-            name: "",
-            type: "",
-            color: "",
-            breed: "",
-            age: "",
-          },
-        ],
-      });
-      setShowSuccessAlert(false);
-      setShowErrorAlert(false);
-    };
+  const handleReset = () => {
+    setFormData({
+      date: "",
+      time: "",
+      reason: "",
+      pets: [
+        {
+          name: "",
+          type: "",
+          color: "",
+          breed: "",
+          age: "",
+        },
+      ],
+    });
+    setShowSuccessAlert(false);
+    setShowErrorAlert(false);
   };
 
   return (
