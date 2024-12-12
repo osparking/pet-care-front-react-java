@@ -217,7 +217,7 @@ const BookAppointment = () => {
                     size="sm"
                     className="me-2"
                   >
-                    예약
+                    진료 예약
                   </Button>
                   <Button
                     variant="outline-info"
