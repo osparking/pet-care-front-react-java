@@ -7,9 +7,10 @@ import {
   Form,
   OverlayTrigger,
   Row,
+  Tooltip,
 } from "react-bootstrap";
 import DatePicker from "react-datepicker";
-import { FaPlusSquare } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetEntry from "../Pet/PetEntry";
@@ -207,7 +208,7 @@ const BookAppointment = () => {
                 <div className="d-flex justify-content-center mb-3">
                   <OverlayTrigger overlay={<Tooltip>팻 추가</Tooltip>}>
                     <Button size="sm" onClick={addPet} className="me-2">
-                      <FaPlusSquare />
+                      <FaPlus />
                     </Button>
                   </OverlayTrigger>
                   <Button
