@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import AddItemModal from "../modals/AddItemModal";
 import { getPetTypes } from "./PetService";
@@ -47,7 +47,7 @@ const PetType = ({ value, onChange }) => {
         >
           <option value="">- 유형 -</option>
           <option value="add-new-item">유형 추가</option>
-          {petColors.map((type) => (
+          {petTypes.map((type) => (
             <option value={type} key={type}>
               {type}
             </option>
