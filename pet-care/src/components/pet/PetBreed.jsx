@@ -3,14 +3,14 @@ import { Form } from "react-bootstrap";
 import AddItemModal from "../modals/AddItemModal";
 import { getPetBreeds } from "./PetService";
 
-const PetBreed = ({ value, onChange }) => {
+const PetBreed = ({ petType, value, onChange }) => {
   const [petBreeds, setPetBreeds] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const readBreeds = async () => {
       try {
-        const response = await getPetBreeds();
+        const response = await getPetBreeds(petType);
         setPetBreeds(response.data);
       } catch (error) {
         console.error("팻 품종 채취 오류:", error);
