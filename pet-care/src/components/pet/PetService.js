@@ -18,9 +18,14 @@ export async function getPetTypes() {
     }
   }
 
-  export async function getPetBreeds(type) {
+  export async function getPetBreeds(type = "") {
     try {
-      const result = await api.get("/pets/get_breeds");
+      let result;
+      if (type === "") {
+        result = await api.get(`/pets/get_breeds?type=${type}`);
+      } else {
+        result = await api.get("/pets/get_breeds");
+      }
       return result.data;
     } catch (error) {
       throw error;
