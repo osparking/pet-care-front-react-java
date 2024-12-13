@@ -1,10 +1,23 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import AddItemModal from "../modals/AddItemModal";
+import { getPetBreeds } from "./PetService";
 
 const PetBreed = ({ value, onChange }) => {
   const [petBreeds, setPetBreeds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const readBreeds = async () => {
+      try {
+        const response = await getPetBreeds();
+        setPetBreeds(response.data);
+      } catch (error) {
+        console.error("팻 품종 채취 오류:", error);
+      }
+    };
+    readBreeds();
+  }, []);
 
   // 1. 품종 변화 처리
   const handleBreedChange = (event) => {
@@ -34,7 +47,11 @@ const PetBreed = ({ value, onChange }) => {
         >
           <option value="">- 품종 -</option>
           <option value="add-new-item">품종 추가</option>
-          <option value="보더콜리">보더콜리</option>
+          {petBreeds.map((breed) => (
+            <option key={breed} value={breed}>
+              {breed}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       <AddItemModal
