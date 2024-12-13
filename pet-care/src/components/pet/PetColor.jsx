@@ -47,7 +47,11 @@ const PetColor = ({ value, onChange }) => {
         >
           <option value="">- 색상 -</option>
           <option value="add-new-item">색상 추가</option>
-          <option value="white">흰색</option>
+          {petColors.map(() => (
+            <option value={color} key={color}>
+              {color}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       <AddItemModal
