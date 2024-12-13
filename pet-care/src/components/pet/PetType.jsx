@@ -1,10 +1,23 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import AddItemModal from "../modals/AddItemModal";
+import { getPetTypes } from "./PetService";
 
 const PetType = ({ value, onChange }) => {
   const [petTypes, setPetTypes] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const readTypes = async () => {
+      try {
+        const response = await getPetTypes();
+        setPetTypes(response.data);
+      } catch (error) {
+        console.error("팻 유형 채취 오류:", error);
+      }
+    };
+    readTypes();
+  }, []);
 
   // 1. 유형 변화 처리
   const handleTypeChange = (event) => {
@@ -34,7 +47,11 @@ const PetType = ({ value, onChange }) => {
         >
           <option value="">- 유형 -</option>
           <option value="add-new-item">유형 추가</option>
-          <option value="dog">개</option>
+          {petColors.map((type) => (
+            <option value={type} key={type}>
+              {type}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       <AddItemModal

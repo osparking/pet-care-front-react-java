@@ -11,7 +11,7 @@ const PetColor = ({ value, onChange }) => {
     const readColors = async () => {
       try {
         const response = await getPetColors();
-        setPetColors(data);
+        setPetColors(response.data);
       } catch (error) {
         console.error("팻 색상 채취 오류:", error);
       }
@@ -47,7 +47,7 @@ const PetColor = ({ value, onChange }) => {
         >
           <option value="">- 색상 -</option>
           <option value="add-new-item">색상 추가</option>
-          {petColors.map(() => (
+          {petColors.map((color) => (
             <option value={color} key={color}>
               {color}
             </option>
