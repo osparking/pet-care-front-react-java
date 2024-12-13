@@ -23,7 +23,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
               type="text"
               name="petName"
               id={`petName-${index}`}
-              value={pet.petName}
+              value={pet.name}
               placeholder="팻 이름 입력"
               onChange={handleInputChange}
               required
@@ -34,7 +34,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
               type="number"
               name="petAge"
               id="petAge"
-              value={pet.petAge}
+              value={pet.age}
               placeholder="팻 나이 입력"
               onChange={handleInputChange}
               required
@@ -43,18 +43,18 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
         </Form.Group>
       </fieldset>
       <Form.Group as={Col} className="mb-2">
-        <PetColor value={pet.petColor} onChange={handleInputChange} />
+        <PetColor value={pet.color} onChange={handleInputChange} />
       </Form.Group>
       <fieldset className="field-set mb-4">
         <legend className="legend">팻 유형 및 품종</legend>
         <Form.Group as={Row} className="mb-2 d-flex">
           <Col>
-            <PetType value={pet.PetType} onChange={handleInputChange} />
+            <PetType value={pet.type} onChange={handleInputChange} />
           </Col>
           <Col>
             <PetBreed
-              petType={pet.petType}
-              value={pet.petBreed}
+              petType={pet.type}
+              value={pet.breed}
               onChange={handleInputChange}
             />
           </Col>
