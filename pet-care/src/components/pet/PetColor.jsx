@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import AddItemModal from "../modals/AddItemModal";
+import { getPetColors } from "./PetService";
 
 const PetColor = ({ value, onChange }) => {
   const [petColors, setPetColors] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const readColors = async () => {
+      try {
+        const response = await getPetColors();
+        setPetColors(data);
+      } catch (error) {
+        console.error("팻 색상 채취 오류:", error);
+      }
+    };
+    readColors();
+  }, []);
 
   // 1. 색상 변화 처리
   const handleColorChange = (event) => {
