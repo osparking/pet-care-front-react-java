@@ -12,9 +12,11 @@ import {
 import DatePicker from "react-datepicker";
 import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetEntry from "../pet/PetEntry";
 import { dateTimeFormatter } from "../utils//utilities";
+import { bookAppointment } from "./ServiceAppointment";
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
@@ -205,6 +207,11 @@ const BookAppointment = () => {
                     canRemove={formData.pets.length > 1}
                   />
                 ))}
+
+                {showErrorAlert && (
+                  <AlertMessage type={"danger"} message={errorMsg} />
+                )}
+
                 <div className="d-flex justify-content-center mb-3">
                   <OverlayTrigger overlay={<Tooltip>팻 추가</Tooltip>}>
                     <Button size="sm" onClick={addPet} className="me-2">
