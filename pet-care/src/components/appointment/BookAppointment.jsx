@@ -13,7 +13,7 @@ import DatePicker from "react-datepicker";
 import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
-import PetEntry from "../Pet/PetEntry";
+import PetEntry from "../pet/PetEntry";
 import { dateTimeFormatter } from "../utils//utilities";
 
 const BookAppointment = () => {

@@ -21,7 +21,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           <Col md={6}>
             <Form.Control
               type="text"
-              name="petName"
+              name="name"
               id={`petName-${index}`}
               value={pet.name}
               placeholder="팻 이름 입력"
@@ -32,7 +32,7 @@ const PetEntry = ({ pet, index, removePet, canRemove, handleInputChange }) => {
           <Col md={6}>
             <Form.Control
               type="number"
-              name="petAge"
+              name="age"
               id="petAge"
               value={pet.age}
               placeholder="팻 나이 입력"
