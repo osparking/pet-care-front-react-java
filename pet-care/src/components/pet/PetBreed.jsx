@@ -31,7 +31,7 @@ const PetBreed = ({ petType, value, onChange }) => {
   const handleSaveNewBreed = (newBreed) => {
     if (newBreed && !petBreeds.includes(newBreed)) {
       setPetBreeds([...petBreeds, newBreed]);
-      onChange({ target: { name: "petBreed", value: newBreed } });
+      onChange({ target: { name: "breed", value: newBreed } });
     }
   };
 
@@ -40,7 +40,7 @@ const PetBreed = ({ petType, value, onChange }) => {
       <Form.Group>
         <Form.Control
           as="select"
-          name="petBreed"
+          name="breed"
           value={value}
           required
           onChange={handleBreedChange}
