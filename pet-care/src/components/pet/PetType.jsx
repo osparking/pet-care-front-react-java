@@ -31,7 +31,7 @@ const PetType = ({ value, onChange }) => {
   const handleSaveNewType = (newType) => {
     if (newType && !petTypes.includes(newType)) {
       setPetTypes([...petTypes, newType]);
-      onChange({ target: { name: "petType", value: newType } });
+      onChange({ target: { name: "type", value: newType } });
     }
   };
 
@@ -40,7 +40,7 @@ const PetType = ({ value, onChange }) => {
       <Form.Group>
         <Form.Control
           as="select"
-          name="petType"
+          name="type"
           value={value}
           required
           onChange={handleTypeChange}
