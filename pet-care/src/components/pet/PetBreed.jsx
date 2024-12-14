@@ -17,7 +17,7 @@ const PetBreed = ({ petType, value, onChange }) => {
       }
     };
     readBreeds();
-  }, []);
+  }, [petType]);
 
   // 1. 품종 변화 처리
   const handleBreedChange = (event) => {
