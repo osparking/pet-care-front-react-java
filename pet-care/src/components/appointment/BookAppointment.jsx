@@ -211,6 +211,9 @@ const BookAppointment = () => {
                 {showErrorAlert && (
                   <AlertMessage type={"danger"} message={errorMsg} />
                 )}
+                {showSuccessAlert && (
+                  <AlertMessage type={"success"} message={successMsg} />
+                )}
 
                 <div className="d-flex justify-content-center mb-3">
                   <OverlayTrigger overlay={<Tooltip>팻 추가</Tooltip>}>
