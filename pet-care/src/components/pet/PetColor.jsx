@@ -31,7 +31,7 @@ const PetColor = ({ value, onChange }) => {
   const handleSaveNewColor = (newColor) => {
     if (newColor && !petColors.includes(newColor)) {
       setPetColors([...petColors, newColor]);
-      onChange({ target: { name: "petColor", value: newColor } });
+      onChange({ target: { name: "color", value: newColor } });
     }
   };
 
@@ -40,7 +40,7 @@ const PetColor = ({ value, onChange }) => {
       <Form.Group>
         <Form.Control
           as="select"
-          name="petColor"
+          name="color"
           value={value}
           required
           onChange={handleColorChange}
