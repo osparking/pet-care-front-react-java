@@ -18,18 +18,23 @@ import PetEntry from "../pet/PetEntry";
 import { dateTimeFormatter } from "../utils//utilities";
 import { bookAppointment } from "./ServiceAppointment";
 
+let tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+tomorrow.setHours(10);
+tomorrow.setMinutes(15);
+tomorrow.setSeconds(0);
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
-    date: "",
-    time: "",
-    reason: "",
+    date: tomorrow,
+    time: tomorrow.getTime(),
+    reason: "정기 예방 접종",
     pets: [
       {
-        name: "",
-        type: "",
-        color: "",
-        breed: "",
-        age: "",
+        name: "구름이",
+        type: "개",
+        color: "아이보리",
+        breed: "보더믹스",
+        age: "4",
       },
     ],
   });
@@ -115,12 +120,14 @@ const BookAppointment = () => {
     };
 
     try {
+      console.log("예약 요청 정보: " + request);
       const response = await bookAppointment(senderId, recipientId, request);
-      setSuccessMsg(response.data.message);
+      setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (err) {
-      setErrorMsg(err.response.data.message);
-      setShowErrorAlert(true);
+      // console.log("Error: " + err);
+      // setErrorMsg(err);
+      // setShowErrorAlert(true);
     }
   };
 
@@ -166,6 +173,7 @@ const BookAppointment = () => {
                         minDate={new Date()}
                         className="form-control"
                         placeholderText="날짜 선택"
+                        defaultShow={true}
                         required
                       />
                     </Col>
