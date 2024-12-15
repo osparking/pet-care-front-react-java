@@ -39,6 +39,7 @@ const BookAppointment = () => {
     ],
   });
 
+  const senderId = 3;
   const { recipientId } = useParams();
 
   const dateChanged = (newDate) => {
@@ -120,14 +121,12 @@ const BookAppointment = () => {
     };
 
     try {
-      console.log("예약 요청 정보: " + request);
       const response = await bookAppointment(senderId, recipientId, request);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (err) {
-      // console.log("Error: " + err);
-      // setErrorMsg(err);
-      // setShowErrorAlert(true);
+      setErrorMsg(err);
+      setShowErrorAlert(true);
     }
   };
 
