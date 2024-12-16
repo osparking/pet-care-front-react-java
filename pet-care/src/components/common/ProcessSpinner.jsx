@@ -7,7 +7,7 @@ const ProcessSpinner = ({
   message = "",
 }) => {
   return (
-    <div>
+    <div className="text-center">
       <Spinner
         as="span"
         animation={animation}
@@ -15,6 +15,7 @@ const ProcessSpinner = ({
         role="status"
         area-hidden="true"
       />
+      {message && <span className="sr-only">{message}</span>}
     </div>
   );
 };
