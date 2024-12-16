@@ -55,6 +55,8 @@ const BookAppointment = () => {
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const {
     successMsg,
     setSuccessMsg,
@@ -121,12 +123,15 @@ const BookAppointment = () => {
     };
 
     try {
+      setIsProcessing(true);
       const response = await bookAppointment(senderId, recipientId, request);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (err) {
       setErrorMsg("오류: " + err.response.data.message);
       setShowErrorAlert(true);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
