@@ -26,7 +26,7 @@ tomorrow.setSeconds(0);
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
     date: tomorrow,
-    time: tomorrow.getTime(),
+    time: tomorrow,
     reason: "정기 예방 접종",
     pets: [
       {
