@@ -125,7 +125,7 @@ const BookAppointment = () => {
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (err) {
-      setErrorMsg(err);
+      setErrorMsg("오류: " + err);
       setShowErrorAlert(true);
     }
   };
