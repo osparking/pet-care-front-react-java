@@ -13,6 +13,7 @@ import DatePicker from "react-datepicker";
 import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
+import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetEntry from "../pet/PetEntry";
 import { dateTimeFormatter } from "../utils//utilities";
@@ -238,8 +239,13 @@ const BookAppointment = () => {
                     variant="outline-primary"
                     size="sm"
                     className="me-2"
+                    disabled={isProcessing}
                   >
-                    진료 예약
+                    {isProcessing ? (
+                      <ProcessSpinner message="진료 예약 중..." />
+                    ) : (
+                      "진료 예약"
+                    )}
                   </Button>
                   <Button
                     variant="outline-info"
