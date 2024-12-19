@@ -132,7 +132,9 @@ const BookAppointment = () => {
       setErrorMsg("오류: " + err.response.data.message);
       setShowErrorAlert(true);
     } finally {
-      setIsProcessing(false);
+      setTimeout(() => {
+        setIsProcessing(false);
+      }, 3000);
     }
   };
 

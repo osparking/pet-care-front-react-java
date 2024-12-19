@@ -1,11 +1,7 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 
-const ProcessSpinner = ({
-  size = "sm",
-  animation = "border",
-  message = "",
-}) => {
+const ProcessSpinner = ({ size = "sm", animation = "grow", message = "" }) => {
   return (
     <div className="text-center">
       <Spinner
@@ -13,7 +9,7 @@ const ProcessSpinner = ({
         animation={animation}
         size={size}
         role="status"
-        area-hidden="true"
+        aria-hidden="true"
       />
       {message && <span className="sr-only">{message}</span>}
     </div>
