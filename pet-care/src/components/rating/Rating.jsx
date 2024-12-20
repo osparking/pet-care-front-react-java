@@ -27,6 +27,21 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await addReview(vetId, reviewerId, review);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+      if (onReviewSubmit) {
+        onReviewSubmit();
+      }
+    } catch (err) {
+      setErrorMsg("오류: " + err.response.data.message);
+      setShowErrorAlert(true);
+    }
+  };
+
   return <div>Rating</div>;
 };
 
