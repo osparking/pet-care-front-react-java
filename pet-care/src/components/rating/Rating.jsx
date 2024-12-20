@@ -42,7 +42,30 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     }
   };
 
-  return <div>Rating</div>;
+  return (
+    <React.Fragment>
+      <Form>
+        <h3>수의사를 평가한다:</h3>
+        <div>
+          {[...Array(5)].map((_, index) => {
+            const ratingValue = index + 1;
+            return (
+              <Form.Label key={index}>
+                <Form.Check
+                  type="radio"
+                  name="rading"
+                  value={ratingValue}
+                  onChange={handleInputChange}
+                  checked={review.rating === ratingValue}
+                  inline
+                />
+              </Form.Label>
+            );
+          })}
+        </div>
+      </Form>
+    </React.Fragment>
+  );
 };
 
 export default Rating;
