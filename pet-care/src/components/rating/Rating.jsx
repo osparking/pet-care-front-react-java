@@ -1,5 +1,7 @@
 import React from "react";
+import { Button, Form } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
@@ -45,6 +47,12 @@ const Rating = ({ vetId, onReviewSubmit }) => {
 
   return (
     <React.Fragment>
+      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+
+      {showSuccessAlert && (
+        <AlertMessage type={"success"} message={successMsg} />
+      )}
+
       <Form>
         <h3>수의사를 평가한다:</h3>
         <div>
