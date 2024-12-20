@@ -75,6 +75,16 @@ const Rating = ({ vetId, onReviewSubmit }) => {
             );
           })}
         </div>
+        <div>
+          <Form.Control
+            as="textarea"
+            row="4"
+            value={review.comment}
+            required
+            onChange={handleInputChange}
+            placeholder="수의사 진료 행위에 대한 의견 기술"
+          />
+        </div>
       </Form>
     </React.Fragment>
   );
