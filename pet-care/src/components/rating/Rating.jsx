@@ -1,4 +1,5 @@
 import React from "react";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
   const [hover, setHover] = useState(null);
@@ -7,6 +8,17 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     comment: null,
   });
 
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+
   const handleInputChange = (e) => {
     const { name, value } = e.target.value;
     setReview((prevState) => ({
@@ -14,6 +26,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
       name: value,
     }));
   };
+
   return <div>Rating</div>;
 };
 
