@@ -7,6 +7,13 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     comment: null,
   });
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target.value;
+    setReview((prevState) => ({
+      ...prevState,
+      name: value,
+    }));
+  };
   return <div>Rating</div>;
 };
 
