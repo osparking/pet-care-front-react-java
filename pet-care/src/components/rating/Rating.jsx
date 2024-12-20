@@ -85,6 +85,14 @@ const Rating = ({ vetId, onReviewSubmit }) => {
             placeholder="수의사 진료 행위에 대한 의견 기술"
           />
         </div>
+        <div>
+          <Button variant="secondary">리뷰 저장</Button>
+        </div>
+        <p>
+          당신은 이 수의사에게{" "}
+          <span style={{ color: "orange" }}>{review.rating}개</span>의 별점을
+          주었습니다.
+        </p>
       </Form>
     </React.Fragment>
   );
