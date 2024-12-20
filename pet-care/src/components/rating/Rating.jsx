@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
@@ -58,6 +59,17 @@ const Rating = ({ vetId, onReviewSubmit }) => {
                   onChange={handleInputChange}
                   checked={review.rating === ratingValue}
                   inline
+                />
+                <FaStar
+                  size={20}
+                  className="star"
+                  color={
+                    ratingValue <= (hover || review.rating)
+                      ? "#ffc107"
+                      : "#e4e5e9"
+                  }
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setHover(null)}
                 />
               </Form.Label>
             );
