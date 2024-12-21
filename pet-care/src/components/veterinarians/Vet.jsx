@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import ImageUser from "../common/ImageUser";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);
@@ -34,7 +35,12 @@ const Vet = () => {
     <Container>
       <Card>
         <Row>
-          <Col></Col>
+          <Col>
+            <ImageUser
+              photoUser={vet.photo}
+              altText={`${vet.lastName}${vet.firstName} 사진`}
+            />
+          </Col>
           <Col></Col>
         </Row>
       </Card>
