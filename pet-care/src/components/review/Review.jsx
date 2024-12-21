@@ -16,7 +16,12 @@ const Review = ({ review, userType }) => {
             userId={review.patientId}
             photoUser={review.patientImage}
           />
-        ) : null}
+        ) : (
+          <ImageUser
+            userId={review.vetId}
+            photoUser={review.vetImage}
+          />
+        )}
       </div>
     </div>
   );
