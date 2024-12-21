@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const Vet = () => {
@@ -29,7 +30,16 @@ const Vet = () => {
     return <h1>자료 적재 중...</h1>;
   }
 
-  return <div>Vet</div>;
+  return (
+    <Container>
+      <Card>
+        <Row>
+          <Col></Col>
+          <Col></Col>
+        </Row>
+      </Card>
+    </Container>
+  );
 };
 
 export default Vet;
