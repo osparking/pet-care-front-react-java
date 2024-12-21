@@ -1,5 +1,6 @@
 import React from "react";
 import ImageUser from "../common/ImageUser";
+import RatingAvg from "../rating/RatingAvg";
 import { UserType } from "../utils/utilities";
 
 const Review = ({ review, userType }) => {
@@ -17,11 +18,15 @@ const Review = ({ review, userType }) => {
             photoUser={review.patientImage}
           />
         ) : (
-          <ImageUser
-            userId={review.vetId}
-            photoUser={review.vetImage}
-          />
+          <ImageUser userId={review.vetId} photoUser={review.vetImage} />
         )}
+        <div>
+          <div>
+            <h5>
+              <RatingAvg rating={review.stars} />
+            </h5>
+          </div>
+        </div>
       </div>
     </div>
   );
