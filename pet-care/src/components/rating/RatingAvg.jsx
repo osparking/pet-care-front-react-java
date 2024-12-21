@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const RatingAvg = ({ rating }) => {
   const starsMax = 5;
@@ -14,6 +14,11 @@ const RatingAvg = ({ rating }) => {
   // 소수점 이하 값이 0.25 이상이면 반별 부여.
   if (rating % 1 >= 0.25) {
     stars.push(<FaStarHalfAlt key="half" color="#ffc107" />);
+  }
+
+  // 빈 별을 추가 - stars 길이 5 로 만듦
+  for (let i = stars.length; i < starsMax; i++) {
+    stars.push(<FaRegStar key={i} color="#e4e5e9" />);
   }
 
   return <div>RatingAvg</div>;
