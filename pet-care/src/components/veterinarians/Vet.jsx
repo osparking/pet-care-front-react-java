@@ -7,6 +7,19 @@ const Vet = () => {
   const { vetId } = useParams();
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
+
+  const getUser = async () => {
+    try {
+      setIsLoading(true);
+      const response = await getUserById(vetId);
+      setVet(response.data);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return <div>Vet</div>;
 };
 
