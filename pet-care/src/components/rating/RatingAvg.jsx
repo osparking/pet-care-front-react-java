@@ -1,10 +1,16 @@
-import React from 'react'
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import React from "react";
+import { FaStar } from "react-icons/fa";
 
-const RatingAvg = () => {
-  return (
-    <div>RatingAvg</div>
-  )
-}
+const RatingAvg = ({ rating }) => {
+  const starsMax = 5;
+  let stars = [];
 
-export default RatingAvg
+  // 찬 별을 rating의 정수부 만큼 삽입
+  for (let i = 0; i < Math.floor(rating); i++) {
+    stars.push(<FaStar key={i} color="#ffc107" />);
+  }
+
+  return <div>RatingAvg</div>;
+};
+
+export default RatingAvg;
