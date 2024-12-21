@@ -10,8 +10,8 @@ const Review = ({ review, userType }) => {
       : `${review.patientName} 고객이 입력한 리뷰입니다.`;
 
   return (
-    <div>
-      <div>
+    <div className="mb-4">
+      <div className="d-flex align-item-center me-5">
         {userType === UserType.VET ? (
           <ImageUser
             userId={review.patientId}
@@ -20,14 +20,14 @@ const Review = ({ review, userType }) => {
         ) : (
           <ImageUser userId={review.vetId} photoUser={review.vetImage} />
         )}
-        <div>
+        <div className="ms-4">
           <div>
-            <h5>
+            <h5 className="title">
               <RatingAvg rating={review.stars} />
             </h5>
           </div>
-          <div>
-            <p>{review.comment}</p>
+          <div className="mt-4">
+            <p className="review-text">{review.comment}</p>
           </div>
           <div>
             <p>{ratedDoctor}</p>
