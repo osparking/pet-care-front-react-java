@@ -20,6 +20,15 @@ const Vet = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    getUser();
+  }, [vetId]);
+
+  if (isLoading) {
+    return <h1>자료 적재 중...</h1>;
+  }
+
   return <div>Vet</div>;
 };
 
