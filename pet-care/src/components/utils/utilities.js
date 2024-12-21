@@ -24,3 +24,8 @@ export const dateTimeFormatter = (date, time) => {
 
   return { formattedDate, formattedTime };
 };
+
+export const UserType = {
+  PATIENT: "PATIENT",
+  VET: "VET",
+};
