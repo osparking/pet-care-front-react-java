@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const RatingAvg = ({ rating }) => {
   const starsMax = 5;
@@ -21,7 +21,7 @@ const RatingAvg = ({ rating }) => {
     stars.push(<FaRegStar key={i} color="#e4e5e9" />);
   }
 
-  return <div>RatingAvg</div>;
+  return <span className="me-2 ms-2">{stars}</span>;
 };
 
 export default RatingAvg;
