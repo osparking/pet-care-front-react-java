@@ -26,6 +26,9 @@ const Review = ({ review, userType }) => {
               <RatingAvg rating={review.stars} />
             </h5>
           </div>
+          <div>
+            <p>{review.comment}</p>
+          </div>
         </div>
       </div>
     </div>
