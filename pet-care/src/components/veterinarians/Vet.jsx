@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
+import { Link, useParams } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 
 const Vet = () => {
@@ -41,7 +42,11 @@ const Vet = () => {
               altText={`${vet.lastName}${vet.firstName} 사진`}
             />
           </Col>
-          <Col></Col>
+          <Col>
+            <Link to={"/doctors"}>
+              <BsFillArrowRightSquareFill>수의사 목록</BsFillArrowRightSquareFill>
+            </Link>
+          </Col>
         </Row>
       </Card>
     </Container>
