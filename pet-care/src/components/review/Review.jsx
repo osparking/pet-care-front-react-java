@@ -29,6 +29,9 @@ const Review = ({ review, userType }) => {
           <div>
             <p>{review.comment}</p>
           </div>
+          <div>
+            <p>{ratedDoctor}</p>
+          </div>
         </div>
       </div>
     </div>
