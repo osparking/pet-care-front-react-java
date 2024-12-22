@@ -31,11 +31,16 @@ const VetCard = ({ vet }) => {
           </Accordion.Header>
           <Accordion.Body>
             <div>
-              <Link to={`/veterinarian/${vet.id}/veterinarian`} className="link-2">
+              <span className="margin-left-space">
+                {vet.lastName}
+                {vet.firstName} 의사를
+              </span>{" "}
+              <Link
+                to={`/veterinarian/${vet.id}/veterinarian`}
+                className="link-2"
+              >
                 사람들이 어떻게 평가하고 있는가?
               </Link>
-              {""}
-              <span className="margin-left-space">{vet.firstName} 의사</span>
             </div>
           </Accordion.Body>
         </Accordion.Item>
