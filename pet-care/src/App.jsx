@@ -21,6 +21,7 @@ function App() {
           path="/appointments/create/:recipientId"
           element={<BookAppointment />}
         />
+        <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
       </Route>
     )
   );
