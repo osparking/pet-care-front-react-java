@@ -67,6 +67,9 @@ const Vet = () => {
               {vet.totalReviewers || 0} {")"})
             </Card.Text>
           )}
+          <Link to={`/appointments/create/${vetId}`} className="link">
+            진료 예약
+          </Link>
         </Card.Body>
       </Card>
     </Container>
