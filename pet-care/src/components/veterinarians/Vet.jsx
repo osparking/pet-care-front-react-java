@@ -44,10 +44,19 @@ const Vet = () => {
           </Col>
           <Col>
             <Link to={"/doctors"}>
-              <BsFillArrowRightSquareFill>수의사 목록</BsFillArrowRightSquareFill>
+              <BsFillArrowRightSquareFill>
+                수의사 목록
+              </BsFillArrowRightSquareFill>
             </Link>
           </Col>
         </Row>
+        <Card.Body>
+          <Card.Title>
+            {vet.lastName}
+            {vet.firstName} 수의사
+          </Card.Title>
+          <Card.Title>전문분야: {vet.specialization}</Card.Title>
+        </Card.Body>
       </Card>
     </Container>
   );
