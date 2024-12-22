@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import Review from "../review/Review";
+import { getUserById } from "../user/UserService";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);
