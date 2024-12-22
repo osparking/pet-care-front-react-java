@@ -31,7 +31,7 @@ const VetCard = ({ vet }) => {
           </Accordion.Header>
           <Accordion.Body>
             <div>
-              <Link to={""} className="link-2">
+              <Link to={`/veterinarian/${vet.id}/veterinarian`} className="link-2">
                 사람들이 어떻게 평가하고 있는가?
               </Link>
               {""}
