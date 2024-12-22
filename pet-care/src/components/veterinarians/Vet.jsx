@@ -93,8 +93,8 @@ const Vet = () => {
           <h4 className="text-center mb-4">리뷰 목록</h4>
           <hr />
           {/* 리뷰 목록 - 페이지 단위 표출 */}
-          {currentReviews && currentReviews.length > 0 ? (
-            currentReviews.map((review) => (
+          {vet && vet.reviews.length > 0 ? (
+            vet.reviews.map((review) => (
               <Review key={review.id} review={review} userType={vet.userType} />
             ))
           ) : (
