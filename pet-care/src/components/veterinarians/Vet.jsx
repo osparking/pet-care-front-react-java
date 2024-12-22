@@ -89,6 +89,7 @@ const Vet = () => {
           </p>
           <hr />
           <Rating vetId={vetId} onReviewSubmit={refreshVetPage} />
+          <h4 className="text-center mb-4">리뷰 목록</h4>
         </Card.Body>
       </Card>
     </Container>
