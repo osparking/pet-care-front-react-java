@@ -89,7 +89,7 @@ const Vet = () => {
             법률로 정한다.
           </p>
           <hr />
-          <Rating vetId={vetId} onReviewSubmit={refreshVetPage} />
+          <Rating vetId={vetId} onReviewSubmit={null} />
           <h4 className="text-center mb-4">리뷰 목록</h4>
           <hr />
           {/* 리뷰 목록 - 페이지 단위 표출 */}
