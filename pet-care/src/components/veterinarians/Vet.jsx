@@ -3,7 +3,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
-import Review from "../common/Review";
+import Review from "../review/Review";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);

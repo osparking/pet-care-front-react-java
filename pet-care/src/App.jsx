@@ -10,6 +10,7 @@ import BookAppointment from "./components/appointment/BookAppointment";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
 import VetListing from "./components/veterinarians/VetListing";
+import Vet from "./components/veterinarians/Vet";
 
 function App() {
   const router = createBrowserRouter(
