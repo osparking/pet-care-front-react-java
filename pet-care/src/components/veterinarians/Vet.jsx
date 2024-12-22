@@ -3,6 +3,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
+import Review from "../common/Review";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);
@@ -90,6 +91,15 @@ const Vet = () => {
           <hr />
           <Rating vetId={vetId} onReviewSubmit={refreshVetPage} />
           <h4 className="text-center mb-4">리뷰 목록</h4>
+          <hr />
+          {/* 리뷰 목록 - 페이지 단위 표출 */}
+          {currentReviews && currentReviews.length > 0 ? (
+            currentReviews.map((review) => (
+              <Review key={review.id} review={review} userType={vet.userType} />
+            ))
+          ) : (
+            <p>등록된 리뷰가 없습니다.</p>
+          )}
         </Card.Body>
       </Card>
     </Container>
