@@ -87,6 +87,8 @@ const Vet = () => {
             국회의 동의를 얻어야 한다. 군사법원의 조직·권한 및 재판관의 자격은
             법률로 정한다.
           </p>
+          <hr />
+          <Rating vetId={vetId} onReviewSubmit={refreshVetPage} />
         </Card.Body>
       </Card>
     </Container>
