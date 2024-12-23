@@ -38,8 +38,14 @@ const Rating = ({ vetId, onReviewSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const reviewInfo = {
+      rating: rating,
+      comment: comment,
+    };
+
     try {
-      const response = await addReview(vetId, reviewerId, review);
+      const response = await addReview(vetId, reviewerId, reviewInfo);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
       if (onReviewSubmit) {
@@ -59,7 +65,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         <AlertMessage type={"success"} message={successMsg} />
       )}
 
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <h3>수의사를 평가한다:</h3>
         <div className="mb-3">
           {[...Array(5)].map((_, index) => {
