@@ -55,11 +55,11 @@ const Rating = ({ vetId, onReviewSubmit }) => {
 
       <Form>
         <h3>수의사를 평가한다:</h3>
-        <div>
+        <div className="mb-3">
           {[...Array(5)].map((_, index) => {
             const ratingValue = index + 1;
             return (
-              <Form.Label key={index}>
+              <Form.Label key={index} className="me-2">
                 <Form.Check
                   type="radio"
                   name="rading"
@@ -93,7 +93,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
             placeholder="수의사 진료 행위에 대한 의견 기술"
           />
         </div>
-        <div>
+        <div className="mt-2">
           <Button variant="secondary">리뷰 저장</Button>
         </div>
         <p>
