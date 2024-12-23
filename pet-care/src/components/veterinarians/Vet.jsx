@@ -4,6 +4,8 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import Rating from "../rating/Rating";
+import RatingAvg from "../rating/RatingAvg";
 import Review from "../review/Review";
 import { getUserById } from "../user/UserService";
 
