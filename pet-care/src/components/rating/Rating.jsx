@@ -20,14 +20,6 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target.value;
-  //   setReview((prevState) => ({
-  //     ...prevState,
-  //     name: value,
-  //   }));
-  // };
-
   const handleRatingChange = (value) => {
     setRating(value);
   };
