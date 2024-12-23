@@ -39,7 +39,7 @@ const Vet = () => {
   }
 
   return (
-    <Container>
+    <Container className="d-flex justify-content-center align-item-center mt-5">
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       {vet && (
         <Card className="review-card">
