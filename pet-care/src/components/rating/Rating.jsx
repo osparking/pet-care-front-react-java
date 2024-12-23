@@ -76,17 +76,15 @@ const Rating = ({ vetId, onReviewSubmit }) => {
                   type="radio"
                   name="rading"
                   value={ratingValue}
-                  onChange={handleInputChange}
-                  checked={review.rating === ratingValue}
+                  onChange={() => handleRatingChange(ratingValue)}
+                  checked={rating === ratingValue}
                   inline
                 />
                 <FaStar
                   size={20}
                   className="star"
                   color={
-                    ratingValue <= (hover || review.rating)
-                      ? "#ffc107"
-                      : "#e4e5e9"
+                    ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"
                   }
                   onMouseEnter={() => setHover(ratingValue)}
                   onMouseLeave={() => setHover(null)}
@@ -99,7 +97,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
           <Form.Control
             as="textarea"
             row="4"
-            value={review.comment}
+            value={comment}
             required
             onChange={handleInputChange}
             placeholder="수의사 진료 행위에 대한 의견 기술"
@@ -110,7 +108,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         </div>
         <p>
           당신은 이 수의사에게{" "}
-          <span style={{ color: "orange" }}>{review.rating}개</span>의 별점을
+          <span style={{ color: "orange" }}>{rating}개</span>의 별점을
           주었습니다.
         </p>
       </Form>
