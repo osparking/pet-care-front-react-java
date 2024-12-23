@@ -99,7 +99,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
             row="4"
             value={comment}
             required
-            onChange={handleInputChange}
+            onChange={handleCommentChange}
             placeholder="수의사 진료 행위에 대한 의견 기술"
           />
         </div>
