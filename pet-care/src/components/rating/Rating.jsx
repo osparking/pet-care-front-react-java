@@ -6,10 +6,8 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
   const [hover, setHover] = useState(null);
-  const [review, setReview] = useState({
-    rating: null,
-    comment: null,
-  });
+  const [rating, setRating] = useState(null);
+  const [comment, setComment] = useState(null);
 
   const {
     successMsg,
