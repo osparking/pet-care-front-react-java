@@ -65,13 +65,13 @@ const Vet = () => {
             <Card.Title>전문분야: {vet.specialization}</Card.Title>
             {vet.averageRating > 0 && (
               <Card.Text className="rating-stars">
-                점수: 별 평균 (
+                점수: 별 평균 
                 {vet.averageRating > 0
-                  ? Number(vet.averageRating.toFixed(1))
-                  : "0.0"}{" "}
-                개,
-                <RatingAvg rating={vet.averageRating} />,{"("}평가 인원{" "}
-                {vet.totalReviewers || 0} {")"})
+                  ? " " + Number(vet.averageRating.toFixed(1))
+                  : "0.0"}
+                개{" ("}
+                <RatingAvg rating={vet.averageRating} />{"), "}평가 인원{" "}
+                {vet.totalReviewers || 0}명
               </Card.Text>
             )}
             <Link to={`/appointments/create/${vetId}`} className="link">
