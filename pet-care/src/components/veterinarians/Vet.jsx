@@ -52,9 +52,8 @@ const Vet = () => {
             </Col>
             <Col>
               <Link to={"/doctors"}>
-                <BsFillArrowRightSquareFill>
-                  수의사 목록
-                </BsFillArrowRightSquareFill>
+                <BsFillArrowRightSquareFill />
+                {" "}수의사 목록
               </Link>
             </Col>
           </Row>
