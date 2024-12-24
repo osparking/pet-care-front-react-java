@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 
-const Pagenator = ({ pageSize, totalItems, currPage, paginate }) => {
+const Paginator = ({ pageSize, totalItems, currPage, paginate }) => {
   let active = currPage;
   let items = [];
   for (let i = 1; i <= Math.ceil(totalItems / pageSize); i++) {
@@ -23,4 +23,4 @@ const Pagenator = ({ pageSize, totalItems, currPage, paginate }) => {
   );
 };
 
-export default Pagenator;
+export default Paginator;

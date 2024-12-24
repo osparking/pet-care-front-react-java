@@ -4,6 +4,7 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import ImageUser from "../common/ImageUser";
+import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import Rating from "../rating/Rating";
 import RatingAvg from "../rating/RatingAvg";
@@ -109,6 +110,7 @@ const Vet = () => {
             ) : (
               <p>등록된 리뷰가 없습니다.</p>
             )}
+            <Paginator />
           </Card.Body>
         </Card>
       )}
