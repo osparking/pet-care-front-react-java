@@ -13,12 +13,9 @@ const Review = ({ review, userType }) => {
     <div className="mb-4">
       <div className="d-flex align-item-center me-5">
         {userType === UserType.VET ? (
-          <ImageUser
-            userId={review.patientId}
-            photoUser={review.patientImage}
-          />
+          <ImageUser photoUser={review.patientImage} />
         ) : (
-          <ImageUser userId={review.vetId} photoUser={review.vetImage} />
+          <ImageUser photoUser={review.vetImage} />
         )}
         <div className="ms-4">
           <div>
