@@ -7,7 +7,7 @@ import { saveReview } from "../review/ReviewService";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
   const [hover, setHover] = useState(null);
-  const [rating, setRating] = useState(null);
+  const [stars, setStars] = useState(0);
   const [comment, setComment] = useState("");
 
   const {
@@ -22,7 +22,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
   } = UseMsgAlerts();
 
   const handleRatingChange = (value) => {
-    setRating(value);
+    setStars(value);
   };
 
   const handleCommentChange = (e) => {
@@ -34,7 +34,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const reviewInfo = {
-      rating: rating,
+      stars: stars,
       comment: comment,
     };
 
@@ -63,24 +63,24 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         <h3>수의사를 평가한다:</h3>
         <div className="mb-3">
           {[...Array(5)].map((_, index) => {
-            const ratingValue = index + 1;
+            const starCount = index + 1;
             return (
               <Form.Label key={index} className="me-2">
                 <Form.Check
                   type="radio"
                   name="rading"
-                  value={ratingValue}
-                  onChange={() => handleRatingChange(ratingValue)}
-                  checked={rating === ratingValue}
+                  value={starCount}
+                  onChange={() => handleRatingChange(starCount)}
+                  checked={stars === starCount}
                   inline
                 />
                 <FaStar
                   size={20}
                   className="star"
                   color={
-                    ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                    starCount <= (hover || stars) ? "#ffc107" : "#e4e5e9"
                   }
-                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseEnter={() => setHover(starCount)}
                   onMouseLeave={() => setHover(null)}
                 />
               </Form.Label>
@@ -104,7 +104,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         </div>
         <p>
           당신은 이 수의사에게{" "}
-          <span style={{ color: "orange" }}>{rating}개</span>의 별점을
+          <span style={{ color: "orange" }}>{stars}개</span>의 별점을
           주었습니다.
         </p>
       </Form>
