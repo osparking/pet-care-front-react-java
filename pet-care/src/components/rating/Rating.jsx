@@ -29,6 +29,8 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     setComment(e.target.value);
   };
 
+  const reviewerId = 3;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const reviewInfo = {
