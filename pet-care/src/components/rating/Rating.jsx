@@ -31,7 +31,6 @@ const Rating = ({ vetId, onReviewSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const reviewInfo = {
       rating: rating,
       comment: comment,
@@ -97,7 +96,9 @@ const Rating = ({ vetId, onReviewSubmit }) => {
           />
         </div>
         <div className="mt-2">
-          <Button variant="outline-primary">리뷰 저장</Button>
+          <Button type="submit" variant="outline-primary">
+            리뷰 저장
+          </Button>
         </div>
         <p>
           당신은 이 수의사에게{" "}
