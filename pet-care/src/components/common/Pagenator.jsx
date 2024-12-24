@@ -16,7 +16,11 @@ const Pagenator = ({ pageSize, totalItems, currPage, paginate }) => {
     );
     active = i;
   }
-  return <div>Pagenator</div>;
+  return (
+    <div className="d-flex justify-content-center">
+      <Pagination>{items}</Pagination>
+    </div>
+  );
 };
 
 export default Pagenator;
