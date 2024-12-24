@@ -46,7 +46,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         onReviewSubmit();
       }
     } catch (err) {
-      setErrorMsg("오류: " + err);
+      setErrorMsg("오류: " + err.response.data.message);
       setShowErrorAlert(true);
     }
   };
