@@ -31,6 +31,7 @@ const Review = ({ review, userType }) => {
           </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 };
