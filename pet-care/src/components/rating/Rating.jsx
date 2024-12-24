@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { saveReview } from "../review/ReviewService";
 
 const Rating = ({ vetId, onReviewSubmit }) => {
   const [hover, setHover] = useState(null);
@@ -37,7 +38,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     };
 
     try {
-      const response = await addReview(vetId, reviewerId, reviewInfo);
+      const response = await saveReview(reviewerId, vetId, reviewInfo);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
       if (onReviewSubmit) {
