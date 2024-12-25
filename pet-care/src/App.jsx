@@ -9,8 +9,9 @@ import "./App.css";
 import BookAppointment from "./components/appointment/BookAppointment";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
-import VetListing from "./components/veterinarians/VetListing";
+import UserRegist from "./components/user/UserRegist";
 import Vet from "./components/veterinarians/Vet";
+import VetListing from "./components/veterinarians/VetListing";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="/doctors" element={<VetListing />} />
+        <Route path="/register-user" element={<UserRegist />} />
         <Route
           path="/appointments/create/:recipientId"
           element={<BookAppointment />}
