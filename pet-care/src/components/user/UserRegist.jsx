@@ -55,7 +55,20 @@ const UserRegist = () => {
     }
   };
 
-  return <div>UserRegist</div>;
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Form>
+            <Card>
+              <Card.Header></Card.Header>
+              <Card.Body></Card.Body>
+            </Card>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default UserRegist;
