@@ -64,7 +64,23 @@ const UserRegist = () => {
               <Card.Header className="text-center">
                 사용자(유저) 등록
               </Card.Header>
-              <Card.Body></Card.Body>
+              <Card.Body>
+                <fieldset>
+                  <legend>유저 성명</legend>
+                  <Row>
+                    <Col xs={6} className="mb-2 mb-sm-0">
+                      <Form.Control
+                        type="text"
+                        name="lastName"
+                        placeholder="(성씨)"
+                        value={user.lastName}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </Col>
+                  </Row>
+                </fieldset>
+              </Card.Body>
             </Card>
           </Form>
         </Col>
