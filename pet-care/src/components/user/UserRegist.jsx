@@ -197,6 +197,13 @@ const UserRegist = () => {
                     리셋
                   </Button>
                 </div>
+                {/* Adjust column sizes for different screens */}
+                {showErrorAlert && (
+                  <AlertMessage type="danger" message={errorMessage} />
+                )}
+                {showSuccessAlert && (
+                  <AlertMessage type="success" message={successMessage} />
+                )}
               </Card.Body>
             </Card>
           </Form>
