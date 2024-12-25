@@ -1,4 +1,5 @@
 import React from "react";
+import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const UserRegist = () => {
@@ -173,6 +174,22 @@ const UserRegist = () => {
                     </Row>
                   </Form.Group>
                 )}
+                {/* 처리 버튼 */}
+                <div className="d-flex justify-content-center mb-3">
+                  <Button
+                    type="submit"
+                    variant="outline-primary"
+                    size="sm"
+                    className="me-2"
+                    disabled={isProcessing}
+                  >
+                    {isProcessing ? (
+                      <ProcessSpinner message="등록 처리 중..." />
+                    ) : (
+                      "등록"
+                    )}
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Form>
