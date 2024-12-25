@@ -206,6 +206,12 @@ const UserRegist = () => {
                 {showSuccessAlert && (
                   <AlertMessage type="success" message={successMessage} />
                 )}
+                <div className="text-center">
+                  이미 등록한 경우:{" "}
+                  <Link to={"/login"} style={{ textDecoration: "none" }}>
+                    로그인
+                  </Link>
+                </div>
               </Card.Body>
             </Card>
           </Form>
