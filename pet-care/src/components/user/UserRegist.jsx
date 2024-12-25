@@ -124,7 +124,7 @@ const UserRegist = () => {
                         required
                       />
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={6} >
                       <Form.Control
                         type="text"
                         name="phone"
@@ -136,6 +136,21 @@ const UserRegist = () => {
                     </Col>
                   </Row>
                 </fieldset>
+
+                {/* 패스워드 */}
+                <Form.Group as={Row} controlId='password' className='mb-3'>
+                  <Col>
+                    <Form.Label>패스워드</Form.Label>
+                    <Form.Control
+                      type='password'
+                      name='password'
+                      required
+                      placeholder='(비밀번호)'
+                      value={user.password}
+                      onChange={handleInputChange}
+                    />
+                  </Col>
+                </Form.Group>                
               </Card.Body>
             </Card>
           </Form>
