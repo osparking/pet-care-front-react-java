@@ -56,9 +56,9 @@ const UserRegist = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col xs={12} md={8} lg={6}>
           <Form>
             <Card>
               <Card.Header></Card.Header>
