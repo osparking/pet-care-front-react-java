@@ -115,10 +115,10 @@ const Vet = () => {
               <p>등록된 리뷰가 없습니다.</p>
             )}
             <Paginator
-              itemsPerPage={pageSize}
+              pageSize={pageSize}
               totalItems={vet.reviews.length}
               paginate={setCurrPage}
-              currentPage={currPage}
+              currPage={currPage}
             ></Paginator>
           </Card.Body>
         </Card>
