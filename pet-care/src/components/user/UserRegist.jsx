@@ -29,6 +29,18 @@ const UserRegist = () => {
     setUser({ ...user, [name]: value });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await registUser(user);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    }
+  };
+
   return <div>UserRegist</div>;
 };
 
