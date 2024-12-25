@@ -17,7 +17,7 @@ const Vet = () => {
   const { vetId } = useParams();
 
   const [currPage, setCurrPage] = useState(1);
-  const [pageSize, setPageSize] = useState(1);
+  const [pageSize] = useState(1);
 
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
@@ -123,8 +123,8 @@ const Vet = () => {
             <Paginator
               pageSize={pageSize}
               totalItems={vet.reviews.length}
-              paginate={setCurrPage}
               currPage={currPage}
+              setCurrPage={setCurrPage}
             ></Paginator>
           </Card.Body>
         </Card>

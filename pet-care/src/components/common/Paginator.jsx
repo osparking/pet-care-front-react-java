@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 
-const Paginator = ({ pageSize, totalItems, currPage, paginate }) => {
+const Paginator = ({ pageSize, totalItems, currPage, setCurrPage }) => {
   let active = currPage;
   let items = [];
   for (let i = 1; i <= Math.ceil(totalItems / pageSize); i++) {
@@ -9,7 +9,7 @@ const Paginator = ({ pageSize, totalItems, currPage, paginate }) => {
       <Pagination.Item
         key={i}
         active={i === active}
-        onClick={() => paginate(i)}
+        onClick={() => setCurrPage(i)}
       >
         {i}
       </Pagination.Item>
