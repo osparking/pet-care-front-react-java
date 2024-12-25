@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
@@ -32,6 +33,7 @@ const UserRegist = () => {
     setUser({ ...user, [name]: value });
   };
 
+  const [isProcessing, setIsProcessing] = useState(false);
   const handleReset = () => {
     setUser({
       lastName: "",
