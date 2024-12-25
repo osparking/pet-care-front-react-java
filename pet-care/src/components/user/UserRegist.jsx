@@ -59,9 +59,11 @@ const UserRegist = () => {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <Form>
-            <Card>
-              <Card.Header></Card.Header>
+          <Form onSubmit={handleSubmit}>
+            <Card className="shadow mb-5">
+              <Card.Header className="text-center">
+                사용자(유저) 등록
+              </Card.Header>
               <Card.Body></Card.Body>
             </Card>
           </Form>
