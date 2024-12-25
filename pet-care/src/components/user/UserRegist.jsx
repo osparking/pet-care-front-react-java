@@ -1,4 +1,5 @@
 import React from "react";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const UserRegist = () => {
   const [user, setUser] = useState({
@@ -11,6 +12,18 @@ const UserRegist = () => {
     userType: "",
     specialty: "",
   });
+
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+  
   return <div>UserRegist</div>;
 };
 
