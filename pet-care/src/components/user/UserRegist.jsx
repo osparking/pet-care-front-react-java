@@ -189,6 +189,13 @@ const UserRegist = () => {
                       "등록"
                     )}
                   </Button>
+                  <Button
+                    variant="outline-info"
+                    size="sm"
+                    onClick={handleReset}
+                  >
+                    리셋
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
