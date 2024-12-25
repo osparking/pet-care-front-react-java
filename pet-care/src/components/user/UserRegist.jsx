@@ -91,7 +91,7 @@ const UserRegist = () => {
                   </Row>
                 </fieldset>
 
-                {/* 성별 입력 성분 */}
+                {/* 성별 입력 */}
                 <Form.Group as={Row} controlId="gender" className="mb-3">
                   <Col>
                     <Form.Label>Gender</Form.Label>
@@ -109,6 +109,23 @@ const UserRegist = () => {
                     </Form.Control>
                   </Col>
                 </Form.Group>
+
+                {/* 연락처 두 가지 */}
+                <fieldset>
+                  <legend>연락처</legend>
+                  <Row>
+                    <Col xs={6} className="mb-2 mb-sm-0">
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        placeholder="(이메일)"
+                        value={user.email}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </Col>
+                  </Row>
+                </fieldset>
               </Card.Body>
             </Card>
           </Form>
