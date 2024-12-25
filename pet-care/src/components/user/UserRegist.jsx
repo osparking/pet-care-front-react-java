@@ -166,6 +166,13 @@ const UserRegist = () => {
                     </Form.Control>
                   </Col>
                 </Form.Group>
+                {user.userType === "VET" && (
+                  <Form.Group>
+                    <Row>
+                      <Col>{/* 수의사 전문분야 선택자 */}</Col>
+                    </Row>
+                  </Form.Group>
+                )}
               </Card.Body>
             </Card>
           </Form>
