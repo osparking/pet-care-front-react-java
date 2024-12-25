@@ -29,12 +29,26 @@ const UserRegist = () => {
     setUser({ ...user, [name]: value });
   };
 
+  const handleReset = () => {
+    setUser({
+      lastName: "",
+      firstName: "",
+      gender: "",
+      phone: "",
+      email: "",
+      password: "",
+      userType: "",
+      specialty: "",
+    });
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await registUser(user);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
+      handleReset();
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
