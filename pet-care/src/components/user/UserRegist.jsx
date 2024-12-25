@@ -90,7 +90,6 @@ const UserRegist = () => {
                     </Col>
                   </Row>
                 </fieldset>
-
                 {/* 성별 입력 */}
                 <Form.Group as={Row} controlId="gender" className="mb-3">
                   <Col>
@@ -109,7 +108,6 @@ const UserRegist = () => {
                     </Form.Control>
                   </Col>
                 </Form.Group>
-
                 {/* 연락처 두 가지 */}
                 <fieldset>
                   <legend>연락처</legend>
@@ -124,7 +122,7 @@ const UserRegist = () => {
                         required
                       />
                     </Col>
-                    <Col xs={6} >
+                    <Col xs={6}>
                       <Form.Control
                         type="text"
                         name="phone"
@@ -136,21 +134,38 @@ const UserRegist = () => {
                     </Col>
                   </Row>
                 </fieldset>
-
                 {/* 패스워드 */}
-                <Form.Group as={Row} controlId='password' className='mb-3'>
+                <Form.Group as={Row} controlId="password" className="mb-3">
                   <Col>
                     <Form.Label>패스워드</Form.Label>
                     <Form.Control
-                      type='password'
-                      name='password'
+                      type="password"
+                      name="password"
                       required
-                      placeholder='(비밀번호)'
+                      placeholder="(비밀번호)"
                       value={user.password}
                       onChange={handleInputChange}
                     />
                   </Col>
-                </Form.Group>                
+                </Form.Group>
+
+                {/* 계정 유형 - 수의사, 팻 주인 */}
+                <Form.Group as={Row} controlId="user-type" className="mb-3">
+                  <Col>
+                    <Form.Label>계정 유형</Form.Label>
+                    <Form.Control
+                      as="select"
+                      name="userType"
+                      required
+                      value={user.userType}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">(계정 유형)</option>
+                      <option value="VET">수의사</option>
+                      <option value="PATIENT">팻 주인</option>
+                    </Form.Control>
+                  </Col>
+                </Form.Group>
               </Card.Body>
             </Card>
           </Form>
