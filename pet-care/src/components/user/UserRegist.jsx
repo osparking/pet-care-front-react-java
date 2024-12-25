@@ -94,7 +94,7 @@ const UserRegist = () => {
                 {/* 성별 입력 */}
                 <Form.Group as={Row} controlId="gender" className="mb-3">
                   <Col>
-                    <Form.Label>Gender</Form.Label>
+                    <Form.Label>성별</Form.Label>
                     <Form.Control
                       as="select"
                       name="gender"
@@ -120,6 +120,16 @@ const UserRegist = () => {
                         name="email"
                         placeholder="(이메일)"
                         value={user.email}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </Col>
+                    <Col xs={6}>
+                      <Form.Control
+                        type="text"
+                        name="phone"
+                        placeholder="(휴대폰 번호)"
+                        value={user.phone}
                         onChange={handleInputChange}
                         required
                       />
