@@ -21,7 +21,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <NavDropdown title="계정" id="basic-nav-dropdown">
-              <NavDropdown.Item to={"/user-dashboard"} as={Link}>
+              <NavDropdown.Item to={"/register-user"} as={Link}>
                 등록
               </NavDropdown.Item>
               <NavDropdown.Divider />
