@@ -17,7 +17,7 @@ const Vet = () => {
   const { vetId } = useParams();
 
   const [currPage, setCurrPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
+  const [pageSize, setPageSize] = useState(1);
 
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
