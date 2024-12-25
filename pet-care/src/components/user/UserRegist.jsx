@@ -7,6 +7,9 @@ const UserRegist = () => {
     gender: "",
     phone: "",
     email: "",
+    password: "",
+    userType: "",
+    specialty: "",
   });
   return <div>UserRegist</div>;
 };
