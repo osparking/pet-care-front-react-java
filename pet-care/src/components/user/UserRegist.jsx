@@ -78,6 +78,16 @@ const UserRegist = () => {
                         required
                       />
                     </Col>
+                    <Col xs={6} className="mb-2 mb-sm-0">
+                      <Form.Control
+                        type="text"
+                        name="firstName"
+                        placeholder="(이름)"
+                        value={user.firstName}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </Col>
                   </Row>
                 </fieldset>
               </Card.Body>
