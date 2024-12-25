@@ -90,6 +90,25 @@ const UserRegist = () => {
                     </Col>
                   </Row>
                 </fieldset>
+
+                {/* 성별 입력 성분 */}
+                <Form.Group as={Row} controlId="gender" className="mb-3">
+                  <Col>
+                    <Form.Label>Gender</Form.Label>
+                    <Form.Control
+                      as="select"
+                      name="gender"
+                      required
+                      value={user.gender}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">(성별)</option>
+                      <option value="Male">남성</option>
+                      <option value="Female">여성</option>
+                      <option value="Others">기타</option>
+                    </Form.Control>
+                  </Col>
+                </Form.Group>
               </Card.Body>
             </Card>
           </Form>
