@@ -1,5 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, InputGroup } from "react-bootstrap";
+import { BsPersonFill } from "react-icons/bs";
 
 const Login = () => {
   const [creden, setCreden] = useState({
@@ -21,6 +22,11 @@ const Login = () => {
                 <Form>
                   <Form.Group>
                     <Form.Label>이메일</Form.Label>
+                    <InputGroup>
+                      <InputGroup.Text>
+                        <BsPersonFill />
+                      </InputGroup.Text>
+                    </InputGroup>
                   </Form.Group>
                 </Form>
               </Card.Title>
