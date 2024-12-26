@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -25,7 +25,7 @@ const NavBar = () => {
                 등록
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item to={"/user-dashboard"} as={Link}>
+              <NavDropdown.Item to={"/login"} as={Link}>
                 로그인
               </NavDropdown.Item>
               <NavDropdown.Divider />
