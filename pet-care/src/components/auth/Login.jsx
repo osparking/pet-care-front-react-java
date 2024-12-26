@@ -12,9 +12,9 @@ const Login = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col sm={6}>
           <Card>
             <Card.Body>
               <Card.Title>
