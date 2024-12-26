@@ -226,10 +226,10 @@ const UserRegist = () => {
                 </div>
                 {/* Adjust column sizes for different screens */}
                 {showErrorAlert && (
-                  <AlertMessage type="danger" message={errorMessage} />
+                  <AlertMessage type="danger" message={errorMsg} />
                 )}
                 {showSuccessAlert && (
-                  <AlertMessage type="success" message={successMessage} />
+                  <AlertMessage type="success" message={successMsg} />
                 )}
                 <div className="text-center">
                   이미 등록한 경우:{" "}
