@@ -174,7 +174,12 @@ const UserRegist = () => {
                 {user.userType === "VET" && (
                   <Form.Group>
                     <Row>
-                      <Col>{/* 수의사 전문분야 선택자 */}</Col>
+                      <Col>
+                        <VetSpecialSelector
+                          value={user.specialty}
+                          onChange={handleInputChange}
+                        />
+                      </Col>
                     </Row>
                   </Form.Group>
                 )}
