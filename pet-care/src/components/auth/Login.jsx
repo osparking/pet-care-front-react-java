@@ -50,6 +50,13 @@ const Login = () => {
                       />
                     </InputGroup>
                   </Form.Group>
+                  <Button
+                    variant="outline-primary"
+                    type="submit"
+                    className="w-100"
+                  >
+                    로그인
+                  </Button>
                 </Form>
               </Card.Title>
             </Card.Body>
