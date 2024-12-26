@@ -52,6 +52,7 @@ const UserRegist = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      setIsProcessing(true);
       const response = await registUser(user);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
@@ -59,6 +60,8 @@ const UserRegist = () => {
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
+    } finally {
+      setIsProcessing(true);
     }
   };
 
