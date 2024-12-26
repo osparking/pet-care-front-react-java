@@ -5,6 +5,7 @@ import AlertMessage from "../common/AlertMessage";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetSpecialSelector from "../veterinarians/VetSpecialSelector";
+import { registUser } from "./UserService";
 
 const UserRegist = () => {
   const [user, setUser] = useState({
