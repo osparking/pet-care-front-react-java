@@ -19,3 +19,12 @@ export async function findAvailableVets(searchParams) {
     throw error;
   }
 }
+
+export async function getSpecializations() {
+  try {
+    const result = await api.get("/vets/get_all_specializations");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
