@@ -5,6 +5,11 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const handleInputChange = (e) => {
+    setCreden({ ...creden, [e.target.name]: e.target.value });
+  };
+
   return <div>Login</div>;
 };
 
