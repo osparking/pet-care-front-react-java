@@ -26,6 +26,13 @@ const Login = () => {
                       <InputGroup.Text>
                         <BsPersonFill />
                       </InputGroup.Text>
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        placeholder="(이메일)"
+                        value={creden.email}
+                        onChange={handleInputChange}
+                      />
                     </InputGroup>
                   </Form.Group>
                 </Form>
