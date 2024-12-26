@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import VetSpecialSelector from "../veterinarians/VetSpecialSelector";
 
 const UserRegist = () => {
   const [user, setUser] = useState({
