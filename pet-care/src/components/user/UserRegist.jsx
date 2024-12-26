@@ -177,7 +177,7 @@ const UserRegist = () => {
                     <Row>
                       <Col>
                         <VetSpecialSelector
-                          value={user.specialty}
+                          value={user.specialization}
                           onChange={handleInputChange}
                         />
                       </Col>
