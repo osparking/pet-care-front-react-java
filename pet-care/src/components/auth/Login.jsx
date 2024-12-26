@@ -58,6 +58,12 @@ const Login = () => {
                   로그인
                 </Button>
               </Form>
+              <div className="text-center mt-2">
+                아직 등록하지 않았음:{" "}
+                <Link to={"/register-user"} style={{ textDecoration: "none" }}>
+                  계정 등록
+                </Link>{" "}
+              </div>
             </Card.Body>
           </Card>
         </Col>
