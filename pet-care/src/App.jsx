@@ -12,6 +12,7 @@ import RootLayout from "./components/layouts/RootLayout";
 import UserRegist from "./components/user/UserRegist";
 import Vet from "./components/veterinarians/Vet";
 import VetListing from "./components/veterinarians/VetListing";
+import Login from "./components/auth/Login";
 
 function App() {
   const router = createBrowserRouter(
@@ -25,6 +26,7 @@ function App() {
           element={<BookAppointment />}
         />
         <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
+        <Route path="/login" element={<Login />} />
       </Route>
     )
   );
