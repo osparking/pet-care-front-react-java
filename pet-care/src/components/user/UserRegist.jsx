@@ -61,6 +61,23 @@ const UserRegist = () => {
     }
   };
 
+  const inputDefaultValues = () => {
+    var local = new Date();
+    var hrmnsc =
+      local.getHours() + "_" + local.getMinutes() + "_" + local.getSeconds();
+
+    setUser({
+      lastName: "홍",
+      firstName: "길동" + hrmnsc,
+      gender: "Male",
+      phone: "010-1234-5678",
+      email: `honggd${hrmnsc}@gmail.com`,
+      password: "1234",
+      userType: "VET",
+      specialization: "애견치과",
+    });
+  };
+
   return (
     <Container className="mt-5">
       <Row className="justify-content-center">
