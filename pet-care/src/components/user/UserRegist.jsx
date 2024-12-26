@@ -12,7 +12,7 @@ const UserRegist = () => {
     lastName: "",
     firstName: "",
     gender: "",
-    phone: "",
+    mobile: "",
     email: "",
     password: "",
     userType: "",
@@ -41,7 +41,7 @@ const UserRegist = () => {
       lastName: "",
       firstName: "",
       gender: "",
-      phone: "",
+      mobile: "",
       email: "",
       password: "",
       userType: "",
@@ -73,8 +73,8 @@ const UserRegist = () => {
     setUser({
       lastName: "홍",
       firstName: "길동" + hrmnsc,
-      gender: "Male",
-      phone: "010-1234-5678",
+      gender: "male",
+      mobile: "010-1234-5678",
       email: `honggd${hrmnsc}@gmail.com`,
       password: "1234",
       userType: "VET",
@@ -129,8 +129,8 @@ const UserRegist = () => {
                       onChange={handleInputChange}
                     >
                       <option value="">(성별)</option>
-                      <option value="Male">남성</option>
-                      <option value="Female">여성</option>
+                      <option value="male">남성</option>
+                      <option value="female">여성</option>
                       <option value="Others">기타</option>
                     </Form.Control>
                   </Col>
@@ -152,9 +152,9 @@ const UserRegist = () => {
                     <Col xs={6}>
                       <Form.Control
                         type="text"
-                        name="phone"
+                        name="mobile"
                         placeholder="(휴대폰 번호)"
-                        value={user.phone}
+                        value={user.mobile}
                         onChange={handleInputChange}
                         required
                       />
