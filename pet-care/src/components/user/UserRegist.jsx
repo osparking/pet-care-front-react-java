@@ -237,6 +237,15 @@ const UserRegist = () => {
                     로그인
                   </Link>
                 </div>
+                <div className="mt-3 text-center">
+                  <Button
+                    variant="outline-info"
+                    size="sm"
+                    onClick={inputDefaultValues}
+                  >
+                    기본값 입력
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Form>
