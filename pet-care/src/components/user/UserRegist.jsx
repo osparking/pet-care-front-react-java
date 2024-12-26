@@ -61,7 +61,7 @@ const UserRegist = () => {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
     } finally {
-      setIsProcessing(true);
+      setIsProcessing(false);
     }
   };
 
