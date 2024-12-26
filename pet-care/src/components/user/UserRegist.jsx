@@ -15,7 +15,7 @@ const UserRegist = () => {
     email: "",
     password: "",
     userType: "",
-    specialty: "",
+    specialization: "",
   });
 
   const {
@@ -44,7 +44,7 @@ const UserRegist = () => {
       email: "",
       password: "",
       userType: "",
-      specialty: "",
+      specialization: "",
     });
   };
 
@@ -185,7 +185,7 @@ const UserRegist = () => {
                   </Form.Group>
                 )}
                 {/* 처리 버튼 */}
-                <div className="d-flex justify-content-center mb-3">
+                <div className="d-flex justify-content-center mb-3 mt-3">
                   <Button
                     type="submit"
                     variant="outline-primary"
