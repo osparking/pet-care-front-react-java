@@ -17,8 +17,12 @@ const Login = () => {
         <Col sm={6}>
           <Card>
             <Card.Body>
-              <Card.Title>
-                <Form></Form>
+              <Card.Title className="text-center mb-4">
+                <Form>
+                  <Form.Group>
+                    <Form.Label>이메일</Form.Label>
+                  </Form.Group>
+                </Form>
               </Card.Title>
             </Card.Body>
           </Card>
