@@ -15,7 +15,13 @@ const Login = () => {
     <Container>
       <Row>
         <Col>
-          <Card></Card>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                <Form></Form>
+              </Card.Title>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
