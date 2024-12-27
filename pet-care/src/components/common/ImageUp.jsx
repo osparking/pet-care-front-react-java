@@ -1,4 +1,5 @@
 import React from "react";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const ImageUp = () => {
   // 1. 유저 읽기
@@ -22,6 +23,17 @@ const ImageUp = () => {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
+  };
+
+  const getUser = async () => {
+    try {
+      const result = getUserById(userId);
+      setSuccessMsg(result.data);
+    } catch (e) {
+      setErrorMsg(e.response.data.message);
+      setShowErrorAlert(true);
+      console.error(error.message);
+    }
   };
 
   return <div>ImageUp</div>;
