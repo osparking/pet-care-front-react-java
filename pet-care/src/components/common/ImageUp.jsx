@@ -40,6 +40,25 @@ const ImageUp = ({ userId }) => {
     getUser();
   }, [userId]);
 
+  const handleImageUp = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      if (user && user.photo) {
+        const reader = new FileReader();
+        reader.readAsArrayBuffer(file);
+        reader.onloadend = async (e) => {
+          const fileBytes = new Unit8Array(e.target.result);
+          const response = await updateUserPhoto(user.photoId, fileBytes);
+          setSuccessMsg(result.data);
+          window.location.reload();
+          setShowSuccessAlert(true);
+        };
+      }
+    } catch (error) {}
+  };
   return <div>ImageUp</div>;
 };
 
