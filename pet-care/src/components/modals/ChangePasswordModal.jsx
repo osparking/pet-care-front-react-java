@@ -10,6 +10,17 @@ const ChangePasswordModal = () => {
     cnfPwd: "",
   });
 
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+
   return <div>ChangePasswordModal</div>;
 };
 
