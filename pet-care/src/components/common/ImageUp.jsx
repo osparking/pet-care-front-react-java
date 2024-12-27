@@ -1,6 +1,7 @@
 import React from "react";
 import { InputGroup, Modal } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import AlertMessage from "./AlertMessage";
 
 const ImageUp = ({ userId, show, handleClose }) => {
   // 1. 유저 읽기
@@ -74,6 +75,10 @@ const ImageUp = ({ userId, show, handleClose }) => {
     <Modal show={show} onHide={handleClose}>
       <Modal.Header></Modal.Header>
       <Modal.Body>
+        {showSuccessAlert && (
+          <AlertMessage type="success" message={successMsg} />
+        )}
+        {showErrorAlert && <AlertMessage type="danger" message={errorMsg} />}
         <Form>
           <InputGroup>
             <Form.Control type="file">
