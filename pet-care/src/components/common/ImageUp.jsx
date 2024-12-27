@@ -1,4 +1,5 @@
 import React from "react";
+import { Modal } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const ImageUp = ({ userId }) => {
@@ -69,7 +70,16 @@ const ImageUp = ({ userId }) => {
       console.error(error.message);
     }
   };
-  return <div>ImageUp</div>;
+  return (
+    <Modal>
+      <Modal.Header>
+        
+      </Modal.Header>
+      <Modal.Body>
+
+      </Modal.Body>
+    </Modal>
+  );
 };
 
 export default ImageUp;
