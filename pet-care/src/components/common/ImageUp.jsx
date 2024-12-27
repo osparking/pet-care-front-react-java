@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
+import { InputGroup, Modal } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const ImageUp = ({ userId }) => {
@@ -73,10 +73,16 @@ const ImageUp = ({ userId }) => {
   return (
     <Modal>
       <Modal.Header>
-        
+
       </Modal.Header>
       <Modal.Body>
-
+        <Form>
+          <InputGroup>
+            <Form.Control>
+                
+            </Form.Control>
+          </InputGroup>
+        </Form>
       </Modal.Body>
     </Modal>
   );
