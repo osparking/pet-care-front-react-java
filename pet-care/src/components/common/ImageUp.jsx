@@ -72,14 +72,14 @@ const ImageUp = ({ userId }) => {
   };
   return (
     <Modal>
-      <Modal.Header>
-
-      </Modal.Header>
+      <Modal.Header></Modal.Header>
       <Modal.Body>
         <Form>
           <InputGroup>
-            <Form.Control>
-                
+            <Form.Control type="file">
+              <Button variant="secondary" onClick={handleImageUp}>
+                올리기
+              </Button>
             </Form.Control>
           </InputGroup>
         </Form>
