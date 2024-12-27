@@ -1,7 +1,7 @@
 import React from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
-const ImageUp = () => {
+const ImageUp = ({ userId }) => {
   // 1. 유저 읽기
   // 2. 원래 영상을 가지고 있나 검사
   // 2-1. 있다 - 기존 영상 갱신
@@ -35,6 +35,10 @@ const ImageUp = () => {
       console.error(error.message);
     }
   };
+
+  useEffect(() => {
+    getUser();
+  }, [userId]);
 
   return <div>ImageUp</div>;
 };
