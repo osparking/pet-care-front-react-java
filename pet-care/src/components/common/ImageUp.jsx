@@ -9,6 +9,21 @@ const ImageUp = () => {
   const [user, setUser] = useState(null);
   const [file, setFile] = useState(null);
 
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   return <div>ImageUp</div>;
 };
 
