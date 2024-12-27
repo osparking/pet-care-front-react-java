@@ -1,7 +1,8 @@
-import React from "react";
-import { InputGroup, Modal } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
-import AlertMessage from "./AlertMessage";
+import { getUserById } from "../user/UserService";
+import AlertMessage from "../common/AlertMessage";
 
 const ImageUp = ({ userId, show, handleClose }) => {
   // 1. 유저 읽기
