@@ -21,6 +21,11 @@ const ChangePasswordModal = () => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setPwds({...pwds, [name]: value });
+  };
+
   return <div>ChangePasswordModal</div>;
 };
 
