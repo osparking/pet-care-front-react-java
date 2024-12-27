@@ -26,6 +26,17 @@ const ChangePasswordModal = () => {
     setPwds({...pwds, [name]: value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { curPwd, newPwd, cnfPwd } = pwds;
+    try {
+
+    } catch(error) {
+      setShowErrorAlert(true);
+      setErrorMsg(error.message);
+    }
+  }
+
   return <div>ChangePasswordModal</div>;
 };
 
