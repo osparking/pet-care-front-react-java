@@ -5,7 +5,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getUserById } from "../user/UserService";
 import { updateUserPhoto, uploadUserPhoto } from "./ImageService";
 
-const ImageUp = ({ userId, show, handleClose }) => {
+const ImageUpModal = ({ userId, show, handleClose }) => {
   // 1. 유저 읽기
   // 2. 원래 영상을 가지고 있나 검사
   // 2-1. 있다 - 기존 영상 갱신
@@ -96,4 +96,4 @@ const ImageUp = ({ userId, show, handleClose }) => {
   );
 };
 
-export default ImageUp;
+export default ImageUpModal;
