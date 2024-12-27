@@ -5,5 +5,8 @@ export async function updateUserPhoto(photoId, photo) {
     const response = await api.put(`/photos/${photoId}/update`, photo, {
       headers: { "Content-Type": "application/octet-stream" },
     });
-  } catch (error) {}
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 }
