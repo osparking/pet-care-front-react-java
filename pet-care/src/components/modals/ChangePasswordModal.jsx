@@ -34,6 +34,7 @@ const ChangePasswordModal = () => {
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (error) {
+      console.error(error.message);
       setShowErrorAlert(true);
       setErrorMsg(error.message);
     }
