@@ -65,7 +65,7 @@ const ChangePasswordModal = () => {
             <InputGroup>
               <Form.Control
                 type={type}
-                value={pwds.curPwd}
+                value={curPwd}
                 placeholder="(현재 비밀번호)"
                 name="curPwd"
                 onChange={handleInputChange}
