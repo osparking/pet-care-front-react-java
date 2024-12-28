@@ -52,7 +52,13 @@ const ChangePasswordModal = () => {
     setShowSuccessAlert(false);
   };
 
-  return <div>ChangePasswordModal</div>;
+  return (
+    <Modal>
+      <Modal.Header>
+        <Modal.Title>비밀번호 변경</Modal.Title>
+      </Modal.Header>
+    </Modal>
+  );
 };
 
 export default ChangePasswordModal;
