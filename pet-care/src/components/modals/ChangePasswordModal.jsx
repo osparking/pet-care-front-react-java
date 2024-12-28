@@ -75,6 +75,16 @@ const ChangePasswordModal = () => {
               </InputGroup.Text>
             </InputGroup>
           </Form.Group>
+          <Form.Group controlId="newPwd" className="mb-2">
+            <Form.Label>신규 비밀번호: </Form.Label>
+            <Form.Control
+              type={type}
+              value={newPwd}
+              placeholder="(신규 비밀번호)"
+              name="newPwd"
+              onChange={handleInputChange}
+            />
+          </Form.Group>
         </Form>
       </Model.Body>
     </Modal>
