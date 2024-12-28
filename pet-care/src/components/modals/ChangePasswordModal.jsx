@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const ChangePasswordModal = () => {
@@ -62,6 +63,13 @@ const ChangePasswordModal = () => {
           <Form.Group controlId="curPwd">
             <Form.Label>현재 비밀번호: </Form.Label>
             <InputGroup>
+              <Form.Control
+                type={type}
+                value={pwds.curPwd}
+                placeholder="(현재 비밀번호)"
+                name="curPwd"
+                onChange={handleInputChange}
+              />
             </InputGroup>
           </Form.Group>
         </Form>
