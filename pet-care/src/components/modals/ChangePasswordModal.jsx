@@ -33,11 +33,18 @@ const ChangePasswordModal = () => {
       const response = await changePwd(useAccordionButton, pwds);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
+      handleReset();
     } catch (error) {
       console.error(error.message);
       setShowErrorAlert(true);
       setErrorMsg(error.message);
     }
+  };
+
+  const handleReset = () => {
+    setPwds({ curPwd: "", newPwd: "", cnfPwd: "" });
+    setShowErrorAlert(false);
+    setShowSuccessAlert(false);
   };
 
   return <div>ChangePasswordModal</div>;
