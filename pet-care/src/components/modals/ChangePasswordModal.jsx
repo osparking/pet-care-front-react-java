@@ -23,19 +23,21 @@ const ChangePasswordModal = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setPwds({...pwds, [name]: value });
+    setPwds({ ...pwds, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { curPwd, newPwd, cnfPwd } = pwds;
     try {
-
-    } catch(error) {
+      const response = await changePwd(useAccordionButton, pwds);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
       setShowErrorAlert(true);
       setErrorMsg(error.message);
     }
-  }
+  };
 
   return <div>ChangePasswordModal</div>;
 };
