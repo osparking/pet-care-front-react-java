@@ -1,5 +1,5 @@
 import React from "react";
-import { FiEyeOff, FiEye } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const ChangePasswordModal = () => {
   const [type, setType] = useState("password");
@@ -57,6 +57,15 @@ const ChangePasswordModal = () => {
       <Modal.Header>
         <Modal.Title>비밀번호 변경</Modal.Title>
       </Modal.Header>
+      <Model.Body>
+        <Form>
+          <Form.Group controlId="curPwd">
+            <Form.Label>현재 비밀번호: </Form.Label>
+            <InputGroup>
+            </InputGroup>
+          </Form.Group>
+        </Form>
+      </Model.Body>
     </Modal>
   );
 };
