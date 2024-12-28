@@ -70,6 +70,9 @@ const ChangePasswordModal = () => {
                 name="curPwd"
                 onChange={handleInputChange}
               />
+              <InputGroup.Text onClick={handleTogglePasswordType}>
+                <Icon icon={icon} />
+              </InputGroup.Text>
             </InputGroup>
           </Form.Group>
         </Form>
