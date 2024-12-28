@@ -85,6 +85,16 @@ const ChangePasswordModal = () => {
               onChange={handleInputChange}
             />
           </Form.Group>
+          <Form.Group controlId="cnfPwd" className="mb-2">
+            <Form.Label>비밀번호 확인: </Form.Label>
+            <Form.Control
+              type={type}
+              value={cnfPwd}
+              placeholder="(비밀번호 확인)"
+              name="cnfPwd"
+              onChange={handleInputChange}
+            />
+          </Form.Group>
         </Form>
       </Model.Body>
     </Modal>
