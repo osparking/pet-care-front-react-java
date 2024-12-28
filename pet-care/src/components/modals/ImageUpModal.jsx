@@ -75,7 +75,9 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
   };
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header></Modal.Header>
+      <Modal.Header>
+        <Modal.Title>프로필 사진</Modal.Title>
+      </Modal.Header>
       <Modal.Body>
         {showSuccessAlert && (
           <AlertMessage type="success" message={successMsg} />
