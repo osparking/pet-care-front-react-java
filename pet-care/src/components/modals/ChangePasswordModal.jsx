@@ -1,8 +1,10 @@
-import React from "react";
-import { Form } from "react-bootstrap";
+import React, {useState} from "react";
+import { Button, Form, InputGroup, Modal } from "react-bootstrap";
+import { Icon } from "react-icons-kit";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import AlertMessage from "../common/AlertMessage";
 import { changePwd } from "../user/UserService";
+import UseMsgAlerts from "../common/UseMsgAlerts";
 
 const ChangePasswordModal = () => {
   const [type, setType] = useState("password");
@@ -60,7 +62,7 @@ const ChangePasswordModal = () => {
       <Modal.Header>
         <Modal.Title>비밀번호 변경</Modal.Title>
       </Modal.Header>
-      <Model.Body>
+      <Modal.Body>
         {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
         {showSuccessAlert && (
           <AlertMessage type={"success"} message={successMsg} />
@@ -114,7 +116,7 @@ const ChangePasswordModal = () => {
             </div>
           </div>
         </Form>
-      </Model.Body>
+      </Modal.Body>
     </Modal>
   );
 };
