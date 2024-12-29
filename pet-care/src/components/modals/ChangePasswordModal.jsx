@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import AlertMessage from "../common/AlertMessage";
 import { changePwd } from "../user/UserService";
 
 const ChangePasswordModal = () => {
@@ -60,6 +61,10 @@ const ChangePasswordModal = () => {
         <Modal.Title>비밀번호 변경</Modal.Title>
       </Modal.Header>
       <Model.Body>
+        {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+        {showSuccessAlert && (
+          <AlertMessage type={"success"} message={successMsg} />
+        )}
         <Form>
           <Form.Group controlId="curPwd">
             <Form.Label>현재 비밀번호: </Form.Label>
