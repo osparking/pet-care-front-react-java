@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import { Icon } from "react-icons-kit";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import AlertMessage from "../common/AlertMessage";
-import { changePwd } from "../user/UserService";
 import UseMsgAlerts from "../common/UseMsgAlerts";
+import { changePwd } from "../user/UserService";
 
-const ChangePasswordModal = ({ userId, show, handleClose}) => {
+const ChangePasswordModal = ({ userId, show, handleClose }) => {
   const [type, setType] = useState("password");
   const { icon, setIcon } = useState(FiEyeOff);
   const [pwds, setPwds] = useState({
@@ -58,7 +58,7 @@ const ChangePasswordModal = ({ userId, show, handleClose}) => {
   };
 
   return (
-    <Modal>
+    <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>비밀번호 변경</Modal.Title>
       </Modal.Header>
