@@ -17,3 +17,13 @@ export async function registUser(user) {
     throw err;
   }
 }
+
+export async function changePwd(userId, curPwd, newPwd, cnfPwd) {
+  try {
+    const request = { curPwd, newPwd, cnfPwd };
+    const result = await api.put(`/users/${userId}/change_pwd`, request);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
