@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { changePwd } from "../user/UserService";
 
 const ChangePasswordModal = () => {
   const [type, setType] = useState("password");
@@ -31,7 +32,7 @@ const ChangePasswordModal = () => {
     e.preventDefault();
     const { curPwd, newPwd, cnfPwd } = pwds;
     try {
-      const response = await changePwd(useAccordionButton, pwds);
+      const response = await changePwd(1, curPwd, newPwd, cnfPwd);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
       handleReset();
