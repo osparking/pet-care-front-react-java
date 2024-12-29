@@ -7,9 +7,18 @@ const UserProfile = ({ user }) => {
   const handleShowImageUpModal = () => setShowImageUpModal(true);
   const handleCloseImageUpModal = () => setShowImageUpModal(false);
   const handleShowChangePasswordModal = () => setShowChangePasswordModal(true);
-  const handleCloseChangePasswordModal = () => setShowChangePasswordModal(false);
+  const handleCloseChangePasswordModal = () =>
+    setShowChangePasswordModal(false);
 
-  return <div>UserProfile</div>;
+  return (
+    <React.Fragment>
+      <Row>
+        <Col>
+          <Card></Card>
+        </Col>
+      </Row>
+    </React.Fragment>
+  );
 };
 
 export default UserProfile;
