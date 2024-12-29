@@ -1,4 +1,6 @@
 import React from "react";
+import { Card } from "react-bootstrap";
+import ImageUser from "../common/ImageUser";
 
 const UserProfile = ({ user }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
@@ -13,8 +15,12 @@ const UserProfile = ({ user }) => {
   return (
     <React.Fragment>
       <Row>
-        <Col>
-          <Card></Card>
+        <Col md={3}>
+          <Card>
+            <Card.Body>
+              <ImageUser photoUser={user.photo} />
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </React.Fragment>
