@@ -6,7 +6,7 @@ import AlertMessage from "../common/AlertMessage";
 import { changePwd } from "../user/UserService";
 import UseMsgAlerts from "../common/UseMsgAlerts";
 
-const ChangePasswordModal = () => {
+const ChangePasswordModal = ({ userId, show, handleClose}) => {
   const [type, setType] = useState("password");
   const { icon, setIcon } = useState(FiEyeOff);
   const [pwds, setPwds] = useState({
@@ -35,7 +35,7 @@ const ChangePasswordModal = () => {
     e.preventDefault();
     const { curPwd, newPwd, cnfPwd } = pwds;
     try {
-      const response = await changePwd(1, curPwd, newPwd, cnfPwd);
+      const response = await changePwd(userId, curPwd, newPwd, cnfPwd);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
       handleReset();
