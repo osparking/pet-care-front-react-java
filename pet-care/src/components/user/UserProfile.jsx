@@ -48,16 +48,44 @@ const UserProfile = ({ user }) => {
         </Col>
         <Col md={8}>
           <Card>
-            <Card.Body>
-              <Col md={4}>성씨</Col>
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>성씨 :</Col>
               <Col md={4}>
                 <Card.Text>{user.lastName}</Card.Text>
               </Col>
             </Card.Body>
-            <Card.Body>
-              <Col md={4}>이름</Col>
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>이름 :</Col>
               <Col md={4}>
                 <Card.Text>{user.firstName}</Card.Text>
+              </Col>
+            </Card.Body>
+
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>성별 :</Col>
+              <Col md={4}>
+                <Card.Text>{user.gender}</Card.Text>
+              </Col>
+            </Card.Body>
+
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>이메일 :</Col>
+              <Col md={4}>
+                <Card.Text>{user.email}</Card.Text>
+              </Col>
+            </Card.Body>
+
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>휴대폰 :</Col>
+              <Col md={4}>
+                <Card.Text>{user.mobile}</Card.Text>
+              </Col>
+            </Card.Body>
+
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>유저 유형 :</Col>
+              <Col md={4}>
+                <Card.Text>{user.userType}</Card.Text>
               </Col>
             </Card.Body>
           </Card>
