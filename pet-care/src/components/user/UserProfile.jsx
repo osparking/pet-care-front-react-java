@@ -1,6 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
+import ImageUpModal from "../modals/ImageUpModal";
 
 const UserProfile = ({ user }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
@@ -20,6 +22,12 @@ const UserProfile = ({ user }) => {
             <Card.Body>
               <ImageUser photoUser={user.photo} />
             </Card.Body>
+            <div>
+              <Link to={"#"} onClick={handleShowImageUpModal}>
+                사진 변경
+              </Link>
+              <ImageUpModal userId={user.id} userPhoto={user.photo} />
+            </div>
           </Card>
         </Col>
       </Row>
