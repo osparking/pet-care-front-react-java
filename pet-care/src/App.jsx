@@ -28,7 +28,10 @@ function App() {
         />
         <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user_dashboard" element={<UserDashboard />} />
+        <Route
+          path="/user_dashboard/:userId/my_dashboard"
+          element={<UserDashboard />}
+        />
       </Route>
     )
   );
