@@ -27,7 +27,11 @@ const UserProfile = ({ user }) => {
               <Link to={"#"} onClick={handleShowImageUpModal}>
                 사진 변경
               </Link>
-              <ImageUpModal userId={user.id} userPhoto={user.photo} />
+              <ImageUpModal
+                userId={user.id}
+                show={showImageUpModal}
+                handleClose={handleCloseImageUpModal}
+              />
               <Link to={"#"} onClick={handleShowChangePasswordModal}>
                 비밀번호 변경
               </Link>
