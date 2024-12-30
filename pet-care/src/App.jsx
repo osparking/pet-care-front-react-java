@@ -10,7 +10,7 @@ import BookAppointment from "./components/appointment/BookAppointment";
 import Login from "./components/auth/Login";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
-import UserProfile from "./components/user/UserProfile";
+import UserDashboard from "./components/user/UserDashboard";
 import UserRegist from "./components/user/UserRegist";
 import Vet from "./components/veterinarians/Vet";
 import VetListing from "./components/veterinarians/VetListing";
@@ -28,7 +28,7 @@ function App() {
         />
         <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user_profile" element={<UserProfile />} />
+        <Route path="/user_dashboard" element={<UserDashboard />} />
       </Route>
     )
   );
