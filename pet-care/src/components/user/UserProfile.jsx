@@ -27,6 +27,9 @@ const UserProfile = ({ user }) => {
                 사진 변경
               </Link>
               <ImageUpModal userId={user.id} userPhoto={user.photo} />
+              <Link to={"#"} onClick={handleShowChangePasswordModal}>
+                비밀번호 변경
+              </Link>
             </div>
           </Card>
         </Col>
