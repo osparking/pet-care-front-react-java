@@ -3,7 +3,7 @@ import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import { Icon } from "react-icons-kit";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import AlertMessage from "../common/AlertMessage";
-import UseMsgAlerts from "../common/UseMsgAlerts";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { changePwd } from "../user/UserService";
 
 const ChangePasswordModal = ({ userId, show, handleClose }) => {
