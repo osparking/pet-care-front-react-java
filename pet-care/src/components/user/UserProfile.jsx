@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
+import ChangePasswordModal from "../modals/ChangePasswordModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
 const UserProfile = ({ user }) => {
@@ -30,6 +31,11 @@ const UserProfile = ({ user }) => {
               <Link to={"#"} onClick={handleShowChangePasswordModal}>
                 비밀번호 변경
               </Link>
+              <ChangePasswordModal
+                userId={user.id}
+                show={showChangePasswordModal}
+                handleClose={handleCloseChangePasswordModal}
+              />
             </div>
           </Card>
         </Col>
