@@ -49,7 +49,10 @@ const UserProfile = ({ user }) => {
         <Col md={8}>
           <Card>
             <Card.Body>
-              <Col></Col>
+              <Col md={4}>이름</Col>
+              <Col md={4}>
+                <Card.Text>{user.firstName}</Card.Text>
+              </Col>
             </Card.Body>
           </Card>
         </Col>
