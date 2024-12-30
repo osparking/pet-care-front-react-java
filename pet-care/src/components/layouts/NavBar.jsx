@@ -29,7 +29,7 @@ const NavBar = () => {
                 로그인
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item to={"/user-dashboard"} as={Link}>
+              <NavDropdown.Item to={"/user_profile"} as={Link}>
                 나의 대시보드
               </NavDropdown.Item>
               <NavDropdown.Divider />
