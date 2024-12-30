@@ -19,11 +19,11 @@ const UserProfile = ({ user }) => {
     <React.Fragment>
       <Row>
         <Col md={3}>
-          <Card>
+          <Card className="text-center mb-3 shadow">
             <Card.Body>
               <ImageUser photoUser={user.photo} />
             </Card.Body>
-            <div>
+            <div className="text-center">
               <Link to={"#"} onClick={handleShowImageUpModal}>
                 사진 변경
               </Link>
@@ -44,6 +44,13 @@ const UserProfile = ({ user }) => {
                 handleClose={handleCloseChangePasswordModal}
               />
             </div>
+          </Card>
+        </Col>
+        <Col md={8}>
+          <Card>
+            <Card.Body>
+              <Col></Col>
+            </Card.Body>
           </Card>
         </Col>
       </Row>
