@@ -32,6 +32,9 @@ const UserProfile = ({ user }) => {
                 show={showImageUpModal}
                 handleClose={handleCloseImageUpModal}
               />
+              <Link to={"#"} onClick={""}>
+                사진 제거
+              </Link>
               <Link to={"#"} onClick={handleShowChangePasswordModal}>
                 비밀번호 변경
               </Link>
