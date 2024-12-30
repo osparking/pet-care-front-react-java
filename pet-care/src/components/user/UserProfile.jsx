@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
