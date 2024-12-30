@@ -9,7 +9,9 @@ const UserDashboard = () => {
   return (
     <Container>
         <Tabs>
-            <Tab></Tab>
+            <Tab eventkey="profile" title={<h3>프로필</h3>}>
+                {user && (<UserProfile user={user}/>)}
+            </Tab>
             <Tab></Tab>
             <Tab></Tab>
             <Tab></Tab>
