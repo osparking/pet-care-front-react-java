@@ -49,6 +49,12 @@ const UserProfile = ({ user }) => {
         <Col md={8}>
           <Card>
             <Card.Body>
+              <Col md={4}>성씨</Col>
+              <Col md={4}>
+                <Card.Text>{user.lastName}</Card.Text>
+              </Col>
+            </Card.Body>
+            <Card.Body>
               <Col md={4}>이름</Col>
               <Col md={4}>
                 <Card.Text>{user.firstName}</Card.Text>
