@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Container, Tab, Tabs } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import UserProfile from "../user/UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
-  const { userId } = useParams();
+  // const { userId } = useParams();
+  const userId = 1;
+
   const {
     successMsg,
     setSuccessMsg,
@@ -17,11 +18,14 @@ const UserDashboard = () => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
+
   useEffect(() => {
     const getUser = async () => {
       try {
+        console.log('user ID: ', userId);
         const result = await getUserById(userId);
         setUser(result.data);
+        console.log('user data: ', result.data);
       } catch (error) {
         setErrorMsg(error.response.data.message);
         setShowErrorAlert(true);
