@@ -28,7 +28,8 @@ const UserDashboard = () => {
         console.error(error.message);
       }
     };
-  }, []);
+    getUser();
+  }, [userId]);
 
   return (
     <Container>
