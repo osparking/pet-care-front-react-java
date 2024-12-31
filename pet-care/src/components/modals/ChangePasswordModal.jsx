@@ -73,7 +73,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
             <InputGroup>
               <Form.Control
                 type={type}
-                value={curPwd}
+                value={pwds.curPwd}
                 placeholder="(현재 비밀번호)"
                 name="curPwd"
                 onChange={handleInputChange}
@@ -87,7 +87,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
             <Form.Label>신규 비밀번호: </Form.Label>
             <Form.Control
               type={type}
-              value={newPwd}
+              value={pwds.newPwd}
               placeholder="(신규 비밀번호)"
               name="newPwd"
               onChange={handleInputChange}
@@ -97,7 +97,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
             <Form.Label>비밀번호 확인: </Form.Label>
             <Form.Control
               type={type}
-              value={cnfPwd}
+              value={pwds.cnfPwd}
               placeholder="(비밀번호 확인)"
               name="cnfPwd"
               onChange={handleInputChange}
