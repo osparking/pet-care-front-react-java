@@ -22,7 +22,11 @@ const UserDashboard = () => {
       try {
         const result = await getUserById(userId);
         setUser(result.data);
-      } catch (error) {}
+      } catch (error) {
+        setErrorMsg(error.response.data.message);
+        setShowErrorAlert(true);
+        console.error(error.message);
+      }
     };
   }, []);
 
