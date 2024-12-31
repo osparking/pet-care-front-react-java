@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Tabs } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { Container, Tab, Tabs } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import UserProfile from "../user/UserProfile";
 const UserDashboard = () => {
