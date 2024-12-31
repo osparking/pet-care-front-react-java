@@ -1,10 +1,22 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const { userId } = useParams();
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+
   useEffect(() => {
     const getUser = async () => {
       try {
