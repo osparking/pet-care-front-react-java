@@ -24,17 +24,23 @@ const UserProfile = ({ user }) => {
               <ImageUser photoUser={user.photo} />
             </Card.Body>
             <div className="text-center">
-              <Link to={"#"} onClick={handleShowImageUpModal}>
-                사진 변경
-              </Link>
+              <p>
+                {" "}
+                <Link to={"#"} onClick={handleShowImageUpModal}>
+                  사진 변경
+                </Link>
+              </p>
               <ImageUpModal
                 userId={user.id}
                 show={showImageUpModal}
                 handleClose={handleCloseImageUpModal}
               />
-              <Link to={"#"} onClick={""}>
-                사진 제거
-              </Link>
+              <p>
+                {" "}
+                <Link to={"#"} onClick={""}>
+                  사진 제거
+                </Link>
+              </p>
               <Link to={"#"} onClick={handleShowChangePasswordModal}>
                 비밀번호 변경
               </Link>
