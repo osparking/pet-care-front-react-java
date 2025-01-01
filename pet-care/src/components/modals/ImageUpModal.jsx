@@ -62,7 +62,7 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
           setShowSuccessAlert(true);
         };
       } else {
-        const response = await uploadUserPhoto(userId, fileBytes);
+        const response = await uploadUserPhoto(userId, file);
         setSuccessMsg(response.data);
         window.location.reload();
         setShowSuccessAlert(true);
