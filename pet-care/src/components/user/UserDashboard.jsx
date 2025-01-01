@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import UserProfile from "../user/UserProfile";
 import { getUserById } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
-  // const { userId } = useParams();
-  const userId = 1;
+  const { userId } = useParams();
 
   const {
     successMsg,
