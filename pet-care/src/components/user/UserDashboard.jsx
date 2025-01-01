@@ -27,8 +27,7 @@ const UserDashboard = () => {
         setUser(result.data);
         console.log("user data: ", result.data);
       } catch (error) {
-        setErrorMsg(error);
-        // setErrorMsg(error.response.data.message);
+        setErrorMsg(error.response.data.message);
         setShowErrorAlert(true);
         console.error(error.message);
       }
