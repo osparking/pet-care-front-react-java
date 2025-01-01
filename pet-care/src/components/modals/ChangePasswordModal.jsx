@@ -58,7 +58,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
 
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header>
+      <Modal.Header closeButton={true}>
         <Modal.Title>비밀번호 변경</Modal.Title>
       </Modal.Header>
       <Modal.Body>
