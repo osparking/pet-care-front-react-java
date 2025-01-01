@@ -50,7 +50,7 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const fileBytes = new Unit8Array(e.target.result);
+      const fileBytes = new Uint8Array(e.target.result);
 
       if (user && user.photo) {
         const reader = new FileReader();
@@ -68,7 +68,8 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
         setShowSuccessAlert(true);
       }
     } catch (error) {
-      setErrorMsg(error.response.data.message);
+      setErrorMsg(error);
+      // setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
       console.error(error.message);
     }
