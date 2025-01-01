@@ -6,8 +6,12 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { changePwd } from "../user/UserService";
 
 const ChangePasswordModal = ({ userId, show, handleClose }) => {
-  const [type, setType] = useState("password");
-  const { icon, setIcon } = useState(FiEyeOff);
+  const [typeCur, setTypeCur] = useState("password");
+  const [typeNew, setTypeNew] = useState("password");
+  const [typeCnf, setTypeCnf] = useState("password");
+  const [iconCur, setIconCur] = useState(FiEyeOff);
+  const [iconNew, setIconNew] = useState(FiEyeOff);
+  const [iconCnf, setIconCnf] = useState(FiEyeOff);
   const [pwds, setPwds] = useState({
     curPwd: "",
     newPwd: "",
@@ -45,9 +49,34 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
     }
   };
 
-  const handleTogglePasswordType = () => {
-    type === "password" ? setType("text") : setType("password");
-    icon === FiEyeOff ? setIcon(FiEye) : setIcon(FiEyeOff);
+  const handleToggleHideCur = () => {
+    if (typeCur === "password") {
+      setTypeCur("text");
+      setIconCur(FiEye);
+    } else {
+      setTypeCur("password");
+      setIconCur(FiEyeOff);
+    }
+  };
+
+  const handleToggleHideNew = () => {
+    if (typeNew === "password") {
+      setTypeNew("text");
+      setIconNew(FiEye);
+    } else {
+      setTypeNew("password");
+      setIconNew(FiEyeOff);
+    }
+  };
+
+  const handleToggleHideCnf = () => {
+    if (typeCnf === "password") {
+      setTypeCnf("text");
+      setIconCnf(FiEye);
+    } else {
+      setTypeCnf("password");
+      setIconCnf(FiEyeOff);
+    }
   };
 
   const handleReset = () => {
@@ -71,36 +100,46 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
             <Form.Label>현재 비밀번호: </Form.Label>
             <InputGroup>
               <Form.Control
-                type={type}
+                type={typeCur}
                 value={pwds.curPwd}
                 placeholder="(현재 비밀번호)"
                 name="curPwd"
                 onChange={handleInputChange}
               />
-              <InputGroup.Text onClick={handleTogglePasswordType}>
-                {icon}
+              <InputGroup.Text onClick={handleToggleHideCur}>
+                {iconCur}
               </InputGroup.Text>
             </InputGroup>
           </Form.Group>
           <Form.Group controlId="newPwd" className="mb-2">
             <Form.Label>신규 비밀번호: </Form.Label>
-            <Form.Control
-              type={type}
-              value={pwds.newPwd}
-              placeholder="(신규 비밀번호)"
-              name="newPwd"
-              onChange={handleInputChange}
-            />
+            <InputGroup>
+              <Form.Control
+                type={typeNew}
+                value={pwds.newPwd}
+                placeholder="(신규 비밀번호)"
+                name="newPwd"
+                onChange={handleInputChange}
+              />
+              <InputGroup.Text onClick={handleToggleHideNew}>
+                {iconNew}
+              </InputGroup.Text>
+            </InputGroup>
           </Form.Group>
           <Form.Group controlId="cnfPwd" className="mb-2">
             <Form.Label>비밀번호 확인: </Form.Label>
-            <Form.Control
-              type={type}
-              value={pwds.cnfPwd}
-              placeholder="(비밀번호 확인)"
-              name="cnfPwd"
-              onChange={handleInputChange}
-            />
+            <InputGroup>
+              <Form.Control
+                type={typeCnf}
+                value={pwds.cnfPwd}
+                placeholder="(비밀번호 확인)"
+                name="cnfPwd"
+                onChange={handleInputChange}
+              />
+              <InputGroup.Text onClick={handleToggleHideCnf}>
+                {iconCnf}
+              </InputGroup.Text>
+            </InputGroup>
           </Form.Group>
           <div className="d-flex justify-content-center mt-4">
             <div className="mx-2">
