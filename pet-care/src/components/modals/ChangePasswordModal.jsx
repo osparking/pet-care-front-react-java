@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Form, InputGroup, Modal } from "react-bootstrap";
-import { Icon } from "react-icons-kit";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
@@ -79,7 +78,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
                 onChange={handleInputChange}
               />
               <InputGroup.Text onClick={handleTogglePasswordType}>
-                <Icon icon={icon} />
+                {icon}
               </InputGroup.Text>
             </InputGroup>
           </Form.Group>
