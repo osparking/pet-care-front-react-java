@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Tab, Tabs } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import UserProfile from "../user/UserProfile";
 import { getUserById } from "../user/UserService";
@@ -36,24 +36,7 @@ const UserDashboard = () => {
     getUser();
   }, [userId]);
 
-  return (
-    <Container>
-      <Tabs>
-        <Tab eventkey="profile" title={<h3>프로필</h3>}>
-          {user && <UserProfile user={user} />}
-        </Tab>
-        <Tab eventkey="profile" title={<h3>프로필</h3>}>
-          {user && <UserProfile user={user} />}
-        </Tab>
-        <Tab eventkey="profile" title={<h3>프로필</h3>}>
-          {user && <UserProfile user={user} />}
-        </Tab>
-        <Tab eventkey="profile" title={<h3>프로필</h3>}>
-          {user && <UserProfile user={user} />}
-        </Tab>
-      </Tabs>
-    </Container>
-  );
+  return <Container>{user && <UserProfile user={user} />}</Container>;
 };
 
 export default UserDashboard;
