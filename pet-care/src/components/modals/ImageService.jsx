@@ -2,7 +2,11 @@ import { api } from "../utils/api";
 
 export async function updateUserPhoto(photoId, photo) {
   try {
-    const response = await api.put(`/photos/${photoId}/update`, photo, {
+    console.log("photo Id: " + photoId);
+    const formData = new FormData();
+    formData.append("userId", userId);
+    formData.append("file", photo);
+    const response = await api.put(`/photos/${photoId}/update`, formData, {
       headers: { "Content-Type": "application/octet-stream" },
     });
     return response.data;
