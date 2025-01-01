@@ -50,14 +50,14 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const fileBytes = new Uint8Array(e.target.result);
 
       if (user && user.photo) {
         const reader = new FileReader();
         reader.readAsArrayBuffer(file);
-        reader.onloadend = async (e) => {
+        reader.onload = async (e) => {
+          const fileBytes = new Uint8Array(e.target.result);
           const response = await updateUserPhoto(user.photoId, fileBytes);
-          setSuccessMsg(result.data);
+          setSuccessMsg(response.data);
           window.location.reload();
           setShowSuccessAlert(true);
         };
@@ -68,10 +68,9 @@ const ImageUpModal = ({ userId, show, handleClose }) => {
         setShowSuccessAlert(true);
       }
     } catch (error) {
-      setErrorMsg(error);
-      // setErrorMsg(error.response.data.message);
+      console.error("error message: ", error.message);
+      setErrorMsg(error.message);
       setShowErrorAlert(true);
-      console.error(error.message);
     }
   };
   return (
