@@ -95,7 +95,7 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
         {showSuccessAlert && (
           <AlertMessage type={"success"} message={successMsg} />
         )}
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Group controlId="curPwd">
             <Form.Label>현재 비밀번호: </Form.Label>
             <InputGroup>
