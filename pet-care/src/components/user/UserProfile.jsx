@@ -109,6 +109,17 @@ const UserProfile = ({ user, handleRemovePhoto }) => {
                 </Col>
               </Card.Body>
             )}
+
+            <Card.Body className="d-flex align-items-center">
+              <Col md={4}>계정 상태 :</Col>
+              <Col md={4}>
+                <Card.Text
+                  className={user.enabled ? styles.active : styles.inactive}
+                >
+                  {user.enabled ? "활성" : "비활성"}
+                </Card.Text>
+              </Col>
+            </Card.Body>
           </Card>
         </Col>
       </Row>
