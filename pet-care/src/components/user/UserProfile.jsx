@@ -5,7 +5,7 @@ import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
-const UserProfile = ({ user }) => {
+const UserProfile = ({ user, handleRemovePhoto }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
 
@@ -37,7 +37,7 @@ const UserProfile = ({ user }) => {
               />
               <p>
                 {" "}
-                <Link to={"#"} onClick={""}>
+                <Link to={"#"} onClick={handleRemovePhoto}>
                   사진 제거
                 </Link>
               </p>
