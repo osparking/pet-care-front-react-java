@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import UserProfile from "../user/UserProfile";
@@ -30,7 +31,6 @@ const UserDashboard = () => {
       } catch (error) {
         setErrorMsg(error.response.data.message);
         setShowErrorAlert(true);
-        console.error(error.message);
       }
     };
     getUser();
@@ -41,11 +41,7 @@ const UserDashboard = () => {
     try {
       const result = await deleteUserPhoto(userId);
       window.location.reload();
-      setSuccessMsg(result.message);
-      setShowSuccessAlert(true);
-    } catch (e) {
-      console.log("error.response.data.message: ", error.response.data.message);
-      console.log("error.message: ", error.message);
+    } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
     }
@@ -53,6 +49,7 @@ const UserDashboard = () => {
 
   return (
     <Container>
+      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       {user && (
         <UserProfile user={user} handleRemovePhoto={handleRemovePhoto} />
       )}
