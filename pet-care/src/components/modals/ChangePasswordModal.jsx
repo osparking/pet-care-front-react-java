@@ -39,9 +39,9 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
     const { curPwd, newPwd, cnfPwd } = pwds;
     try {
       const response = await changePwd(userId, curPwd, newPwd, cnfPwd);
+      handleReset();
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
-      handleReset();
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
