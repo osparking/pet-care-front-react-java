@@ -6,7 +6,7 @@ import { getUserById } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 2;
+  const userId = 3;
 
   const {
     successMsg,

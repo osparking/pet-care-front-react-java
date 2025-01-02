@@ -43,9 +43,8 @@ const ChangePasswordModal = ({ userId, show, handleClose }) => {
       setShowSuccessAlert(true);
       handleReset();
     } catch (error) {
-      console.error(error.message);
+      setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
-      setErrorMsg(error.message);
     }
   };
 
