@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
@@ -137,6 +137,20 @@ const UserProfile = ({ user, handleRemovePhoto }) => {
               </Col>
             </Card.Body>
           </Card>
+          <Card.Body>
+            <div className="d-flex justify-content-center mb-4">
+              <div className="mx-2">
+                <Link to={""} className="btn btn-warning btn-sm">
+                  프로필 수정
+                </Link>
+              </div>
+              <div className="mx-2">
+                <Button variant="danger" size="sm" onClick={""}>
+                  계정 폐쇄
+                </Button>
+              </div>
+            </div>
+          </Card.Body>
         </Col>
       </Row>
     </React.Fragment>
