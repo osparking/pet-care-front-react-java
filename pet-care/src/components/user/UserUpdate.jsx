@@ -139,6 +139,31 @@ const UserUpdate = () => {
                     disabled
                   />
                 </Form.Group>
+
+                {/* 연락처 두 가지 */}
+                <fieldset className="field-set mb-2 mt-2">
+                  <legend>연락처</legend>
+                  <Form.Group
+                    as={Col}
+                    controlId="emailMobileFields"
+                    className="mb-2 d-flex"
+                  >
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      placeholder="(이메일)"
+                      value={user.email}
+                      disabled
+                    />
+                    <Form.Control
+                      type="text"
+                      name="mobile"
+                      placeholder="(휴대폰 번호)"
+                      value={user.mobile}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </fieldset>
               </Card.Body>
             </Card>
           </div>
