@@ -128,6 +128,17 @@ const UserUpdate = () => {
                     <option value="Others">기타</option>
                   </Form.Control>
                 </Form.Group>
+                {/* 계정 유형 - 비활성 */}
+                <Form.Group as={Col} controlId="user-type" className="mb-2">
+                  <Form.Label className="legend">계정 유형</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="userType"
+                    value={user.userType}
+                    onChange={handleInputChange}
+                    disabled
+                  />
+                </Form.Group>
               </Card.Body>
             </Card>
           </div>
