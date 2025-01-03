@@ -83,7 +83,7 @@ const UserUpdate = () => {
   return (
     <Container>
       <div>
-        <Form>
+        <Form onSubmit={handleUpdate}>
           <div>
             <Card>
               <Card.Header></Card.Header>
