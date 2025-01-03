@@ -12,6 +12,7 @@ import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
 import UserDashboard from "./components/user/UserDashboard";
 import UserRegist from "./components/user/UserRegist";
+import UserUpdate from "./components/user/UserUpdate";
 import Vet from "./components/veterinarians/Vet";
 import VetListing from "./components/veterinarians/VetListing";
 
