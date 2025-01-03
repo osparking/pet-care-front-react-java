@@ -76,7 +76,7 @@ const UserUpdate = () => {
     }
   };
 
-  const { navigate } = useNavigate();
+  const navigate = useNavigate();
 
   const handleCancelUpdate = () => {
     navigate(`/user_dashboard/${userId}/my_dashboard`);
