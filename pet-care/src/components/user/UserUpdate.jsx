@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Container, Form } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
