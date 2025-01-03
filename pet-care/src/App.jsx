@@ -22,6 +22,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/doctors" element={<VetListing />} />
         <Route path="/register-user" element={<UserRegist />} />
+        <Route path="/update-user/:userId" element={<UserUpdate />} />
         <Route
           path="/appointments/create/:recipientId"
           element={<BookAppointment />}
