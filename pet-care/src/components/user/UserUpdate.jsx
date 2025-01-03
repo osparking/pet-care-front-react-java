@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getUserById } from "../user/UserService";
@@ -79,7 +80,20 @@ const UserUpdate = () => {
     navigate(`/user_dashboard/${userId}/my_dashboard`);
   };
 
-  return <div>UserUpdate</div>;
+  return (
+    <Container>
+      <div>
+        <Form>
+          <div>
+            <Card>
+              <Card.Header></Card.Header>
+              <Card.Body></Card.Body>
+            </Card>
+          </div>
+        </Form>
+      </div>
+    </Container>
+  );
 };
 
 export default UserUpdate;
