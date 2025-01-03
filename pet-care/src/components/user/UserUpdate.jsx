@@ -193,6 +193,15 @@ const UserUpdate = () => {
                       )}
                     </Button>
                   </div>
+                  <div className="mx-2">
+                    <Button
+                      variant="outline-info"
+                      size="sm"
+                      onClick={handleCancelUpdate}
+                    >
+                      프로필로 복귀
+                    </Button>
+                  </div>
                 </div>
               </Card.Body>
             </Card>
