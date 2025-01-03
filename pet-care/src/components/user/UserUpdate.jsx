@@ -43,6 +43,11 @@ const UserUpdate = () => {
     getUser();
   }, [userId]);
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUser((prevState) => ({ ...prevState, [name]: value }));
+  };
+
   return <div>UserUpdate</div>;
 };
 
