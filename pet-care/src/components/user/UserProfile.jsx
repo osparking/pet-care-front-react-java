@@ -5,7 +5,7 @@ import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
-const UserProfile = ({ user, handleRemovePhoto }) => {
+const UserProfile = ({ user, handleRemovePhoto, handleCloseAccount }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
 
@@ -143,7 +143,7 @@ const UserProfile = ({ user, handleRemovePhoto }) => {
                 </Link>
               </div>
               <div className="mx-2">
-                <Button variant="danger" size="sm" onClick={""}>
+                <Button variant="danger" size="sm" onClick={handleCloseAccount}>
                   계정 폐쇄
                 </Button>
               </div>
