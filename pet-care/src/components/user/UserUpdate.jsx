@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getUserById } from "../user/UserService";
+import VetSpecialSelector from "../veterinarians/VetSpecialSelector";
 
 const UserUpdate = () => {
   const [user, setUser] = useState({
@@ -164,6 +165,17 @@ const UserUpdate = () => {
                     />
                   </Form.Group>
                 </fieldset>
+
+                {user.userType === "VET" && (
+                  <Form.Group controlId="specialization" className="mb-4">
+                    <Form.Label className="legend">전문분야</Form.Label>
+                    <VetSpecialSelector
+                      handleAddSpecial={handleAddSpecial}
+                      user={user}
+                      setUser={setUser}
+                    />
+                  </Form.Group>
+                )}
               </Card.Body>
             </Card>
           </div>
