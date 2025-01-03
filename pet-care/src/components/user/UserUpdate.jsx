@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getUserById } from "../user/UserService";
 
@@ -71,6 +71,12 @@ const UserUpdate = () => {
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  const { navigate } = useNavigate();
+
+  const handleCancelUpdate = () => {
+    navigate(`/user_dashboard/${userId}/my_dashboard`);
   };
 
   return <div>UserUpdate</div>;
