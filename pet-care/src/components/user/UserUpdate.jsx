@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { getUserById } from "../user/UserService";
 
 const UserUpdate = () => {
   const [user, setUser] = useState({
@@ -26,6 +27,21 @@ const UserUpdate = () => {
 
   const [isProcessing, setIsProcessing] = useState(false);
   const { userId } = useParams();
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        console.log("user ID: ", userId);
+        const result = await getUserById(userId);
+        setUser(result.data);
+        console.log("user data: ", result.data);
+      } catch (error) {
+        setErrorMsg(error.response.data.message);
+        setShowErrorAlert(true);
+      }
+    };
+    getUser();
+  }, [userId]);
 
   return <div>UserUpdate</div>;
 };
