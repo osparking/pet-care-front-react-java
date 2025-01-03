@@ -176,6 +176,24 @@ const UserUpdate = () => {
                     />
                   </Form.Group>
                 )}
+
+                <div className="d-flex justify-content-center">
+                  <div className="mx-2">
+                    <Button
+                      type="submit"
+                      variant="outline-warning"
+                      size="sm"
+                      className="me-2"
+                      disabled={isProcessing}
+                    >
+                      {isProcessing ? (
+                        <ProcessSpinner message="갱신 처리 중..." />
+                      ) : (
+                        "갱신"
+                      )}
+                    </Button>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           </div>
