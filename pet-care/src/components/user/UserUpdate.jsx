@@ -87,7 +87,32 @@ const UserUpdate = () => {
           <div>
             <Card>
               <Card.Header></Card.Header>
-              <Card.Body></Card.Body>
+              <Card.Body>
+                <fieldset className="field-set">
+                  <legend>성명</legend>
+                  <Form.Group
+                    as={Col}
+                    controlId="nameFields"
+                    className="mb-2 d-flex"
+                  >
+                    <Form.Control
+                      type="text"
+                      name="lastName"
+                      placeholder="(성씨)"
+                      value={user.lastName}
+                      onChange={handleInputChange}
+                    />
+                    <Form.Control
+                      type="text"
+                      name="firstName"
+                      placeholder="(이름)"
+                      value={user.firstName}
+                      onChange={handleInputChange}
+                      style={{ marginRight: "10px" }}
+                    />
+                  </Form.Group>
+                </fieldset>
+              </Card.Body>
             </Card>
           </div>
         </Form>
