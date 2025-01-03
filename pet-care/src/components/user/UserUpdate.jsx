@@ -48,6 +48,31 @@ const UserUpdate = () => {
     setUser((prevState) => ({ ...prevState, [name]: value }));
   };
 
+  const handleUpdate = async (event) => {
+    event.preventDefault();
+    const updatedUser = {
+      lastName: user.lastName,
+      firstName: user.firstName,
+      gender: user.gender,
+      mobile: user.mobile,
+      specialization: user.specialization,
+      email: user.email,
+      userType: user.userType,
+    };
+
+    try {
+      setIsProcessing(true);
+      const response = await updateUser(userId, updatedUser);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   return <div>UserUpdate</div>;
 };
 
