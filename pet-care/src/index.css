@@ -171,5 +171,15 @@ h6 {
   border-radius: 5%;
   margin-bottom: 20px;
   margin-top: 100px;
+}
 
+/* Classes for user account active status text decoration */
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: orange;
+  font-weight: bold;
 }
