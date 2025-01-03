@@ -112,6 +112,22 @@ const UserUpdate = () => {
                     />
                   </Form.Group>
                 </fieldset>
+                {/* 성별 입력 */}
+                <Form.Group as={Row} controlId="gender" className="mb-3">
+                  <Form.Label>성별</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="gender"
+                    required
+                    value={user.gender}
+                    onChange={handleInputChange}
+                  >
+                    <option value="">(성별)</option>
+                    <option value="male">남성</option>
+                    <option value="female">여성</option>
+                    <option value="Others">기타</option>
+                  </Form.Control>
+                </Form.Group>
               </Card.Body>
             </Card>
           </div>
