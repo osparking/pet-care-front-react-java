@@ -4,11 +4,11 @@ import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import UserProfile from "../user/UserProfile";
-import { getUserById } from "../user/UserService";
+import { getUserById, deleteUserAccount } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 3;
+  const userId = 11;
 
   const {
     successMsg,
@@ -45,11 +45,28 @@ const UserDashboard = () => {
     }
   };
 
+  const handleDeleteUser = async () => {
+    console.log("삭제할 유저 계정 ID: ", userId);
+    try {
+      const result = await deleteUserAccount(userId);
+      setSuccessMsg(result.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
+      setErrorMsg(error.message);
+      setShowErrorAlert(true);
+      console.error(error.message);
+    }
+  };
+
   return (
     <Container>
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       {user && (
-        <UserProfile user={user} handleRemovePhoto={handleRemovePhoto} />
+        <UserProfile
+          user={user}
+          handleRemovePhoto={handleRemovePhoto}
+          handleDeleteUser={handleDeleteUser}
+        />
       )}
     </Container>
   );
