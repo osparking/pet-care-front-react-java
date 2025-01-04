@@ -66,7 +66,7 @@ const UserUpdate = () => {
 
     try {
       setIsProcessing(true);
-      const response = await updateUser(userId, updatedUser);
+      const response = await updateUser(100, updatedUser);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (error) {
