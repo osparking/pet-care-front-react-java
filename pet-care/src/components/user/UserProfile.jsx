@@ -5,7 +5,12 @@ import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
-const UserProfile = ({ user, handleRemovePhoto, handleCloseAccount }) => {
+const UserProfile = ({
+  user,
+  handleRemovePhoto,
+  handleCloseAccount,
+  handleDeleteUser,
+}) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
 
@@ -14,6 +19,14 @@ const UserProfile = ({ user, handleRemovePhoto, handleCloseAccount }) => {
   const handleShowChangePasswordModal = () => setShowChangePasswordModal(true);
   const handleCloseChangePasswordModal = () =>
     setShowChangePasswordModal(false);
+  const handleDelUserConfirm = async () => {
+    try {
+      await handleDeleteUser(user.id);
+      setShowUserDelModal(false);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <Container>
