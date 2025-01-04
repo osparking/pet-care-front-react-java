@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import AlertMessage from "../common/AlertMessage";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getUserById, updateUser } from "../user/UserService";
@@ -179,6 +180,12 @@ const UserUpdate = () => {
                 </Form.Group>
               )}
 
+              {showErrorAlert && (
+                <AlertMessage type={"danger"} message={errorMsg} />
+              )}
+              {showSuccessAlert && (
+                <AlertMessage type={"success"} message={successMsg} />
+              )}
               <div className="d-flex justify-content-center">
                 <div className="mx-2">
                   <Button
