@@ -3,13 +3,10 @@ import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
+import DelUserConfirmModal from "../modals/DelUserConfirmModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
-const UserProfile = ({
-  user,
-  handleRemovePhoto,
-  handleDeleteUser,
-}) => {
+const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
   const [showUserDelModal, setShowUserDelModal] = useState(false);
@@ -31,14 +28,21 @@ const UserProfile = ({
   const showUserDelCnfModal = (userId) => {
     setUserToDel(userId);
     setShowUserDelModal(true);
-  }
+  };
   const hideDelUserCnfModal = () => {
     setShowUserDelModal(false);
     setUserToDel(null);
-  }
+  };
 
   return (
     <Container>
+      <DelUserConfirmModal
+        show={showUserDelModal}
+        onHide={hideDelUserCnfModal}
+        handleDelete={handleDelUserConfirm}
+        target={"유저 계정"}
+        deleting={false}
+      />
       <React.Fragment>
         <Row>
           <Col md={3}>
