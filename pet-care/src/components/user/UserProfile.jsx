@@ -13,6 +13,8 @@ const UserProfile = ({
 }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
+  const [showUserDelModal, setShowUserDelModal] = useState(false);
+  const [userToDel, setUserToDel] = useState(null);
 
   const handleShowImageUpModal = () => setShowImageUpModal(true);
   const handleCloseImageUpModal = () => setShowImageUpModal(false);
