@@ -18,6 +18,15 @@ export async function registUser(user) {
   }
 }
 
+export async function updateUser(userId, user) {
+  try {
+    const result = await api.put(`/users/update/${userId}`, user);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
+
 export async function changePwd(userId, curPwd, newPwd, cnfPwd) {
   try {
     const request = { currentPwd: curPwd, newPwd, confirmPwd: cnfPwd };
