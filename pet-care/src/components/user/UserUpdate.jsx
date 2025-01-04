@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
-import { getUserById } from "../user/UserService";
+import { getUserById, updateUser } from "../user/UserService";
 import VetSpecialSelector from "../veterinarians/VetSpecialSelector";
 
 const UserUpdate = () => {
