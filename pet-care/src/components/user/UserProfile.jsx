@@ -32,6 +32,10 @@ const UserProfile = ({
     setUserToDel(userId);
     setShowUserDelModal(true);
   }
+  const hideDelUserCnfModal = () => {
+    setShowUserDelModal(false);
+    setUserToDel(null);
+  }
 
   return (
     <Container>
