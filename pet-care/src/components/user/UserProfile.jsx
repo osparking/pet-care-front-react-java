@@ -8,7 +8,6 @@ import ImageUpModal from "../modals/ImageUpModal";
 const UserProfile = ({
   user,
   handleRemovePhoto,
-  handleCloseAccount,
   handleDeleteUser,
 }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
@@ -29,6 +28,10 @@ const UserProfile = ({
       console.error(error.message);
     }
   };
+  const showUserDelCnfModal = (userId) => {
+    setUserToDel(userId);
+    setShowUserDelModal(true);
+  }
 
   return (
     <Container>
@@ -165,7 +168,7 @@ const UserProfile = ({
                   <Button
                     variant="danger"
                     size="sm"
-                    onClick={handleCloseAccount}
+                    onClick={showUserDelCnfModal}
                   >
                     계정 폐쇄
                   </Button>
