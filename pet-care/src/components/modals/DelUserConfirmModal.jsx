@@ -8,8 +8,8 @@ const DelUserConfirmModal = ({
   deleting,
 }) => {
   return (
-    <Modal>
-      <Modal.Header>
+    <Modal show={show} onHide={onHide}>
+      <Modal.Header closeButton>
         <Modal.Title>계정 폐쇄 확인</Modal.Title>
       </Modal.Header>
       <Modal.Body>
