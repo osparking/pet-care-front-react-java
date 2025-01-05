@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
-import UserProfile from "../user/UserProfile";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
@@ -64,13 +63,20 @@ const UserDashboard = () => {
         <AlertMessage type={"success"} message={successMsg} />
       )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
-      {user && (
-        <UserProfile
-          user={user}
-          handleRemovePhoto={handleRemovePhoto}
-          handleDeleteUser={handleDeleteUser}
-        />
-      )}
+      <Tabs>
+        <Tab>
+          {user && (
+            <UserProfile
+              user={user}
+              handleRemovePhoto={handleRemovePhoto}
+              handleDeleteUser={handleDeleteUser}
+            />
+          )}
+        </Tab>
+        <Tab></Tab>
+        <Tab></Tab>
+        <Tab></Tab>
+      </Tabs>
     </Container>
   );
 };
