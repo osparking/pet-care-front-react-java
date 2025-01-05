@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container, Tab, Tabs } from "react-bootstrap";
+import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
@@ -84,7 +84,13 @@ const UserDashboard = () => {
               <Row>
                 <Col>
                   {user && user.reviews && user.reviews.length > 0 ? (
-                    user.reviews.map((review) => <Review key={review.id} />)
+                    user.reviews.map((review) => (
+                      <Review
+                        key={review.id}
+                        review={review}
+                        userType={user.userType}
+                      />
+                    ))
                   ) : (
                     <p>등록된 리뷰가 없습니다.</p>
                   )}
