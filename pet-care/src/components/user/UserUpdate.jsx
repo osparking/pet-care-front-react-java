@@ -173,9 +173,8 @@ const UserUpdate = () => {
                 <Form.Group controlId="specialization" className="mb-4">
                   <Form.Label className="legend">전문분야</Form.Label>
                   <VetSpecialSelector
-                    handleAddSpecial={handleInputChange}
-                    user={user}
-                    setUser={setUser}
+                    value={user.specialization}
+                    onChange={handleInputChange}
                   />
                 </Form.Group>
               )}
