@@ -64,7 +64,7 @@ const UserDashboard = () => {
       )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       <Tabs>
-        <Tab>
+        <Tab eventKey="profile" title={<h3>프로필</h3>}>
           {user && (
             <UserProfile
               user={user}
