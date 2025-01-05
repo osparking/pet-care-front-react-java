@@ -12,8 +12,6 @@ export async function getUserById(userId) {
 export async function deleteUserAccount(userId) {
   try {
     const result = await api.delete(`/users/delete/${userId}`);
-    console.log("result.message : ", result.message);
-    console.log("result.data : ", result.data);
     return result.data;
   } catch (err) {
     throw err;
