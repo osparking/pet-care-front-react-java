@@ -8,7 +8,7 @@ import { deleteUserAccount, getUserById } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 9;
+  const userId = 15;
 
   const {
     successMsg,
@@ -60,8 +60,8 @@ const UserDashboard = () => {
 
   return (
     <Container>
-      {showErrorAlert && (
-        <AlertMessage type={"secondary"} message={successMsg} />
+      {showSuccessAlert && (
+        <AlertMessage type={"success"} message={successMsg} />
       )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       {user && (
