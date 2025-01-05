@@ -74,9 +74,9 @@ const UserDashboard = () => {
             />
           )}
         </Tab>
-        <Tab></Tab>
-        <Tab></Tab>
-        <Tab></Tab>
+        <Tab eventKey="appo_status" title={<h3>예약 종합</h3>}></Tab>
+        <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}></Tab>
+        <Tab eventKey="review" title={<h3>리뷰</h3>}></Tab>
       </Tabs>
     </Container>
   );
