@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Tab, Tabs } from "react-bootstrap";
+import { Card, Container, Tab, Tabs } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
@@ -76,7 +76,13 @@ const UserDashboard = () => {
         </Tab>
         <Tab eventKey="appo_status" title={<h3>예약 종합</h3>}></Tab>
         <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}></Tab>
-        <Tab eventKey="review" title={<h3>리뷰</h3>}></Tab>
+        <Tab eventKey="review" title={<h3>리뷰</h3>}>
+          <Container>
+            <Card>
+              <h4 className="text-center">나의 리뷰</h4>
+            </Card>
+          </Container>
+        </Tab>
       </Tabs>
     </Container>
   );
