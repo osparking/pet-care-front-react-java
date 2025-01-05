@@ -3,6 +3,7 @@ import { Card, Container, Tab, Tabs } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
+import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import UserProfile from "./UserProfile";
 const UserDashboard = () => {
@@ -80,6 +81,15 @@ const UserDashboard = () => {
           <Container>
             <Card>
               <h4 className="text-center">나의 리뷰</h4>
+              <Row>
+                <Col>
+                  {user && user.reviews && user.reviews.length > 0 ? (
+                    user.reviews.map((review) => <Review key={review.id} />)
+                  ) : (
+                    <p>등록된 리뷰가 없습니다.</p>
+                  )}
+                </Col>
+              </Row>
             </Card>
           </Container>
         </Tab>
