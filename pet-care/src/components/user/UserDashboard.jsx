@@ -78,9 +78,10 @@ const UserDashboard = () => {
         <Tab eventKey="appo_status" title={<h3>예약 종합</h3>}></Tab>
         <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}></Tab>
         <Tab eventKey="review" title={<h3>리뷰</h3>}>
-          <Container>
-            <Card>
-              <h4 className="text-center">나의 리뷰</h4>
+          <Container className="d-flex justify-content-center align-items-center">
+            <Card className="mt-5 mb-4 review-card">
+              <h4 className="text-center mb-2">나의 리뷰</h4>
+              <hr />
               <Row>
                 <Col>
                   {user && user.reviews && user.reviews.length > 0 ? (
