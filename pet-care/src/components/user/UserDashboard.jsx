@@ -4,11 +4,11 @@ import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import UserProfile from "../user/UserProfile";
-import { getUserById, deleteUserAccount } from "../user/UserService";
+import { deleteUserAccount, getUserById } from "../user/UserService";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 11;
+  const userId = 9;
 
   const {
     successMsg,
@@ -60,6 +60,9 @@ const UserDashboard = () => {
 
   return (
     <Container>
+      {showErrorAlert && (
+        <AlertMessage type={"secondary"} message={successMsg} />
+      )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       {user && (
         <UserProfile
