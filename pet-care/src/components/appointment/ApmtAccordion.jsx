@@ -5,12 +5,19 @@ const ApmtAccordion = ({ apmts }) => {
   return (
     <Container>
       <Accordion>
-        {apmts.map((apmt) => (
-          <Accordion.Item key={apmt.id}>
-            <Accordion.Header>{apmt.date}</Accordion.Header>
-            <Accordion.Body>{apmt.reason}</Accordion.Body>
-          </Accordion.Item>
-        ))}
+        {apmts.map((apmt, index) => {
+          return (
+            <Accordion.Item key={apmt.id} eventKey={index}>
+              <Accordion.Header>
+                <div>
+                  <div>날짜: {apmt.date}</div>
+                  <div>상태: {apmt.status}</div>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>{apmt.reason}</Accordion.Body>
+            </Accordion.Item>
+          );
+        })}
       </Accordion>
     </Container>
   );
