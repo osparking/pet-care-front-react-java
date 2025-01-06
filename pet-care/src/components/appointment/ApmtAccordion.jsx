@@ -1,7 +1,7 @@
-import { ko } from "date-fns/esm/locale";
+import ko from "date-fns/locale/ko";
 import React from "react";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
-import { DatePicker } from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 
 const ApmtAccordion = ({ apmts }) => {
   return (
