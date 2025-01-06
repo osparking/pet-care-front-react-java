@@ -43,6 +43,14 @@ const ApmtAccordion = ({ apmts }) => {
                     여기 애완 동물 테이블이 표시된다.
                   </Col>
                 </Row>
+                <div>
+                  <Button variant="warning" size="sm">
+                    예약 갱신
+                  </Button>
+                  <Button variant="danger" size="sm" className="ms-2">
+                    예약 취소
+                  </Button>
+                </div>
               </Accordion.Body>
             </Accordion.Item>
           );
