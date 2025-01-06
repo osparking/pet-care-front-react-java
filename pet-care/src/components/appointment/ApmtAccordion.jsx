@@ -6,14 +6,14 @@ import DatePicker, { registerLocale } from "react-datepicker";
 const ApmtAccordion = ({ apmts }) => {
   registerLocale("ko", ko);
   return (
-    <Container>
-      <Accordion>
+    <Container className="p-5">
+      <Accordion className="mt-4 mb-5">
         {apmts.map((apmt, index) => {
           return (
-            <Accordion.Item key={apmt.id} eventKey={index}>
+            <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
               <Accordion.Header>
                 <div>
-                  <div>날짜: {apmt.date}</div>
+                  <div className="mb-3">날짜: {apmt.date}</div>
                   <div>상태: {apmt.status}</div>
                 </div>
               </Accordion.Header>
