@@ -6,10 +6,12 @@ import { deleteUserPhoto } from "../modals/ImageService";
 import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import UserProfile from "./UserProfile";
+import ApmtAccordion from "../appointment/ApmtAccordion";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
   const userId = 1;
+  const [appointments, setAppointments] = useState([]);
 
   const {
     successMsg,
@@ -27,6 +29,7 @@ const UserDashboard = () => {
       try {
         const result = await getUserById(userId);
         setUser(result.data);
+        setAppointments(user.appointments);
       } catch (error) {
         setErrorMsg(error.response.data.message);
         setShowErrorAlert(true);
@@ -76,7 +79,21 @@ const UserDashboard = () => {
           )}
         </Tab>
         <Tab eventKey="appo_status" title={<h3>예약 종합</h3>}></Tab>
-        <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}></Tab>
+        <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}>
+          <Row>
+            <Col>
+              {user && (
+                <React.Fragment>
+                  {appointments && appointments.length > 0 ? (
+                    <ApmtAccordion apmts={appointments} />
+                  ) : (
+                    <p>예약 건 없음</p>
+                  )}
+                </React.Fragment>
+              )}
+            </Col>
+          </Row>
+        </Tab>
         <Tab eventKey="review" title={<h3>리뷰</h3>}>
           <Container className="d-flex justify-content-center align-items-center">
             <Card className="mt-5 mb-4 review-card">
