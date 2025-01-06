@@ -4,6 +4,7 @@ import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 
 const ApmtAccordion = ({ apmts }) => {
+  registerLocale("ko", ko);
   return (
     <Container>
       <Accordion>
@@ -30,7 +31,7 @@ const ApmtAccordion = ({ apmts }) => {
                       timeFormat="HH:mm"
                       timeInterval={30}
                       timeCaption="시간"
-                      dateFormat="yyyy MMMM d, h:mm aa"
+                      dateFormat="yyyy년 MM월 dd일, HH:mm aa"
                       inline
                     />
                     <p>
