@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { BsCheck, BsX } from "react-icons/bs";
 
 const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
   const [editPet, setEditPet] = useState(pet);
@@ -49,6 +51,16 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           value={editPet.age}
           onCancel={handleChange}
         />
+      </td>
+      <td>
+        <Button
+          variant="success"
+          size="sm"
+          onClick={() => onSave(pet.id, editPet)}
+          className="me-2"
+        >
+          <BsCheck />
+        </Button>
       </td>
     </tr>
   );
