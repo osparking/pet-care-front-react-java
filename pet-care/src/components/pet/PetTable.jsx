@@ -29,6 +29,19 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
     setShowDelModal(true);
   };
 
+  const callPetDeleteAPI = async () => {
+    try {
+      const response = await deletePetAPI(petToDel);
+      setShowDelModal(false);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+      onPetUpdate(apmtId);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    }
+  };
+
   return <div>PetTable</div>;
 };
 
