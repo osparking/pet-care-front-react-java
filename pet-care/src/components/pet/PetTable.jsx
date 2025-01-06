@@ -24,6 +24,11 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
     setEditModeId(null);
   };
 
+  const handleDelete = (petId) => {
+    setPetToDel(petId);
+    setShowDelModal(true);
+  };
+
   return <div>PetTable</div>;
 };
 
