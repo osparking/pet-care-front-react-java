@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import ApmtAccordion from "../appointment/ApmtAccordion";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import UserProfile from "./UserProfile";
-import ApmtAccordion from "../appointment/ApmtAccordion";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 1;
+  const userId = 2;
   const [appointments, setAppointments] = useState([]);
 
   const {
@@ -29,7 +29,7 @@ const UserDashboard = () => {
       try {
         const result = await getUserById(userId);
         setUser(result.data);
-        setAppointments(user.appointments);
+        setAppointments(result.data.appointments);
       } catch (error) {
         setErrorMsg(error.response.data.message);
         setShowErrorAlert(true);
