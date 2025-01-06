@@ -14,7 +14,16 @@ const ApmtAccordion = ({ apmts }) => {
                   <div>상태: {apmt.status}</div>
                 </div>
               </Accordion.Header>
-              <Accordion.Body>{apmt.reason}</Accordion.Body>
+              <Accordion.Body>
+                <Row>
+                  <Col>
+                    <p>
+                      예약 번호:{" "}
+                      <span className="text-info">{apmt.appointmentNo}</span>
+                    </p>
+                  </Col>
+                </Row>
+              </Accordion.Body>
             </Accordion.Item>
           );
         })}
