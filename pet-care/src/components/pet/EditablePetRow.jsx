@@ -8,7 +8,18 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
       [e.target.name]: e.target.value,
     }));
   };
-  return <div>EditablePetRow</div>;
+  return (
+    <tr>
+      <td>
+        <Form.Control
+          type="text"
+          name="name"
+          value={editPet.name}
+          onCancel={handleChange}
+        />
+      </td>
+    </tr>
+  );
 };
 
 export default EditablePetRow;
