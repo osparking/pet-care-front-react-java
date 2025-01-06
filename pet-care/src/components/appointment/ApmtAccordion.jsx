@@ -17,7 +17,7 @@ const ApmtAccordion = ({ apmts }) => {
               </Accordion.Header>
               <Accordion.Body>
                 <Row>
-                  <Col>
+                  <Col md={4} className="mt-2">
                     <p>
                       예약 번호:{" "}
                       <span className="text-info">{apmt.appointmentNo}</span>
@@ -37,6 +37,10 @@ const ApmtAccordion = ({ apmts }) => {
                       <span className="text-info">{apmt.time}</span>
                     </p>
                     <p>방문 목적: {apmt.reason}</p>
+                  </Col>
+                  <Col md={8} className="mt-2">
+                    <h4>애완 동물:</h4>
+                    여기 애완 동물 테이블이 표시된다.
                   </Col>
                 </Row>
               </Accordion.Body>
