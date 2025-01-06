@@ -18,6 +18,30 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           onCancel={handleChange}
         />
       </td>
+      <td>
+        <Form.Control
+          type="text"
+          name="type"
+          value={editPet.type}
+          onCancel={handleChange}
+        />
+      </td>
+      <td>
+        <Form.Control
+          type="text"
+          name="breed"
+          value={editPet.breed}
+          onCancel={handleChange}
+        />
+      </td>
+      <td>
+        <Form.Control
+          type="text"
+          name="color"
+          value={editPet.color}
+          onCancel={handleChange}
+        />
+      </td>
     </tr>
   );
 };
