@@ -62,6 +62,11 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           <BsCheck />
         </Button>
       </td>
+      <td colSpan={2}>
+        <Button variant="secondary" size="sm" onClick={onCancel}>
+          <BsX />
+        </Button>
+      </td>
     </tr>
   );
 };
