@@ -1,6 +1,6 @@
+import { ko } from "date-fns/esm/locale";
 import React from "react";
 import { Accordion, Container } from "react-bootstrap";
-import { ko } from "date-fns/esm/locale"
 
 const ApmtAccordion = ({ apmts }) => {
   return (
@@ -32,6 +32,11 @@ const ApmtAccordion = ({ apmts }) => {
                       dateFormat="yyyy MMMM d, h:mm aa"
                       inline
                     />
+                    <p>
+                      시간:
+                      <span className="text-info">{apmt.time}</span>
+                    </p>
+                    <p>방문 목적: {apmt.reason}</p>
                   </Col>
                 </Row>
               </Accordion.Body>
