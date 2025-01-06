@@ -42,6 +42,18 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
     }
   };
 
+  const callPetUpdateAPI = async (petId, updatedPet) => {
+    try {
+      const response = await updatePetAPI(petId, updatedPet);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+      setEditModeId(null);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    }
+  };
+
   return <div>PetTable</div>;
 };
 
