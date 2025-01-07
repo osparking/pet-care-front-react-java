@@ -11,7 +11,7 @@ import UserProfile from "./UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 2;
+  const userId = 3;
   const [appointments, setAppointments] = useState([]);
 
   const {

@@ -70,7 +70,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
         <AlertMessage type={"success"} message={successMsg} />
       )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
-      <Table>
+      <Table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>이름</th>
