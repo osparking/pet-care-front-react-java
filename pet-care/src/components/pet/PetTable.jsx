@@ -1,4 +1,5 @@
 import React from "react";
+import { BsPenFill, BsTrashFill } from "react-icons/bs";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import EditablePetRow from "./EditablePetRow";
@@ -97,7 +98,26 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
                   <td>{pet.breed}</td>
                   <td>{pet.color}</td>
                   <td>{pet.age}</td>
-                  <React.Fragment></React.Fragment>
+                  <React.Fragment>
+                    <td>
+                      <Button
+                        className="btn btn-sm btn-warning"
+                        disabled={!isEditable}
+                        onClick={() => handleEdit(pet.id)}
+                      >
+                        <BsPenFill />
+                      </Button>
+                    </td>
+                    <td>
+                      <Button
+                        className="btn btn-sm btn-danger"
+                        disabled={!isEditable}
+                        onClick={() => handleDelete(pet.id)}
+                      >
+                        <BsTrashFill />
+                      </Button>
+                    </td>
+                  </React.Fragment>
                 </tr>
               )
             )}
