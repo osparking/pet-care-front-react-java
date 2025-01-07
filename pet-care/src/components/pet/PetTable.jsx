@@ -78,7 +78,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
             <th>품종</th>
             <th>색상</th>
             <th>나이</th>
-            <th colSpan={3}>작업</th>
+            {isPatient && <th colSpan={3}>작업</th>}
           </tr>
         </thead>
         <tbody>
@@ -99,26 +99,28 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
                   <td>{pet.breed}</td>
                   <td>{pet.color}</td>
                   <td>{pet.age}</td>
-                  <React.Fragment>
-                    <td>
-                      <Button
-                        className="btn btn-sm btn-warning"
-                        disabled={!isEditable}
-                        onClick={() => handleEdit(pet.id)}
-                      >
-                        <BsPencilFill />
-                      </Button>
-                    </td>
-                    <td>
-                      <Button
-                        className="btn btn-sm btn-danger"
-                        disabled={!isEditable}
-                        onClick={() => handleDelete(pet.id)}
-                      >
-                        <BsTrashFill />
-                      </Button>
-                    </td>
-                  </React.Fragment>
+                  {isPatient && (
+                    <React.Fragment>
+                      <td>
+                        <Button
+                          className="btn btn-sm btn-warning"
+                          disabled={!isEditable}
+                          onClick={() => handleEdit(pet.id)}
+                        >
+                          <BsPencilFill />
+                        </Button>
+                      </td>
+                      <td>
+                        <Button
+                          className="btn btn-sm btn-danger"
+                          disabled={!isEditable}
+                          onClick={() => handleDelete(pet.id)}
+                        >
+                          <BsTrashFill />
+                        </Button>
+                      </td>
+                    </React.Fragment>
+                  )}
                 </tr>
               )
             )}
