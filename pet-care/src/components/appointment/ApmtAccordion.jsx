@@ -10,9 +10,10 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
     // TODO: Update appointment status
   };
   return (
-    <Container className="p-5">
+    <Container className="p-3">
       <Accordion className="mt-4 mb-5">
         {apmts.map((apmt, index) => {
+          const isWaitingForApproval = apmt.status === "승인대기";
           return (
             <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
               <Accordion.Header>
@@ -50,7 +51,7 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
                       pets={apmt.pets}
                       apmtId={apmt.id}
                       onPetUpdate={handlePetsUpdate}
-                      isEditable={""}
+                      isEditable={isWaitingForApproval}
                       isPatient={isPatient}
                     />
                   </Col>
