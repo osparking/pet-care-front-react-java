@@ -63,6 +63,10 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
         handleDelete={handleDelete}
         target="'애완동물'"
       />
+      {showSuccessAlert && (
+        <AlertMessage type={"success"} message={successMsg} />
+      )}
+      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
     </section>
   );
 };
