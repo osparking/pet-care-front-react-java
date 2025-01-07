@@ -91,7 +91,14 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
                   onSave={callPetUpdateAPI}
                 />
               ) : (
-                <tr></tr>
+                <tr key={pet.id}>
+                  <td>{pet.name}</td>
+                  <td>{pet.type}</td>
+                  <td>{pet.breed}</td>
+                  <td>{pet.color}</td>
+                  <td>{pet.age}</td>
+                  <React.Fragment></React.Fragment>
+                </tr>
               )
             )}
         </tbody>
