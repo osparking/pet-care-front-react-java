@@ -22,7 +22,7 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
               <Accordion.Header>
                 <div>
                   <div className="mb-3">날짜: {apmt.date}</div>
-                  <div>상태: {apmt.status}</div>
+                  <div style={{color: statusColor}}>상태: {apmt.status}</div>
                 </div>
               </Accordion.Header>
               <Accordion.Body>
