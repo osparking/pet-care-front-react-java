@@ -67,6 +67,18 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
         <AlertMessage type={"success"} message={successMsg} />
       )}
       {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+      <Table>
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>유형</th>
+            <th>품종</th>
+            <th>색상</th>
+            <th>나이</th>
+            <th colSpan={3}>작업</th>
+          </tr>
+        </thead>
+      </Table>
     </section>
   );
 };
