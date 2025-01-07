@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 
-const DelUserConfirmModal = ({
+const DelTargetConfirmModal = ({
   show,
   onHide,
   handleDelete,
@@ -28,4 +28,4 @@ const DelUserConfirmModal = ({
   );
 };
 
-export default DelUserConfirmModal;
+export default DelTargetConfirmModal;

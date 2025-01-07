@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
-import DelUserConfirmModal from "../modals/DelUserConfirmModal";
+import DelUserConfirmModal from "../modals/DelTargetConfirmModal";
 import ImageUpModal from "../modals/ImageUpModal";
 
 const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {

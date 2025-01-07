@@ -1,6 +1,6 @@
 import React from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
-import DelUserConfirmModal from "../modals/DelUserConfirmModal";
+import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 
 const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
   const [editModeId, setEditModeId] = useState(null);
@@ -57,7 +57,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
 
   return (
     <section>
-      <DelUserConfirmModal
+      <DelTargetConfirmModal
         show={showDelModal}
         onHide={() => setShowDelModal(false)}
         handleDelete={handleDelete}
