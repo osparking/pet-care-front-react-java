@@ -2,9 +2,13 @@ import ko from "date-fns/locale/ko";
 import React from "react";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
+import PetTable from "../pet/PetTable";
 
 const ApmtAccordion = ({ apmts }) => {
   registerLocale("ko", ko);
+  const handlePetsUpdate = (apmtId) => {
+    // TODO: Update appointment status
+  };
   return (
     <Container className="p-5">
       <Accordion className="mt-4 mb-5">
@@ -42,7 +46,12 @@ const ApmtAccordion = ({ apmts }) => {
                   </Col>
                   <Col md={8} className="mt-2">
                     <h4>애완 동물:</h4>
-                    여기 애완 동물 테이블이 표시된다.
+                    <PetTable
+                      pets={apmt.pets}
+                      apmtId={apmt.id}
+                      onPetUpdate={handlePetsUpdate}
+                      isEditable={""}
+                    />
                   </Col>
                 </Row>
                 <div>
