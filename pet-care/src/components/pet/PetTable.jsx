@@ -1,6 +1,7 @@
 import React from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
+import EditablePetRow from "./EditablePetRow";
 
 const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
   const [editModeId, setEditModeId] = useState(null);
@@ -78,6 +79,22 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
             <th colSpan={3}>작업</th>
           </tr>
         </thead>
+        <tbody>
+          {Array.isArray(pets) &&
+            pets.map((pet, index) =>
+              editModeId === pet.id ? (
+                <EditablePetRow
+                  key={index}
+                  index={index}
+                  pet={pet}
+                  onCancel={handleCancel}
+                  onSave={callPetUpdateAPI}
+                />
+              ) : (
+                <tr></tr>
+              )
+            )}
+        </tbody>
       </Table>
     </section>
   );
