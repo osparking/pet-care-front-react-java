@@ -1,5 +1,6 @@
 import React from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import DelUserConfirmModal from "../modals/DelUserConfirmModal";
 
 const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
   const [editModeId, setEditModeId] = useState(null);
@@ -54,7 +55,16 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
     }
   };
 
-  return <div>PetTable</div>;
+  return (
+    <section>
+      <DelUserConfirmModal
+        show={showDelModal}
+        onHide={() => setShowDelModal(false)}
+        handleDelete={handleDelete}
+        target="'애완동물'"
+      />
+    </section>
+  );
 };
 
 export default PetTable;
