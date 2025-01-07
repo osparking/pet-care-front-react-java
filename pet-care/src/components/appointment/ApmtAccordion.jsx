@@ -11,6 +11,15 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
     // TODO: Update appointment status
   };
   const colors = useColorMapping();
+
+  // 수의사:
+  // 작업 1 - 예약 승인
+  // 작업 2 - 예약 거절(reject)
+
+  // 환자/고객: 
+  // 작업 1 - 예약 갱신
+  // 작업 2 - 예약 취소
+
   return (
     <Container className="p-3">
       <Accordion className="mt-4 mb-5">
