@@ -1,5 +1,6 @@
-import React from "react";
-import { BsPenFill, BsTrashFill } from "react-icons/bs";
+import React, { useState } from "react";
+import { Button, Table } from "react-bootstrap";
+import { BsPencilFill, BsTrashFill } from "react-icons/bs";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import EditablePetRow from "./EditablePetRow";
@@ -105,7 +106,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
                         disabled={!isEditable}
                         onClick={() => handleEdit(pet.id)}
                       >
-                        <BsPenFill />
+                        <BsPencilFill />
                       </Button>
                     </td>
                     <td>
