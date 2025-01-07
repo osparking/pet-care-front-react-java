@@ -6,6 +6,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
+import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
@@ -85,7 +86,10 @@ const UserDashboard = () => {
               {user && (
                 <React.Fragment>
                   {appointments && appointments.length > 0 ? (
-                    <ApmtAccordion apmts={appointments} />
+                    <ApmtAccordion
+                      apmts={appointments}
+                      isPatient={user.userType === UserType.PATIENT}
+                    />
                   ) : (
                     <p>예약 건 없음</p>
                   )}

@@ -4,7 +4,7 @@ import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import PetTable from "../pet/PetTable";
 
-const ApmtAccordion = ({ apmts }) => {
+const ApmtAccordion = ({ apmts, isPatient }) => {
   registerLocale("ko", ko);
   const handlePetsUpdate = (apmtId) => {
     // TODO: Update appointment status
@@ -51,6 +51,7 @@ const ApmtAccordion = ({ apmts }) => {
                       apmtId={apmt.id}
                       onPetUpdate={handlePetsUpdate}
                       isEditable={""}
+                      isPatient={isPatient}
                     />
                   </Col>
                 </Row>

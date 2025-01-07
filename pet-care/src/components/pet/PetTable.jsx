@@ -5,7 +5,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import EditablePetRow from "./EditablePetRow";
 
-const PetTable = ({ pets, apmtId, onPetUpdate, isEditable }) => {
+const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
   const [editModeId, setEditModeId] = useState(null);
   const [showDelModal, setShowDelModal] = useState(false);
   const [petToDel, setPetToDel] = useState(null);
