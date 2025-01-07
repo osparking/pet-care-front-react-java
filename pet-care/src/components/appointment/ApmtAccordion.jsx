@@ -3,12 +3,14 @@ import React from "react";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import PetTable from "../pet/PetTable";
+import useColorMapping from "../hooks/ColorMapping";
 
 const ApmtAccordion = ({ apmts, isPatient }) => {
   registerLocale("ko", ko);
   const handlePetsUpdate = (apmtId) => {
     // TODO: Update appointment status
   };
+  const colors = useColorMapping();
   return (
     <Container className="p-3">
       <Accordion className="mt-4 mb-5">

@@ -23,4 +23,4 @@ const useColorMapping = () => {
   return colors;
 };
 
-export default use;
+export default useColorMapping;
