@@ -2,8 +2,8 @@ import ko from "date-fns/locale/ko";
 import React from "react";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
-import PetTable from "../pet/PetTable";
 import useColorMapping from "../hooks/ColorMapping";
+import PetTable from "../pet/PetTable";
 
 const ApmtAccordion = ({ apmts, isPatient }) => {
   registerLocale("ko", ko);
@@ -16,6 +16,7 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
       <Accordion className="mt-4 mb-5">
         {apmts.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
+          const statusColor = colors[apmt.status] || colors["default"];
           return (
             <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
               <Accordion.Header>
