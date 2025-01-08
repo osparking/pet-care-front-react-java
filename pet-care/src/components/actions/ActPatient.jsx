@@ -17,6 +17,21 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
       setIsProcessing(false);
     }
   };
+
+  const handleClose = () => {
+    setShowUpdateModal(false);
+  };
+
+  const handleUpdate = async (apmt) => {
+    setIsProcessing(true);
+    try {
+      await onUpdate(apmt);
+      handleClose();
+    } catch (e) {
+      console.error(error);
+    }
+  };
+
   return (
     <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
       <ActButton
