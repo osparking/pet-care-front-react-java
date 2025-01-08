@@ -87,6 +87,7 @@ const UserDashboard = () => {
                 <React.Fragment>
                   {appointments && appointments.length > 0 ? (
                     <ApmtAccordion
+                      user={user}
                       apmts={appointments}
                       isPatient={user.userType === UserType.PATIENT}
                     />

@@ -6,8 +6,9 @@ import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import useColorMapping from "../hooks/ColorMapping";
 import PetTable from "../pet/PetTable";
+import { UserType } from "../utils/utilities";
 
-const ApmtAccordion = ({ apmts, isPatient }) => {
+const ApmtAccordion = ({ user, apmts, isPatient }) => {
   registerLocale("ko", ko);
   const handlePetsUpdate = (apmtId) => {
     // TODO: Update appointment status
@@ -74,20 +75,24 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
                     />
                   </Col>
                 </Row>
-                <div>
-                  <ActPatient
-                    onUpdate={appointmentBeingUpdated}
-                    onCancel={appointmentBeingCanceled}
-                    disabled={!isWaitingForApproval}
-                  />
-                </div>
-                <div>
-                  <ActVeter
-                    onApprove={appointmentBeingApproved}
-                    onDecline={appointmentBeingDeclined}
-                    disabled={!isWaitingForApproval}
-                  />
-                </div>
+                {user && user.userType === UserType.PATIENT && (
+                  <div>
+                    <ActPatient
+                      onUpdate={appointmentBeingUpdated}
+                      onCancel={appointmentBeingCanceled}
+                      disabled={!isWaitingForApproval}
+                    />
+                  </div>
+                )}
+                {user && user.userType === UserType.VET && (
+                  <div>
+                    <ActVeter
+                      onApprove={appointmentBeingApproved}
+                      onDecline={appointmentBeingDeclined}
+                      disabled={!isWaitingForApproval}
+                    />
+                  </div>
+                )}
               </Accordion.Body>
             </Accordion.Item>
           );
