@@ -53,6 +53,16 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
               required
             />
           </Form.Group>
+          <Form.Group controlId="reason" className="mt-2">
+            <Form.Label>방문 목적</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="(방문 목적 입력)"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+            />
+          </Form.Group>
         </Form>
       </Modal.Body>
     </Modal>
