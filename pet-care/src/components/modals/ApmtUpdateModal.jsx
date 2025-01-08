@@ -8,6 +8,10 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
   const [reason, setReason] = useState(apmt.reason);
 
   const handleSubmit = () => {
+    console.log(
+      "time: ",
+      apmtTime.toTimeString().split(" ")[0].substring(0, 5)
+    );
     const updatedApmt = {
       ...apmt,
       date: apmtDate.toISOString().split("T")[0],
@@ -17,7 +21,14 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
     doUpdate(updatedApmt);
   };
 
-  return <div>ApmtUpdateModal</div>;
+  return (
+    <Modal>
+      <Modal.Header>
+        <Modal.Title>예약 수정</Modal.Title>
+      </Modal.Header>
+      <Modal.Body></Modal.Body>
+    </Modal>
+  );
 };
 
 export default ApmtUpdateModal;
