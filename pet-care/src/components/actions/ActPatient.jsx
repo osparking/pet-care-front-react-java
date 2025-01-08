@@ -24,7 +24,7 @@ const ActPatient = ({ onUpdate, onCancel, disabled }) => {
     }
   };
   return (
-    <div>
+    <section>
       <ActButton
         title={"예약 취소"}
         variant={"danger"}
@@ -32,7 +32,14 @@ const ActPatient = ({ onUpdate, onCancel, disabled }) => {
         disabled={disabled}
         isProcessing={isProcessing}
       />
-    </div>
+      <ActButton
+        title={"예약 갱신"}
+        variant={"primary"}
+        onClick={() => handleClick("update")}
+        disabled={disabled}
+        isProcessing={isProcessing}
+      />
+    </section>
   );
 };
 
