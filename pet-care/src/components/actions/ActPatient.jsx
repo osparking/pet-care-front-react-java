@@ -6,11 +6,15 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const handleClick = (actionType) => {
     setIsProcessing(true);
-    // actionType 에 따라 다르게 처리한다.
-    if (actionType === "update") {
-      setShowUpdateModal(true);
-    } else {
-      onCancel();
+    try {
+      // actionType 에 따라 다르게 처리한다.
+      if (actionType === "update") {
+        setShowUpdateModal(true);
+      } else {
+        onCancel();
+      }
+    } catch (e) {
+      setIsProcessing(false);
     }
   };
   return (
