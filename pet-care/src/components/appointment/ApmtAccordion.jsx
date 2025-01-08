@@ -3,6 +3,7 @@ import React from "react";
 import { Accordion, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
+import ActVeter from "../actions/ActVeter";
 import useColorMapping from "../hooks/ColorMapping";
 import PetTable from "../pet/PetTable";
 
@@ -16,8 +17,8 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
   // 수의사:
   // 작업 1 - 예약 승인
   const appointmentBeingApproved = () => {};
-  // 작업 2 - 예약 거절(reject)
-  const appointmentBeingRejected = () => {};
+  // 작업 2 - 예약 거절(decline)
+  const appointmentBeingDeclined = () => {};
 
   // 환자/고객:
   // 작업 1 - 예약 갱신
@@ -77,6 +78,13 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
                   <ActPatient
                     onUpdate={appointmentBeingUpdated}
                     onCancel={appointmentBeingCanceled}
+                    disabled={!isWaitingForApproval}
+                  />
+                </div>
+                <div>
+                  <ActVeter
+                    onApprove={appointmentBeingApproved}
+                    onDecline={appointmentBeingDeclined}
                     disabled={!isWaitingForApproval}
                   />
                 </div>
