@@ -23,8 +23,8 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
   };
 
   return (
-    <Modal>
-      <Modal.Header>
+    <Modal show={show} onHide={doClose}>
+      <Modal.Header closeButton>
         <Modal.Title>예약 수정</Modal.Title>
       </Modal.Header>
       <Modal.Body>
