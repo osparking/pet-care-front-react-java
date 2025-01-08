@@ -27,7 +27,7 @@ const ActVeter = ({ onApprove, onDecline, disabled }) => {
   };
 
   return (
-    <section>
+    <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
       <ActButton
         title={"예약 승인"}
         variant={"success"}
