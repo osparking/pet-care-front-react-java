@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ActButton from "./ActButton";
 
 const ActPatient = ({ onUpdate, onCancel, disabled }) => {
   const [isProcessing, setIsProcessing] = useState(false);
