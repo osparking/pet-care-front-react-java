@@ -1,7 +1,8 @@
 import ko from "date-fns/locale/ko";
 import React from "react";
-import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
+import { Accordion, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
+import ActPatient from "../actions/ActPatient";
 import useColorMapping from "../hooks/ColorMapping";
 import PetTable from "../pet/PetTable";
 
@@ -18,10 +19,10 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
   // 작업 2 - 예약 거절(reject)
   const appointmentBeingRejected = () => {};
 
-  // 환자/고객: 
-  // 작업 1 - 예약 갱신  
+  // 환자/고객:
+  // 작업 1 - 예약 갱신
   const appointmentBeingUpdated = () => {};
-  // 작업 2 - 예약 취소  
+  // 작업 2 - 예약 취소
   const appointmentBeingCanceled = () => {};
 
   return (
@@ -35,7 +36,7 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
               <Accordion.Header>
                 <div>
                   <div className="mb-3">날짜: {apmt.date}</div>
-                  <div style={{color: statusColor}}>상태: {apmt.status}</div>
+                  <div style={{ color: statusColor }}>상태: {apmt.status}</div>
                 </div>
               </Accordion.Header>
               <Accordion.Body>
@@ -73,12 +74,11 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
                   </Col>
                 </Row>
                 <div>
-                  <Button variant="warning" size="sm">
-                    예약 갱신
-                  </Button>
-                  <Button variant="danger" size="sm" className="ms-2">
-                    예약 취소
-                  </Button>
+                  <ActPatient
+                    onUpdate={appointmentBeingUpdated}
+                    onCancel={appointmentBeingCanceled}
+                    disabled={!isWaitingForApproval}
+                  />
                 </div>
               </Accordion.Body>
             </Accordion.Item>
