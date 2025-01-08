@@ -28,7 +28,20 @@ const ActVeter = ({ onApprove, onDecline, disabled }) => {
 
   return (
     <section>
-      <ActButton />
+      <ActButton
+        title={"예약 승인"}
+        variant={"success"}
+        onClick={() => handleClick("approve")}
+        disabled={disabled}
+        isProcessing={isProcessing}
+      />
+      <ActButton
+        title={"예약 거절"}
+        variant={"danger"}
+        onClick={() => handleClick("decline")}
+        disabled={disabled}
+        isProcessing={isProcessing}
+      />
     </section>
   );
 };
