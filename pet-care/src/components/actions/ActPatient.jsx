@@ -35,7 +35,7 @@ const ActPatient = ({ onUpdate, onCancel, disabled }) => {
       />
       <ActButton
         title={"예약 갱신"}
-        variant={"primary"}
+        variant={"warning"}
         onClick={() => handleClick("update")}
         disabled={disabled}
         isProcessing={isProcessing}

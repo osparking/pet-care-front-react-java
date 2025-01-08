@@ -37,7 +37,7 @@ const ActVeter = ({ onApprove, onDecline, disabled }) => {
       />
       <ActButton
         title={"예약 거절"}
-        variant={"danger"}
+        variant={"warning"}
         onClick={() => handleClick("decline")}
         disabled={disabled}
         isProcessing={isProcessing}
