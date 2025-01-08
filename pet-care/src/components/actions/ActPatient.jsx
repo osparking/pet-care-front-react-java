@@ -1,27 +1,16 @@
 import React, { useState } from "react";
 import ActButton from "./ActButton";
 
-const ActPatient = ({ onUpdate, onCancel, disabled }) => {
+const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
   const [isProcessing, setIsProcessing] = useState(false);
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
   const handleClick = (actionType) => {
     setIsProcessing(true);
     // actionType 에 따라 다르게 처리한다.
     if (actionType === "update") {
-      onUpdate()
-        .then(() => {
-          setIsProcessing(false);
-        })
-        .catch(() => {
-          setIsProcessing(false);
-        });
+      setShowUpdateModal(true);
     } else {
-      onCancel()
-        .then(() => {
-          setIsProcessing(false);
-        })
-        .catch(() => {
-          setIsProcessing(false);
-        });
+      onCancel();
     }
   };
   return (
