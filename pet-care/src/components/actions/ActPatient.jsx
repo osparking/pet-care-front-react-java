@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ApmtUpdateModal from "../modals/ApmtUpdateModal";
 import ActButton from "./ActButton";
 
 const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
@@ -33,22 +34,32 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
   };
 
   return (
-    <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
-      <ActButton
-        title={"예약 취소"}
-        variant={"danger"}
-        onClick={() => handleClick("cancel")}
-        disabled={disabled}
-        isProcessing={isProcessing}
-      />
-      <ActButton
-        title={"예약 갱신"}
-        variant={"warning"}
-        onClick={() => handleClick("update")}
-        disabled={disabled}
-        isProcessing={isProcessing}
-      />
-    </section>
+    <React.Fragment>
+      <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
+        <ActButton
+          title={"예약 취소"}
+          variant={"danger"}
+          onClick={() => handleClick("cancel")}
+          disabled={disabled}
+          isProcessing={isProcessing}
+        />
+        <ActButton
+          title={"예약 갱신"}
+          variant={"warning"}
+          onClick={() => handleClick("update")}
+          disabled={disabled}
+          isProcessing={isProcessing}
+        />
+      </section>
+      {showUpdateModal && (
+        <ApmtUpdateModal
+          show={true}
+          apmt={apmt}
+          doClose={handleClose}
+          doUpdate={handleUpdate}
+        />
+      )}
+    </React.Fragment>
   );
 };
 
