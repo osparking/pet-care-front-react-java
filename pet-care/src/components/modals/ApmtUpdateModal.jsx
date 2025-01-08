@@ -65,6 +65,14 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
           </Form.Group>
         </Form>
       </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={doClose}>
+          닫기
+        </Button>
+        <Button variant="info" onClick={handleSubmit}>
+          자료 저장
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };
