@@ -14,11 +14,15 @@ const ApmtAccordion = ({ apmts, isPatient }) => {
 
   // 수의사:
   // 작업 1 - 예약 승인
+  const appointmentBeingApproved = () => {};
   // 작업 2 - 예약 거절(reject)
+  const appointmentBeingRejected = () => {};
 
   // 환자/고객: 
-  // 작업 1 - 예약 갱신
-  // 작업 2 - 예약 취소
+  // 작업 1 - 예약 갱신  
+  const appointmentBeingUpdated = () => {};
+  // 작업 2 - 예약 취소  
+  const appointmentBeingCanceled = () => {};
 
   return (
     <Container className="p-3">
