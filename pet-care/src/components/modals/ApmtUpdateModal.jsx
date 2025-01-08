@@ -38,6 +38,21 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
               className="form-control"
             />
           </Form.Group>
+          <Form.Group controlId="apmtTime" className="mt-4">
+            <Form.Label className="me-2">진료 시간</Form.Label>
+            <DatePicker
+              selected={apmtTime}
+              onChange={(time) => setApmtTime(time)}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={30}
+              timeCaption="시간"
+              dateFormat="HH:mm"
+              className="form-control"
+              placeholderText="시간 선택"
+              required
+            />
+          </Form.Group>
         </Form>
       </Modal.Body>
     </Modal>
