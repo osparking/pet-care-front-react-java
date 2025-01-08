@@ -23,7 +23,17 @@ const ActPatient = ({ onUpdate, onCancel, disabled }) => {
         });
     }
   };
-  return <div>ActPatient</div>;
+  return (
+    <div>
+      <ActButton
+        title={"예약 취소"}
+        variant={"danger"}
+        onClick={() => handleClick("cancel")}
+        disabled={disabled}
+        isProcessing={isProcessing}
+      />
+    </div>
+  );
 };
 
 export default ActPatient;
