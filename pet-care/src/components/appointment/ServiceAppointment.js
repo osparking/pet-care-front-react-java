@@ -20,3 +20,12 @@ export const updateApmt = async function updateApmt(apmtId, apmt) {
     throw err;
   }
 };
+
+export const cancelApmt = async (apmtId) => {
+  try {
+    const result = await api.put(`/appointments/${apmtId}/cancel`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
