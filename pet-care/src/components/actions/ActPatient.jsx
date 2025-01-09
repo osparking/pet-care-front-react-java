@@ -12,7 +12,7 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
       if (actionType === "update") {
         setShowUpdateModal(true);
       } else {
-        onCancel();
+        onCancel(apmt.id);
       }
     } catch (e) {
       setIsProcessing(false);
