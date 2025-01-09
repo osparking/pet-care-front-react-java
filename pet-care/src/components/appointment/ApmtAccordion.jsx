@@ -36,7 +36,17 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
 
   // 환자/고객:
   // 작업 1 - 예약 갱신
-  const appointmentBeingUpdated = () => {};
+  const appointmentBeingUpdated = async (newApmt) => {
+    try {
+      const result = await updateApmt(newApmt.id, newApmt);
+      setApmts(apmts.map((apmt) => (apmt.id == newApmt.id ? newApmt : apmt)));
+      console.log("갱신 결과 : " + result);
+      setSuccessMsg(result.data.message);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      console.error(e);
+    }
+  };
   // 작업 2 - 예약 취소
   const appointmentBeingCanceled = () => {};
 
