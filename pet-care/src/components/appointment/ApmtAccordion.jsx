@@ -1,5 +1,5 @@
 import ko from "date-fns/locale/ko";
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
