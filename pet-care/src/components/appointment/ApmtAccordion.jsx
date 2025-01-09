@@ -52,6 +52,11 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const appointmentBeingCanceled = async (apmtId) => {
     try {
       const result = await cancelApmt(apmtId);
+      setApmts(
+        apmts.map((apmt) =>
+          apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
+        )
+      );
       setSuccessMsg(result.message);
       setShowSuccessAlert(true);
     } catch (e) {
