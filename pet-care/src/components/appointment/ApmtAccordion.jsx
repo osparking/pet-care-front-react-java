@@ -9,8 +9,9 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
 
-const ApmtAccordion = ({ user, apmts, isPatient }) => {
+const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
+  const [apmts, setApmts] = useState(oldApmts);
   const handlePetsUpdate = (apmtId) => {
     // TODO: Update appointment status
   };
