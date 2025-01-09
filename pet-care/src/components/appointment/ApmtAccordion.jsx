@@ -52,9 +52,8 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const appointmentBeingCanceled = async (apmtId) => {
     try {
       const result = await cancelApmt(apmtId);
-      setSuccessMsg(result.data.message);
+      setSuccessMsg(result.message);
       setShowSuccessAlert(true);
-      console.log("취소 결과: ", result.data.message);
     } catch (e) {
       console.error(e);
       setErrorMsg(e.message);
