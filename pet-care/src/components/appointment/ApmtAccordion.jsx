@@ -63,10 +63,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
 
   return (
     <Container className="p-3">
-      {showSuccessAlert && (
-        <AlertMessage type={"success"} message={successMsg} />
-      )}
-      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       <Accordion className="mt-4 mb-5">
         {apmts.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
@@ -113,6 +109,12 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     />
                   </Col>
                 </Row>
+                {showSuccessAlert && (
+                  <AlertMessage type={"success"} message={successMsg} />
+                )}
+                {showErrorAlert && (
+                  <AlertMessage type={"danger"} message={errorMsg} />
+                )}
                 {user && user.userType === UserType.PATIENT && (
                   <div>
                     <ActPatient
