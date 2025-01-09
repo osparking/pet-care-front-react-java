@@ -15,8 +15,9 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
         onCancel(apmt.id);
       }
     } catch (e) {
-      setIsProcessing(false);
+      console.error(error);
     }
+    setIsProcessing(false);
   };
 
   const handleClose = () => {
