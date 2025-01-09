@@ -32,9 +32,38 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
 
   // 수의사:
   // 작업 1 - 예약 승인
-  const appointmentBeingApproved = () => {};
+  const appointmentBeingApproved = async (apmtId) => {
+    try {
+      const result = await approveApmt(apmtId);
+      setApmts(
+        apmts.map((apmt) =>
+          apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
+        )
+      );
+      setSuccessMsg(result.message);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      console.error(e);
+      setErrorMsg(e.message);
+      setShowErrorAlert(true);
+    }
+  };  
   // 작업 2 - 예약 거절(decline)
-  const appointmentBeingDeclined = () => {};
+  const appointmentBeingDeclined = async (apmtId) => {
+    try {
+      const result = await declineApmt(apmtId);
+      setApmts(
+        apmts.map((apmt) =>
+          apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
+        )
+      );
+      setSuccessMsg(result.message);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      console.error(e);
+      setErrorMsg(e.message);
+      setShowErrorAlert(true);
+    }
 
   // 환자/고객:
   // 작업 1 - 예약 갱신
