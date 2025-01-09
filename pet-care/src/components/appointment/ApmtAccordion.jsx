@@ -49,7 +49,17 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     }
   };
   // 작업 2 - 예약 취소
-  const appointmentBeingCanceled = () => {};
+  const appointmentBeingCanceled = async (apmtId) => {
+    try {
+      const result = await cancelApmt(apmtId);
+      setSuccessMsg(result.data.message);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      console.error(e);
+      setErrorMsg(e.message);
+      setShowErrorAlert(true);
+    }
+  };
 
   return (
     <Container className="p-3">
