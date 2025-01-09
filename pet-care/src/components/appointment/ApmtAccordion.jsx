@@ -4,6 +4,7 @@ import { Accordion, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
+import AlertMessage from "../common/AlertMessage";
 import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
@@ -41,7 +42,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     try {
       const result = await updateApmt(newApmt.id, newApmt);
       setApmts(apmts.map((apmt) => (apmt.id == newApmt.id ? newApmt : apmt)));
-      console.log("갱신 결과 : " + result);
       setSuccessMsg(result.data.message);
       setShowSuccessAlert(true);
     } catch (e) {
@@ -53,6 +53,10 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
 
   return (
     <Container className="p-3">
+      {showSuccessAlert && (
+        <AlertMessage type={"success"} message={successMsg} />
+      )}
+      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       <Accordion className="mt-4 mb-5">
         {apmts.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
