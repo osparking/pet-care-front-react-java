@@ -9,7 +9,7 @@ import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
-import { updateApmt, cancelApmt } from "./ServiceAppointment";
+import { cancelApmt, updateApmt } from "./ServiceAppointment";
 
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
@@ -54,6 +54,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       const result = await cancelApmt(apmtId);
       setSuccessMsg(result.data.message);
       setShowSuccessAlert(true);
+      console.log("취소 결과: ", result.data.message);
     } catch (e) {
       console.error(e);
       setErrorMsg(e.message);
