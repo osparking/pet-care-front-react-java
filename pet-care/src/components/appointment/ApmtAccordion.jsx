@@ -5,6 +5,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import useColorMapping from "../hooks/ColorMapping";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
 
@@ -14,6 +15,17 @@ const ApmtAccordion = ({ user, apmts, isPatient }) => {
     // TODO: Update appointment status
   };
   const colors = useColorMapping();
+
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
 
   // 수의사:
   // 작업 1 - 예약 승인
