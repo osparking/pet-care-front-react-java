@@ -8,6 +8,7 @@ import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
+import { updateApmt } from "./ServiceAppointment";
 
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
