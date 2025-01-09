@@ -31,6 +31,7 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
     } catch (e) {
       console.error(error);
     }
+    setIsProcessing(false);
   };
 
   return (
