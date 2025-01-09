@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import ActButton from "./ActButton";
 
-const ActVeter = ({ onApprove, onDecline, disabled }) => {
+const ActVeter = ({ onApprove, onDecline, disabled, apmt }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const handleClick = (actionType) => {
     setIsProcessing(true);
     // actionType 에 따라 다르게 처리한다.
     if (actionType === "approve") {
-      onApprove()
+      onApprove(apmt.id)
         .then(() => {
           setIsProcessing(false);
         })
@@ -16,7 +16,7 @@ const ActVeter = ({ onApprove, onDecline, disabled }) => {
           setIsProcessing(false);
         });
     } else {
-      onDecline()
+      onDecline(apmt.id)
         .then(() => {
           setIsProcessing(false);
         })
