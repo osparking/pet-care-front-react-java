@@ -54,7 +54,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       const result = await declineApmt(apmtId);
       setApmts(
         apmts.map((apmt) =>
-          apmt.id == apmtId ? { ...apmt, status: "거부됨" } : apmt
+          apmt.id == apmtId ? { ...apmt, status: "거절됨" } : apmt
         )
       );
       setSuccessMsg(result.message);
