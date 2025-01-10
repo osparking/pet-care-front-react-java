@@ -8,7 +8,7 @@ const UserInfo = ({ userType, apmt }) => {
         <React.Fragment>
           <p>예약 번호: {apmt.appointmentNo}</p>
           <p>
-            이름: `${apmt.patient.lastName} ${apmt.patient.firstName}`
+            이름: {apmt.patient.lastName}{apmt.patient.firstName}
           </p>
           <p>메일: {apmt.patient.email}</p>
           <p>전화: {apmt.patient.mobile}</p>
