@@ -25,7 +25,7 @@ const ActVeter = ({ onApprove, onDecline, disabled, apmt }) => {
         });
     }
   };
-
+  
   return (
     <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
       <ActButton

@@ -29,3 +29,21 @@ export const cancelApmt = async (apmtId) => {
     throw err;
   }
 };
+
+export const approveApmt = async (apmtId) => {
+  try {
+    const result = await api.put(`/appointments/${apmtId}/approve`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const declineApmt = async (apmtId) => {
+  try {
+    const result = await api.put(`/appointments/${apmtId}/decline`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
