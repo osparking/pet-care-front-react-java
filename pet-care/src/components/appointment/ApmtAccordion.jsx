@@ -5,6 +5,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import AlertMessage from "../common/AlertMessage";
+import UserInfo from "../common/UserInfo";
 import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
@@ -107,6 +108,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
         {apmts.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
           const statusColor = colors[apmt.status] || colors["default"];
+          const isApproved = apmt.status === "승인됨";
           return (
             <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
               <Accordion.Header>
@@ -148,6 +150,9 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       isPatient={isPatient}
                     />
                   </Col>
+                  {isApproved && (
+                    <UserInfo userType={user.userType} apmt={apmt} />
+                  )}
                 </Row>
                 {showSuccessAlert && (
                   <AlertMessage type={"success"} message={successMsg} />
