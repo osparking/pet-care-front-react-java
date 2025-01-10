@@ -171,6 +171,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       onApprove={appointmentBeingApproved}
                       onDecline={appointmentBeingDeclined}
                       disabled={!isWaitingForApproval}
+                      apmt={apmt}
                     />
                   </div>
                 )}
