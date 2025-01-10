@@ -9,7 +9,12 @@ import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
-import { cancelApmt, updateApmt, approveApmt, declineApmt } from "./ServiceAppointment";
+import {
+  approveApmt,
+  cancelApmt,
+  declineApmt,
+  updateApmt,
+} from "./ServiceAppointment";
 
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
@@ -47,7 +52,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       setErrorMsg(e.message);
       setShowErrorAlert(true);
     }
-  };  
+  };
   // 작업 2 - 예약 거절(decline)
   const appointmentBeingDeclined = async (apmtId) => {
     try {
@@ -64,6 +69,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       setErrorMsg(e.message);
       setShowErrorAlert(true);
     }
+  };
 
   // 환자/고객:
   // 작업 1 - 예약 갱신
