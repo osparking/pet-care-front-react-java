@@ -4,6 +4,18 @@ const UserInfo = ({ userType, apmt }) => {
   return (
     <div className="mt-2 mb-2" style={{ backgroundColor: "whitesmoke" }}>
       <h5>{userType === "VET" ? "팻 주인" : "수의사"} 인적 사항</h5>
+      {userType === "VET" ? (
+        <React.Fragment>
+          <p>예약 번호: {apmt.appointmentNo}</p>
+          <p>
+            이름: `${apmt.patient.lastName} ${apmt.patient.firstName}`
+          </p>
+          <p>메일: {apmt.patient.email}</p>
+          <p>전화: {apmt.patient.mobile}</p>
+        </React.Fragment>
+      ) : (
+        <React.Fragment></React.Fragment>
+      )}
     </div>
   );
 };
