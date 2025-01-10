@@ -9,7 +9,7 @@ import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
-import { cancelApmt, updateApmt } from "./ServiceAppointment";
+import { cancelApmt, updateApmt, approveApmt, declineApmt } from "./ServiceAppointment";
 
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
@@ -37,7 +37,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       const result = await approveApmt(apmtId);
       setApmts(
         apmts.map((apmt) =>
-          apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
+          apmt.id == apmtId ? { ...apmt, status: "승인됨" } : apmt
         )
       );
       setSuccessMsg(result.message);
@@ -54,7 +54,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       const result = await declineApmt(apmtId);
       setApmts(
         apmts.map((apmt) =>
-          apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
+          apmt.id == apmtId ? { ...apmt, status: "거부됨" } : apmt
         )
       );
       setSuccessMsg(result.message);
