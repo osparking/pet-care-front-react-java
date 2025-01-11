@@ -1,0 +1,10 @@
+/* Classes for user account active status text decoration */
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: orange;
+  font-weight: bold;
+}
