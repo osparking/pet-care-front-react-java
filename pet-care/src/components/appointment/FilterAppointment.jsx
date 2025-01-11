@@ -26,6 +26,13 @@ const FilterAppointment = ({
                     </option>
                   ))}
                 </Form.Select>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={onClearFilter}
+                >
+                  조건 초기화
+                </Button>
               </InputGroup>
             </Form.Group>
           </Form>
