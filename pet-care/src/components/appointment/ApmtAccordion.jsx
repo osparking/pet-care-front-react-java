@@ -114,6 +114,8 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setSelectedStat("all");
   };
 
+  const statuses = Array.from(new Set(apmts.map((apmt) => apmt.status)));
+
   return (
     <Container className="p-3">
       <Accordion className="mt-4 mb-5">
