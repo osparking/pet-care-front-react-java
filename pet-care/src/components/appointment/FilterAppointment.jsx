@@ -15,7 +15,11 @@ const FilterAppointment = ({
             <Form.Group>
               <Form.Label>상태별 예약 검색</Form.Label>
               <InputGroup>
-                <Form.Control></Form.Control>
+                <Form.Select
+                  value={selectedStat}
+                  onChange={(e) => onSelectStat(e.target.value)}
+                >
+                </Form.Select>
               </InputGroup>
             </Form.Group>
           </Form>
