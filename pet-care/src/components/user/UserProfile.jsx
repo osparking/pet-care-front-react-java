@@ -5,6 +5,7 @@ import ImageUser from "../common/ImageUser";
 import ChangePasswordModal from "../modals/ChangePasswordModal";
 import DelUserConfirmModal from "../modals/DelTargetConfirmModal";
 import ImageUpModal from "../modals/ImageUpModal";
+import style from "./UserProfile.module.css";
 
 const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
   const [showImageUpModal, setShowImageUpModal] = useState(false);
@@ -140,7 +141,9 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
               <Card.Body className="d-flex align-items-center">
                 <Col md={4}>계정 상태 :</Col>
                 <Col md={4}>
-                  <Card.Text className={user.enabled ? "active" : "inactive"}>
+                  <Card.Text
+                    className={user.enabled ? style.active : style.inactive}
+                  >
                     {user.enabled ? "활성" : "비활성"}
                   </Card.Text>
                 </Col>
