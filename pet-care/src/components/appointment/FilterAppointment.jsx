@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 const FilterAppointment = ({
   statuses = [],
@@ -6,7 +7,15 @@ const FilterAppointment = ({
   onSelectStat,
   onClearFilter,
 }) => {
-  return <div>FilterAppointment</div>;
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Form></Form>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default FilterAppointment;
