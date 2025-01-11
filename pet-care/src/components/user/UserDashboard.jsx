@@ -67,6 +67,11 @@ const UserDashboard = () => {
     }
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    localStorage.setItem("activeTab", tab);
+  };
+
   return (
     <Container>
       {showSuccessAlert && (
