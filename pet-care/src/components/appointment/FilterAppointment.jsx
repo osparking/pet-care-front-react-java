@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 
 const FilterAppointment = ({
   statuses = [],
@@ -11,7 +11,14 @@ const FilterAppointment = ({
     <Container>
       <Row>
         <Col>
-          <Form></Form>
+          <Form>
+            <Form.Group>
+              <Form.Label>상태별 예약 검색</Form.Label>
+              <InputGroup>
+                <Form.Control></Form.Control>
+              </InputGroup>
+            </Form.Group>
+          </Form>
         </Col>
       </Row>
     </Container>
