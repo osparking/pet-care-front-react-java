@@ -5,6 +5,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import AlertMessage from "../common/AlertMessage";
+import Paginator from "../common/Paginator";
 import UserInfo from "../common/UserInfo";
 import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
@@ -226,6 +227,12 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
           );
         })}
       </Accordion>
+      <Paginator
+        pageSize={pageSize}
+        totalItems={filteredApmts.length}
+        currPage={currPage}
+        setCurrPage={setCurrPage}
+      ></Paginator>
     </Container>
   );
 };
