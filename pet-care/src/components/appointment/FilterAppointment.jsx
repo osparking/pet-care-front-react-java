@@ -19,6 +19,12 @@ const FilterAppointment = ({
                   value={selectedStat}
                   onChange={(e) => onSelectStat(e.target.value)}
                 >
+                  <option value="all">- 전체 -</option>
+                  {statuses.map((status, idx) => (
+                    <option value={status} key={idx}>
+                      {status}
+                    </option>
+                  ))}
                 </Form.Select>
               </InputGroup>
             </Form.Group>
