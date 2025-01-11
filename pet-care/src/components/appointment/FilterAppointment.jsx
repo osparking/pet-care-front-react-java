@@ -8,9 +8,9 @@ const FilterAppointment = ({
   onClearFilter,
 }) => {
   return (
-    <Container>
+    <Container className="mt-3">
       <Row>
-        <Col>
+        <Col xs={12} md={6}>
           <Form>
             <Form.Group>
               <Form.Label>상태별 예약 검색</Form.Label>
