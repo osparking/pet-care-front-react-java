@@ -41,6 +41,9 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
+  const [currPage, setCurrPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(2);
+
   // 수의사:
   // 작업 1 - 예약 승인
   const appointmentBeingApproved = async (apmtId) => {
