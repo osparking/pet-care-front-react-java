@@ -130,6 +130,12 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setFilteredApmts(filteredOnes);
   }, [selectedStat, apmts]);
 
+  /* 페이지 링크 관련 변수 */
+  const indexLastAppoint = pageSize * currPage;
+  const indexFirstAppoint = indexLastAppoint - pageSize;
+  const currFltdApps =
+    filteredApmts.slice(indexFirstAppoint, indexLastAppoint) || [];
+
   return (
     <Container className="p-3">
       <FilterAppointment
@@ -139,7 +145,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
         onClearFilter={onClearFilter}
       />
       <Accordion className="mt-4 mb-5">
-        {filteredApmts.map((apmt, index) => {
+        {currFltdApps.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
           const statusColor = colors[apmt.status] || colors["default"];
           const isApproved = apmt.status === "승인됨";
