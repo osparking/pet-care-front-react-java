@@ -1,5 +1,5 @@
 import ko from "date-fns/locale/ko";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ActPatient from "../actions/ActPatient";
@@ -115,6 +115,16 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   };
 
   const statuses = Array.from(new Set(apmts.map((apmt) => apmt.status)));
+
+  useEffect(() => {
+    let filteredOnes = apmts;
+    if (selectedStat && selectedStat !== "all") {
+      filteredOnes = filteredOnes.filter(
+        (apmt) => apmt.status === selectedStat
+      );
+    }
+    setFilteredApmts(filteredOnes);
+  }, [selectedStat, apmts]);
 
   return (
     <Container className="p-3">
