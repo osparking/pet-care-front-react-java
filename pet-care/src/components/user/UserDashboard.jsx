@@ -13,6 +13,10 @@ const UserDashboard = () => {
   // const { userId } = useParams();
   const userId = 3;
   const [appointments, setAppointments] = useState([]);
+  const [activeTab, setActiveTab] = useState(() => {
+    const savedActiveTab = localStorage.getItem("activeTab");
+    return savedActiveTab || "profile";
+  });
 
   const {
     successMsg,
