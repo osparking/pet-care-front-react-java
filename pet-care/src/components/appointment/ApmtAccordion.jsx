@@ -131,6 +131,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   }, [selectedStat, apmts]);
 
   /* 페이지 링크 관련 변수 */
+  const [pageSize] = useState(2);
   const indexLastAppoint = pageSize * currPage;
   const indexFirstAppoint = indexLastAppoint - pageSize;
   const currFltdApps =
