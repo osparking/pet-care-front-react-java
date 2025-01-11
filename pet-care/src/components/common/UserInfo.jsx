@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserInfo = ({ userType, apmt }) => {
   return (
@@ -8,7 +9,8 @@ const UserInfo = ({ userType, apmt }) => {
         <React.Fragment>
           <p className="text-info">예약 번호: {apmt.appointmentNo}</p>
           <p>
-            이름: {apmt.patient.lastName}{apmt.patient.firstName}
+            이름: {apmt.patient.lastName}
+            {apmt.patient.firstName}
           </p>
           <p>메일: {apmt.patient.email}</p>
           <p className="text-primary">전화: {apmt.patient.mobile}</p>
@@ -24,6 +26,9 @@ const UserInfo = ({ userType, apmt }) => {
           </p>
           <p>메일: {apmt.veterinarian.email}</p>
           <p className="text-primary">전화: {apmt.veterinarian.mobile}</p>
+          <Link to={`/appointments/create/${apmt.veterinarian.id}`}>
+            예약하기
+          </Link>
         </React.Fragment>
       )}
     </div>
