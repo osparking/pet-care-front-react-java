@@ -20,6 +20,10 @@ import {
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
   const [apmts, setApmts] = useState(oldApmts);
+
+  const [selectedStat, setSelectedStat] = useState("");
+  const [filteredApmts, setFilteredApmts] = useState([]);
+
   const handlePetsUpdate = (apmtId) => {
     // TODO: Update appointment status
   };
