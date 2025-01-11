@@ -10,6 +10,7 @@ import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
+import FilterAppointment from "./FilterAppointment";
 import {
   approveApmt,
   cancelApmt,
@@ -128,8 +129,14 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
 
   return (
     <Container className="p-3">
+      <FilterAppointment
+        statuses={statuses}
+        selectedStat={selectedStat}
+        onSelectStat={onSelectStat}
+        onClearFilter={onClearFilter}
+      />
       <Accordion className="mt-4 mb-5">
-        {apmts.map((apmt, index) => {
+        {filteredApmts.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
           const statusColor = colors[apmt.status] || colors["default"];
           const isApproved = apmt.status === "승인됨";
