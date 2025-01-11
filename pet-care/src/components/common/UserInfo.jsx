@@ -26,7 +26,10 @@ const UserInfo = ({ userType, apmt }) => {
           </p>
           <p>메일: {apmt.veterinarian.email}</p>
           <p className="text-primary">전화: {apmt.veterinarian.mobile}</p>
-          <Link to={`/appointments/create/${apmt.veterinarian.id}`}>
+          <Link
+            className="text-warning"
+            to={`/appointments/create/${apmt.veterinarian.id}`}
+          >
             예약하기
           </Link>
         </React.Fragment>
