@@ -110,6 +110,10 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setSelectedStat(status);
   };
 
+  const onClearFilter = () => {
+    setSelectedStat("all");
+  };
+
   return (
     <Container className="p-3">
       <Accordion className="mt-4 mb-5">
