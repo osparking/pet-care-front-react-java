@@ -41,7 +41,7 @@ const UserDashboard = () => {
       }
     };
     getUser();
-  }, [userId]);
+  }, []);
 
   const handleRemovePhoto = async () => {
     console.log("삭제할 포토 소유 유저 ID: ", userId);
