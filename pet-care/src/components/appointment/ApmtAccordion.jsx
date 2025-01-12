@@ -26,9 +26,16 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const [selectedStat, setSelectedStat] = useState("");
   const [filteredApmts, setFilteredApmts] = useState([]);
 
-  const handlePetsUpdate = (apmtId) => {
-    // TODO: Update appointment status
+  const handlePetsUpdate = async (apmtId) => {
+    try {
+      await fetchApmt(apmtId);
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(err.message);
+      setShowErrorAlert(true);
+    }
   };
+
   const colors = useColorMapping();
 
   const {
@@ -132,7 +139,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   }, [selectedStat, apmts]);
 
   /* 페이지 링크 관련 변수 */
-  const [pageSize] = useState(2);
+  const [pageSize] = useState(4);
   const indexLastAppoint = pageSize * currPage;
   const indexFirstAppoint = indexLastAppoint - pageSize;
   const currFltdApps =
