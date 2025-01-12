@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { BsPencilFill, BsTrashFill } from "react-icons/bs";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import EditablePetRow from "./EditablePetRow";
@@ -19,7 +20,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
     setShowSuccessAlert,
     showErrorAlert,
     setShowErrorAlert,
-  } = UseMsgAlerts;
+  } = UseMsgAlerts();
 
   const handleEdit = (petId) => {
     setEditModeId(petId);
