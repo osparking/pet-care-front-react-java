@@ -37,9 +37,9 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
     try {
       const response = await deletePetAPI(petToDel);
       setShowDelModal(false);
+      onPetUpdate(apmtId);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
-      onPetUpdate(apmtId);
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
@@ -49,6 +49,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
   const callPetUpdateAPI = async (petId, updatedPet) => {
     try {
       const response = await updatePetAPI(petId, updatedPet);
+      onPetUpdate(apmtId);
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
       setEditModeId(null);
