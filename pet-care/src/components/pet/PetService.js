@@ -31,3 +31,12 @@ export async function getPetBreeds(type = "") {
     throw error;
   }
 }
+
+export async function updatePetAPI(petId, updatedPet) {
+  try {
+    const result = await api.put(`/pets/${petId}/update`, updatedPet);
+    return result.data;
+  } catch (error) {
+    throw error;
+  }
+}
