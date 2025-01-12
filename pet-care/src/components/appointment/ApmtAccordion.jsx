@@ -49,9 +49,9 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     }
   };
 
-  useEffect(() => {
-    fetchApmt();
-  }, []);
+  // useEffect(() => {
+  //   fetchApmt();
+  // }, []);
 
   const colors = useColorMapping();
 
