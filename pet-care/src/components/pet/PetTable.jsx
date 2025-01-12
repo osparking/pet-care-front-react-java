@@ -4,7 +4,7 @@ import { BsPencilFill, BsTrashFill } from "react-icons/bs";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import EditablePetRow from "./EditablePetRow";
-import { updatePetAPI } from "./PetService";
+import { deletePetAPI, updatePetAPI } from "./PetService";
 
 const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
   const [editModeId, setEditModeId] = useState(null);

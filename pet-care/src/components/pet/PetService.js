@@ -40,3 +40,12 @@ export async function updatePetAPI(petId, updatedPet) {
     throw error;
   }
 }
+
+export async function deletePetAPI(petId, updatedPet) {
+  try {
+    const result = await api.delete(`/pets/${petId}/delete`);
+    return result.data;
+  } catch (error) {
+    throw error;
+  }
+}
