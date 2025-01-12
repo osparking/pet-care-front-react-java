@@ -16,6 +16,7 @@ import {
   approveApmt,
   cancelApmt,
   declineApmt,
+  getApmtById,
   updateApmt,
 } from "./ServiceAppointment";
 
