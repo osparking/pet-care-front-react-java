@@ -64,7 +64,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
       <DelTargetConfirmModal
         show={showDelModal}
         onHide={() => setShowDelModal(false)}
-        handleDelete={handleDelete}
+        handleDelete={callPetDeleteAPI}
         target="'애완동물'"
       />
       {showSuccessAlert && (
