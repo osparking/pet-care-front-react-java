@@ -36,6 +36,18 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     }
   };
 
+  const fetchApmt = async (apmtId) => {
+    try {
+      const response = await getApmtById(apmtId);
+      const newApmt = response.data;
+      setApmts(apmts.map((apmt) => (apmt.id === newApmt.id ? newApmt : apmt)));
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(err.message);
+      setShowErrorAlert(true);
+    }
+  };
+
   const colors = useColorMapping();
 
   const {
