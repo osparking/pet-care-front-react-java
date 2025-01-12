@@ -48,11 +48,15 @@ export const declineApmt = async (apmtId) => {
   }
 };
 
-export const getApmtById = async function(apmtId) {
+export const getApmtById = async function (apmtId) {
   try {
-    const result = await api.get(`/appointments/${apmtId}/get_id`);
+    const result = await api.get(`/appointments/${apmtId}/get_id`, {
+      validateStatus: function (status) {
+        return status === 302;
+      },
+    });
     return result.data;
   } catch (err) {
     throw err;
   }
-}
+};
