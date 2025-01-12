@@ -17,7 +17,7 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           type="text"
           name="name"
           value={editPet.name}
-          onCancel={handleChange}
+          onChange={handleChange}
         />
       </td>
       <td>
@@ -25,7 +25,7 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           type="text"
           name="type"
           value={editPet.type}
-          onCancel={handleChange}
+          onChange={handleChange}
         />
       </td>
       <td>
@@ -33,7 +33,7 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           type="text"
           name="breed"
           value={editPet.breed}
-          onCancel={handleChange}
+          onChange={handleChange}
         />
       </td>
       <td>
@@ -41,7 +41,7 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           type="text"
           name="color"
           value={editPet.color}
-          onCancel={handleChange}
+          onChange={handleChange}
         />
       </td>
       <td>
@@ -49,7 +49,7 @@ const EditablePetRow = ({ pet, index, onSave, onCancel }) => {
           type="number"
           name="age"
           value={editPet.age}
-          onCancel={handleChange}
+          onChange={handleChange}
         />
       </td>
       <td>
