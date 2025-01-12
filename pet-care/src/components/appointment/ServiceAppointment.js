@@ -47,3 +47,12 @@ export const declineApmt = async (apmtId) => {
     throw err;
   }
 };
+
+export const getApmtById = async function(apmtId) {
+  try {
+    const result = await api.get(`/appointments/${apmtId}/get_id`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
