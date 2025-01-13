@@ -9,13 +9,13 @@ import {
 } from "recharts";
 import useColorMapping from "../hooks/ColorMapping";
 
-const CustomPie = (
+const CustomPie = ({
   data,
   dataKey = "value",
   nameKey = "name",
   width = "80%",
-  height = 400
-) => {
+  height = 400,
+}) => {
   const colors = useColorMapping();
 
   return (
