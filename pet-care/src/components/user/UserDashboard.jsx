@@ -97,7 +97,7 @@ const UserDashboard = () => {
         <Tab eventKey="appo_status" title={<h3>예약 통계</h3>}>
           <Row>
             <Col>
-              <CustomPie data={apmts} />
+              <CustomPie data={appointments} />
             </Col>
           </Row>
         </Tab>
