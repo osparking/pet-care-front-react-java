@@ -148,7 +148,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   useEffect(() => {
     let filteredOnes = apmts;
     if (selectedStat && selectedStat !== "all") {
-      filteredOnes = filteredOnes.filter((apmt) => {
+      filteredOnes = apmts.filter((apmt) => {
         console.log("selected 스태터스: ", selectedStat, ", apmt.status, ", apmt.status);
         return apmt.status === selectedStat;
       });
