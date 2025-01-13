@@ -45,6 +45,12 @@ const UserDashboard = () => {
     getUser();
   }, []);
 
+  const frequencies = (arr) =>
+    arr.reduce((a, v) => {
+      a[v] = (a[v] ?? 0) + 1;
+      return a;
+    }, {});
+
   useEffect(() => {
     if (user && user.appointments) {
       const statusCounts = user.appointments.reduce((acc, appointment) => {
