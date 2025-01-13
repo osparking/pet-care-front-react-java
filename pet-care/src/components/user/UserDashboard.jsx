@@ -53,22 +53,14 @@ const UserDashboard = () => {
 
   useEffect(() => {
     if (user && user.appointments) {
-      const statusCounts = user.appointments.reduce((acc, appointment) => {
-        const appoStatus = appointment.status;
-        if (!acc[appoStatus]) {
-          acc[appoStatus] = {
-            name: appoStatus,
-            value: 1,
-          };
-        } else {
-          acc[appoStatus].value += 1;
-        }
-        return acc;
-      }, {});
-      const statusCountArr = Object.values(statusCounts);
+      const result = frequencies(appointments.map((appo) => appo.status));
+      const statusCountArr = Object.entries(result).map(([status, count]) => ({
+        name: status,
+        value: count,
+      }));
       setAppoChartData(statusCountArr);
       setAppointments(user.appointments);
-      console.log("예약 통계 차트 자료: ", statusCountArr);
+      console.log("예약 차트 자료: ", statusCountArr);
     }
   }, [user]);
 
