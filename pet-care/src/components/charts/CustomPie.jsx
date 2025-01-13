@@ -17,7 +17,7 @@ const CustomPie = ({
   height = 400,
 }) => {
   const colors = useColorMapping();
-
+  {console.log("user data: ", data)}
   return (
     <section>
       <h4 className="text-center mt-2">예약 통계/차트</h4>
