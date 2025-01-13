@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import ApmtAccordion from "../appointment/ApmtAccordion";
+import CustomPie from "../charts/CustomPie";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
@@ -93,7 +94,13 @@ const UserDashboard = () => {
             />
           )}
         </Tab>
-        <Tab eventKey="appo_status" title={<h3>예약 종합</h3>}></Tab>
+        <Tab eventKey="appo_status" title={<h3>예약 통계</h3>}>
+          <Row>
+            <Col>
+              <CustomPie data={apmts} />
+            </Col>
+          </Row>
+        </Tab>
         <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}>
           <Row>
             <Col>
