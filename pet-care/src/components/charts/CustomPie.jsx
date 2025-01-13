@@ -1,8 +1,13 @@
 import React from "react";
-import useColorMapping from "../hooks/ColorMapping";
 import {
-    PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer,
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
 } from "recharts";
+import useColorMapping from "../hooks/ColorMapping";
 
 const CustomPie = (
   data,
@@ -15,9 +20,22 @@ const CustomPie = (
 
   return (
     <section>
-      <h4 className="text-center">예약 통계/차트</h4>
+      <h4 className="text-center mt-2">예약 통계/차트</h4>
       <ResponsiveContainer width={width} height={height}>
-        <PieChart></PieChart>
+        <PieChart>
+          <Pie
+            dataKey={dataKey}
+            data={data}
+            label={({ [nameKey]: name }) => name}
+          >
+            {data &&
+              data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={colors[entry.name]} />
+              ))}
+          </Pie>
+          <Tooltip />
+          <Legend layout="vertical" />
+        </PieChart>
       </ResponsiveContainer>
     </section>
   );
