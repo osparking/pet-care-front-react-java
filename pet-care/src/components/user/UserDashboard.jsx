@@ -3,6 +3,7 @@ import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import ApmtAccordion from "../appointment/ApmtAccordion";
 import CustomPie from "../charts/CustomPie";
 import AlertMessage from "../common/AlertMessage";
+import NoDataAvailable from "../common/NoDataAvailable";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
 import Review from "../review/Review";
@@ -18,7 +19,7 @@ const UserDashboard = () => {
     const savedActiveTab = localStorage.getItem("activeTab");
     return savedActiveTab || "profile";
   });
-
+  const [appoChartData, setAppoChartData] = useState([]);
   const {
     successMsg,
     setSuccessMsg,
@@ -97,7 +98,11 @@ const UserDashboard = () => {
         <Tab eventKey="appo_status" title={<h3>예약 통계</h3>}>
           <Row>
             <Col>
-              <CustomPie data={appointments} />
+              {appoChartData && appoChartData.length > 0 ? (
+                <CustomPie data={appoChartData} />
+              ) : (
+                <NoDataAvailable dataType={"진료 예약 자료"} />
+              )}
             </Col>
           </Row>
         </Tab>
