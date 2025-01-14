@@ -18,10 +18,10 @@ const CustomPie = ({
 }) => {
   const colors = useColorMapping();
   return (
-    <section>
+    <section className="pb-5">
       <h4 className="text-center mt-2">예약 통계/차트</h4>
       <ResponsiveContainer width={width} height={height}>
-        <PieChart>
+        <PieChart >
           <Pie
             dataKey={dataKey}
             data={data}
@@ -33,7 +33,7 @@ const CustomPie = ({
               ))}
           </Pie>
           <Tooltip />
-          <Legend verticalAlign="bottom" className="m-5"/>
+          <Legend verticalAlign="bottom" />
         </PieChart>
       </ResponsiveContainer>
     </section>
