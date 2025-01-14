@@ -21,10 +21,12 @@ const CustomPie = ({
     <section className="pb-5">
       <h4 className="text-center mt-2">예약 통계/차트</h4>
       <ResponsiveContainer width={width} height={height}>
-        <PieChart >
+        <PieChart margin={{ left: 100 }}>
           <Pie
             dataKey={dataKey}
             data={data}
+            cx="50%"
+            cy="50%"
             label={({ [nameKey]: name }) => name}
           >
             {data &&
@@ -33,7 +35,7 @@ const CustomPie = ({
               ))}
           </Pie>
           <Tooltip />
-          <Legend verticalAlign="bottom" />
+          <Legend align="right" layout="vertical"/>
         </PieChart>
       </ResponsiveContainer>
     </section>
