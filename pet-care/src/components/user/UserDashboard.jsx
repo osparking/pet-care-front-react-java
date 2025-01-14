@@ -13,7 +13,7 @@ import UserProfile from "./UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 3;
+  const userId = 17;
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState(() => {
     const savedActiveTab = localStorage.getItem("activeTab");
@@ -120,7 +120,10 @@ const UserDashboard = () => {
               {appoChartData && appoChartData.length > 0 ? (
                 <CustomPie data={appoChartData} />
               ) : (
-                <NoDataAvailable dataType={"진료 예약 자료"} />
+                <NoDataAvailable
+                  dataType={"진료 예약 자료"}
+                  errorMessage={"맨 처음 예약을 해 보세요."}
+                />
               )}
             </Col>
           </Row>
