@@ -33,7 +33,7 @@ const CustomPie = ({
               ))}
           </Pie>
           <Tooltip />
-          <Legend layout="vertical" />
+          <Legend verticalAlign="bottom" className="m-5"/>
         </PieChart>
       </ResponsiveContainer>
     </section>
