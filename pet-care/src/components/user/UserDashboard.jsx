@@ -140,7 +140,10 @@ const UserDashboard = () => {
                       isPatient={user.userType === UserType.PATIENT}
                     />
                   ) : (
-                    <p>예약 건 없음</p>
+                    <NoDataAvailable
+                      dataType={"진료 예약 자료"}
+                      errorMessage={"등록된 예약 기록이 없습니다."}
+                    />
                   )}
                 </React.Fragment>
               )}
