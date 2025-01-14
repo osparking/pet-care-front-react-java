@@ -1,7 +1,8 @@
 import ko from "date-fns/locale/ko";
 import React, { useEffect, useState } from "react";
-import { Accordion, Col, Container, Row } from "react-bootstrap";
+import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
+import { BsPlusSquareFill } from "react-icons/bs";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import AlertMessage from "../common/AlertMessage";
@@ -149,7 +150,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     let filteredOnes = apmts;
     if (selectedStat && selectedStat !== "all") {
       filteredOnes = apmts.filter((apmt) => {
-        console.log("selected 스태터스: ", selectedStat, ", apmt.status, ", apmt.status);
         return apmt.status === selectedStat;
       });
     }
@@ -162,6 +162,10 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const indexFirstAppoint = indexLastAppoint - pageSize;
   const currFltdApps =
     filteredApmts.slice(indexFirstAppoint, indexLastAppoint) || [];
+
+  const handleAddPet = () => {
+    console.log("팻 추가 모달 표시");
+  };
 
   return (
     <Container className="p-3">
@@ -208,7 +212,15 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     <p>방문 목적: {apmt.reason}</p>
                   </Col>
                   <Col md={8} className="mt-2">
-                    <h4>애완 동물:</h4>
+                    <h4>
+                      애완 동물:
+                      <Button
+                        className="btn btn-sm btn-primary ms-3"
+                        onClick={handleAddPet}
+                      >
+                        <BsPlusSquareFill />
+                      </Button>
+                    </h4>
                     <PetTable
                       pets={apmt.pets}
                       apmtId={apmt.id}
