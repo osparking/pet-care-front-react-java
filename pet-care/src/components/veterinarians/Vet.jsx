@@ -118,7 +118,10 @@ const Vet = () => {
                 />
               ))
             ) : (
-              <p>등록된 리뷰가 없습니다.</p>
+              <NoDataAvailable
+                dataType={"진료 경험 리뷰"}
+                errorMessage={"등록된 리뷰가 없습니다."}
+              />
             )}
             <Paginator
               pageSize={pageSize}

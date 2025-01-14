@@ -13,7 +13,7 @@ import UserProfile from "./UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   // const { userId } = useParams();
-  const userId = 17;
+  const userId = 18;
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState(() => {
     const savedActiveTab = localStorage.getItem("activeTab");
@@ -163,7 +163,10 @@ const UserDashboard = () => {
                       />
                     ))
                   ) : (
-                    <p>등록된 리뷰가 없습니다.</p>
+                    <NoDataAvailable
+                      dataType={"진료 경험 리뷰"}
+                      errorMessage={"등록된 리뷰가 없습니다."}
+                    />
                   )}
                 </Col>
               </Row>
