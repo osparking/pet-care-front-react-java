@@ -61,6 +61,8 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
     }
   };
 
+  const onlyPet = pets.length === 1;
+
   return (
     <section>
       <DelTargetConfirmModal
@@ -116,7 +118,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
                       <td>
                         <Button
                           className="btn btn-sm btn-danger"
-                          disabled={!isEditable}
+                          disabled={!isEditable || onlyPet}
                           onClick={() => handleDelete(pet.id)}
                         >
                           <BsTrashFill />
