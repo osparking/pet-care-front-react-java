@@ -285,12 +285,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     <UserInfo userType={user.userType} apmt={apmt} />
                   )}
                 </Row>
-                {showSuccessAlert && (
-                  <AlertMessage type={"success"} message={successMsg} />
-                )}
-                {showErrorAlert && (
-                  <AlertMessage type={"danger"} message={errorMsg} />
-                )}
                 {user && user.userType === UserType.PATIENT && (
                   <div>
                     <ActPatient
