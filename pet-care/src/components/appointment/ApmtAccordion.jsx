@@ -32,10 +32,10 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const [showAddPetModal, setShowAddPetModal] = useState(false);
   const [petData, setPetData] = useState({
     name: "롤프",
-    type: "고양",
-    color: "검정",
-    breed: "페르시안",
-    age: "8",
+    type: "고양이",
+    color: "누런색",
+    breed: "보더믹스",
+    age: "6",
   });
 
   const [selectedStat, setSelectedStat] = useState("");
@@ -185,7 +185,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     try {
       console.log("apmmtIdPet: ", apmtIdPet, ", 팻 삽입: ", pet);
       const response = await insertPet(apmtId, pet);
-      console.log("response data: ", response.data);
+      console.log("response: ", response);
       setApmts(
         apmts.map((apmt) => {
           if (apmt.id == apmtId) {
@@ -194,15 +194,13 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
           } else return apmt;
         })
       );
-      // clear pet data
-      setPetData({
-        name: "",
-        type: "",
-        color: "",
-        breed: "",
-        age: "",
-      });
-    } catch (error) {}
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      console.error(e);
+      // setErrorMsg(e.message);
+      setShowErrorAlert(true);
+    }
   };
 
   return (
@@ -259,7 +257,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                         <BsPlusSquareFill />
                       </Button>
                     </h4>
-                    {console.log("apmt.id:", apmt.id)}
                     <AddPetModal
                       apmtId={apmtIdPet}
                       petData={petData}
@@ -268,8 +265,13 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       show={showAddPetModal}
                       closer={() => setShowAddPetModal(false)}
                       saver={callPetAddAPI}
-                      label={"팻"}
                     />
+                    {showSuccessAlert && (
+                      <AlertMessage type={"success"} message={successMsg} />
+                    )}
+                    {showErrorAlert && (
+                      <AlertMessage type={"danger"} message={errorMsg} />
+                    )}
                     <PetTable
                       pets={apmt.pets}
                       apmtId={apmt.id}
