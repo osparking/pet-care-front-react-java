@@ -49,3 +49,12 @@ export async function deletePetAPI(petId, updatedPet) {
     throw error;
   }
 }
+
+export async function insertPet(apmtId, pet) {
+  try {
+    const result = await api.post(`/pets/${apmtId}/insert`, pet);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
