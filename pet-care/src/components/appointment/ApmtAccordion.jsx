@@ -185,6 +185,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     try {
       console.log("apmmtIdPet: ", apmtIdPet, ", 팻 삽입: ", pet);
       const response = await insertPet(apmtId, pet);
+      setShowAddPetModal(false);
       console.log("response: ", response);
       setApmts(
         apmts.map((apmt) => {
