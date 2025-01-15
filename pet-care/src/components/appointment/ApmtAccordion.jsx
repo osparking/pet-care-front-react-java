@@ -10,6 +10,7 @@ import Paginator from "../common/Paginator";
 import UserInfo from "../common/UserInfo";
 import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import AddPetModal from "../modals/AddPetModal";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
 import FilterAppointment from "./FilterAppointment";
@@ -179,7 +180,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setShowAddPetModal(true);
   };
 
-  };
+  const callPetAddAPI = async () => {};
 
   return (
     <Container className="p-3">
@@ -235,6 +236,16 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                         <BsPlusSquareFill />
                       </Button>
                     </h4>
+                    <AddPetModal
+                      apmtId={apmtIdPet}
+                      petData={petData}
+                      setPetData={setPetData}
+                      index={apmt.pets.length}
+                      show={showAddPetModal}
+                      closer={() => setShowAddPetModal(false)}
+                      saver={callPetAddAPI}
+                      label={"팻"}
+                    />
                     <PetTable
                       pets={apmt.pets}
                       apmtId={apmt.id}
