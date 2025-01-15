@@ -10,6 +10,12 @@ const AddPetModal = ({
   closer,
   saver,
 }) => {
+  const handlePetChange = (e) => {
+    const { name, value } = e.target;
+    petData[name] = value;
+    setPetData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
   return <Modal show={show} onHide={closer}></Modal>;
 };
 
