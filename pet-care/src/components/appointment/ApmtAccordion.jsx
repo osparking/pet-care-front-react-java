@@ -198,8 +198,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (e) {
-      console.error(e);
-      // setErrorMsg(e.message);
+      setErrorMsg(e.response.data.message);
       setShowErrorAlert(true);
     }
   };
