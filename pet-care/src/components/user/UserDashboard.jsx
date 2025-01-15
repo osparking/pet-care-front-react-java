@@ -10,10 +10,10 @@ import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
+import { useParams } from "react-router-dom";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
-  // const { userId } = useParams();
-  const userId = 18;
+  const { userId } = useParams();
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState(() => {
     const savedActiveTab = localStorage.getItem("activeTab");
