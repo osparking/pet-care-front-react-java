@@ -11,6 +11,7 @@ import UserInfo from "../common/UserInfo";
 import useColorMapping from "../hooks/ColorMapping";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import AddPetModal from "../modals/AddPetModal";
+import { insertPet } from "../pet/PetService";
 import PetTable from "../pet/PetTable";
 import { UserType } from "../utils/utilities";
 import FilterAppointment from "./FilterAppointment";
@@ -180,7 +181,12 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     setShowAddPetModal(true);
   };
 
-  const callPetAddAPI = async () => {};
+  const callPetAddAPI = async (apmtId, pet) => {
+    try {
+      console.log("apmmtIdPet: ", apmtIdPet, ", 팻 삽입: ", pet);
+      const response = await insertPet(apmtId, pet);
+    } catch (error) {}
+  };
 
   return (
     <Container className="p-3">
@@ -236,6 +242,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                         <BsPlusSquareFill />
                       </Button>
                     </h4>
+                    {console.log("apmt.id:", apmt.id)}
                     <AddPetModal
                       apmtId={apmtIdPet}
                       petData={petData}
