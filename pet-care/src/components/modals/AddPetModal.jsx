@@ -1,5 +1,6 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
+import PetEntry from "../pet/PetEntry";
 
 const AddPetModal = ({
   apmtId,
@@ -16,7 +17,23 @@ const AddPetModal = ({
     setPetData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  return <Modal show={show} onHide={closer}></Modal>;
+  return (
+    <Modal show={show} onHide={closer}>
+      <Modal.Header closeButton>
+        <Modal.Title>새 팻 추가</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          {console.log("pet a: ", petData)}
+          <PetEntry
+            pet={petData}
+            index={index}
+            handleInputChange={(e) => handlePetChange(e)}
+          />
+        </Form>
+      </Modal.Body>
+    </Modal>
+  );
 };
 
 export default AddPetModal;
