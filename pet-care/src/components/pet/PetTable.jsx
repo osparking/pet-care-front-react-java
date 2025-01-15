@@ -98,7 +98,7 @@ const PetTable = ({ pets, apmtId, onPetUpdate, isEditable, isPatient }) => {
                   onSave={callPetUpdateAPI}
                 />
               ) : (
-                <tr key={pet.id}>
+                <tr key={index}>
                   <td>{pet.name}</td>
                   <td>{pet.type}</td>
                   <td>{pet.breed}</td>
