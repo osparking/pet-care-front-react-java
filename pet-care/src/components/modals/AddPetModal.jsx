@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import PetEntry from "../pet/PetEntry";
 
 const AddPetModal = ({
@@ -32,6 +32,14 @@ const AddPetModal = ({
           />
         </Form>
       </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={() => saver(apmtId, petData)}>
+          저장
+        </Button>
+        <Button variant="danger" onClick={closer}>
+          닫기
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };
