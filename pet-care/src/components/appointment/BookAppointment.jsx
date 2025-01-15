@@ -33,7 +33,7 @@ const BookAppointment = () => {
       {
         name: "구름이",
         type: "개",
-        color: "아이보리",
+        color: "갈색",
         breed: "보더믹스",
         age: "4",
       },
