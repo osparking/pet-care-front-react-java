@@ -23,7 +23,18 @@ import {
 
 const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   registerLocale("ko", ko);
+
   const [apmts, setApmts] = useState(oldApmts);
+
+  const [apmtIdPet, setApmmtIdPet] = useState();
+  const [showAddPetModal, setShowAddPetModal] = useState(false);
+  const [petData, setPetData] = useState({
+    name: "롤프",
+    type: "고양",
+    color: "검정",
+    breed: "페르시안",
+    age: "8",
+  });
 
   const [selectedStat, setSelectedStat] = useState("");
   const [filteredApmts, setFilteredApmts] = useState([]);
