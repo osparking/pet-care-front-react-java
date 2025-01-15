@@ -185,6 +185,15 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
     try {
       console.log("apmmtIdPet: ", apmtIdPet, ", 팻 삽입: ", pet);
       const response = await insertPet(apmtId, pet);
+      console.log("response data: ", response.data);
+      setApmts(
+        apmts.map((apmt) => {
+          if (apmt.id == apmtId) {
+            apmt.pets.push(response.data);
+            return apmt;
+          } else return apmt;
+        })
+      );
     } catch (error) {}
   };
 
