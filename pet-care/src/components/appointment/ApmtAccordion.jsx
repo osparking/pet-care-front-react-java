@@ -174,8 +174,11 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const currFltdApps =
     filteredApmts.slice(indexFirstAppoint, indexLastAppoint) || [];
 
-  const handleAddPet = () => {
-    console.log("팻 추가 모달 표시");
+  const handleAddPet = (apmtId) => {
+    setApmmtIdPet(apmtId);
+    setShowAddPetModal(true);
+  };
+
   };
 
   return (
@@ -227,7 +230,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       애완 동물:
                       <Button
                         className="btn btn-sm btn-primary ms-3"
-                        onClick={handleAddPet}
+                        onClick={() => handleAddPet(apmt.id)}
                       >
                         <BsPlusSquareFill />
                       </Button>
