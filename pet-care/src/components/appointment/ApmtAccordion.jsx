@@ -194,6 +194,14 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
           } else return apmt;
         })
       );
+      // clear pet data
+      setPetData({
+        name: "",
+        type: "",
+        color: "",
+        breed: "",
+        age: "",
+      });
     } catch (error) {}
   };
 
