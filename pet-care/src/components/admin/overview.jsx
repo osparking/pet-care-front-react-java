@@ -29,6 +29,17 @@ const Overview = () => {
       <h5 className="chart-title">실적 통계</h5>
       <div>
         <CardCompo label={"유저"} count={userCount} IconCompo={BsPeopleFill} />
+        <CardCompo
+          label={"예약"}
+          // count={appoCount}
+          IconCompo={BsPeopleFill}
+        />
+        <CardCompo label={"수의사"} count={vetCount} IconCompo={BsPeopleFill} />
+        <CardCompo
+          label={"팻주인"}
+          count={patientCount}
+          IconCompo={BsPeopleFill}
+        />
       </div>
     </main>
   );
