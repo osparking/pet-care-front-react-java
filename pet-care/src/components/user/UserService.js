@@ -46,7 +46,7 @@ export async function changePwd(userId, curPwd, newPwd, cnfPwd) {
   }
 }
 
-export async function countVet() {
+export async function getVetCount() {
   try {
     const result = await api.get("/users/vet/count");
     return result.data.data;
@@ -55,7 +55,7 @@ export async function countVet() {
   }
 }
 
-export async function countPatient() {
+export async function getPatientCount() {
   try {
     const result = await api.get("/users/patient/count");
     return result.data.data;
@@ -64,7 +64,7 @@ export async function countPatient() {
   }
 }
 
-export async function countUser() {
+export async function getUserCount() {
   try {
     const result = await api.get("/users/count");
     return result.data;
