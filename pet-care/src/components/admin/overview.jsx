@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { BsPeopleFill } from "react-icons/bs";
+import CardCompo from "../cards/CardCompo";
 
 const Overview = () => {
   const [userCount, setUserCount] = useState(0);
@@ -25,6 +27,9 @@ const Overview = () => {
   return (
     <main>
       <h5 className="chart-title">실적 통계</h5>
+      <div>
+        <CardCompo label={"유저"} count={userCount} IconCompo={BsPeopleFill} />
+      </div>
     </main>
   );
 };
