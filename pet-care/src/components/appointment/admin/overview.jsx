@@ -22,7 +22,11 @@ const Overview = () => {
     readCounts();
   }, []); // useEffect body executes only once when this page is loaded
 
-  return <div>overview</div>;
+  return (
+    <main>
+      <h5 className="chart-title">실적 통계</h5>
+    </main>
+  );
 };
 
 export default Overview;
