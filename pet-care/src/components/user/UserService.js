@@ -45,3 +45,12 @@ export async function changePwd(userId, curPwd, newPwd, cnfPwd) {
     throw err;
   }
 }
+
+export async function countVet() {
+  try {
+    const result = await api.get("/users/vet/count");
+    return result.data.data;
+  } catch (err) {
+    throw err;
+  }
+}
