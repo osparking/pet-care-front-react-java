@@ -6,6 +6,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import "./App.css";
+import AdminDashboard from "./components/admin/AdminDashboard";
 import BookAppointment from "./components/appointment/BookAppointment";
 import Login from "./components/auth/Login";
 import Home from "./components/home/Home";
@@ -34,6 +35,7 @@ function App() {
           path="/user_dashboard/:userId/my_dashboard"
           element={<UserDashboard />}
         />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Route>
     )
   );
