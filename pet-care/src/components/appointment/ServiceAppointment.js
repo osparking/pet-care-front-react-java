@@ -60,3 +60,12 @@ export const getApmtById = async function (apmtId) {
     throw err;
   }
 };
+
+export const getAppoCount = async () => {
+  try {
+    const result = await api.get(`/appointments/count`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
