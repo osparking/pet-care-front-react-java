@@ -5,6 +5,23 @@ const Overview = () => {
   const [vetCount, setVetCount] = useState(0);
   const [patientCount, setPatientCount] = useState(0);
 
+  useEffect(() => {
+    const readCounts = async () => {
+      try {
+        // Fetch user count
+        const userCount = await getUserCount();
+        const vetCount = await getVetCount();
+        const patientCount = await getPatientCount();
+        setUserCount(userCount);
+        setVetCount(vetCount);
+        setPatientCount(patientCount);
+      } catch (e) {
+        console.error("유저 건수 읽는 오류: ", e);
+      }
+    };
+    readCounts();
+  }, []); // useEffect body executes only once when this page is loaded
+
   return <div>overview</div>;
 };
 
