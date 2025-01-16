@@ -32,7 +32,7 @@ const Overview = () => {
   return (
     <main>
       <h5 className="chart-title">실적 통계</h5>
-      <div>
+      <div className="main-cards">
         <CardCompo label={"유저"} count={userCount} IconCompo={BsPeopleFill} />
         <CardCompo
           label={"예약"}
