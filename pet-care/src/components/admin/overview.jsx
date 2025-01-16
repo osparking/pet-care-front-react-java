@@ -1,6 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BsPeopleFill } from "react-icons/bs";
 import CardCompo from "../cards/CardCompo";
+import {
+  getPatientCount,
+  getUserCount,
+  getVetCount,
+} from "../user/UserService";
 
 const Overview = () => {
   const [userCount, setUserCount] = useState(0);
