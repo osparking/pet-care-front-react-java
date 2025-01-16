@@ -63,3 +63,12 @@ export async function countPatient() {
     throw err;
   }
 }
+
+export async function countUser() {
+  try {
+    const result = await api.get("/users/count");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
