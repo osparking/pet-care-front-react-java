@@ -54,3 +54,12 @@ export async function countVet() {
     throw err;
   }
 }
+
+export async function countPatient() {
+  try {
+    const result = await api.get("/users/patient/count");
+    return result.data.data;
+  } catch (err) {
+    throw err;
+  }
+}
