@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 import { getUserByMonthType } from "../user/UserService";
+import {
+    ResponsiveContainer,
+    LineChart,
+    Line,
+    CartesianGrid,
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+  } from "recharts";
 
 const UserRegister = () => {
   const [userStat, setUserStat] = useState([]);
