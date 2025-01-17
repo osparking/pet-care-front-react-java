@@ -22,7 +22,7 @@ const UserRegister = () => {
         const userStat = await response.data;
         console.log("user stat:", userStat);
         const chartData = Object.entries(userStat).map(
-          (month, userCountByTypeObject) => {
+          ([month, userCountByTypeObject]) => {
             return {
               name: month,
               수의사: userCountByTypeObject.VET || 0,
