@@ -72,3 +72,12 @@ export async function getUserCount() {
     throw err;
   }
 }
+
+export async function getUserByMonthType() {
+  try {
+    const result = await api.get("/users/count_month_utype");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
