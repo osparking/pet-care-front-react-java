@@ -11,8 +11,19 @@ const UserRegister = () => {
         const response = await getUserByMonthType();
         const userStat = await response.data;
         console.log("user stat:", userStat);
+        const chartData = Object.entries(userStat).map(
+          (month, userCountByTypeObject) => {
+            return {
+              name: month,
+              수의사: userCountByTypeObject.VET || 0,
+              팻주인: userCountByTypeObject.PATIENT || 0,
+            };
+          }
+        );
+        console.log("chartData:", chartData);
+        setUserStat(chartData);
       } catch (err) {
-        setErrorMessage(err.message)
+        setErrorMessage(err.message);
       }
     };
     getUserStat();
