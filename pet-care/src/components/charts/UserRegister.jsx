@@ -41,7 +41,12 @@ const UserRegister = () => {
     getUserStat();
   }, []);
 
-  return <div>UserRegister</div>;
+  return (
+    <ResponsiveContainer width={"60%"} height={400}>
+      <h5 className="chart-title mb-5">등록 유저 통계</h5>
+      <BarChart data={userStat}></BarChart>
+    </ResponsiveContainer>
+  );
 };
 
 export default UserRegister;
