@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { getUserByMonthType } from "../user/UserService";
 import {
-    ResponsiveContainer,
-    LineChart,
-    Line,
-    CartesianGrid,
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    Tooltip,
-    Legend,
-  } from "recharts";
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { getUserByMonthType } from "../user/UserService";
 
 const UserRegister = () => {
   const [userStat, setUserStat] = useState([]);
@@ -44,7 +42,15 @@ const UserRegister = () => {
   return (
     <ResponsiveContainer width={"60%"} height={400}>
       <h5 className="chart-title mb-5">등록 유저 통계</h5>
-      <BarChart data={userStat}></BarChart>
+      <BarChart data={userStat}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" angle={-50} textAnchor="end" height={70} />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey={"수의사"} fill="#8884d8" />
+        <Bar dataKey={"팻주인"} fill="#82ca9d" />
+      </BarChart>
     </ResponsiveContainer>
   );
 };
