@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CustomPie from "./CustomPie";
 
 const AppointChart = () => {
   const [appointData, setAppointData] = useState([]);
@@ -17,7 +18,12 @@ const AppointChart = () => {
     readAppointmentData();
   }, []);
 
-  return <div>AppointChart</div>;
+  return (
+    <div>
+      <h5 className="mb-4 chart-title">진료 예약</h5>
+      <CustomPie data={appointData} />
+    </div>
+  );
 };
 
 export default AppointChart;
