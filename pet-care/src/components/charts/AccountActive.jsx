@@ -10,7 +10,7 @@ const AccountActive = () => {
       try {
         const result = await getUserActivenessStat();
         const userActivenessStat = result.data;
-
+        console.log("before flat map: " + result.data);
         // 후단 근본 자료를 차트용 자료로 변형
         const accountData = Object.entries(userActivenessStat).flatMap(
           ([status, counts]) => [
@@ -21,7 +21,7 @@ const AccountActive = () => {
             },
             {
               name: "비활성 팻주인",
-              value: status === "Enabled" ? 0 : counts.PATIENT ,
+              value: status === "Enabled" ? 0 : counts.PATIENT,
               color: "#926262",
             },
             {
@@ -36,6 +36,7 @@ const AccountActive = () => {
             },
           ]
         );
+        setAccountData(accountData);
       } catch (error) {
         setErrorMessage(error.message);
       }
