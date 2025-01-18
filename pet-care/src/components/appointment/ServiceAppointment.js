@@ -69,3 +69,12 @@ export const getAppoCount = async () => {
     throw err;
   }
 };
+
+export const getAppointData = async () => {
+  try {
+    const result = await api.get("/appointments/appoint_data");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};

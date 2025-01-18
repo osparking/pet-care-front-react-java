@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomPie from "./CustomPie";
+import { getAppointData } from "../appointment/ServiceAppointment";
 
 const AppointChart = () => {
   const [appointData, setAppointData] = useState([]);
