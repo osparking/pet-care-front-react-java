@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BsPeopleFill } from "react-icons/bs";
 import { getAppoCount } from "../appointment/ServiceAppointment";
 import CardCompo from "../cards/CardCompo";
+import AccountActive from "../charts/AccountActive";
 import AppointChart from "../charts/AppointChart";
 import UserRegister from "../charts/UserRegister";
 import {
@@ -54,6 +55,9 @@ const Overview = () => {
         </div>
         <div className="chart-container">
           <AppointChart />
+        </div>
+        <div className="chart-container">
+          <AccountActive />
         </div>
       </div>
     </main>
