@@ -29,3 +29,11 @@ export const UserType = {
   PATIENT: "PATIENT",
   VET: "VET",
 };
+
+export const generateColor = (specName) => {
+  // 기본 값 부여
+  if (typeof specName !== "string" || specName.length === 0) {
+    return "#8884d8"; // 군청색
+  }
+
+}
