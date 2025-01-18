@@ -81,3 +81,12 @@ export async function getUserByMonthType() {
     throw err;
   }
 }
+
+export const getUserActivenessStat = async () => {
+  try {
+    const result = await api.get("/users/active_stat");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+}
