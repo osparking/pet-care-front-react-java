@@ -19,6 +19,21 @@ const AccountActive = () => {
               value: status === "Enabled" ? counts.PATIENT : 0,
               color: "#d26161",
             },
+            {
+              name: "비활성 팻주인",
+              value: status === "Enabled" ? 0 : counts.PATIENT ,
+              color: "#926262",
+            },
+            {
+              name: "활성인 수의사",
+              value: status === "Enabled" ? counts.VET : 0,
+              color: "#2f6a32",
+            },
+            {
+              name: "비활성 수의사",
+              value: status === "Enabled" ? 0 : counts.VET,
+              color: "#557a56",
+            },
           ]
         );
       } catch (error) {
