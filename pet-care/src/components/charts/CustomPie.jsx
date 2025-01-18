@@ -19,7 +19,6 @@ const CustomPie = ({
   const colors = useColorMapping();
   return (
     <section className="pb-5">
-      <h4 className="text-center mt-2">예약 통계/차트</h4>
       <ResponsiveContainer width={width} height={height}>
         <PieChart margin={{ left: 100 }}>
           <Pie

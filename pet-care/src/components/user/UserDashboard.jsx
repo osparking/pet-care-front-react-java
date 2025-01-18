@@ -117,6 +117,7 @@ const UserDashboard = () => {
         <Tab eventKey="appo_status" title={<h3>예약 통계</h3>}>
           <Row>
             <Col>
+              <h5 className="mb-4 chart-title">예약 상태 통계</h5>
               {appoChartData && appoChartData.length > 0 ? (
                 <CustomPie data={appoChartData} />
               ) : (

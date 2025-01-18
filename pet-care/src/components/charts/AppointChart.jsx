@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CustomPie from "./CustomPie";
 import { getAppointData } from "../appointment/ServiceAppointment";
+import CustomPie from "./CustomPie";
 
 const AppointChart = () => {
   const [appointData, setAppointData] = useState([]);
@@ -12,6 +12,7 @@ const AppointChart = () => {
         // Fetch appointments data calling service function
         const response = await getAppointData();
         setAppointData(response.data);
+        console.log("예약 차트 자료: ", response.data);
       } catch (error) {
         setErrorMessage(error.message);
       }
@@ -21,7 +22,7 @@ const AppointChart = () => {
 
   return (
     <div>
-      <h5 className="mb-4 chart-title">진료 예약</h5>
+      <h5 className="mb-4 chart-title">예약 상태 통계</h5>
       <CustomPie data={appointData} />
     </div>
   );
