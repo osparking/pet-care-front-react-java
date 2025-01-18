@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { getUserActivenessStat } from "../user/UserService";
 
 const AccountActive = () => {
@@ -44,7 +45,28 @@ const AccountActive = () => {
     getAcccountTypeActStat();
   }, []);
 
-  return <div>AccountActive</div>;
+  return (
+    <div>
+      <h5 className="mt-4 chart-title">계정 활동성 집계</h5>
+      <ResponsiveContainer width="80%" height={400}>
+        <PieChart>
+          <Pie
+            data={accountData}
+            dataKey="value"
+            nameKey="name"
+            label
+            outerRadius={110}
+            fill="#8884d8"
+          >
+            {accountData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 
 export default AccountActive;
