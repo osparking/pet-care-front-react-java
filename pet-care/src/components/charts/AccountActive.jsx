@@ -32,7 +32,7 @@ const AccountActive = () => {
                   {
                     name: "활성인 수의사",
                     value: status === "Enabled" ? counts.VET : 0,
-                    color: "#2f6a32",
+                    color: "#ffff00 ",
                   },
                 ]
               : [
