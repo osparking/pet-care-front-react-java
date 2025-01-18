@@ -89,4 +89,4 @@ export const getUserActivenessStat = async () => {
   } catch (err) {
     throw err;
   }
-}
+};
