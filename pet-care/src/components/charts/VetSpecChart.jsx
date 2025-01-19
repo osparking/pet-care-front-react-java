@@ -23,7 +23,8 @@ const VetSpecChart = () => {
         setErrorMessage("전문분야 채취 오류:" + error.message);
       }
     };
-  });
+    readSpecials();
+  }, []);
 
   return <div></div>;
 };
