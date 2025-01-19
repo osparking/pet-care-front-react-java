@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BarChart, ResponsiveContainer, Tooltip } from "recharts";
+import { BarChart, Legend, ResponsiveContainer, Tooltip } from "recharts";
 import { getSpecializations } from "../user/UserService";
 import { generateColor } from "../utils/utilities";
 
@@ -48,6 +48,12 @@ const VetSpecChart = () => {
             return null;
           }}
         />
+        <Legend layout="vertical" />
+        <Bar dataKey="count" fill="#8884d8">
+          {vetSpecials.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.color} />
+          ))}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
