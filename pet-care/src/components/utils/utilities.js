@@ -36,4 +36,13 @@ export const generateColor = (specName) => {
     return "#8884d8"; // 군청색
   }
 
+  // 해쉬 코드 생성 - 전문분야 문자열을 근거로 함
+  let hash = 0;
+  for (let i = 0; i < hash.length; i++) {
+    const char = specName.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  
+
 }
