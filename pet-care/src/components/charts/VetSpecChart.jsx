@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BarChart, ResponsiveContainer } from "recharts";
 import { getSpecializations } from "../user/UserService";
 import { generateColor } from "../utils/utilities";
 
@@ -26,7 +27,12 @@ const VetSpecChart = () => {
     readSpecials();
   }, []);
 
-  return <div></div>;
+  return (
+    <ResponsiveContainer>
+      <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
+      <BarChart data={vetSpecials}></BarChart>
+    </ResponsiveContainer>
+  );
 };
 
 export default VetSpecChart;
