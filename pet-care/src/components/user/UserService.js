@@ -90,3 +90,12 @@ export const getUserActivenessStat = async () => {
     throw err;
   }
 };
+
+export const getSpecializations = async () => {
+  try {
+    // const result = await api.get("/users/active_stat");
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
