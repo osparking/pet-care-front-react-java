@@ -43,6 +43,10 @@ export const generateColor = (specName) => {
     hash = (hash << 5) - hash + char;
     hash = hash & hash; // Convert to 32bit integer
   }
-  
+
+  // 0 ~ 359 범위 중 하나의 값을 hue 로 사용
+  // saturation: 70, lightness: 50 - HSL 축약어.
+  const hue = hash % 360;
+  return `hsl(${hue}, 70%, 50%)`;
 
 }
