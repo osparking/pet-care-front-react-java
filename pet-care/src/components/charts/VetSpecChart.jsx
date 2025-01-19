@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { BarChart, Legend, ResponsiveContainer, Tooltip } from "recharts";
+import {
+  Bar,
+  BarChart,
+  Cell,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { getSpecializations } from "../user/UserService";
 import { generateColor } from "../utils/utilities";
 
