@@ -30,7 +30,10 @@ const VetSpecChart = () => {
   return (
     <ResponsiveContainer>
       <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
-      <BarChart data={vetSpecials}></BarChart>
+      <BarChart data={vetSpecials}>
+        <XAxis dataKey="speciality" angle={-30} textAnchor="end" height={70} />
+        <YAxis />
+      </BarChart>
     </ResponsiveContainer>
   );
 };
