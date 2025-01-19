@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getSpecializations } from "../user/UserService";
+import { generateColor } from "../utils/utilities";
 
 const VetSpecChart = () => {
   const [vetSpecials, setVetSpecials] = useState([]);
@@ -12,6 +13,11 @@ const VetSpecChart = () => {
         const response = await getSpecializations();
         const rawSpecials = response.data;
         console.log("전문분야: ", response.data);
+        const specialsWithColor = rawSpecials.map((special) => ({
+          ...special,
+          color: generateColor(special.name),
+        }));
+        setVetSpecials(specialsWithColor);
       } catch (error) {
         console.error("전문분야 채취 오류:", error.message);
         setErrorMessage("전문분야 채취 오류:" + error.message);
