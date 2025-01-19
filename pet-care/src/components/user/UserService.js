@@ -93,7 +93,7 @@ export const getUserActivenessStat = async () => {
 
 export const getSpecializations = async () => {
   try {
-    // const result = await api.get("/users/active_stat");
+    const result = await api.get("/vets/special_stat");
     return result.data;
   } catch (err) {
     throw err;
