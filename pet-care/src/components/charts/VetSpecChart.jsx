@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BarChart, ResponsiveContainer } from "recharts";
+import { BarChart, ResponsiveContainer, Tooltip } from "recharts";
 import { getSpecializations } from "../user/UserService";
 import { generateColor } from "../utils/utilities";
 
@@ -33,6 +33,21 @@ const VetSpecChart = () => {
       <BarChart data={vetSpecials}>
         <XAxis dataKey="speciality" angle={-30} textAnchor="end" height={70} />
         <YAxis />
+        <Tooltip
+          content={(props) => {
+            const { payload } = props;
+            if (payload && payload.length) {
+              return (
+                <div style={{ backgroundColor: "#aab5b0" }} className="p-4">
+                  <p className="text-primary">
+                    {payload[0].payload.speciality}: {payload[0].payload.count}
+                  </p>
+                </div>
+              );
+            }
+            return null;
+          }}
+        />
       </BarChart>
     </ResponsiveContainer>
   );
