@@ -10,7 +10,6 @@ import {
   YAxis,
 } from "recharts";
 import { getSpecializations } from "../user/UserService";
-import { generateColor } from "../utils/utilities";
 
 const VetSpecChart = () => {
   const [vetSpecials, setVetSpecials] = useState([]);
@@ -25,7 +24,7 @@ const VetSpecChart = () => {
         console.log("전문분야: ", response.data);
         const specialsWithColor = rawSpecials.map((special) => ({
           ...special,
-          color: generateColor(special.specialty),
+          color: `hsl(${special.color}, 70%, 50%)`,
         }));
         setVetSpecials(specialsWithColor);
       } catch (error) {
