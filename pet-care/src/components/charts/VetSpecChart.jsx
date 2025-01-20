@@ -38,9 +38,9 @@ const VetSpecChart = () => {
   return (
     <ResponsiveContainer width={"50%"} height={400}>
       <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
-      <BarChart data={vetSpecials}>
+      <BarChart data={vetSpecials} >
         <XAxis dataKey="specialty" angle={-30} textAnchor="end" height={70} />
-        <YAxis />
+        <YAxis domain={[0,5]} tickCount={6} tick={[0, 1, 2, 3, 4, 5]} />
         <Tooltip
           content={(props) => {
             const { payload } = props;
