@@ -10,6 +10,7 @@ import {
   getUserCount,
   getVetCount,
 } from "../user/UserService";
+import VetSpecChart from "../charts/VetSpecChart";
 
 const Overview = () => {
   const [userCount, setUserCount] = useState(0);
@@ -58,6 +59,9 @@ const Overview = () => {
         </div>
         <div className="chart-container">
           <AccountActive />
+        </div>
+        <div className="chart-container">
+          <VetSpecChart />
         </div>
       </div>
     </main>
