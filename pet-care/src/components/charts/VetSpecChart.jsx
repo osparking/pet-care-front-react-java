@@ -36,7 +36,7 @@ const VetSpecChart = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width={"60%"} height={400}>
+    <ResponsiveContainer width={"50%"} height={400}>
       <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
       <BarChart data={vetSpecials}>
         <XAxis dataKey="specialty" angle={-30} textAnchor="end" height={70} />
@@ -44,11 +44,12 @@ const VetSpecChart = () => {
         <Tooltip
           content={(props) => {
             const { payload } = props;
+            console.log("payload: ", props);
             if (payload && payload.length) {
               return (
                 <div style={{ backgroundColor: "#aab5b0" }} className="p-4">
                   <p className="text-primary">
-                    {payload[0].payload.speciality}: {payload[0].payload.count}
+                    {payload[0].payload.specialty}: {payload[0].payload.count}
                   </p>
                 </div>
               );
@@ -56,7 +57,6 @@ const VetSpecChart = () => {
             return null;
           }}
         />
-        <Legend layout="vertical" />
         <Bar dataKey="count" fill="#8884d8">
           {vetSpecials.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={entry.color} />
