@@ -25,7 +25,7 @@ const VetSpecChart = () => {
         console.log("전문분야: ", response.data);
         const specialsWithColor = rawSpecials.map((special) => ({
           ...special,
-          color: generateColor(special.name),
+          color: generateColor(special.specialty),
         }));
         setVetSpecials(specialsWithColor);
       } catch (error) {
@@ -37,7 +37,7 @@ const VetSpecChart = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width={"80%"} height={400}>
+    <ResponsiveContainer width={"60%"} height={400}>
       <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
       <BarChart data={vetSpecials}>
         <XAxis dataKey="speciality" angle={-30} textAnchor="end" height={70} />
