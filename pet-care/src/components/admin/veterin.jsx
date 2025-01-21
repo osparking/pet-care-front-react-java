@@ -54,7 +54,16 @@ const Veterin = () => {
     setVetIdToDel(vetId);
   };
 
-  return <div></div>;
+  return (
+    <main>
+      <DelTargetConfirmModal
+        show={showDelModal}
+        onHide={() => setShowDelModal(false)}
+        handleDelete={handleDelVet}
+        target="수의사"
+      />
+    </main>
+  );
 };
 
 export default Veterin;
