@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AdminSideBar from "./AdminSideBar";
+import Overview from "./Overview";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -22,6 +23,9 @@ const AdminDashboard = () => {
           onNavigate={handleTabClick}
           activeTab={activeTab}
         />
+        <div className="main-container">
+          {activeTab === "overview" && <Overview />}
+        </div>
       </div>
     </main>
   );
