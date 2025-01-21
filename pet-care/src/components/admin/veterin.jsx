@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BsPlusSquareFill } from "react-icons/bs";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserAccount } from "../user/UserService";
@@ -72,7 +73,15 @@ const Veterin = () => {
             <AlertMessage type={"danger"} message={errorMsg} />
           )}
         </Col>
-        <Col></Col>
+        <Col>
+          {" "}
+          <div className="d-flex justify-content-end">
+            <Link to={"/register-user"}>
+              {" "}
+              <BsPlusSquareFill />
+            </Link>
+          </div>
+        </Col>
       </Row>
     </main>
   );
