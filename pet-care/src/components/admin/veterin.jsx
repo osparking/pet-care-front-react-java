@@ -117,6 +117,17 @@ const Veterin = () => {
                 </Link>
               </OverlayTrigger>
             </td>
+            <td>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id={`tooltip-view-${index}`}>정보 편집</Tooltip>
+                }
+              >
+                <Link to={`/update-user/${vet.id}`} className="text-warning">
+                  <BsPencilFill />
+                </Link>
+              </OverlayTrigger>
+            </td>
           </tr>
         </tbody>
       </Table>
