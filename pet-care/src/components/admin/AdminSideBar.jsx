@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillHospitalFill } from "react-icons/bs";
+import { BsFillHospitalFill, BsX } from "react-icons/bs";
 
 const AdminSideBar = ({
   openSidebarToggle,
@@ -12,10 +12,14 @@ const AdminSideBar = ({
       id="sidebar"
       className={openSidebarToggle ? "sidebar-responsive" : ""}
     >
-      <div>
+      <div className="sidebar-title">
         <div className="sidebar-brand">
-          <BsFillHospitalFill />
+          <BsFillHospitalFill className="icon-header" />
+          유니 팻 건강
         </div>
+        <span className="icon icon-close" onClick={OpenSidebar}>
+          <BsX />
+        </span>
       </div>
     </aside>
   );
