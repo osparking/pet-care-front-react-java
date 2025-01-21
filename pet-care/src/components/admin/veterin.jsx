@@ -104,63 +104,65 @@ const Veterin = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{vet.lastName}</td>
-            <td>{vet.firstName}</td>
-            <td>{vet.email}</td>
-            <td>{vet.mobile}</td>
-            <td>{vet.gender}</td>
-            <td>{vet.specialization}</td>
-            <td>{vet.createdAt}</td>
-            <td>
-              <OverlayTrigger
-                overlay={
-                  <Tooltip id={`tooltip-view-${index}`}>정보 열람</Tooltip>
-                }
-              >
-                <Link to={"/"} className="text-info">
-                  <BsEyeFill />
-                </Link>
-              </OverlayTrigger>
-            </td>
-            <td>
-              <OverlayTrigger
-                overlay={
-                  <Tooltip id={`tooltip-view-${index}`}>정보 편집</Tooltip>
-                }
-              >
-                <Link to={`/update-user/${vet.id}`} className="text-warning">
-                  <BsPencilFill />
-                </Link>
-              </OverlayTrigger>
-            </td>
-            <td>
-              <OverlayTrigger
-                overlay={
-                  <Tooltip id={`tooltip-view-${index}`}>계정 잠금</Tooltip>
-                }
-              >
-                <Link to={"/"}>
-                  <BsLockFill />
-                </Link>
-              </OverlayTrigger>
-            </td>
-            <td>
-              <OverlayTrigger
-                overlay={
-                  <Tooltip id={`tooltip-view-${index}`}>계정 삭제</Tooltip>
-                }
-              >
-                <Link
-                  to={"#"}
-                  className="text-danger"
-                  onClick={() => handleShowDelModal(vet.id)}
+          {veterins.map((vet, index) => (
+            <tr>
+              <td>{vet.lastName}</td>
+              <td>{vet.firstName}</td>
+              <td>{vet.email}</td>
+              <td>{vet.mobile}</td>
+              <td>{vet.gender}</td>
+              <td>{vet.specialization}</td>
+              <td>{vet.createdAt}</td>
+              <td>
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id={`tooltip-view-${index}`}>정보 열람</Tooltip>
+                  }
                 >
-                  <BsTrashFill />
-                </Link>
-              </OverlayTrigger>
-            </td>
-          </tr>
+                  <Link to={"/"} className="text-info">
+                    <BsEyeFill />
+                  </Link>
+                </OverlayTrigger>
+              </td>
+              <td>
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id={`tooltip-view-${index}`}>정보 편집</Tooltip>
+                  }
+                >
+                  <Link to={`/update-user/${vet.id}`} className="text-warning">
+                    <BsPencilFill />
+                  </Link>
+                </OverlayTrigger>
+              </td>
+              <td>
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id={`tooltip-view-${index}`}>계정 잠금</Tooltip>
+                  }
+                >
+                  <Link to={"/"}>
+                    <BsLockFill />
+                  </Link>
+                </OverlayTrigger>
+              </td>
+              <td>
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id={`tooltip-view-${index}`}>계정 삭제</Tooltip>
+                  }
+                >
+                  <Link
+                    to={"#"}
+                    className="text-danger"
+                    onClick={() => handleShowDelModal(vet.id)}
+                  >
+                    <BsTrashFill />
+                  </Link>
+                </OverlayTrigger>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </main>
