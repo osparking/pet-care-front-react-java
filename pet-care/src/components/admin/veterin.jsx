@@ -83,6 +83,20 @@ const Veterin = () => {
           </div>
         </Col>
       </Row>
+      <Table>
+        <thead>
+            <tr>
+                <th>성씨</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>휴대폰</th>
+                <th>성별</th>
+                <th>전문분야</th>
+                <th>등록일</th>
+                <th colSpan={4}>작업</th>
+            </tr>
+        </thead>
+      </Table>
     </main>
   );
 };
