@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BsPlusSquareFill } from "react-icons/bs";
+import { OverlayTrigger } from "react-bootstrap";
+import { BsEyeFill, BsPlusSquareFill } from "react-icons/bs";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserAccount } from "../user/UserService";
@@ -105,7 +106,17 @@ const Veterin = () => {
             <td>{vet.gender}</td>
             <td>{vet.specialization}</td>
             <td>{vet.createdAt}</td>
-            <td></td>
+            <td>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id={`tooltip-view-${index}`}>정보 열람</Tooltip>
+                }
+              >
+                <Link to={"/"} className="text-info">
+                  <BsEyeFill />
+                </Link>
+              </OverlayTrigger>
+            </td>
           </tr>
         </tbody>
       </Table>
