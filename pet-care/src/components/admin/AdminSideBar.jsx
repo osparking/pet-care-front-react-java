@@ -33,6 +33,28 @@ const AdminSideBar = ({
             대시보드 개요
           </a>
         </li>
+        <li
+          className={`sidebar-list-item ${
+            activeTab === "veteris" ? "active" : ""
+          }`}
+          onClick={() => onNavigate("veteris")}
+        >
+          <a href="#">
+            <BsGrid1X2Fill className="icon" />
+            수의사
+          </a>
+        </li>
+        <li
+          className={`sidebar-list-item ${
+            activeTab === "patients" ? "active" : ""
+          }`}
+          onClick={() => onNavigate("patients")}
+        >
+          <a href="#">
+            <BsGrid1X2Fill className="icon" />
+            팻 주인
+          </a>
+        </li>
       </ul>
     </aside>
   );
