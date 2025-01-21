@@ -1,4 +1,5 @@
 import React from "react";
+import { BsFillHospitalFill } from "react-icons/bs";
 
 const AdminSideBar = ({
   openSidebarToggle,
@@ -11,7 +12,11 @@ const AdminSideBar = ({
       id="sidebar"
       className={openSidebarToggle ? "sidebar-responsive" : ""}
     >
-        
+      <div>
+        <div className="sidebar-brand">
+          <BsFillHospitalFill />
+        </div>
+      </div>
     </aside>
   );
 };
