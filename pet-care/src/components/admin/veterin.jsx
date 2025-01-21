@@ -49,6 +49,11 @@ const Veterin = () => {
     }
   };
 
+  const handleShowDelModal = (vetId) => {
+    setShowDelModal(true);
+    setVetIdToDel(vetId);
+  };
+
   return <div></div>;
 };
 
