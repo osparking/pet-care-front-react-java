@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillHospitalFill, BsPeopleFill, BsX } from "react-icons/bs";
+import { BsFillHospitalFill, BsPeopleFill, BsX, BsGrid1X2Fill } from "react-icons/bs";
 
 const AdminSideBar = ({
   openSidebar,
