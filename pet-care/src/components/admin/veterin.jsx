@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { deleteUserAccount } from "../user/UserService";
+import { getVets } from "../veterinarians/VetService";
 
 const Veterin = () => {
   const [veterins, setVeterins] = useState([]);
   const [showDelModal, setShowDelModal] = useState(false);
-  const [vetToDel, setVetToDel] = useState(null);
+  const [vetIdToDel, setVetIdToDel] = useState(null);
 
   const {
-    successMsg,
+    // successMsg,
     setSuccessMsg,
     errorMsg,
     setErrorMsg,
@@ -31,6 +33,21 @@ const Veterin = () => {
   useEffect(() => {
     readAllVeters();
   }, []);
+
+  const handleDelVet = async () => {
+    if (vetIdToDel) {
+      try {
+        const result = await deleteUserAccount(vetIdToDel);
+        setSuccessMsg(result.message);
+        setShowSuccessAlert(true);
+        setShowDelModal(false);
+        readAllVeters();
+      } catch (err) {
+        setErrorMsg(err.message);
+        setShowErrorAlert(true);
+      }
+    }
+  };
 
   return <div></div>;
 };
