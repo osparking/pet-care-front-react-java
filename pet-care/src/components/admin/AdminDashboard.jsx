@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AdminSideBar from "./AdminSideBar";
 import Overview from "./Overview";
+import Veterin from "./veterin";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
