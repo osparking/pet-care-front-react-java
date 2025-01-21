@@ -5,6 +5,7 @@ import {
   BsLockFill,
   BsPencilFill,
   BsPlusSquareFill,
+  BsTrashFill,
 } from "react-icons/bs";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
@@ -141,6 +142,21 @@ const Veterin = () => {
               >
                 <Link to={"/"}>
                   <BsLockFill />
+                </Link>
+              </OverlayTrigger>
+            </td>
+            <td>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id={`tooltip-view-${index}`}>계정 삭제</Tooltip>
+                }
+              >
+                <Link
+                  to={"#"}
+                  className="text-danger"
+                  onClick={() => handleShowDelModal(vet.id)}
+                >
+                  <BsTrashFill />
                 </Link>
               </OverlayTrigger>
             </td>
