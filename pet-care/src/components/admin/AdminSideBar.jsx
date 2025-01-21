@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillHospitalFill, BsX } from "react-icons/bs";
+import { BsFillHospitalFill, BsPeopleFill, BsX } from "react-icons/bs";
 
 const AdminSideBar = ({
   openSidebarToggle,
@@ -40,7 +40,7 @@ const AdminSideBar = ({
           onClick={() => onNavigate("veteris")}
         >
           <a href="#">
-            <BsGrid1X2Fill className="icon" />
+            <BsPeopleFill className="icon" />
             수의사
           </a>
         </li>
@@ -51,8 +51,7 @@ const AdminSideBar = ({
           onClick={() => onNavigate("patients")}
         >
           <a href="#">
-            <BsGrid1X2Fill className="icon" />
-            팻 주인
+            <BsPeopleFill className="icon" />팻 주인
           </a>
         </li>
       </ul>
