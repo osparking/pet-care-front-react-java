@@ -26,7 +26,13 @@ const AdminSideBar = ({
           className={`sidebar-list-item ${
             activeTab === "overview" ? "active" : ""
           }`}
-        ></li>
+          onClick={() => onNavigate("overview")}
+        >
+          <a href="#">
+            <BsGrid1X2Fill className="icon" />
+            대시보드 개요
+          </a>
+        </li>
       </ul>
     </aside>
   );
