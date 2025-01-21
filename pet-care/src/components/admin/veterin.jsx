@@ -85,17 +85,29 @@ const Veterin = () => {
       </Row>
       <Table>
         <thead>
-            <tr>
-                <th>성씨</th>
-                <th>이름</th>
-                <th>이메일</th>
-                <th>휴대폰</th>
-                <th>성별</th>
-                <th>전문분야</th>
-                <th>등록일</th>
-                <th colSpan={4}>작업</th>
-            </tr>
+          <tr>
+            <th>성씨</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>휴대폰</th>
+            <th>성별</th>
+            <th>전문분야</th>
+            <th>등록일</th>
+            <th colSpan={4}>작업</th>
+          </tr>
         </thead>
+        <tbody>
+          <tr>
+            <td>{vet.lastName}</td>
+            <td>{vet.firstName}</td>
+            <td>{vet.email}</td>
+            <td>{vet.mobile}</td>
+            <td>{vet.gender}</td>
+            <td>{vet.specialization}</td>
+            <td>{vet.createdAt}</td>
+            <td></td>
+          </tr>
+        </tbody>
       </Table>
     </main>
   );
