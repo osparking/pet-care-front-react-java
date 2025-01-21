@@ -21,6 +21,13 @@ const AdminSideBar = ({
           <BsX />
         </span>
       </div>
+      <ul>
+        <li
+          className={`sidebar-list-item ${
+            activeTab === "overview" ? "active" : ""
+          }`}
+        ></li>
+      </ul>
     </aside>
   );
 };
