@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { OverlayTrigger } from "react-bootstrap";
-import { BsEyeFill, BsPlusSquareFill } from "react-icons/bs";
+import {
+  BsEyeFill,
+  BsLockFill,
+  BsPencilFill,
+  BsPlusSquareFill,
+} from "react-icons/bs";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserAccount } from "../user/UserService";
@@ -125,6 +130,17 @@ const Veterin = () => {
               >
                 <Link to={`/update-user/${vet.id}`} className="text-warning">
                   <BsPencilFill />
+                </Link>
+              </OverlayTrigger>
+            </td>
+            <td>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id={`tooltip-view-${index}`}>계정 잠금</Tooltip>
+                }
+              >
+                <Link to={"/"}>
+                  <BsLockFill />
                 </Link>
               </OverlayTrigger>
             </td>
