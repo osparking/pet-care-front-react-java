@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserAccount } from "../user/UserService";
 import { getVets } from "../veterinarians/VetService";
@@ -9,7 +10,7 @@ const Veterin = () => {
   const [vetIdToDel, setVetIdToDel] = useState(null);
 
   const {
-    // successMsg,
+    successMsg,
     setSuccessMsg,
     errorMsg,
     setErrorMsg,
@@ -62,6 +63,17 @@ const Veterin = () => {
         handleDelete={handleDelVet}
         target="수의사"
       />
+      <Row>
+        <Col>
+          {showSuccessAlert && (
+            <AlertMessage type={"success"} message={successMsg} />
+          )}
+          {showErrorAlert && (
+            <AlertMessage type={"danger"} message={errorMsg} />
+          )}
+        </Col>
+        <Col></Col>
+      </Row>
     </main>
   );
 };
