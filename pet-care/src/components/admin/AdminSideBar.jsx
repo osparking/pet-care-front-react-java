@@ -18,7 +18,7 @@ const AdminSideBar = ({
           <BsX />
         </span>
       </div>
-      <ul>
+      <ul className="sidebar-list">
         <li
           className={`sidebar-list-item ${
             activeTab === "overview" ? "active" : ""
