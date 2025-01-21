@@ -2,22 +2,19 @@ import React from "react";
 import { BsFillHospitalFill, BsPeopleFill, BsX } from "react-icons/bs";
 
 const AdminSideBar = ({
-  openSidebarToggle,
-  OpenSidebar,
+  openSidebar,
+  toggleSidebar,
   onNavigate,
   activeTab,
 }) => {
   return (
-    <aside
-      id="sidebar"
-      className={openSidebarToggle ? "sidebar-responsive" : ""}
-    >
+    <aside id="sidebar" className={openSidebar ? "sidebar-responsive" : ""}>
       <div className="sidebar-title">
         <div className="sidebar-brand">
           <BsFillHospitalFill className="icon-header" />
           유니 팻 건강
         </div>
-        <span className="icon icon-close" onClick={OpenSidebar}>
+        <span className="icon icon-close" onClick={toggleSidebar}>
           <BsX />
         </span>
       </div>
