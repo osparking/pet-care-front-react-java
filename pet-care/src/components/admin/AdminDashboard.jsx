@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Overview from "./overview";
+import AdminSideBar from "./AdminSideBar";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -14,9 +14,16 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div>
-      <Overview />
-    </div>
+    <main className="admin-body">
+      <div className="grid-container">
+        <AdminSideBar
+          openSidebar={openSidebar}
+          toggleSidebar={toggleSidebar}
+          onNavigate={handleTabClick}
+          activeTab={activeTab}
+        />
+      </div>
+    </main>
   );
 };
 
