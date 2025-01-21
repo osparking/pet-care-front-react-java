@@ -25,6 +25,7 @@ const AdminDashboard = () => {
         />
         <div className="main-container">
           {activeTab === "overview" && <Overview />}
+          {activeTab === "veteris" && <Veterin />}
         </div>
       </div>
     </main>
