@@ -6,7 +6,14 @@ const AdminSideBar = ({
   onNavigate,
   activeTab,
 }) => {
-  return <div></div>;
+  return (
+    <aside
+      id="sidebar"
+      className={openSidebarToggle ? "sidebar-responsive" : ""}
+    >
+        
+    </aside>
+  );
 };
 
 export default AdminSideBar;
