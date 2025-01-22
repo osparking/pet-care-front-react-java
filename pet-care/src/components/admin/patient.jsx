@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -34,6 +34,17 @@ const Patient = () => {
 
   return (
     <main>
+      <Row>
+        <Col></Col>
+        <Col>
+          {showSuccessAlert && (
+            <AlertMessage type={"success"} message={successMsg} />
+          )}
+          {showErrorAlert && (
+            <AlertMessage type={"danger"} message={errorMsg} />
+          )}
+        </Col>
+      </Row>
       <Table>
         <thread>
           <tr>
