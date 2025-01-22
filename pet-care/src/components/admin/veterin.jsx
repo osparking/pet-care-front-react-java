@@ -73,7 +73,7 @@ const Veterin = () => {
       setVeterins(
         veterins.map((veterin) =>
           veterin.id === vet.id
-            ? { ...veterin, enabled: !veterin.isActive }
+            ? { ...veterin, enabled: !vet.enabled }
             : veterin
         )
       );
