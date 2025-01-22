@@ -12,7 +12,7 @@ import { Tooltip } from "recharts";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
-import { deleteUserAccount } from "../user/UserService";
+import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
 import { getVets } from "../veterinarians/VetService";
 
 const Veterin = () => {
@@ -64,6 +64,26 @@ const Veterin = () => {
   const handleShowDelModal = (vetId) => {
     setShowDelModal(true);
     setVetIdToDel(vetId);
+  };
+
+  const handleToggleAccount = async (vet) => {
+    try {
+      let result = await toggleUserAccount(vet.id, !vet.enabled);
+      setVeterins(
+        veterins.map((veterin) =>
+          veterin.id === vet.id
+            ? { ...veterin, enabled: !veterin.isActive }
+            : veterin
+        )
+      );
+      setShowErrorAlert(false);
+      setSuccessMsg(result.message + ", 활성값: " + !vet.enabled);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      setErrorMsg(e.response.data.message);
+      setShowSuccessAlert(false);
+      setShowErrorAlert(true);
+    }
   };
 
   return (
