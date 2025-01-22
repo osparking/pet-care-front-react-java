@@ -23,13 +23,23 @@ const Patient = () => {
       setErrorMsg(error.message);
       setShowErrorAlert(true);
     }
-  }
+  };
 
   useEffect(() => {
     fetchPatients();
   }, []);
 
-  return <div></div>;
+  return (
+    <main>
+      <Table>
+        <thread>
+          <tr>
+            <th>아이디</th>
+          </tr>
+        </thread>
+      </Table>
+    </main>
+  );
 };
 
 export default Patient;
