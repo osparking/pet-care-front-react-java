@@ -89,9 +89,23 @@ const Veterin = () => {
   const [selectedSpecial, setSelectedSpecial] = useState("");
   const [filteredVets, setSelectedVets] = useState([]);
 
-  const handleClearFilter = () {
+  const handleClearFilter = () => {
     setSelectedSpecial("");
-  }
+  };
+
+  useEffect(() => {
+    let filtered = veterins;
+    if (selectedSpecial) {
+      filtered = filtered.filter(
+        (vet) => vet.specialization === selectedSpecial
+      );
+    }
+    setSelectedVets(filtered);
+  }, [selectedSpecial, veterins]);
+
+  const specials = Array.from(
+    new Set(veterins.map((vet) => vet.specialization))
+  );
 
   return (
     <main>
