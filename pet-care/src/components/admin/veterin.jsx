@@ -136,12 +136,14 @@ const Veterin = () => {
         </Col>
       </Row>
       <Row>
-        <VetFilter
-          specials={specials}
-          selectedSpecial={selectedSpecial}
-          onSelectSpecial={setSelectedSpecial}
-          onClearFilter={handleClearFilter}
-        />
+        <Col md={6}>
+          <VetFilter
+            specials={specials}
+            selectedSpecial={selectedSpecial}
+            onSelectSpecial={setSelectedSpecial}
+            onClearFilter={handleClearFilter}
+          />
+        </Col>
       </Row>
       <Table>
         <thead>
