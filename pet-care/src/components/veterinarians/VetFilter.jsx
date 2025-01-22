@@ -14,7 +14,14 @@ const VetFilter = ({
         className="form-control"
         value={selectedSpecial}
         onChange={(e) => onSelectSpecial(e.target.value)}
-      ></Form.Select>
+      >
+        <option value="">- 전문분야 선택 -</option>
+        {specials.map((special, idx) => (
+          <option value={special} key={idx}>
+            {special}
+          </option>
+        ))}
+      </Form.Select>
     </InputGroup>
   );
 };
