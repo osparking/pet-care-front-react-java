@@ -6,6 +6,7 @@ import {
   BsPencilFill,
   BsPlusSquareFill,
   BsTrashFill,
+  BsUnlockFill,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Tooltip } from "recharts";
@@ -161,12 +162,17 @@ const Veterin = () => {
               <td>
                 <OverlayTrigger
                   overlay={
-                    <Tooltip id={`tooltip-view-${index}`}>계정 잠금</Tooltip>
+                    <Tooltip id={`tooltip-view-${index}`}>
+                      {vet.enabled ? "계정 잠금" : "잠금 해제"}
+                    </Tooltip>
                   }
                 >
-                  <Link to={"/"}>
-                    <BsLockFill />
-                  </Link>
+                  <span
+                    onClick={() => handleToggleAccount(vet)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {vet.enabled ? <BsUnlockFill /> : <BsLockFill />}
+                  </span>
                 </OverlayTrigger>
               </td>
               <td>
