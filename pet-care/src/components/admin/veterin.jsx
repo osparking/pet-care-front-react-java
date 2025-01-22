@@ -13,6 +13,7 @@ import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
+import VetFilter from "../veterinarians/VetFilter";
 import { getVets } from "../veterinarians/VetService";
 
 const Veterin = () => {
@@ -133,6 +134,14 @@ const Veterin = () => {
             </Link>
           </div>
         </Col>
+      </Row>
+      <Row>
+        <VetFilter
+          specials={specials}
+          selectedSpecial={selectedSpecial}
+          onSelectSpecial={setSelectedSpecial}
+          onClearFilter={handleClearFilter}
+        />
       </Row>
       <Table>
         <thead>
