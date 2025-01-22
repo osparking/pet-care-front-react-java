@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, OverlayTrigger, Row, Table } from "react-bootstrap";
+import { Col, OverlayTrigger, Row, Table, Tooltip } from "react-bootstrap";
 import {
   BsEyeFill,
   BsLockFill,
@@ -9,7 +9,6 @@ import {
   BsUnlockFill,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { Tooltip } from "recharts";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
