@@ -166,7 +166,7 @@ const Veterin = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredVets.map((vet, index) => (
+          {currentVets.map((vet, index) => (
             <tr>
               <td>{vet.lastName}</td>
               <td>{vet.firstName}</td>
