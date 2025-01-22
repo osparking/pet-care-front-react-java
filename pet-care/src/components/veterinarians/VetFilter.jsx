@@ -22,6 +22,9 @@ const VetFilter = ({
           </option>
         ))}
       </Form.Select>
+      <Button variant="secondary" onClick={onClearFilter}>
+        초기화
+      </Button>
     </InputGroup>
   );
 };
