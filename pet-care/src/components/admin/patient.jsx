@@ -35,6 +35,13 @@ const Patient = () => {
         <thread>
           <tr>
             <th>아이디</th>
+            <th>성씨</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>휴대폰</th>
+            <th>성별</th>
+            <th>등록일</th>
+            <th colSpan={2}>작업</th>
           </tr>
         </thread>
       </Table>
