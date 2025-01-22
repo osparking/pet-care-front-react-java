@@ -44,6 +44,17 @@ const Patient = () => {
             <th colSpan={2}>작업</th>
           </tr>
         </thread>
+        <tbody>
+            <tr>
+                <td>{patient.id}</td>
+                <td>{patient.lastName}</td>
+                <td>{patient.firstName}</td>
+                <td>{patient.email}</td>
+                <td>{patient.mobile}</td>
+                <td>{patient.gender}</td>
+                <td>{patient.createdAt}</td>
+            </tr>
+        </tbody>
       </Table>
     </main>
   );
