@@ -99,3 +99,12 @@ export const getSpecializations = async () => {
     throw err;
   }
 };
+
+export const toggleUserAccount = async (userId, flag) => {
+  try {
+    const result = await api.put(`/users/toggle/${userId}/${flag}`);
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
+};
