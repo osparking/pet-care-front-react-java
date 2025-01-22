@@ -14,6 +14,21 @@ const Patient = () => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
+  const fetchPatients = async () => {
+    try {
+      const response = await getPatients();
+      setPatients(response.data);
+    } catch (error) {
+      console.error(error);
+      setErrorMsg(error.message);
+      setShowErrorAlert(true);
+    }
+  }
+
+  useEffect(() => {
+    fetchPatients();
+  }, []);
+
   return <div></div>;
 };
 
