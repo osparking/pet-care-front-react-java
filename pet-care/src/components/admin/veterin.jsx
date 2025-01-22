@@ -21,6 +21,12 @@ const Veterin = () => {
   const [showDelModal, setShowDelModal] = useState(false);
   const [vetIdToDel, setVetIdToDel] = useState(null);
 
+  const [currPage, setCurrPage] = useState(1);
+  const [vetsPerPage] = useState(7);
+  const indexOfLastVet = currPage * vetsPerPage;
+  const indexOfFirstVet = indexOfLastVet - vetsPerPage;
+  const currentVets = filteredVets.slice(indexOfFirstVet, indexOfLastVet);
+
   const {
     successMsg,
     setSuccessMsg,
@@ -135,7 +141,7 @@ const Veterin = () => {
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row className="mb-2">
         <Col md={6}>
           <VetFilter
             specials={specials}
