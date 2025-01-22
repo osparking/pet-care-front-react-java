@@ -8,7 +8,7 @@ const VetFilter = ({
   onClearFilter,
 }) => {
   return (
-    <InputGroup>
+    <InputGroup className="mb-4">
       <InputGroup.Text>전문분야 검색</InputGroup.Text>
       <Form.Select
         className="form-control"

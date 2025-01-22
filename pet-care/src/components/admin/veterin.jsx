@@ -86,6 +86,13 @@ const Veterin = () => {
     }
   };
 
+  const [selectedSpecial, setSelectedSpecial] = useState("");
+  const [filteredVets, setSelectedVets] = useState([]);
+
+  const handleClearFilter = () {
+    setSelectedSpecial("");
+  }
+
   return (
     <main>
       <DelTargetConfirmModal
