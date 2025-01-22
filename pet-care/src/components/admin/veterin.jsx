@@ -23,9 +23,10 @@ const Veterin = () => {
   const [vetIdToDel, setVetIdToDel] = useState(null);
 
   const [currPage, setCurrPage] = useState(1);
-  const [vetsPerPage] = useState(7);
+  const [vetsPerPage] = useState(5);
   const indexOfLastVet = currPage * vetsPerPage;
   const indexOfFirstVet = indexOfLastVet - vetsPerPage;
+  const [filteredVets, setSelectedVets] = useState([]);
   const currentVets = filteredVets.slice(indexOfFirstVet, indexOfLastVet);
 
   const {
@@ -95,7 +96,6 @@ const Veterin = () => {
   };
 
   const [selectedSpecial, setSelectedSpecial] = useState("");
-  const [filteredVets, setSelectedVets] = useState([]);
 
   const handleClearFilter = () => {
     setSelectedSpecial("");
