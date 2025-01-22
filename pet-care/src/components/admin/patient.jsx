@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { Col, OverlayTrigger, Row, Table, Tooltip } from "react-bootstrap";
 import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import AlertMessage from "../common/AlertMessage";
 
 const Patient = () => {
   const [patients, setPatients] = useState([]);
@@ -35,7 +36,7 @@ const Patient = () => {
   return (
     <main>
       <Row>
-        <Col></Col>
+        <Col>팻 주인 필터 성분 자리</Col>
         <Col>
           {showSuccessAlert && (
             <AlertMessage type={"success"} message={successMsg} />
