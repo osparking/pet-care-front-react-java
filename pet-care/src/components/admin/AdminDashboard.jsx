@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AdminSideBar from "./AdminSideBar";
 import Overview from "./Overview";
 import Veterin from "./veterin";
+import Patient from "./patient";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -27,6 +28,7 @@ const AdminDashboard = () => {
         <div className="main-container">
           {activeTab === "overview" && <Overview />}
           {activeTab === "veteris" && <Veterin />}
+          {activeTab === "patients" && <Patient />}
         </div>
       </div>
     </main>
