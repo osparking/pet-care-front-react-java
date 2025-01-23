@@ -74,7 +74,7 @@ const Patient = () => {
               <td>
                 <OverlayTrigger
                   overlay={
-                    <Tooltip id={`tooltip-view-${index}`}>팻 주인 열람</Tooltip>
+                    <Tooltip id={`tooltip-view-${idx}`}>팻 주인 열람</Tooltip>
                   }
                 >
                   <Link

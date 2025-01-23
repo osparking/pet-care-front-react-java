@@ -7,7 +7,6 @@ export async function getPatients() {
         return true;
       },
     });
-    console.log("반응자료:", response.data);
     return response.data;
   } catch (err) {
     throw err;
