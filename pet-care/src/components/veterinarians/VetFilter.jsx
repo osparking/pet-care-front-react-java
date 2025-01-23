@@ -2,9 +2,10 @@ import React from "react";
 import { InputGroup, Button, Form } from "react-bootstrap";
 
 const VetFilter = ({
-  specials = [],
-  selectedSpecial,
-  onSelectSpecial,
+  label,
+  options = [],
+  selectedOption,
+  onOptionSelection,
   onClearFilter,
 }) => {
   return (
@@ -12,11 +13,11 @@ const VetFilter = ({
       <InputGroup.Text>전문분야 검색</InputGroup.Text>
       <Form.Select
         className="form-control"
-        value={selectedSpecial}
-        onChange={(e) => onSelectSpecial(e.target.value)}
+        value={selectedOption}
+        onChange={(e) => onOptionSelection(e.target.value)}
       >
         <option value="">- 전문분야 선택 -</option>
-        {specials.map((special, idx) => (
+        {options.map((special, idx) => (
           <option value={special} key={idx}>
             {special}
           </option>
