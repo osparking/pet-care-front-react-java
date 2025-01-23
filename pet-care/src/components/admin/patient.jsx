@@ -37,13 +37,18 @@ const Patient = () => {
     setSelectedEmail("");
   };
 
+  const [filtered, setFiltered] = useState([]);
+
   useEffect(() => {
-    let filtered = patients;
+    setFiltered(patients);
     if (selectedEmail) {
-      filtered = filtered.filter((patient) => patient.email === selectedEmail);
+      setFiltered(
+        patients.filter((patient) => patient.email === selectedEmail)
+      );
     } else {
       fetchPatients();
     }
+    console.log("주인 숫자: ", patients.length);
   }, [patients, selectedEmail]);
 
   return (
@@ -84,7 +89,7 @@ const Patient = () => {
           </tr>
         </thead>
         <tbody>
-          {patients.map((patient, idx) => (
+          {filtered.map((patient, idx) => (
             <tr key={idx}>
               <td>{patient.id}</td>
               <td>{patient.lastName}</td>
