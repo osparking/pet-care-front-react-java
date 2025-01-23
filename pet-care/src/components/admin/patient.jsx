@@ -4,6 +4,7 @@ import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { getPatients } from "../patient/PatientService";
 
 const Patient = () => {
   const [patients, setPatients] = useState([]);
@@ -35,6 +36,7 @@ const Patient = () => {
 
   return (
     <main>
+      <h5>팻 주인(=환자) 목록</h5>
       <Row>
         <Col>팻 주인 필터 성분 자리</Col>
         <Col>
