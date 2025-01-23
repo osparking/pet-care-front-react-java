@@ -26,7 +26,7 @@ const Veterin = () => {
   const [vetsPerPage] = useState(5);
   const indexOfLastVet = currPage * vetsPerPage;
   const indexOfFirstVet = indexOfLastVet - vetsPerPage;
-  const [filteredVets, setSelectedVets] = useState([]);
+  const [filteredVets, setFilteredVets] = useState([]);
   const currentVets = filteredVets.slice(indexOfFirstVet, indexOfLastVet);
 
   const {
@@ -108,7 +108,7 @@ const Veterin = () => {
         (vet) => vet.specialization === selectedSpecial
       );
     }
-    setSelectedVets(filtered);
+    setFilteredVets(filtered);
   }, [selectedSpecial, veterins]);
 
   const specials = Array.from(
