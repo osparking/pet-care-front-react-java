@@ -30,6 +30,12 @@ const Patient = () => {
     }
   };
 
+  const emails = Array.from(new Set(patients.map((patient) => patient.email)));
+  const [selectedEmail, setSelectedEmail] = useState("");
+  const handleClearFilter = () => {
+    setSelectedEmail("");
+  };
+
   useEffect(() => {
     fetchPatients();
   }, []);
