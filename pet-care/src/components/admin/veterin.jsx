@@ -145,9 +145,9 @@ const Veterin = () => {
       <Row className="mb-2">
         <Col md={6}>
           <VetFilter
-            specials={specials}
-            selectedSpecial={selectedSpecial}
-            onSelectSpecial={setSelectedSpecial}
+            options={specials}
+            selectedOption={selectedSpecial}
+            onOptionSelection={setSelectedSpecial}
             onClearFilter={handleClearFilter}
           />
         </Col>
