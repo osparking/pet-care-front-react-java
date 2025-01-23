@@ -102,13 +102,13 @@ const Veterin = () => {
   };
 
   useEffect(() => {
-    let filtered = veterins;
     if (selectedSpecial) {
-      filtered = filtered.filter(
-        (vet) => vet.specialization === selectedSpecial
+      setFilteredVets(
+        veterins.filter((vet) => vet.specialization === selectedSpecial)
       );
+    } else {
+      setFilteredVets(veterins);
     }
-    setFilteredVets(filtered);
   }, [selectedSpecial, veterins]);
 
   const specials = Array.from(
