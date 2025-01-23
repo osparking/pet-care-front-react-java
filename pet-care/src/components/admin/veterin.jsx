@@ -10,12 +10,12 @@ import {
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
+import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
-import VetFilter from "../veterinarians/VetFilter";
+import ItemsFilter from "../veterinarians/VetFilter";
 import { getVets } from "../veterinarians/VetService";
-import Paginator from "../common/Paginator";
 
 const Veterin = () => {
   const [veterins, setVeterins] = useState([]);
@@ -144,7 +144,8 @@ const Veterin = () => {
       </Row>
       <Row className="mb-2">
         <Col md={6}>
-          <VetFilter
+          <ItemsFilter
+            label={"전문분야"}
             options={specials}
             selectedOption={selectedSpecial}
             onOptionSelection={setSelectedSpecial}
@@ -232,13 +233,12 @@ const Veterin = () => {
           ))}
         </tbody>
       </Table>
-      <Paginator 
+      <Paginator
         pageSize={vetsPerPage}
         totalItems={filteredVets.length}
         currPage={currPage}
         setCurrPage={setCurrPage}
       />
-      
     </main>
   );
 };
