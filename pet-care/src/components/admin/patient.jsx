@@ -40,15 +40,16 @@ const Patient = () => {
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
+    fetchPatients();
+  }, []);
+
+  useEffect(() => {
     setFiltered(patients);
     if (selectedEmail) {
       setFiltered(
         patients.filter((patient) => patient.email === selectedEmail)
       );
-    } else {
-      fetchPatients();
     }
-    console.log("주인 숫자: ", patients.length);
   }, [patients, selectedEmail]);
 
   return (
