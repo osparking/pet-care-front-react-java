@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getPatients } from "../patient/PatientService";
+import ItemsFilter from "../user/ItemsFilter";
 
 const Patient = () => {
   const [patients, setPatients] = useState([]);
@@ -52,6 +53,17 @@ const Patient = () => {
           {showErrorAlert && (
             <AlertMessage type={"danger"} message={errorMsg} />
           )}
+        </Col>
+      </Row>
+      <Row className="mb-2">
+        <Col md={6}>
+          <ItemsFilter
+            label={"이메일"}
+            options={emails}
+            selectedOption={selectedEmail}
+            onOptionSelection={setSelectedEmail}
+            onClearFilter={handleClearFilter}
+          />
         </Col>
       </Row>
       <Table>
