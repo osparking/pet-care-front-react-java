@@ -13,8 +13,8 @@ import AlertMessage from "../common/AlertMessage";
 import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
-import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
 import ItemsFilter from "../user/ItemsFilter";
+import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
 import { getVets } from "../veterinarians/VetService";
 
 const Veterin = () => {
@@ -40,8 +40,8 @@ const Veterin = () => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
-  const readAllVeters = () => {
-    getVets()
+  const readAllVeters = async () => {
+    await getVets()
       .then((data) => {
         setVeterins(data.data);
       })
