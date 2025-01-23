@@ -39,6 +39,12 @@ const Patient = () => {
 
   const [filtered, setFiltered] = useState([]);
 
+  const [currPage, setCurrPage] = useState(1);
+  const [patsPerPage] = useState(2);
+  const indexOfLastPat = currPage * patsPerPage;
+  const indexOfFirstPat = indexOfLastPat - patsPerPage;
+  const currentPats = filtered.slice(indexOfFirstPat, indexOfLastPat);
+
   useEffect(() => {
     fetchPatients();
   }, []);
