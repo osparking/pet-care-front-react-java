@@ -49,7 +49,7 @@ const Patient = () => {
         </Col>
       </Row>
       <Table>
-        <thread>
+        <thead>
           <tr>
             <th>아이디</th>
             <th>성씨</th>
@@ -60,7 +60,7 @@ const Patient = () => {
             <th>등록일</th>
             <th colSpan={2}>작업</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
           {patients.map((patient, idx) => (
             <tr key={idx}>
