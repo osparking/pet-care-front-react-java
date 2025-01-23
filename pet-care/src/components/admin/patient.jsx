@@ -44,11 +44,12 @@ const Patient = () => {
   }, []);
 
   useEffect(() => {
-    setFiltered(patients);
     if (selectedEmail) {
       setFiltered(
         patients.filter((patient) => patient.email === selectedEmail)
       );
+    } else {
+      setFiltered(patients);
     }
   }, [patients, selectedEmail]);
 
