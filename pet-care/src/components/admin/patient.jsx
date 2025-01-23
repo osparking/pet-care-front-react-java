@@ -38,14 +38,18 @@ const Patient = () => {
   };
 
   useEffect(() => {
-    fetchPatients();
-  }, []);
+    let filtered = patients;
+    if (selectedEmail) {
+      filtered = filtered.filter((patient) => patient.email === selectedEmail);
+    } else {
+      fetchPatients();
+    }
+  }, [patients, selectedEmail]);
 
   return (
     <main>
       <h5>팻 주인(=환자) 목록</h5>
       <Row>
-        <Col>팻 주인 필터 성분 자리</Col>
         <Col>
           {showSuccessAlert && (
             <AlertMessage type={"success"} message={successMsg} />
