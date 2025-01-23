@@ -14,7 +14,7 @@ import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import DelTargetConfirmModal from "../modals/DelTargetConfirmModal";
 import { deleteUserAccount, toggleUserAccount } from "../user/UserService";
-import ItemsFilter from "../veterinarians/VetFilter";
+import ItemsFilter from "../user/ItemsFilter";
 import { getVets } from "../veterinarians/VetService";
 
 const Veterin = () => {
