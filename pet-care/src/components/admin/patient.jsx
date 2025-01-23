@@ -6,6 +6,7 @@ import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getPatients } from "../patient/PatientService";
 import ItemsFilter from "../user/ItemsFilter";
+import Paginator from "../common/Paginator";
 
 const Patient = () => {
   const [patients, setPatients] = useState([]);
@@ -97,7 +98,7 @@ const Patient = () => {
           </tr>
         </thead>
         <tbody>
-          {filtered.map((patient, idx) => (
+          {currentPats.map((patient, idx) => (
             <tr key={idx}>
               <td>{patient.id}</td>
               <td>{patient.lastName}</td>
@@ -124,6 +125,12 @@ const Patient = () => {
           ))}
         </tbody>
       </Table>
+      <Paginator
+        pageSize={patsPerPage}
+        totalItems={filtered.length}
+        currPage={currPage}
+        setCurrPage={setCurrPage}
+      />
     </main>
   );
 };
