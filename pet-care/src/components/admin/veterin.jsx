@@ -104,8 +104,8 @@ const Veterin = () => {
   };
 
   useEffect(() => {
+    localStorage.setItem("selectedSpecial", selectedSpecial);
     if (selectedSpecial) {
-      localStorage.setItem("selectedSpecial", selectedSpecial);
       setFilteredVets(
         veterins.filter((vet) => vet.specialization === selectedSpecial)
       );
