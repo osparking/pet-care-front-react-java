@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import AdminSideBar from "./AdminSideBar";
 import Overview from "./Overview";
-import Veterin from "./veterin";
 import Patient from "./patient";
+import Veterin from "./veterin";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -14,6 +14,8 @@ const AdminDashboard = () => {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    localStorage.setItem("activeTab", tab);
+    console.log("activeTab: " + tab);
   };
 
   return (
