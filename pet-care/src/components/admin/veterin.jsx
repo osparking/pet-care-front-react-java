@@ -95,7 +95,9 @@ const Veterin = () => {
     }
   };
 
-  const [selectedSpecial, setSelectedSpecial] = useState("");
+  const [selectedSpecial, setSelectedSpecial] = useState(
+    localStorage.getItem("selectedSpecial") || ""
+  );
 
   const handleClearFilter = () => {
     setSelectedSpecial("");
@@ -103,6 +105,7 @@ const Veterin = () => {
 
   useEffect(() => {
     if (selectedSpecial) {
+      localStorage.setItem("selectedSpecial", selectedSpecial);
       setFilteredVets(
         veterins.filter((vet) => vet.specialization === selectedSpecial)
       );
