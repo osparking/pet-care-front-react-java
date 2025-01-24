@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminSideBar from "./AdminSideBar";
 import Overview from "./Overview";
 import Patient from "./patient";
@@ -15,8 +15,15 @@ const AdminDashboard = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
     localStorage.setItem("activeTab", tab);
-    console.log("activeTab: " + tab);
   };
+
+  useEffect(() => {
+    setActiveTab(
+      localStorage.getItem("activeTab")
+        ? localStorage.getItem("activeTab")
+        : "overview"
+    );
+  }, []);
 
   return (
     <main className="admin-body">
