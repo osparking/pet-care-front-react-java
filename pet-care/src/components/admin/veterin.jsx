@@ -22,7 +22,9 @@ const Veterin = () => {
   const [showDelModal, setShowDelModal] = useState(false);
   const [vetIdToDel, setVetIdToDel] = useState(null);
 
-  const [currPage, setCurrPage] = useState(1);
+  const [currPage, setCurrPage] = useState(
+    localStorage.getItem("currPage") || 1
+  );
   const [vetsPerPage] = useState(5);
   const indexOfLastVet = currPage * vetsPerPage;
   const indexOfFirstVet = indexOfLastVet - vetsPerPage;
@@ -50,6 +52,10 @@ const Veterin = () => {
         setShowErrorAlert(true);
       });
   };
+
+  useEffect(() => {
+    localStorage.setItem("currPage", currPage);
+  }, [currPage]);
 
   useEffect(() => {
     readAllVeters();
