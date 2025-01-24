@@ -2,13 +2,12 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 
 const Paginator = ({ pageSize, totalItems, currPage, setCurrPage }) => {
-  let active = currPage;
   let items = [];
   for (let i = 1; i <= Math.ceil(totalItems / pageSize); i++) {
     items.push(
       <Pagination.Item
         key={i}
-        active={i === active}
+        active={i == currPage}
         onClick={() => setCurrPage(i)}
       >
         {i}
