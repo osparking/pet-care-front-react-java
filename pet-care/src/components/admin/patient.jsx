@@ -42,9 +42,16 @@ const Patient = () => {
 
   const [filtered, setFiltered] = useState([]);
 
-  const [currPage, setCurrPage] = useState(1);
+  const [currPatPage, setCurrPatPage] = useState(
+    localStorage.getItem("currPatPage") || 1
+  );
+
+  useEffect(() => {
+    localStorage.setItem("currPatPage", currPatPage);
+  }, [currPatPage]);
+
   const [patsPerPage] = useState(2);
-  const indexOfLastPat = currPage * patsPerPage;
+  const indexOfLastPat = currPatPage * patsPerPage;
   const indexOfFirstPat = indexOfLastPat - patsPerPage;
   const currentPats = filtered.slice(indexOfFirstPat, indexOfLastPat);
 
@@ -131,8 +138,8 @@ const Patient = () => {
       <Paginator
         pageSize={patsPerPage}
         totalItems={filtered.length}
-        currPage={currPage}
-        setCurrPage={setCurrPage}
+        currPage={currPatPage}
+        setCurrPage={setCurrPatPage}
       />
     </main>
   );
