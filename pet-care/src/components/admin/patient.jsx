@@ -3,10 +3,10 @@ import { Col, OverlayTrigger, Row, Table, Tooltip } from "react-bootstrap";
 import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
+import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { getPatients } from "../patient/PatientService";
 import ItemsFilter from "../user/ItemsFilter";
-import Paginator from "../common/Paginator";
 
 const Patient = () => {
   const [patients, setPatients] = useState([]);
@@ -33,7 +33,9 @@ const Patient = () => {
   };
 
   const emails = Array.from(new Set(patients.map((patient) => patient.email)));
-  const [selectedEmail, setSelectedEmail] = useState("");
+  const [selectedEmail, setSelectedEmail] = useState(
+    localStorage.getItem("selectedEmail") || ""
+  );
   const handleClearFilter = () => {
     setSelectedEmail("");
   };
@@ -51,6 +53,7 @@ const Patient = () => {
   }, []);
 
   useEffect(() => {
+    localStorage.setItem("selectedEmail", selectedEmail);
     if (selectedEmail) {
       setFiltered(
         patients.filter((patient) => patient.email === selectedEmail)
