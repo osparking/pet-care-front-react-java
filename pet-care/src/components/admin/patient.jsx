@@ -50,7 +50,7 @@ const Patient = () => {
     localStorage.setItem("currPatPage", currPatPage);
   }, [currPatPage]);
 
-  const [patsPerPage] = useState(2);
+  const [patsPerPage] = useState(5);
   const indexOfLastPat = currPatPage * patsPerPage;
   const indexOfFirstPat = indexOfLastPat - patsPerPage;
   const currentPats = filtered.slice(indexOfFirstPat, indexOfLastPat);
@@ -94,7 +94,7 @@ const Patient = () => {
           />
         </Col>
       </Row>
-      <Table>
+      <Table bordered hover striped>
         <thead>
           <tr>
             <th>아이디</th>

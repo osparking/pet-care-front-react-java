@@ -162,7 +162,7 @@ const Veterin = () => {
           />
         </Col>
       </Row>
-      <Table>
+      <Table bordered hover striped>
         <thead>
           <tr>
             <th>성씨</th>
