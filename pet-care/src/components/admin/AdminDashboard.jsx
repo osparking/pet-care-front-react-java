@@ -6,7 +6,7 @@ import Veterin from "./veterin";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("");
 
   const toggleSidebar = () => {
     setOpenSidebar(!openSidebar);
