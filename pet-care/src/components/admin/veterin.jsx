@@ -168,7 +168,7 @@ const Veterin = () => {
         </thead>
         <tbody>
           {currentVets.map((vet, index) => (
-            <tr>
+            <tr key={index}>
               <td>{vet.lastName}</td>
               <td>{vet.firstName}</td>
               <td>{vet.email}</td>
