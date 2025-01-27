@@ -46,7 +46,11 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         onReviewSubmit();
       }
     } catch (err) {
-      setErrorMsg("오류: " + err.response.data.message);
+      if ("ERR_NETWORK" === err.code) {
+        setErrorMsg("리뷰는 로그인 후에 가능해요.");
+      } else {
+        setErrorMsg(err.response.data.message);
+      }
       setShowErrorAlert(true);
     }
   };
