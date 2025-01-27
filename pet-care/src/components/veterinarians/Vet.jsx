@@ -10,6 +10,7 @@ import Rating from "../rating/Rating";
 import RatingAvg from "../rating/RatingAvg";
 import Review from "../review/Review";
 import { getUserById } from "../user/UserService";
+import NoDataAvailable from "../common/NoDataAvailable";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);
