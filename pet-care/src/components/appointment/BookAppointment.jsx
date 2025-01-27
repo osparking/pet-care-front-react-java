@@ -129,7 +129,11 @@ const BookAppointment = () => {
       setSuccessMsg(response.message);
       setShowSuccessAlert(true);
     } catch (err) {
-      setErrorMsg("오류: " + err.response.data.message);
+      if ("ERR_NETWORK" === err.code) {
+        setErrorMsg("예약은 로그인 후에 가능해요.");
+      } else {
+        setErrorMsg(err.response.data.message);
+      }
       setShowErrorAlert(true);
     } finally {
       setIsProcessing(false);
