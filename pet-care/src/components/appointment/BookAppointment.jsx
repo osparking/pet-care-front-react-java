@@ -40,7 +40,7 @@ const BookAppointment = () => {
     ],
   });
 
-  const senderId = 3;
+  const senderId = 2062;
   const { recipientId } = useParams();
 
   const dateChanged = (newDate) => {
