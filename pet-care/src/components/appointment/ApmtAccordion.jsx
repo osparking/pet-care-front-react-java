@@ -134,7 +134,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   // 작업 2 - 예약 취소
   const appointmentBeingCanceled = async (apmtId) => {
     try {
-      const result = await cancelApmt(apmtId);
+      const result = await cancelApmt(apmtId);      
       setApmts(
         apmts.map((apmt) =>
           apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt

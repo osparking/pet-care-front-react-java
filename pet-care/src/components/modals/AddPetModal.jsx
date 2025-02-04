@@ -24,7 +24,7 @@ const AddPetModal = ({
       </Modal.Header>
       <Modal.Body>
         <Form>
-          {console.log("pet a: ", petData)}
+          {/* {console.log("pet a: ", petData)} */}
           <PetEntry
             pet={petData}
             index={index}

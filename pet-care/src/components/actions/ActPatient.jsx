@@ -3,36 +3,40 @@ import ApmtUpdateModal from "../modals/ApmtUpdateModal";
 import ActButton from "./ActButton";
 
 const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [isCanceling, setCanceling] = useState(false);
+  const [isUpdating, setUpdating] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const handleClick = (actionType) => {
-    setIsProcessing(true);
     try {
       // actionType 에 따라 다르게 처리한다.
       if (actionType === "update") {
+        setUpdating(true);
         setShowUpdateModal(true);
       } else {
+        setCanceling(true);
+        // setTimeout(() => {
         onCancel(apmt.id);
+        setCanceling(false);
+        // }, 500);
       }
     } catch (e) {
       console.error(error);
     }
-    setIsProcessing(false);
   };
 
   const handleClose = () => {
     setShowUpdateModal(false);
+    setUpdating(false);
   };
 
   const handleUpdate = async (apmt) => {
-    setIsProcessing(true);
     try {
       await onUpdate(apmt);
       handleClose();
     } catch (e) {
       console.error(error);
     }
-    setIsProcessing(false);
+    setUpdating(false);
   };
 
   return (
@@ -40,17 +44,19 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
       <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
         <ActButton
           title={"예약 취소"}
+          action={"취소"}
           variant={"danger"}
           onClick={() => handleClick("cancel")}
           disabled={disabled}
-          isProcessing={isProcessing}
+          isProcessing={isCanceling}
         />
         <ActButton
           title={"예약 갱신"}
+          action={"갱신"}
           variant={"warning"}
           onClick={() => handleClick("update")}
           disabled={disabled}
-          isProcessing={isProcessing}
+          isProcessing={isUpdating}
         />
       </section>
       {showUpdateModal && (
