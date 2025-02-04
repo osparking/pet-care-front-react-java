@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import { BsPlusSquareFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import ActPatient from "../actions/ActPatient";
 import ActVeter from "../actions/ActVeter";
 import AlertMessage from "../common/AlertMessage";
@@ -134,7 +135,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   // 작업 2 - 예약 취소
   const appointmentBeingCanceled = async (apmtId) => {
     try {
-      const result = await cancelApmt(apmtId);      
+      const result = await cancelApmt(apmtId);
       setApmts(
         apmts.map((apmt) =>
           apmt.id == apmtId ? { ...apmt, status: "취소됨" } : apmt
@@ -216,6 +217,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
           const isWaitingForApproval = apmt.status === "승인대기";
           const statusColor = colors[apmt.status] || colors["default"];
           const isApproved = apmt.status === "승인됨";
+          const recipientId = apmt.veterinarian.id;
           return (
             <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
               <Accordion.Header>
@@ -253,6 +255,12 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     )}
                     {showErrorAlert && (
                       <AlertMessage type={"danger"} message={errorMsg} />
+                    )}
+
+                    {user.userType === UserType.PATIENT && (
+                      <Link to={`/appointments/create/${recipientId}`}>
+                        예약 신청
+                      </Link>
                     )}
                     {user && user.userType === UserType.PATIENT && (
                       <div>
