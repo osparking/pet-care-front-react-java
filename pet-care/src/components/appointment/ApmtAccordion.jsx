@@ -167,6 +167,10 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
         return apmt.status === selectedStat;
       });
     }
+
+    if (filteredOnes.length === 0) {
+      onClearFilter();
+    }
     setFilteredApmts(filteredOnes);
   }, [selectedStat, apmts]);
 
@@ -174,9 +178,9 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
   const [pageSize] = useState(4);
   const indexLastAppoint = pageSize * currPage;
   const indexFirstAppoint = indexLastAppoint - pageSize;
+
   const currFltdApps =
     filteredApmts.slice(indexFirstAppoint, indexLastAppoint) || [];
-
   const handleAddPet = (apmtId) => {
     setApmmtIdPet(apmtId);
     setShowAddPetModal(true);
@@ -258,7 +262,9 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     )}
 
                     {user.userType === UserType.PATIENT && (
-                      <Link to={`/appointments/create/${recipientId}/${user.id}`}>
+                      <Link
+                        to={`/appointments/create/${recipientId}/${user.id}`}
+                      >
                         예약 신청
                       </Link>
                     )}
