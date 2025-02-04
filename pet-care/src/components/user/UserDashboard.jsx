@@ -95,10 +95,6 @@ const UserDashboard = () => {
 
   return (
     <Container>
-      {showSuccessAlert && (
-        <AlertMessage type={"success"} message={successMsg} />
-      )}
-      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
       <Tabs
         className="mb-2"
         justify
