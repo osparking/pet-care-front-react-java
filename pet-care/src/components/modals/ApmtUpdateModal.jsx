@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import AlertMessage from "../common/AlertMessage";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
   const [apmtDate, setApmtDate] = useState(new Date(apmt.date));
@@ -8,19 +10,33 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
     new Date(`${apmt.date}T${apmt.time}`)
   );
   const [reason, setReason] = useState(apmt.reason);
+  const {
+    successMsg,
+    setSuccessMsg,
+    errorMsg,
+    setErrorMsg,
+    showSuccessAlert,
+    setShowSuccessAlert,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
 
   const handleSubmit = () => {
-    console.log(
-      "time: ",
-      apmtTime.toTimeString().split(" ")[0].substring(0, 5)
-    );
-    const updatedApmt = {
-      ...apmt,
-      date: apmtDate.toISOString().split("T")[0],
-      time: apmtTime.toTimeString().split(" ")[0].substring(0, 5),
-      reason,
-    };
-    doUpdate(updatedApmt);
+    try {
+      const updatedApmt = {
+        ...apmt,
+        date: apmtDate.toISOString().split("T")[0],
+        time: apmtTime.toTimeString().split(" ")[0].substring(0, 5),
+        reason,
+      };
+      doUpdate(updatedApmt);
+      setSuccessMsg("예약 갱신 성공");
+      setShowErrorAlert(false);
+      setShowSuccessAlert(true);
+    } catch (e) {
+      setErrorMsg("예약 갱신 오류: " + e.message);
+      setShowErrorAlert(true);
+    }
   };
 
   return (
@@ -30,6 +46,12 @@ const ApmtUpdateModal = ({ show, apmt, doClose, doUpdate }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
+          {showSuccessAlert && (
+            <AlertMessage type={"success"} message={successMsg} />
+          )}
+          {showErrorAlert && (
+            <AlertMessage type={"danger"} message={errorMsg} />
+          )}
           <Form.Group controlId="apmtDate">
             <Form.Label className="me-2">진료 날짜</Form.Label>
             <DatePicker
