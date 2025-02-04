@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import ProcessSpinner from "../common/ProcessSpinner";
 
 const ActButton = ({
   title,
+  action,
   variant,
   onClick,
   disabled,
@@ -18,7 +20,7 @@ const ActButton = ({
         onClick={onClick}
         className={`me-2 ${className}`}
       >
-        {isProcessing ? "처리 중..." : title}
+        {isProcessing ? <ProcessSpinner message={action} /> : title}
       </Button>
     </div>
   );
