@@ -258,7 +258,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     )}
 
                     {user.userType === UserType.PATIENT && (
-                      <Link to={`/appointments/create/${recipientId}`}>
+                      <Link to={`/appointments/create/${recipientId}/${user.id}`}>
                         예약 신청
                       </Link>
                     )}
