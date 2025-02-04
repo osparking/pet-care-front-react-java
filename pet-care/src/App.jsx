@@ -26,7 +26,7 @@ function App() {
         <Route path="/register-user" element={<UserRegist />} />
         <Route path="/update-user/:userId" element={<UserUpdate />} />
         <Route
-          path="/appointments/create/:recipientId"
+          path="/appointments/create/:recipientId/:senderId"
           element={<BookAppointment />}
         />
         <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
