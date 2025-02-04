@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import ApmtAccordion from "../appointment/ApmtAccordion";
 import CustomPie from "../charts/CustomPie";
-import AlertMessage from "../common/AlertMessage";
 import NoDataAvailable from "../common/NoDataAvailable";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
@@ -10,7 +10,6 @@ import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
-import { useParams } from "react-router-dom";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const { userId } = useParams();
