@@ -2,26 +2,28 @@ import React, { useState } from "react";
 import ActButton from "./ActButton";
 
 const ActVeter = ({ onApprove, onDecline, disabled, apmt }) => {
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [isApproving, setApproving] = useState(false);
+  const [isDeclining, setDeclining] = useState(false);
 
   const handleClick = (actionType) => {
-    setIsProcessing(true);
     // actionType 에 따라 다르게 처리한다.
     if (actionType === "approve") {
+      setApproving(true)
       onApprove(apmt.id)
         .then(() => {
-          setIsProcessing(false);
+          setApproving(false);
         })
         .catch(() => {
-          setIsProcessing(false);
+          setApproving(false);
         });
     } else {
+      setDeclining(true);
       onDecline(apmt.id)
         .then(() => {
-          setIsProcessing(false);
+          setDeclining(false);
         })
         .catch(() => {
-          setIsProcessing(false);
+          setDeclining(false);
         });
     }
   };
@@ -30,17 +32,19 @@ const ActVeter = ({ onApprove, onDecline, disabled, apmt }) => {
     <section className="d-flex justify-content-end gap-2 mt-2 mb-2">
       <ActButton
         title={"예약 승인"}
+        action={"승인"}
         variant={"success"}
         onClick={() => handleClick("approve")}
         disabled={disabled}
-        isProcessing={isProcessing}
+        isProcessing={isApproving}
       />
       <ActButton
         title={"예약 거절"}
+        action={"거절"}
         variant={"warning"}
         onClick={() => handleClick("decline")}
         disabled={disabled}
-        isProcessing={isProcessing}
+        isProcessing={isDeclining}
       />
     </section>
   );
