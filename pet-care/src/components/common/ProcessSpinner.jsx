@@ -11,7 +11,7 @@ const ProcessSpinner = ({ size = "sm", animation = "grow", message = "" }) => {
         role="status"
         aria-hidden="true"
       />
-      {message && <span className="sr-only">{message}</span>}
+      {message && <span className="sr-only">{message} 중...</span>}
     </div>
   );
 };
