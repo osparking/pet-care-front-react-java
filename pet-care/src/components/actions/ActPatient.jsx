@@ -32,7 +32,6 @@ const ActPatient = ({ onUpdate, onCancel, disabled, apmt }) => {
   const handleUpdate = async (apmt) => {
     try {
       await onUpdate(apmt);
-      handleClose();
     } catch (e) {
       console.error(error);
     }
