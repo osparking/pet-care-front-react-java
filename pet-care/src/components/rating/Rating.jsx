@@ -47,6 +47,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
       }
     } catch (err) {
       if ("ERR_NETWORK" === err.code) {
+        console.error("status: ", err);
         setErrorMsg("리뷰는 로그인 후에 가능해요.");
       } else {
         setErrorMsg(err.response.data.message);
@@ -81,9 +82,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
                 <FaStar
                   size={20}
                   className="star"
-                  color={
-                    starCount <= (hover || stars) ? "#ffc107" : "#e4e5e9"
-                  }
+                  color={starCount <= (hover || stars) ? "#ffc107" : "#e4e5e9"}
                   onMouseEnter={() => setHover(starCount)}
                   onMouseLeave={() => setHover(null)}
                 />

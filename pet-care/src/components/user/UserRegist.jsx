@@ -75,9 +75,9 @@ const UserRegist = () => {
       firstName: "길동" + hrmnsc,
       gender: "male",
       mobile: "010-1234-5678",
-      email: `honggd${hrmnsc}@gmail.com`,
+      email: `jbpark03@naver.com`, // ${hrmnsc}
       password: "1234",
-      userType: "VET",
+      userType: "PATIENT",
       specialization: "애견치과",
     });
   };

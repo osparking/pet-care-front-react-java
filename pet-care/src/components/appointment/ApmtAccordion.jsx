@@ -248,7 +248,33 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     <p>방문 목적: {apmt.reason}</p>
                   </Col>
                   <Col md={8} className="mt-2">
-                    <h4>
+                    {showSuccessAlert && (
+                      <AlertMessage type={"success"} message={successMsg} />
+                    )}
+                    {showErrorAlert && (
+                      <AlertMessage type={"danger"} message={errorMsg} />
+                    )}
+                    {user && user.userType === UserType.PATIENT && (
+                      <div>
+                        <ActPatient
+                          onUpdate={appointmentBeingUpdated}
+                          onCancel={appointmentBeingCanceled}
+                          disabled={!isWaitingForApproval}
+                          apmt={apmt}
+                        />
+                      </div>
+                    )}
+                    {user && user.userType === UserType.VET && (
+                      <div>
+                        <ActVeter
+                          onApprove={appointmentBeingApproved}
+                          onDecline={appointmentBeingDeclined}
+                          disabled={!isWaitingForApproval}
+                          apmt={apmt}
+                        />
+                      </div>
+                    )}
+                    <p>
                       애완 동물:
                       <Button
                         className="btn btn-sm btn-primary ms-3"
@@ -256,7 +282,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       >
                         <BsPlusSquareFill />
                       </Button>
-                    </h4>
+                    </p>
                     <AddPetModal
                       apmtId={apmtIdPet}
                       petData={petData}
@@ -266,12 +292,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       closer={() => setShowAddPetModal(false)}
                       saver={callPetAddAPI}
                     />
-                    {showSuccessAlert && (
-                      <AlertMessage type={"success"} message={successMsg} />
-                    )}
-                    {showErrorAlert && (
-                      <AlertMessage type={"danger"} message={errorMsg} />
-                    )}
                     <PetTable
                       pets={apmt.pets}
                       apmtId={apmt.id}
@@ -284,26 +304,6 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     <UserInfo userType={user.userType} apmt={apmt} />
                   )}
                 </Row>
-                {user && user.userType === UserType.PATIENT && (
-                  <div>
-                    <ActPatient
-                      onUpdate={appointmentBeingUpdated}
-                      onCancel={appointmentBeingCanceled}
-                      disabled={!isWaitingForApproval}
-                      apmt={apmt}
-                    />
-                  </div>
-                )}
-                {user && user.userType === UserType.VET && (
-                  <div>
-                    <ActVeter
-                      onApprove={appointmentBeingApproved}
-                      onDecline={appointmentBeingDeclined}
-                      disabled={!isWaitingForApproval}
-                      apmt={apmt}
-                    />
-                  </div>
-                )}
               </Accordion.Body>
             </Accordion.Item>
           );
