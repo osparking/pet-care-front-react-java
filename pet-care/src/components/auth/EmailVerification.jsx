@@ -25,13 +25,21 @@ const EmailVerification = () => {
           break;
       }
       /*
-        {TOKEN_VALI_ERROR = "토큰 검증 오류";
         TOKEN_EXPIRED = "토큰 기한 만료";
-        TOKEN_IS_VALID = "토큰 아직 유용함";
-        TOKEN_SAVED = "토큰 저장 성공";
         */
     } catch (error) {
-      console.error("오류:", error);
+      if (error.response) {
+        const { message } = error.response.data;
+
+        if (message && message === "토큰 기한 만료 ") {
+          setVerifyMsg("기한이 만료된 토큰입니다.");
+          setAlertType("alert-warning");
+        } else {
+          console.error("message: ", message);
+          setVerifyMsg("잘못된 이메일 검증 링크입니다.");
+          setAlertType("alert-danger");
+        }
+      }
     }
   };
 
