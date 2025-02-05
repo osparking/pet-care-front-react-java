@@ -20,10 +20,11 @@ const EmailVerification = () => {
           setAlertType("alert-info");
           break;
         default:
+          setVerifyMsg("이메일 검증 중 오류가 발생하였습니다.");
+          setAlertType("alert-danger");
           break;
       }
       /*
-        TOKEN_VALIDATED = "계정 활성화됨";
         {TOKEN_VALI_ERROR = "토큰 검증 오류";
         TOKEN_EXPIRED = "토큰 기한 만료";
         TOKEN_IS_VALID = "토큰 아직 유용함";
