@@ -39,6 +39,9 @@ const EmailVerification = () => {
           setVerifyMsg("잘못된 이메일 검증 링크입니다.");
           setAlertType("alert-danger");
         }
+      } else {
+        setVerifyMsg("서버 연결 오류가 발생하였습니다.");
+        setAlertType("alert-danger");
       }
     }
   };
