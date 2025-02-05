@@ -24,9 +24,6 @@ const EmailVerification = () => {
           setAlertType("alert-danger");
           break;
       }
-      /*
-        TOKEN_EXPIRED = "토큰 기한 만료";
-        */
     } catch (error) {
       if (error.response) {
         const { message } = error.response.data;
@@ -43,6 +40,8 @@ const EmailVerification = () => {
         setVerifyMsg("서버 연결 오류가 발생하였습니다.");
         setAlertType("alert-danger");
       }
+    } finally {
+      setIsProcessing(false);
     }
   };
 
