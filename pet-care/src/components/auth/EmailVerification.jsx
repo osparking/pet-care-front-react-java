@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProcessSpinner from "../common/ProcessSpinner";
-import verifyEmail from "./AuthService";
+import { verifyEmail } from "./AuthService";
 
 const EmailVerification = () => {
   const [verifyMsg, setVerifyMsg] = useState("이메일 검증 중입니다...");
