@@ -46,6 +46,18 @@ const EmailVerification = () => {
     }
   };
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const token = queryParams.get("token");
+
+    if (token) {
+      verify_email(token);
+    } else if (!token) {
+      setVerifyMsg("토큰이 제출되지 않았습니다.");
+      setAlertType("alert-danger");
+    }
+  }, []);
+
   return (
     <div className="d-flex justify-content-center mt-lg-5">
       {isProcessing ? (
