@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProcessSpinner from "../common/ProcessSpinner";
 import verifyEmail from "./AuthService";
 
 const EmailVerification = () => {
@@ -45,7 +46,19 @@ const EmailVerification = () => {
     }
   };
 
-  return <div></div>;
+  return (
+    <div className="d-flex justify-content-center mt-lg-5">
+      {isProcessing ? (
+        <ProcessSpinner message="요청을 처리 중이니 기다려 주십시오..." />
+      ) : (
+        <div className="col-12 col-md-6">
+          <div className={`alert ${alertType}`} role="alert">
+            {verifyMsg}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default EmailVerification;
