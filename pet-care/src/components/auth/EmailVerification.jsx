@@ -10,7 +10,7 @@ const EmailVerification = () => {
   const verify_email = async (token) => {
     setIsProcessing(true);
     try {
-      const response = verifyEmail(token);
+      const response = await verifyEmail(token);
       switch (response.message) {
         case "계정 활성화됨":
           setVerifyMsg("이메일 검증이 성공하여 로그인이 가능합니다.");
