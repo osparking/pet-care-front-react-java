@@ -8,6 +8,7 @@ import {
 import "./App.css";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import BookAppointment from "./components/appointment/BookAppointment";
+import EmailVerification from "./components/auth/EmailVerification";
 import Login from "./components/auth/Login";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
@@ -36,6 +37,7 @@ function App() {
           element={<UserDashboard />}
         />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/email_verify" element={<EmailVerification />} />
       </Route>
     )
   );
