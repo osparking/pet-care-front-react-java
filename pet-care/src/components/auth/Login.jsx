@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { BsLockFill, BsPersonFill } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { userLogin } from "./AuthService";
 
@@ -65,6 +66,9 @@ const Login = () => {
       <Row className="justify-content-center">
         <Col sm={6}>
           <Card>
+            {showErrorAlert && (
+              <AlertMessage type={"danger"} message={errorMsg} />
+            )}
             <Card.Body>
               <Card.Title className="text-center mb-4"></Card.Title>
               <Form onSubmit={handleSubmit}>
