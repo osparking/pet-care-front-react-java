@@ -37,12 +37,17 @@ const Login = () => {
     try {
       const data = await userLogin(creden.email, creden.password);
       localStorage.setItem("authToken", data.token);
+      clearForm();
       navigate(from, { replace: true });
     } catch (error) {
       setErrorMsg(error.response.data.data);
       setShowErrorAlert(true);
-
     }
+  };
+
+  const clearForm = () => {
+    setCreden({ email: "", password: "" });
+    setShowErrorAlert(false);
   };
 
   return (
