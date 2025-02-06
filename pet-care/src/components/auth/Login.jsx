@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { BsLockFill, BsPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Login = () => {
   const [creden, setCreden] = useState({
@@ -21,14 +22,32 @@ const Login = () => {
     setCreden({ ...creden, [e.target.name]: e.target.value });
   };
 
+  const {
+    errorMsg,
+    setErrorMsg,
+    showErrorAlert,
+    setShowErrorAlert,
+  } = UseMsgAlerts();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!creden.email || !creden.password) {
+      setErrorMsg("아이디/비밀번호를 입력하세요.");
+      setShowErrorAlert(true);
+      return;
+    }
+    // TODO: 로그인 API 호출
+  };
+
   return (
     <Container className="mt-5">
+      z
       <Row className="justify-content-center">
         <Col sm={6}>
           <Card>
             <Card.Body>
               <Card.Title className="text-center mb-4"></Card.Title>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="username">
                   <Form.Label>이메일</Form.Label>
                   <InputGroup>
