@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -47,6 +47,13 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem("authToken");
+    if (isAuthenticated) {
+      navigate(from, { replace: true });
+    }
+  }, []);
+
   const clearForm = () => {
     setCreden({ email: "", password: "" });
     setShowErrorAlert(false);
@@ -54,7 +61,6 @@ const Login = () => {
 
   return (
     <Container className="mt-5">
-      z
       <Row className="justify-content-center">
         <Col sm={6}>
           <Card>
