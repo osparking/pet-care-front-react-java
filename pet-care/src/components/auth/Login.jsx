@@ -9,7 +9,7 @@ import {
   Row,
 } from "react-bootstrap";
 import { BsLockFill, BsPersonFill } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Login = () => {
@@ -26,6 +26,8 @@ const Login = () => {
     UseMsgAlerts();
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
