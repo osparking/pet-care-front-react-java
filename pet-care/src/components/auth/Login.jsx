@@ -9,7 +9,7 @@ import {
   Row,
 } from "react-bootstrap";
 import { BsLockFill, BsPersonFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const Login = () => {
@@ -36,7 +36,12 @@ const Login = () => {
       setShowErrorAlert(true);
       return;
     }
-    // TODO: 로그인 API 호출
+    try {
+      const data = await userLogin(creden.email, creden.password);
+      localStorage.setItem("authToken", data.token);
+    } catch(error) {
+
+    }
   };
 
   return (
