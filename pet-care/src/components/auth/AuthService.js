@@ -12,7 +12,7 @@ export const verifyEmail = async (token) => {
 export const userLogin = async (email, password) => {
   try {
     const response = await api.post("/auth/login", { email, password });
-    return response.data;
+    return response.data.data;
   } catch (error) {
     throw error;
   }
