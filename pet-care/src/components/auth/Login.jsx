@@ -22,12 +22,10 @@ const Login = () => {
     setCreden({ ...creden, [e.target.name]: e.target.value });
   };
 
-  const {
-    errorMsg,
-    setErrorMsg,
-    showErrorAlert,
-    setShowErrorAlert,
-  } = UseMsgAlerts();
+  const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
+    UseMsgAlerts();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +37,10 @@ const Login = () => {
     try {
       const data = await userLogin(creden.email, creden.password);
       localStorage.setItem("authToken", data.token);
-    } catch(error) {
+      navigate(from, { replace: true });
+    } catch (error) {
+      setErrorMsg(error.response.data.data);
+      setShowErrorAlert(true);
 
     }
   };
