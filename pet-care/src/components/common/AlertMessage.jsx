@@ -3,8 +3,9 @@ import { Alert } from "react-bootstrap";
 
 export default function AlertMessage({ type, message }) {
   if (!message) return null;
+  console.log("type: " + type + ", message: " + message);
   return (
-    <Alert varient={type} dismissible>
+    <Alert variant={type} dismissible>
       {message}
     </Alert>
   );
