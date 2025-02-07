@@ -21,10 +21,12 @@ const AppointChart = () => {
   }, []);
 
   return (
-    <div>
-      <h5 className="mb-4 chart-title">예약 상태 통계</h5>
-      <CustomPie data={appointData} />
-    </div>
+    <section>
+      <React.Fragment>
+        <h5 className="mb-4 chart-title">예약 상태 통계</h5>
+        <CustomPie data={appointData} />
+      </React.Fragment>
+    </section>
   );
 };
 
