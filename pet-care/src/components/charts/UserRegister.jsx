@@ -10,6 +10,7 @@ import {
   YAxis,
 } from "recharts";
 import { getUserByMonthType } from "../user/UserService";
+import NoDataAvailable from "../common/NoDataAvailable";
 
 const UserRegister = () => {
   const [userStat, setUserStat] = useState([]);
@@ -40,18 +41,29 @@ const UserRegister = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width={"60%"} height={400}>
-      <h5 className="chart-title mb-5">등록 유저 통계</h5>
-      <BarChart data={userStat}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" angle={-50} textAnchor="end" height={70} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey={"수의사"} fill="#8884d8" />
-        <Bar dataKey={"팻주인"} fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+    <section>
+      {userStat && userStat.length > 0 ? (
+        <React.Fragment>
+          <ResponsiveContainer width={"60%"} height={400}>
+            <h5 className="chart-title mb-5">등록 유저 통계</h5>
+            <BarChart data={userStat}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" angle={-50} textAnchor="end" height={70} />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey={"수의사"} fill="#8884d8" />
+              <Bar dataKey={"팻주인"} fill="#82ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
+        </React.Fragment>
+      ) : (
+        <NoDataAvailable
+          dataType={" (유저) 등록 자료 "}
+          errorMessage={errorMessage}
+        />
+      )}
+    </section>
   );
 };
 
