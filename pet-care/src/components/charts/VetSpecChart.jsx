@@ -3,12 +3,12 @@ import {
   Bar,
   BarChart,
   Cell,
-  Legend,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
+import NoDataAvailable from "../common/NoDataAvailable";
 import { getSpecializations } from "../user/UserService";
 
 const VetSpecChart = () => {
@@ -36,34 +36,54 @@ const VetSpecChart = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width={"50%"} height={400}>
-      <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
-      <BarChart data={vetSpecials} >
-        <XAxis dataKey="specialty" angle={-30} textAnchor="end" height={70} />
-        <YAxis domain={[0,5]} tickCount={6} tick={[0, 1, 2, 3, 4, 5]} />
-        <Tooltip
-          content={(props) => {
-            const { payload } = props;
-            console.log("payload: ", props);
-            if (payload && payload.length) {
-              return (
-                <div style={{ backgroundColor: "#aab5b0" }} className="p-4">
-                  <p className="text-primary">
-                    {payload[0].payload.specialty}: {payload[0].payload.count}
-                  </p>
-                </div>
-              );
-            }
-            return null;
-          }}
+    <section>
+      {vetSpecials && vetSpecials.length > 0 ? (
+        <React.Fragment>
+          <ResponsiveContainer width={"50%"} height={400}>
+            <h5 className="mt-4 mb-4 chart-title">수의사 분야 통계</h5>
+            <BarChart data={vetSpecials}>
+              <XAxis
+                dataKey="specialty"
+                angle={-30}
+                textAnchor="end"
+                height={70}
+              />
+              <YAxis domain={[0, 5]} tickCount={6} tick={[0, 1, 2, 3, 4, 5]} />
+              <Tooltip
+                content={(props) => {
+                  const { payload } = props;
+                  console.log("payload: ", props);
+                  if (payload && payload.length) {
+                    return (
+                      <div
+                        style={{ backgroundColor: "#aab5b0" }}
+                        className="p-4"
+                      >
+                        <p className="text-primary">
+                          {payload[0].payload.specialty}:{" "}
+                          {payload[0].payload.count}
+                        </p>
+                      </div>
+                    );
+                  }
+                  return null;
+                }}
+              />
+              <Bar dataKey="count" fill="#8884d8">
+                {vetSpecials.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </React.Fragment>
+      ) : (
+        <NoDataAvailable
+          dataType={" 수의사 전문분야 자료 "}
+          errorMessage={errorMessage}
         />
-        <Bar dataKey="count" fill="#8884d8">
-          {vetSpecials.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={entry.color} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+      )}
+    </section>
   );
 };
 
