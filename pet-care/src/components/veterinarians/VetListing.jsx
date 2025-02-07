@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetCard from "./VetCard";
 import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
+import NoDataAvailable from "../common/NoDataAvailable";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
@@ -26,14 +26,6 @@ const VetListing = () => {
       });
   }, []);
 
-  if (vets.length === 0) {
-    return showErrorAlert ? (
-      <AlertMessage type={"danger"} message={errorMsg} />
-    ) : (
-      <p>저희는 현재 수의사가 없습니다.</p>
-    );
-  }
-
   const handleSearchResult = (foundVets) => {
     setShowErrorAlert(false);
     if (foundVets === null) {
@@ -44,21 +36,34 @@ const VetListing = () => {
   };
 
   return (
-    <Container>
-      <Row className="justify-content-center">
-        <h2 className="text-center mb-4 mt-4">저희 수의사를 만나보세요</h2>
-      </Row>
-      <Row className="justify-content-center">
-        <Col md={4}>
-          <VetSearch onSearchResult={handleSearchResult} />
-        </Col>
-        <Col md={7}>
-          {vets.map((vet, index) => (
-            <VetCard key={index} vet={vet} />
-          ))}
-        </Col>
-      </Row>
-    </Container>
+    <section>
+      {vets && vets.length > 0 ? (
+        <React.Fragment>
+          <Container>
+            <Row className="justify-content-center">
+              <h2 className="text-center mb-4 mt-4">
+                저희 수의사를 만나보세요
+              </h2>
+            </Row>
+            <Row className="justify-content-center">
+              <Col md={4}>
+                <VetSearch onSearchResult={handleSearchResult} />
+              </Col>
+              <Col md={7}>
+                {vets.map((vet, index) => (
+                  <VetCard key={index} vet={vet} />
+                ))}
+              </Col>
+            </Row>
+          </Container>
+        </React.Fragment>
+      ) : (
+        <NoDataAvailable
+          dataType={" 등록된 수의사 자료 "}
+          errorMessage={errorMsg}
+        />
+      )}
+    </section>
   );
 };
 
