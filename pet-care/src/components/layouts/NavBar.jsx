@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const NavBar = () => {
   const userId = useParams();
   const isLoggedIn = localStorage.getItem("authToken");
+  const userRoles = localStorage.getItem("userRoles") || [];
   return (
     <Navbar expand="lg" sticky="top" className="nav-bg">
       <Container>
