@@ -51,8 +51,6 @@ const NavBar = () => {
                   </NavDropdown.Item>
                 </React.Fragment>
               )}
-
-              <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
