@@ -32,10 +32,14 @@ const NavBar = () => {
                   >
                     나의 대시보드
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item to={"/admin-dashboard"} as={Link}>
-                    관리자 대시보드
-                  </NavDropdown.Item>
+                  {userRoles.includes("ROLE_ADMIN") && (
+                    <>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item to={"/admin-dashboard"} as={Link}>
+                        관리자 대시보드
+                      </NavDropdown.Item>
+                    </>
+                  )}
                   <NavDropdown.Divider />
                   <NavDropdown.Item to={"/logout"} as={Link}>
                     로그아웃
