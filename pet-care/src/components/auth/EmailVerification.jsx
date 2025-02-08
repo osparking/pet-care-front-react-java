@@ -11,6 +11,7 @@ const EmailVerification = () => {
     setIsProcessing(true);
     try {
       const response = await verifyEmail(token);
+
       switch (response.message) {
         case "계정 활성화됨":
           setVerifyMsg("이메일 검증이 성공하여 로그인이 가능합니다.");
@@ -20,6 +21,10 @@ const EmailVerification = () => {
           setVerifyMsg("이메일 검증이 이미 완료된 바 있습니다.");
           setAlertType("alert-info");
           break;
+        case "토큰 기한 만료":
+          setVerifyMsg("기한이 만료된 토큰입니다.");
+          setAlertType("alert-warning");
+          break;
         default:
           setVerifyMsg("이메일 검증 중 오류가 발생하였습니다.");
           setAlertType("alert-danger");
@@ -27,16 +32,8 @@ const EmailVerification = () => {
       }
     } catch (error) {
       if (error.response) {
-        const { message } = error.response.data;
-
-        if (message && message === "토큰 기한 만료 ") {
-          setVerifyMsg("기한이 만료된 토큰입니다.");
-          setAlertType("alert-warning");
-        } else {
-          console.error("message: ", message);
-          setVerifyMsg("잘못된 이메일 검증 링크입니다.");
-          setAlertType("alert-danger");
-        }
+        setVerifyMsg(error.response.data.message);
+        setAlertType("alert-danger");
       } else {
         setVerifyMsg("서버 연결 오류가 발생하였습니다.");
         setAlertType("alert-danger");
