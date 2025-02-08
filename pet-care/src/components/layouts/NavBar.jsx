@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 const NavBar = () => {
   const userId = useParams();
+  const isLoggedIn = localStorage.getItem("authToken");
   return (
     <Navbar expand="lg" sticky="top" className="nav-bg">
       <Container>
@@ -22,28 +23,36 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <NavDropdown title="계정" id="basic-nav-dropdown">
-              <NavDropdown.Item to={"/register-user"} as={Link}>
-                등록
-              </NavDropdown.Item>
+              {isLoggedIn ? (
+                <>
+                  <NavDropdown.Item
+                    to={`/user_dashboard/${userId}/my_dashboard`}
+                    as={Link}
+                  >
+                    나의 대시보드
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item to={"/admin-dashboard"} as={Link}>
+                    관리자 대시보드
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item to={"/logout"} as={Link}>
+                    로그아웃
+                  </NavDropdown.Item>
+                </>
+              ) : (
+                <React.Fragment>
+                  <NavDropdown.Item to={"/register-user"} as={Link}>
+                    등록
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item to={"/login"} as={Link}>
+                    로그인
+                  </NavDropdown.Item>
+                </React.Fragment>
+              )}
+
               <NavDropdown.Divider />
-              <NavDropdown.Item to={"/login"} as={Link}>
-                로그인
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item
-                to={`/user_dashboard/${userId}/my_dashboard`}
-                as={Link}
-              >
-                나의 대시보드
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item to={"/admin-dashboard"} as={Link}>
-                관리자 대시보드
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item to={"/logout"} as={Link}>
-                로그아웃
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
