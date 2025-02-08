@@ -233,7 +233,16 @@ const UserRegist = () => {
                   <AlertMessage type="danger" message={errorMsg} />
                 )}
                 {showSuccessAlert && (
-                  <AlertMessage type="success" message={successMsg} />
+                  <>
+                    <AlertMessage type="success" message={successMsg} />
+                    <p>등록한 이메일로 다음 메일을 전송하였으니 자기 이메일을 인증하십시오</p>
+                    <ul>
+                      <li>메일 제목: 자신 이메일을 검증하세요</li>
+                      <li>보낸 사람: 팻 돌봄이</li>
+                      <li>중요 내용: "이메일 확인" 링크</li>
+                      <li>유저 할일: 위 링크를 클락하여 자기 이메일임을 인증</li>
+                    </ul>
+                  </>
                 )}
                 <div className="text-center">
                   이미 등록한 경우:{" "}
