@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
-import { useParams } from "react-router-dom";
 import ApmtAccordion from "../appointment/ApmtAccordion";
 import CustomPie from "../charts/CustomPie";
 import NoDataAvailable from "../common/NoDataAvailable";
@@ -12,7 +11,7 @@ import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
-  const { userId } = useParams();
+  const userId = localStorage.getItem("userId");
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState(() => {
     const savedActiveTab = localStorage.getItem("activeTab");
