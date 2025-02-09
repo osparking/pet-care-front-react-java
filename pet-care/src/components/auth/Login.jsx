@@ -42,6 +42,10 @@ const Login = () => {
     try {
       const data = await userLogin(creden.email, creden.password);
       localStorage.setItem("authToken", data.token);
+      const tokenDecoded = jwtDecode(data.token);
+      localStorage.setItem("userRoles", JSON.stringify(tokenDecoded.roles));
+      localStorage.setItem("userId", JSON.stringify(tokenDecoded.id));
+      
       clearForm();
       navigate(from, { replace: true });
     } catch (error) {
