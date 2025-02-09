@@ -18,12 +18,9 @@ const AdminDashboard = () => {
   };
 
   useEffect(() => {
-    setActiveTab(
-      localStorage.getItem("activeTab")
-        ? localStorage.getItem("activeTab")
-        : "overview"
-    );
-  }, []);
+    const savedActive = localStorage.getItem("activeTab");
+    setActiveTab(savedActive ? savedActive : "overview");
+  });
 
   return (
     <main className="admin-body">
