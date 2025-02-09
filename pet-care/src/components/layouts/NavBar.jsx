@@ -1,11 +1,17 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { userLogout } from "../auth/AuthService";
 
 const NavBar = () => {
   const userId = localStorage.getItem("userId");
   const isLoggedIn = localStorage.getItem("authToken");
   const userRoles = localStorage.getItem("userRoles") || [];
+
+  const handleLogout = () => {
+    userLogout();
+  };
+
   return (
     <Navbar expand="lg" sticky="top" className="nav-bg">
       <Container>
@@ -41,7 +47,11 @@ const NavBar = () => {
                     </>
                   )}
                   <NavDropdown.Divider />
-                  <NavDropdown.Item to={"/logout"} as={Link}>
+                  <NavDropdown.Item
+                    to={"#"}
+                    as={Link}
+                    onClick={handleLogout}
+                  >
                     로그아웃
                   </NavDropdown.Item>
                 </>
