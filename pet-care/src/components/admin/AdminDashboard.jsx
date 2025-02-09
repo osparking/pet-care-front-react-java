@@ -6,20 +6,20 @@ import Veterin from "./veterin";
 
 const AdminDashboard = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const [activeTab, setActiveTab] = useState("");
+  const [tab4admin, setTab4admin] = useState("");
 
   const toggleSidebar = () => {
     setOpenSidebar(!openSidebar);
   };
 
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    localStorage.setItem("activeTab", tab);
+    setTab4admin(tab);
+    localStorage.setItem("tab4admin", tab);
   };
 
   useEffect(() => {
-    const savedActive = localStorage.getItem("activeTab");
-    setActiveTab(savedActive ? savedActive : "overview");
+    const savedActive = localStorage.getItem("tab4admin");
+    setTab4admin(savedActive ? savedActive : "overview");
   });
 
   return (
@@ -29,12 +29,12 @@ const AdminDashboard = () => {
           openSidebar={openSidebar}
           toggleSidebar={toggleSidebar}
           onNavigate={handleTabClick}
-          activeTab={activeTab}
+          tab4admin={tab4admin}
         />
         <div className="main-container">
-          {activeTab === "overview" && <Overview />}
-          {activeTab === "veteris" && <Veterin />}
-          {activeTab === "patients" && <Patient />}
+          {tab4admin === "overview" && <Overview />}
+          {tab4admin === "veteris" && <Veterin />}
+          {tab4admin === "patients" && <Patient />}
         </div>
       </div>
     </main>

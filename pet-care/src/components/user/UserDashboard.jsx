@@ -13,8 +13,8 @@ const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const userId = localStorage.getItem("userId");
   const [appointments, setAppointments] = useState([]);
-  const [activeTab, setActiveTab] = useState(() => {
-    const savedActiveTab = localStorage.getItem("activeTab");
+  const [tab4user, setTab4user] = useState(() => {
+    const savedActiveTab = localStorage.getItem("tab4user");
     return savedActiveTab || "profile";
   });
   const [appoChartData, setAppoChartData] = useState([]);
@@ -87,8 +87,8 @@ const UserDashboard = () => {
   };
 
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    localStorage.setItem("activeTab", tab);
+    setTab4user(tab);
+    localStorage.setItem("tab4user", tab);
   };
 
   return (
@@ -96,7 +96,7 @@ const UserDashboard = () => {
       <Tabs
         className="mb-2"
         justify
-        activeKey={activeTab}
+        activeKey={tab4user}
         onSelect={handleTabChange}
       >
         <Tab eventKey="profile" title={<h3>프로필</h3>}>
