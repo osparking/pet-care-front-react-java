@@ -32,11 +32,8 @@ function App() {
         />
         <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/user_dashboard/:userId/my_dashboard"
-          element={<UserDashboard />}
-        />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/dashboard/:userId/user" element={<UserDashboard />} />
+        <Route path="/dashboard/:userId/admin" element={<AdminDashboard />} />
         <Route path="/email_verify" element={<EmailVerification />} />
       </Route>
     )
