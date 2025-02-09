@@ -17,8 +17,8 @@ import {jwtDecode} from "jwt-decode"
 
 const Login = () => {
   const [creden, setCreden] = useState({
-    email: "",
-    password: "",
+    email: "jbpark03@gmail.com",
+    password: "1234",
   });
 
   const handleInputChange = (e) => {
