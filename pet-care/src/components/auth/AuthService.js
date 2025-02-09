@@ -17,3 +17,10 @@ export const userLogin = async (email, password) => {
     throw error;
   }
 };
+
+export const userLogout = () => {
+  localStorage.removeItem("userId");
+  localStorage.removeItem("userRoles");
+  localStorage.removeItem("authToken");
+  window.location.href = "/";
+};
