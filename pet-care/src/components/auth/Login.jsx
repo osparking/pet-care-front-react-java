@@ -13,6 +13,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { userLogin } from "./AuthService";
+import {jwtDecode} from "jwt-decode"
 
 const Login = () => {
   const [creden, setCreden] = useState({
