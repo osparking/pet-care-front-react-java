@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const NavBar = () => {
-  const userId = useParams();
+  const userId = localStorage.getItem("userId");
   const isLoggedIn = localStorage.getItem("authToken");
   const userRoles = localStorage.getItem("userRoles") || [];
   return (
