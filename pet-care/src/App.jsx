@@ -22,19 +22,23 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
+        {/* 인증이 불필요한 루트 */}
         <Route index element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/doctors" element={<VetListing />} />
+        <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
         <Route path="/register-user" element={<UserRegist />} />
+        <Route path="/email_verify" element={<EmailVerification />} />
+
+        {/* 인증이 필요한 루트 */}
+        <Route path="/dashboard/:userId/user" element={<UserDashboard />} />
         <Route path="/update-user/:userId" element={<UserUpdate />} />
         <Route
           path="/appointments/create/:recipientId/:senderId"
           element={<BookAppointment />}
         />
-        <Route path="/veterinarian/:vetId/veterinarian" element={<Vet />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard/:userId/user" element={<UserDashboard />} />
+        {/* 관리자 전용 루트 */}
         <Route path="/dashboard/:userId/admin" element={<AdminDashboard />} />
-        <Route path="/email_verify" element={<EmailVerification />} />
       </Route>
     )
   );
