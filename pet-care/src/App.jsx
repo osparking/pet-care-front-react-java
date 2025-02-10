@@ -48,7 +48,13 @@ function App() {
           />
         </Route>
         {/* 관리자 전용 루트 */}
-        <Route path="/dashboard/:userId/admin" element={<AdminDashboard />} />
+        <Route
+          element={
+            <ProtectedRoute allowedRoles={["ROLE_ADMIN"]} useOutlet={true} />
+          }
+        >
+          <Route path="/dashboard/:userId/admin" element={<AdminDashboard />} />
+        </Route>
       </Route>
     )
   );
