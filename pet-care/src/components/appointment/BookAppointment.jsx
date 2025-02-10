@@ -40,8 +40,8 @@ const BookAppointment = () => {
     ],
   });
 
-  // const senderId = 2062;
-  const { recipientId, senderId } = useParams();
+  const senderId = localStorage.getItem("userId");
+  const { recipientId } = useParams();
 
   const dateChanged = (newDate) => {
     setFormData((prevState) => ({ ...prevState, date: newDate }));
