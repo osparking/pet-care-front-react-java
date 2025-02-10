@@ -6,7 +6,7 @@ const EmailVerification = () => {
   const [verifyMsg, setVerifyMsg] = useState("이메일 검증 중입니다...");
   const [alertType, setAlertType] = useState("alert-info");
   const [isProcessing, setIsProcessing] = useState(false);
-
+  
   const verify_email = async (token) => {
     setIsProcessing(true);
     try {
@@ -43,12 +43,17 @@ const EmailVerification = () => {
     }
   };
 
+  var called = false;
+  
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get("token");
 
     if (token) {
-      verify_email(token);
+      if (!called) {
+        called = true;
+        verify_email(token);
+      }
     } else if (!token) {
       setVerifyMsg("토큰이 제출되지 않았습니다.");
       setAlertType("alert-danger");
