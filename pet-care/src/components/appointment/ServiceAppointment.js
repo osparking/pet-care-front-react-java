@@ -1,13 +1,18 @@
+import axios from "axios";
 import { api } from "../utils/api";
 
 export async function bookAppointment(senderId, recipientId, request) {
   try {
     const token = localStorage.getItem("authToken");
-    const result = await api.post(
-      `/appointments/create?senderId=${senderId}&recipientId=${recipientId}`,
-      request,
-      { headers: { Authorization: "Bearer " + token } }
-    );
+    const prefix = "http://localhost:9192/api/v1/appointments/create?senderId=";
+    const result = await axios({
+      method: "post",
+      url: `${prefix}${senderId}&recipientId=${recipientId}`,
+      data: request,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return result.data;
   } catch (err) {
     throw err;
