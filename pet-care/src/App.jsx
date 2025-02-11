@@ -35,7 +35,7 @@ function App() {
         <Route
           element={
             <ProtectedRoute
-              allowedRoles={["ROLE_ADMIN, ROLE_PATIENT, ROLE_VET"]}
+              allowedRoles={["ROLE_ADMIN", "ROLE_PATIENT", "ROLE_VET"]}
               useOutlet={true}
             />
           }
