@@ -43,7 +43,7 @@ function App() {
           <Route path="/dashboard/:userId/user" element={<UserDashboard />} />
           <Route path="/update-user/:userId" element={<UserUpdate />} />
           <Route
-            path="/appointments/create/:recipientId/:senderId"
+            path="/appointments/create/:recipientId"
             element={<BookAppointment />}
           />
         </Route>
