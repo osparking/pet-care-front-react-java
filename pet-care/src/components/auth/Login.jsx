@@ -1,3 +1,4 @@
+import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -13,11 +14,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { userLogin } from "./AuthService";
-import {jwtDecode} from "jwt-decode"
 
 const Login = () => {
   const [creden, setCreden] = useState({
-    email: "jbpark03@gmail.com",
+    email: "jbpark03@naver.com",
     password: "1234",
   });
 
@@ -45,7 +45,7 @@ const Login = () => {
       const tokenDecoded = jwtDecode(data.token);
       localStorage.setItem("userRoles", JSON.stringify(tokenDecoded.roles));
       localStorage.setItem("userId", JSON.stringify(tokenDecoded.id));
-      
+
       clearForm();
       navigate(from, { replace: true });
     } catch (error) {

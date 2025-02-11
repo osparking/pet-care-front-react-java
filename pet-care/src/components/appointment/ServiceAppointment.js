@@ -6,7 +6,7 @@ export async function bookAppointment(senderId, recipientId, request) {
     const result = await api.post(
       `/appointments/create?senderId=${senderId}&recipientId=${recipientId}`,
       request,
-      { headers: { Authorization: "Bearer " } }
+      { headers: { Authorization: "Bearer " + token } }
     );
     return result.data;
   } catch (err) {
