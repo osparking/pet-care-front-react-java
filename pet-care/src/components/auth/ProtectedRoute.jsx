@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const ProtectedRoute = ({ children, allowedRoles = [], useOutlet = false }) => {
   const loggedIn = localStorage.getItem("authToken");
