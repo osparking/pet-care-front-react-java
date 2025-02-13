@@ -191,7 +191,7 @@ const Veterin = () => {
                     <Tooltip id={`tooltip-view-${index}`}>정보 열람</Tooltip>
                   }
                 >
-                  <Link to={"/"} className="text-info">
+                  <Link to={`/dashboard/${vet.id}/user`} className="text-info">
                     <BsEyeFill />
                   </Link>
                 </OverlayTrigger>
