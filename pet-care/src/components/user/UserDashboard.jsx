@@ -9,9 +9,12 @@ import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
+import { useParams } from "react-router-dom";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
-  const userId = localStorage.getItem("userId");
+  const { userId } = useParams();
+  const loginId = localStorage.getItem("userId");
+
   const [appointments, setAppointments] = useState([]);
   const [tab4user, setTab4user] = useState(() => {
     const savedActiveTab = localStorage.getItem("tab4user");
