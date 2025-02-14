@@ -71,8 +71,7 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
                   handleClose={handleCloseImageUpModal}
                 />
                 <p>
-                  {" "}
-                  {user.photo ? (
+                  {itIsMe && user.photo ? (
                     <Link to={"#"} onClick={handleRemovePhoto}>
                       사진 제거
                     </Link>
