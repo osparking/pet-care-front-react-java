@@ -124,7 +124,7 @@ const Patient = () => {
                   }
                 >
                   <Link
-                    to={`/user_dashboard/${patient.id}/my_dashboard`}
+                    to={`/dashboard/${patient.id}/user`}
                     className="text-info"
                   >
                     <BsEyeFill />
