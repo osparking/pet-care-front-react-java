@@ -198,13 +198,23 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
                   )}
                 </div>
                 <div className="mx-2">
-                  <Button
-                    variant="danger"
-                    size="sm"
-                    onClick={showUserDelCnfModal}
-                  >
-                    계정 폐쇄
-                  </Button>
+                  {itIsMe ? (
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={showUserDelCnfModal}
+                    >
+                      계정 폐쇄
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      style={{ cursor: "default", color: "grey" }}
+                    >
+                      계정 폐쇄
+                    </Button>
+                  )}
                 </div>
               </div>
             </Card.Body>
