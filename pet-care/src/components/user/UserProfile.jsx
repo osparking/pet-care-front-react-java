@@ -35,6 +35,8 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
     setUserToDel(null);
   };
 
+  const itIsMe = user.id == localStorage.getItem("userId");
+
   return (
     <Container>
       <DelUserConfirmModal
