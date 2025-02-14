@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { userLogout } from "../auth/AuthService";
@@ -7,6 +7,17 @@ const NavBar = () => {
   const userId = localStorage.getItem("userId");
   const isLoggedIn = localStorage.getItem("authToken");
   const userRoles = localStorage.getItem("userRoles") || [];
+
+  useEffect(() => {
+    const handleAuthToken = () => {
+      const newAuthToken = localStorage.getItem("authToken");
+      if (newAuthToken !== isLoggedIn) {
+        window.location.reload();
+      }
+    };
+    window.addEventListener("authToken", handleAuthToken);
+    return () => window.removeEventListener("authToken", handleAuthToken);
+  }, []);
 
   const handleLogout = () => {
     userLogout();
