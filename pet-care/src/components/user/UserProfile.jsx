@@ -53,49 +53,42 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
               <Card.Body>
                 <ImageUser photoUser={user.photo} />
               </Card.Body>
-              <div className="text-center">
-                <p>
-                  {itIsMe ? (
+              {itIsMe && (
+                <div className="text-center">
+                  <p>
                     <Link to={"#"} onClick={handleShowImageUpModal}>
                       사진 변경
                     </Link>
-                  ) : (
-                    <Link to={"#"} style={{ cursor: "default", color: "grey" }}>
-                      사진 변경
-                    </Link>
-                  )}
-                </p>
-                <ImageUpModal
-                  userId={user.id}
-                  show={showImageUpModal}
-                  handleClose={handleCloseImageUpModal}
-                />
-                <p>
-                  {itIsMe && user.photo ? (
-                    <Link to={"#"} onClick={handleRemovePhoto}>
-                      사진 제거
-                    </Link>
-                  ) : (
-                    <Link to={"#"} style={{ cursor: "default", color: "grey" }}>
-                      사진 제거
-                    </Link>
-                  )}
-                </p>
-                {itIsMe ? (
+                  </p>
+                  <ImageUpModal
+                    userId={user.id}
+                    show={showImageUpModal}
+                    handleClose={handleCloseImageUpModal}
+                  />
+                  <p>
+                    {user.photo ? (
+                      <Link to={"#"} onClick={handleRemovePhoto}>
+                        사진 제거
+                      </Link>
+                    ) : (
+                      <Link
+                        to={"#"}
+                        style={{ cursor: "default", color: "grey" }}
+                      >
+                        사진 제거
+                      </Link>
+                    )}
+                  </p>
                   <Link to={"#"} onClick={handleShowChangePasswordModal}>
                     비밀번호 변경
                   </Link>
-                ) : (
-                  <Link to={"#"} style={{ cursor: "default", color: "grey" }}>
-                    비밀번호 변경
-                  </Link>
-                )}
-                <ChangePasswordModal
-                  userId={user.id}
-                  show={showChangePasswordModal}
-                  handleClose={handleCloseChangePasswordModal}
-                />
-              </div>
+                  <ChangePasswordModal
+                    userId={user.id}
+                    show={showChangePasswordModal}
+                    handleClose={handleCloseChangePasswordModal}
+                  />
+                </div>
+              )}
             </Card>
           </Col>
           <Col md={8}>
