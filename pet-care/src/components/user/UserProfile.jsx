@@ -180,12 +180,22 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
             <Card.Body>
               <div className="d-flex justify-content-center mb-4">
                 <div className="mx-2">
-                  <Link
-                    to={`/update-user/${user.id}`}
-                    className="btn btn-warning btn-sm"
-                  >
-                    프로필 수정
-                  </Link>
+                  {itIsMe ? (
+                    <Link
+                      to={`/update-user/${user.id}`}
+                      className="btn btn-warning btn-sm"
+                    >
+                      프로필 수정
+                    </Link>
+                  ) : (
+                    <Link
+                      to={"#"}
+                      className="btn btn-warning btn-sm"
+                      style={{ cursor: "default", color: "grey" }}
+                    >
+                      프로필 수정
+                    </Link>
+                  )}
                 </div>
                 <div className="mx-2">
                   <Button
