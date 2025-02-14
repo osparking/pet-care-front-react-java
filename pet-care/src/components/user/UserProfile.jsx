@@ -55,10 +55,15 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
               </Card.Body>
               <div className="text-center">
                 <p>
-                  {" "}
-                  <Link to={"#"} onClick={handleShowImageUpModal}>
-                    사진 변경
-                  </Link>
+                  {itIsMe ? (
+                    <Link to={"#"} onClick={handleShowImageUpModal}>
+                      사진 변경
+                    </Link>
+                  ) : (
+                    <Link to={"#"} style={{ cursor: "default", color: "grey" }}>
+                      사진 변경
+                    </Link>
+                  )}
                 </p>
                 <ImageUpModal
                   userId={user.id}
