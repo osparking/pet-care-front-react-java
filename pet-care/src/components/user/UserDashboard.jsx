@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import ApmtAccordion from "../appointment/ApmtAccordion";
 import CustomPie from "../charts/CustomPie";
 import NoDataAvailable from "../common/NoDataAvailable";
@@ -9,7 +10,6 @@ import Review from "../review/Review";
 import { deleteUserAccount, getUserById } from "../user/UserService";
 import { UserType } from "../utils/utilities";
 import UserProfile from "./UserProfile";
-import { useParams } from "react-router-dom";
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const { userId } = useParams();
@@ -126,28 +126,30 @@ const UserDashboard = () => {
             </Col>
           </Row>
         </Tab>
-        <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}>
-          <Row>
-            <Col>
-              {user && (
-                <React.Fragment>
-                  {appointments && appointments.length > 0 ? (
-                    <ApmtAccordion
-                      user={user}
-                      apmts={appointments}
-                      isPatient={user.userType === UserType.PATIENT}
-                    />
-                  ) : (
-                    <NoDataAvailable
-                      dataType={"진료 예약 자료"}
-                      errorMessage={"등록된 예약 기록이 없습니다."}
-                    />
-                  )}
-                </React.Fragment>
-              )}
-            </Col>
-          </Row>
-        </Tab>
+        {loginId === userId && (
+          <Tab eventKey="appo_detail" title={<h3>예약 상세</h3>}>
+            <Row>
+              <Col>
+                {user && (
+                  <React.Fragment>
+                    {appointments && appointments.length > 0 ? (
+                      <ApmtAccordion
+                        user={user}
+                        apmts={appointments}
+                        isPatient={user.userType === UserType.PATIENT}
+                      />
+                    ) : (
+                      <NoDataAvailable
+                        dataType={"진료 예약 자료"}
+                        errorMessage={"등록된 예약 기록이 없습니다."}
+                      />
+                    )}
+                  </React.Fragment>
+                )}
+              </Col>
+            </Row>
+          </Tab>
+        )}
         <Tab eventKey="review" title={<h3>리뷰</h3>}>
           <Container className="d-flex justify-content-center align-items-center">
             <Card className="mt-5 mb-4 review-card">
