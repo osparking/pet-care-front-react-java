@@ -81,9 +81,15 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
                     </Link>
                   )}
                 </p>
-                <Link to={"#"} onClick={handleShowChangePasswordModal}>
-                  비밀번호 변경
-                </Link>
+                {itIsMe ? (
+                  <Link to={"#"} onClick={handleShowChangePasswordModal}>
+                    비밀번호 변경
+                  </Link>
+                ) : (
+                  <Link to={"#"} style={{ cursor: "default", color: "grey" }}>
+                    비밀번호 변경
+                  </Link>
+                )}
                 <ChangePasswordModal
                   userId={user.id}
                   show={showChangePasswordModal}
