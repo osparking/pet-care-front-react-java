@@ -50,7 +50,13 @@ const Login = () => {
       clearForm();
       navigate(from, { replace: true });
     } catch (error) {
-      setErrorMsg(error.response.data.data);
+      const message = error.response.data.message;
+      if (message === "사용 중지된 계정") {
+        const direction = "등록한 이메일을 열람하여 [이메일 확인] 링크를 클릭하십시오.";
+        setErrorMsg(direction);
+      } else {
+        setErrorMsg(message);
+      }
       setShowErrorAlert(true);
     }
   };
