@@ -3,6 +3,7 @@ import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import ApmtAccordion from "../appointment/ApmtAccordion";
 import CustomPie from "../charts/CustomPie";
+import AlertMessage from "../common/AlertMessage";
 import NoDataAvailable from "../common/NoDataAvailable";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { deleteUserPhoto } from "../modals/ImageService";
@@ -177,6 +178,10 @@ const UserDashboard = () => {
           </Container>
         </Tab>
       </Tabs>
+      {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+      {showSuccessAlert && (
+        <AlertMessage type={"success"} message={successMsg} />
+      )}
     </Container>
   );
 };
