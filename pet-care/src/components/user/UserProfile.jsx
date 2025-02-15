@@ -90,6 +90,29 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
                 </div>
               )}
             </Card>
+            {itIsMe && (
+              <Card.Body>
+                <div className="d-flex justify-content-center mb-4">
+                  <div className="mx-2">
+                    <Link
+                      to={`/update-user/${user.id}`}
+                      className="btn btn-warning btn-sm"
+                    >
+                      프로필 수정
+                    </Link>
+                  </div>
+                  <div className="mx-2">
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={showUserDelCnfModal}
+                    >
+                      계정 폐쇄
+                    </Button>
+                  </div>
+                </div>
+              </Card.Body>
+            )}
           </Col>
           <Col md={8}>
             <Card>
@@ -170,29 +193,6 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
                 </Col>
               </Card.Body>
             </Card>
-            {itIsMe && (
-              <Card.Body>
-                <div className="d-flex justify-content-center mb-4">
-                  <div className="mx-2">
-                    <Link
-                      to={`/update-user/${user.id}`}
-                      className="btn btn-warning btn-sm"
-                    >
-                      프로필 수정
-                    </Link>
-                  </div>
-                  <div className="mx-2">
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={showUserDelCnfModal}
-                    >
-                      계정 폐쇄
-                    </Button>
-                  </div>
-                </div>
-              </Card.Body>
-            )}
           </Col>
         </Row>
       </React.Fragment>
