@@ -129,9 +129,9 @@ const UserRegist = () => {
                       onChange={handleInputChange}
                     >
                       <option value="">(성별)</option>
-                      <option value="male">남성</option>
-                      <option value="female">여성</option>
-                      <option value="Others">기타</option>
+                      <option value="남성">남성</option>
+                      <option value="여성">여성</option>
+                      <option value="기타">기타</option>
                     </Form.Control>
                   </Col>
                 </Form.Group>
