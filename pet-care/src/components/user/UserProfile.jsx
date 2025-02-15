@@ -8,6 +8,7 @@ import ImageUpModal from "../modals/ImageUpModal";
 import style from "./UserProfile.module.css";
 
 const UserProfile = ({ user, handleRemovePhoto, handleDeleteUser }) => {
+  console.log("대시보드 인계 유저: ", user);
   const [showImageUpModal, setShowImageUpModal] = useState(false);
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
   const [showUserDelModal, setShowUserDelModal] = useState(false);
