@@ -80,7 +80,7 @@ const UserUpdate = () => {
   const navigate = useNavigate();
 
   const handleCancelUpdate = () => {
-    navigate(`/user_dashboard/${userId}/my_dashboard`);
+    navigate(`/dashboard/${userId}/user`);
   };
 
   return (
