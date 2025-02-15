@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import ApmtAccordion from "../appointment/ApmtAccordion";
+import { userLogout } from "../auth/AuthService";
 import CustomPie from "../charts/CustomPie";
 import AlertMessage from "../common/AlertMessage";
 import NoDataAvailable from "../common/NoDataAvailable";
@@ -83,6 +84,9 @@ const UserDashboard = () => {
       const result = await deleteUserAccount(userId);
       setSuccessMsg(result.message);
       setShowSuccessAlert(true);
+      setTimeout(() => {
+        userLogout();
+      }, 10000);
     } catch (error) {
       setErrorMsg(error.message);
       setShowErrorAlert(true);
