@@ -6,7 +6,7 @@ const EmailVerification = () => {
   const [verifyMsg, setVerifyMsg] = useState("이메일 검증 중입니다...");
   const [alertType, setAlertType] = useState("alert-info");
   const [isProcessing, setIsProcessing] = useState(false);
-  
+
   const verify_email = async (token) => {
     setIsProcessing(true);
     try {
@@ -21,10 +21,6 @@ const EmailVerification = () => {
           setVerifyMsg("이메일 검증이 이미 완료된 바 있습니다.");
           setAlertType("alert-info");
           break;
-        case "토큰 기한 만료":
-          setVerifyMsg("기한이 만료된 토큰입니다.");
-          setAlertType("alert-warning");
-          break;
         default:
           setVerifyMsg("이메일 검증 중 오류가 발생하였습니다.");
           setAlertType("alert-danger");
@@ -32,11 +28,18 @@ const EmailVerification = () => {
       }
     } catch (error) {
       if (error.response) {
-        setVerifyMsg(error.response.data.message);
+        const message = error.response.data.message;
         setAlertType("alert-danger");
+        if (message === "토큰 기한 만료") {
+          setVerifyMsg(
+            "계정 등록 때 발급된 토큰 만료되었으므로 새로 등록하십시오."
+          );
+          setAlertType("alert-warning");
+        } else {
+          setVerifyMsg(message);
+        }
       } else {
         setVerifyMsg("서버 연결 오류가 발생하였습니다.");
-        setAlertType("alert-danger");
       }
     } finally {
       setIsProcessing(false);
@@ -44,7 +47,7 @@ const EmailVerification = () => {
   };
 
   var called = false;
-  
+
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get("token");
