@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProcessSpinner from "../common/ProcessSpinner";
 import { verifyEmail } from "./AuthService";
 
@@ -6,6 +7,7 @@ const EmailVerification = () => {
   const [verifyMsg, setVerifyMsg] = useState("이메일 검증 중입니다...");
   const [alertType, setAlertType] = useState("alert-info");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [tokenExpired, setTokenExpired] = useState(false);
 
   const verify_email = async (token) => {
     setIsProcessing(true);
@@ -31,10 +33,9 @@ const EmailVerification = () => {
         const message = error.response.data.message;
         setAlertType("alert-danger");
         if (message === "토큰 기한 만료") {
-          setVerifyMsg(
-            "계정 등록 때 발급된 토큰 만료되었으므로 새로 등록하십시오."
-          );
+          setVerifyMsg("계정 등록 때 발급된 토큰이 만료되었습니다.");
           setAlertType("alert-warning");
+          setTokenExpired(true);
         } else {
           setVerifyMsg(message);
         }
@@ -70,7 +71,10 @@ const EmailVerification = () => {
       ) : (
         <div className="col-12 col-md-6">
           <div className={`alert ${alertType}`} role="alert">
-            {verifyMsg}
+            {verifyMsg}&nbsp;&nbsp;
+            {tokenExpired && (
+              <Link to={`/auth/resend_email`}>토큰 재발급 요청</Link>
+            )}
           </div>
         </div>
       )}
