@@ -8,6 +8,7 @@ const EmailVerification = () => {
   const [alertType, setAlertType] = useState("alert-info");
   const [isProcessing, setIsProcessing] = useState(false);
   const [tokenExpired, setTokenExpired] = useState(false);
+  const [email, setEmail] = useState("");
 
   const verify_email = async (token) => {
     setIsProcessing(true);
@@ -31,6 +32,7 @@ const EmailVerification = () => {
     } catch (error) {
       if (error.response) {
         const message = error.response.data.message;
+        setEmail(error.response.data.data);
         setAlertType("alert-danger");
         if (message === "토큰 기한 만료") {
           setVerifyMsg("계정 등록 때 발급된 토큰이 만료되었습니다.");
@@ -73,7 +75,9 @@ const EmailVerification = () => {
           <div className={`alert ${alertType}`} role="alert">
             {verifyMsg}&nbsp;&nbsp;
             {tokenExpired && (
-              <Link to={`/auth/resend_email`}>토큰 재발급 요청</Link>
+              <Link to={`/auth/resend_email?email=${email}`}>
+                토큰 재발급 요청
+              </Link>
             )}
           </div>
         </div>
