@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProcessSpinner from "../common/ProcessSpinner";
-import { verifyEmail } from "./AuthService";
+import { resendEmail, verifyEmail } from "./AuthService";
 
 const EmailVerification = () => {
   const [verifyMsg, setVerifyMsg] = useState("이메일 검증 중입니다...");
@@ -9,6 +9,17 @@ const EmailVerification = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [tokenExpired, setTokenExpired] = useState(false);
   const [email, setEmail] = useState("");
+
+  const requestResend = async () => {
+    try {
+      await resendEmail(email);
+      setVerifyMsg("이메일 재 전송이 요청되었습니다.");
+      setAlertType("alert-success");
+    } catch (error) {
+      setVerifyMsg("재 전송 요청 처리 오류 발생!");
+      setAlertType("alert-danger");
+    }
+  };
 
   const verify_email = async (token) => {
     setIsProcessing(true);
