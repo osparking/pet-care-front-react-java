@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import ProcessSpinner from "../common/ProcessSpinner";
 import { resendEmail, verifyEmail } from "./AuthService";
 
@@ -86,9 +86,13 @@ const EmailVerification = () => {
           <div className={`alert ${alertType}`} role="alert">
             {verifyMsg}&nbsp;&nbsp;
             {tokenExpired && (
-              <Link to={`/auth/resend_email?email=${email}`}>
+              <Button
+                variant="outline-primary"
+                size="sm"
+                onClick={requestResend}
+              >
                 토큰 재발급 요청
-              </Link>
+              </Button>
             )}
           </div>
         </div>
