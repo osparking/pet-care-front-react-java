@@ -9,6 +9,16 @@ export const verifyEmail = async (token) => {
   }
 };
 
+export const resendEmail = async (email) => {
+  try {
+    const response = await api.post(`/auth/resend_email?email=${email}`);
+    return response.data;
+  } catch (error) {
+    console.error("재전송 요구: ", error);
+    throw error;
+  }
+};
+
 export const userLogin = async (email, password) => {
   try {
     const response = await api.post("/auth/login", { email, password });
