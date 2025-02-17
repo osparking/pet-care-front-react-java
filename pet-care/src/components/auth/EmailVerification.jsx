@@ -14,6 +14,7 @@ const EmailVerification = () => {
     try {
       await resendEmail(email);
       setVerifyMsg("이메일 재 전송이 요청되었습니다.");
+      setTokenExpired(false);
       setAlertType("alert-success");
     } catch (error) {
       setVerifyMsg("재 전송 요청 처리 오류 발생!");
