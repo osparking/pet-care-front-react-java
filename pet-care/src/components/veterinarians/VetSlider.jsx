@@ -24,6 +24,18 @@ const VetSlider = ({ vets }) => {
                     }}
                   />
                 </Col>
+                <Col xs={12} md={8}>
+                  <div>
+                    <RatingStars rating={vet.averageRating} />
+                  </div>
+                  <div>
+                    <p className="text-success">
+                      {vet.lastName}
+                      {vet.firstName} 수의사
+                    </p>
+                  </div>
+                  <p>전문분야: {vet.specialization}</p>
+                </Col>
               </Row>
             </Carousel.Item>
           ))}
