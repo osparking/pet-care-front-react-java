@@ -2,8 +2,22 @@ import React from 'react'
 import d5 from "../../assets/images/d5.jpg";
 import vett from "../../assets/images/vett.jpg";
 import {Col, Row, Button, Card, Container, ListGroup} from 'react-bootstrap';
+import { getVets } from '../veterinarians/VetService';
 
 const Home = () => {
+  const [vets, setVets] = useState([]);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    getVets().then((vets) => {
+      console.log("vets: ", vets);
+      setVets(vets.data);
+    })
+    .catch((error) => {
+      setErrorMsg(error.message || "수의사 읽는 중 미지의 오류 발생!");
+    });
+  }, []);
+
   return (
     <Container className="home-container mt-5">
       <Row>
