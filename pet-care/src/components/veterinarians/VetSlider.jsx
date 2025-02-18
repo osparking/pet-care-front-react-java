@@ -1,5 +1,8 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Card, Carousel, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import dummyPhoto from "../../assets/images/placeholder.jpg";
+import RatingAvg from "../rating/RatingAvg";
 
 const VetSlider = ({ vets }) => {
   return (
@@ -14,7 +17,7 @@ const VetSlider = ({ vets }) => {
                     src={
                       vet.photo
                         ? `data:image/png;base64,${vet.photo}`
-                        : placeholderImage
+                        : dummyPhoto
                     }
                     alt={"photo"}
                     style={{
@@ -26,7 +29,7 @@ const VetSlider = ({ vets }) => {
                 </Col>
                 <Col xs={12} md={8}>
                   <div>
-                    <RatingStars rating={vet.averageRating} />
+                    <RatingAvg rating={vet.averageRating} />
                   </div>
                   <div>
                     <p className="text-success">
