@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import d5 from "../../assets/images/d5.jpg";
 import vett from "../../assets/images/vett.jpg";
+import NoDataAvailable from "../common/NoDataAvailable";
 import { getVets } from "../veterinarians/VetService";
+import VetSlider from "../veterinarians/VetSlider";
 
 const Home = () => {
   const [vets, setVets] = useState([]);
@@ -90,6 +92,11 @@ const Home = () => {
           저희가 경험한 팻 관리 및 치료 그룹의 수의사들은 이렇습니다.
         </p>
       </div>
+      {vets.length > 0 ? (
+        <VetSlider />
+      ) : (
+        <NoDataAvailable dataType={"수의사 자료"} errorMessage={errorMsg} />
+      )}
     </Container>
   );
 };
