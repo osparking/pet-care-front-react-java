@@ -93,7 +93,7 @@ const Home = () => {
         </p>
       </div>
       {vets.length > 0 ? (
-        <VetSlider />
+        <VetSlider vets={vets} />
       ) : (
         <NoDataAvailable dataType={"수의사 자료"} errorMessage={errorMsg} />
       )}
