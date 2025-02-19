@@ -3,11 +3,19 @@ import { Card, Carousel, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import dummyPhoto from "../../assets/images/placeholder.jpg";
 import RatingAvg from "../rating/RatingAvg";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const VetSlider = ({ vets }) => {
   return (
     <main>
-      <Carousel interval={5000} indicators={true} controls={true}>
+      <Carousel
+        interval={5000}
+        indicators={true}
+        controls={true}
+        prevIcon={<FaArrowAltCircleLeft />}
+        nextIcon={<FaArrowAltCircleRight />}
+      >
         {vets &&
           vets.map((vet, index) => (
             <Carousel.Item key={index}>
