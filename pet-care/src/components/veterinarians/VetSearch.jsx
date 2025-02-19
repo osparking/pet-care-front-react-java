@@ -135,7 +135,7 @@ const VetSearch = ({ onSearchResult }) => {
                   <Form.Group className="mb-3">
                     <Form.Label className="searchText">날짜</Form.Label>
                     <DatePicker
-                      selected={searchKey.date}
+                      selected={formData.date}
                       onChange={handleDateChange}
                       dateFormat="yyyy-MM-dd"
                       minDate={new Date()}
@@ -146,7 +146,7 @@ const VetSearch = ({ onSearchResult }) => {
                   <Form.Group className="mb-3">
                     <Form.Label className="searchText">시간</Form.Label>
                     <DatePicker
-                      selected={searchKey.time}
+                      selected={formData.time}
                       onChange={handleTimeChange}
                       showTimeSelect
                       showTimeSelectOnly
