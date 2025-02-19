@@ -44,6 +44,17 @@ const VetSearch = ({ onSearchResult }) => {
     }
   };
 
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(9);
+  tomorrow.setMinutes(0);
+  tomorrow.setSeconds(0);
+
+  const [formData, setFormData] = useState({
+    date: tomorrow,
+    time: tomorrow,
+  });
+
   const handleDateChange = (newDate) => {
     setFormData((prevState) => ({ ...prevState, date: newDate }));
   };
