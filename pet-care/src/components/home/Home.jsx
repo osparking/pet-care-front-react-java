@@ -82,7 +82,7 @@ const Home = () => {
           </Card>
         </Col>
       </Row>
-      <div className="card mb-5">
+      <div className="card mb-5 vet-bg">
         <h4>
           환자/고객이 말하는 저희 그룹{" "}
           <span className="text-info"> 팻 관리 및 치료</span> 수의사들

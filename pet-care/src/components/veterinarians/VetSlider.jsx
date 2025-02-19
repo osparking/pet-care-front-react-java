@@ -61,7 +61,7 @@ const VetSlider = ({ vets }) => {
                       사람들이 어떻게 평가하고 있는가?
                     </Link>
                   </p>
-                  <p>
+                  <p className="mb-5">
                     <Link to={"/doctors"} className="me-3">
                       수의사 목록보기
                     </Link>
