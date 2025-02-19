@@ -40,6 +40,8 @@ const VetSearch = ({ onSearchResult }) => {
     const ifChecked = e.target.checked;
     setShowDateTime(ifChecked);
     if (ifChecked) {
+      setSearchKey({ ...searchKey, date: formData.date, time: formData.time });
+    } else {
       setSearchKey({ ...searchKey, date: null, time: null });
     }
   };
