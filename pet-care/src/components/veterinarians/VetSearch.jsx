@@ -8,13 +8,6 @@ import { dateTimeFormatter } from "../utils//utilities";
 import { findAvailableVets, getSpecializations } from "./VetService";
 
 const VetSearch = ({ onSearchResult }) => {
-  const VET_SPEC_OTHER = "기타";
-  const [searchKey, setSearchKey] = useState({
-    date: null,
-    time: null,
-    specialization: "",
-  });
-
   const [showDateTime, setShowDateTime] = useState(false);
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
@@ -40,7 +33,7 @@ const VetSearch = ({ onSearchResult }) => {
     const ifChecked = e.target.checked;
     setShowDateTime(ifChecked);
     if (ifChecked) {
-      setSearchKey({ ...searchKey, date: formData.date, time: formData.time });
+      setSearchKey({ ...searchKey});
     } else {
       setSearchKey({ ...searchKey, date: null, time: null });
     }
@@ -51,18 +44,19 @@ const VetSearch = ({ onSearchResult }) => {
   tomorrow.setHours(9);
   tomorrow.setMinutes(0);
   tomorrow.setSeconds(0);
-
-  const [formData, setFormData] = useState({
+  
+  const [searchKey, setSearchKey] = useState({
     date: tomorrow,
     time: tomorrow,
+    specialization: "",
   });
 
   const handleDateChange = (newDate) => {
-    setFormData((prevState) => ({ ...prevState, date: newDate }));
+    setSearchKey((prevState) => ({ ...prevState, date: newDate }));
   };
 
   const handleTimeChange = (newTime) => {
-    setFormData((prevState) => ({ ...prevState, time: newTime }));
+    setSearchKey((prevState) => ({ ...prevState, time: newTime }));
   };
 
   const handleSearch = async (e) => {
@@ -137,7 +131,7 @@ const VetSearch = ({ onSearchResult }) => {
                   <Form.Group className="mb-3">
                     <Form.Label className="searchText">날짜</Form.Label>
                     <DatePicker
-                      selected={formData.date}
+                      selected={searchKey.date}
                       onChange={handleDateChange}
                       dateFormat="yyyy-MM-dd"
                       minDate={new Date()}
@@ -148,7 +142,7 @@ const VetSearch = ({ onSearchResult }) => {
                   <Form.Group className="mb-3">
                     <Form.Label className="searchText">시간</Form.Label>
                     <DatePicker
-                      selected={formData.time}
+                      selected={searchKey.time}
                       onChange={handleTimeChange}
                       showTimeSelect
                       showTimeSelectOnly
