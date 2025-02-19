@@ -24,6 +24,7 @@ const VetSearch = ({ onSearchResult }) => {
     getSpecializations()
       .then((data) => {
         setSpecials(data.data || data);
+        console.log("data.data:", data.data);
       })
       .catch((error) => {
         setErrorMsg(error.message);
@@ -98,10 +99,11 @@ const VetSearch = ({ onSearchResult }) => {
             onChange={handleInputChange}
           >
             <option value="">- 전문분야 선택 -</option>
-            <option value="애견치과">애견치과</option>
-            <option value="애견비뇨">애견비뇨</option>
-            <option value="이비인후">이비인후</option>
-            <option value={VET_SPEC_OTHER}>{VET_SPEC_OTHER}</option>
+            {specials.map((special, index) => (
+              <option key={index} value={special}>
+                {special}
+              </option>
+            ))}
           </Form.Control>
         </Form.Group>
 
