@@ -61,6 +61,10 @@ const VetSearch = ({ onSearchResult }) => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    if (!searchKey.specialization) {
+      alert("전문분야를 고르세요.");
+      return;
+    }
     // 수의사 검색 논리 구현
     let searchParams = { specialization: searchKey.specialization };
     const { date, time } = searchKey;
