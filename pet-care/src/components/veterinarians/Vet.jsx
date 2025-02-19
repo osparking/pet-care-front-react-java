@@ -4,13 +4,14 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import ImageUser from "../common/ImageUser";
+import LoadingSpinner from "../common/LoadingSpinner";
+import NoDataAvailable from "../common/NoDataAvailable";
 import Paginator from "../common/Paginator";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import Rating from "../rating/Rating";
 import RatingAvg from "../rating/RatingAvg";
 import Review from "../review/Review";
 import { getUserById } from "../user/UserService";
-import NoDataAvailable from "../common/NoDataAvailable";
 
 const Vet = () => {
   const [vet, setVet] = useState(null);
@@ -44,7 +45,11 @@ const Vet = () => {
   }, [vetId]);
 
   if (isLoading) {
-    return <h1>자료 적재 중...</h1>;
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   /* 페이지 링크 관련 변수 */
