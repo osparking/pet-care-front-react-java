@@ -88,9 +88,6 @@ const Home = () => {
           <span className="text-info"> 팻 관리 및 치료</span> 수의사들
         </h4>
         <hr />
-        <p className="text-center">
-          저희가 경험한 팻 관리 및 치료 그룹의 수의사들은 이렇습니다.
-        </p>
         {vets.length > 0 ? (
           <VetSlider vets={vets} />
         ) : (
