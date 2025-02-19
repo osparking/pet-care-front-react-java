@@ -33,7 +33,7 @@ const VetSearch = ({ onSearchResult }) => {
     const ifChecked = e.target.checked;
     setShowDateTime(ifChecked);
     if (ifChecked) {
-      setSearchKey({ ...searchKey});
+      setSearchKey({ ...searchKey });
     } else {
       setSearchKey({ ...searchKey, date: null, time: null });
     }
@@ -44,7 +44,7 @@ const VetSearch = ({ onSearchResult }) => {
   tomorrow.setHours(9);
   tomorrow.setMinutes(0);
   tomorrow.setSeconds(0);
-  
+
   const [searchKey, setSearchKey] = useState({
     date: tomorrow,
     time: tomorrow,
@@ -62,14 +62,12 @@ const VetSearch = ({ onSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     // 수의사 검색 논리 구현
-    const { date, time } = searchKey;
-    const { formattedDate, formattedTime } = dateTimeFormatter(date, time);
-
     let searchParams = { specialization: searchKey.specialization };
-    if (searchKey.date) {
+    const { date, time } = searchKey;
+
+    if (date && time) {
+      const { formattedDate, formattedTime } = dateTimeFormatter(date, time);
       searchParams.date = formattedDate;
-    }
-    if (searchKey.time) {
       searchParams.time = formattedTime;
     }
 
