@@ -91,12 +91,12 @@ const Home = () => {
         <p className="text-center">
           저희가 경험한 팻 관리 및 치료 그룹의 수의사들은 이렇습니다.
         </p>
+        {vets.length > 0 ? (
+          <VetSlider vets={vets} />
+        ) : (
+          <NoDataAvailable dataType={"수의사 자료"} errorMessage={errorMsg} />
+        )}
       </div>
-      {vets.length > 0 ? (
-        <VetSlider vets={vets} />
-      ) : (
-        <NoDataAvailable dataType={"수의사 자료"} errorMessage={errorMsg} />
-      )}
     </Container>
   );
 };
