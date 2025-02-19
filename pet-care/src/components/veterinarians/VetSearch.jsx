@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { dateTimeFormatter } from "../utils//utilities";
-import { findAvailableVets } from "./VetService";
+import { findAvailableVets, getSpecializations } from "./VetService";
 
 const VetSearch = ({ onSearchResult }) => {
   const VET_SPEC_OTHER = "기타";
@@ -18,6 +18,17 @@ const VetSearch = ({ onSearchResult }) => {
   const [showDateTime, setShowDateTime] = useState(false);
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
+
+  const [specials, setSpecials] = useState([]);
+  useEffect(() => {
+    getSpecializations()
+      .then((data) => {
+        setSpecials(data.data || data);
+      })
+      .catch((error) => {
+        setErrorMsg(error.message);
+      });
+  }, []);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
