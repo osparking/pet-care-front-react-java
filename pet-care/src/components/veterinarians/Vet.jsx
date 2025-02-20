@@ -52,8 +52,9 @@ const Vet = () => {
   /* 페이지 링크 관련 변수 */
   const indexLastReview = pageSize * currPage;
   const indexFirstReview = indexLastReview - pageSize;
+  console.log("vet: ", vet);
   const currReviews =
-    vet.reviews.slice(indexFirstReview, indexLastReview) || [];
+    (vet && vet.reviews.slice(indexFirstReview, indexLastReview)) || [];
 
   return (
     <Container className="d-flex justify-content-center align-item-center mt-5">
