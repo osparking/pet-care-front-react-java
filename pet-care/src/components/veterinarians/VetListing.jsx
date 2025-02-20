@@ -2,23 +2,27 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import NoDataAvailable from "../common/NoDataAvailable";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetCard from "./VetCard";
 import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
-import NoDataAvailable from "../common/NoDataAvailable";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
   const [allVets, setAllVets] = useState([]);
   const { errorMsg, setErrorMsg, showErrorAlert, setShowErrorAlert } =
     UseMsgAlerts();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getVets()
       .then((data) => {
         setVets(data.data);
         setAllVets(data.data);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       })
       .catch((error) => {
         setErrorMsg(error.response.data.message);
