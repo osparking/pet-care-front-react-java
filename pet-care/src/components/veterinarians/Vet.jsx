@@ -35,8 +35,6 @@ const Vet = () => {
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
-    } finally {
-      setIsLoading(false);
     }
   };
 
