@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import LoadingSpinner from "../common/LoadingSpinner";
 import NoDataAvailable from "../common/NoDataAvailable";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetCard from "./VetCard";
 import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
-import LoadingSpinner from "../common/LoadingSpinner";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
@@ -21,9 +21,7 @@ const VetListing = () => {
       .then((data) => {
         setVets(data.data);
         setAllVets(data.data);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
+        setIsLoading(false);
       })
       .catch((error) => {
         setErrorMsg(error.response.data.message);
