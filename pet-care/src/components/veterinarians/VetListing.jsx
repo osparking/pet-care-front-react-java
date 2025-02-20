@@ -7,6 +7,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import VetCard from "./VetCard";
 import VetSearch from "./VetSearch";
 import { getVets } from "./VetService";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 const VetListing = () => {
   const [vets, setVets] = useState([]);
@@ -38,6 +39,14 @@ const VetListing = () => {
       setVets(foundVets);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
   return (
     <section>
