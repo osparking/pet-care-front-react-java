@@ -29,12 +29,11 @@ const Vet = () => {
       setIsLoading(true);
       const response = await getUserById(vetId);
       setVet(response.data);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
     } catch (error) {
       setErrorMsg(error.response.data.message);
       setShowErrorAlert(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
