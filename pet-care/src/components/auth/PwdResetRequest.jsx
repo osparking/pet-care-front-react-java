@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const PwdResetRequest = () => {
@@ -33,9 +33,10 @@ const PwdResetRequest = () => {
     <Container>
       <Card>
         <Card.Body>
-          <Form>
-            <Form.Group>
-              <Form.Label></Form.Label>
+          <Card.Title>패스워드 리셋 요청</Card.Title>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>자기의 이메일을 입력하세요</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="-이메일 입력-"
