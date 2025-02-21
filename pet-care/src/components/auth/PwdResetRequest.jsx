@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const PwdResetRequest = () => {
@@ -29,8 +30,13 @@ const PwdResetRequest = () => {
     setIsProcessing(false);
   };
   return (
-    <div>
-    </div>
+    <Container>
+      <Card>
+        <Card.Body>
+            
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };
 
