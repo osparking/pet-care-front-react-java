@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Card, Container } from "react-bootstrap";
+import { Button, Card, Container, Form } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
+import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const PwdResetRequest = () => {
@@ -56,6 +57,14 @@ const PwdResetRequest = () => {
                 이메일로 비밀번호 초기화 링크가 전송됩니다.
               </Form.Text>
             </Form.Group>
+            <Button type="submit" variant="outline-info">
+              {/* className="w-100">  */}
+              {isProcessing ? (
+                <ProcessSpinner message="검증 이메일 전송 중..." />
+              ) : (
+                "이메일 전송 요청"
+              )}
+            </Button>
           </Form>
         </Card.Body>
       </Card>
