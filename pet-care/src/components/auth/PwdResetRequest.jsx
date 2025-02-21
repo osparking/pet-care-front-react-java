@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Container } from "react-bootstrap";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import AlertMessage from "../common/AlertMessage";
 
 const PwdResetRequest = () => {
   const [email, setEmail] = useState("");
@@ -32,6 +33,10 @@ const PwdResetRequest = () => {
   return (
     <Container>
       <Card>
+        {showSuccessAlert && (
+          <AlertMessage type={"success"} message={successMsg} />
+        )}
+        {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
         <Card.Body>
           <Card.Title>패스워드 리셋 요청</Card.Title>
           <Form onSubmit={handleSubmit}>
