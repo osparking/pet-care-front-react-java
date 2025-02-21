@@ -14,6 +14,20 @@ const PwdResetRequest = () => {
     showErrorAlert,
     setShowErrorAlert,
   } = UseMsgAlerts();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsProcessing(true);
+    try {
+      const data = await requestPasswordReset(email);
+      setSuccessMsg(data.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    }
+    setIsProcessing(false);
+  };
   return (
     <div>
     </div>
