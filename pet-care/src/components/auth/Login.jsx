@@ -52,7 +52,8 @@ const Login = () => {
     } catch (error) {
       const message = error.response.data.message;
       if (message === "사용 중지된 계정") {
-        const direction = "등록한 이메일을 열람하여 [이메일 확인] 링크를 클릭하십시오.";
+        const direction =
+          "등록한 이메일을 열람하여 [이메일 확인] 링크를 클릭하십시오.";
         setErrorMsg(direction);
       } else {
         setErrorMsg(message);
@@ -127,6 +128,14 @@ const Login = () => {
                 <Link to={"/register-user"} style={{ textDecoration: "none" }}>
                   계정 등록
                 </Link>{" "}
+                <div className="mt-2">
+                  <Link
+                    to={"/req_password_reset"}
+                    style={{ textDecoration: "none" }}
+                  >
+                    비밀번호 재설정
+                  </Link>
+                </div>
               </div>
             </Card.Body>
           </Card>
