@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Container } from "react-bootstrap";
-import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import AlertMessage from "../common/AlertMessage";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const PwdResetRequest = () => {
   const [email, setEmail] = useState("");
@@ -31,8 +31,11 @@ const PwdResetRequest = () => {
     setIsProcessing(false);
   };
   return (
-    <Container>
-      <Card>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ marginTop: "100px" }}
+    >
+      <Card style={{ maxWidth: "600px" }} className="w-100">
         {showSuccessAlert && (
           <AlertMessage type={"success"} message={successMsg} />
         )}
