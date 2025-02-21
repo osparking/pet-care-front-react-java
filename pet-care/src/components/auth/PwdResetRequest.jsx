@@ -52,6 +52,9 @@ const PwdResetRequest = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              <Form.Text className="text-muted">
+                이메일로 비밀번호 초기화 링크가 전송됩니다.
+              </Form.Text>
             </Form.Group>
           </Form>
         </Card.Body>
