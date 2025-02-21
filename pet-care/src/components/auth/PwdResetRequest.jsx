@@ -33,7 +33,18 @@ const PwdResetRequest = () => {
     <Container>
       <Card>
         <Card.Body>
-            
+          <Form>
+            <Form.Group>
+              <Form.Label></Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="-이메일 입력-"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+          </Form>
         </Card.Body>
       </Card>
     </Container>
