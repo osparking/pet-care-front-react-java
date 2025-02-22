@@ -53,11 +53,11 @@ export async function validateToken(token) {
   }
 }
 
-export async function resetPassword(token, password) {
+export async function resetPassword(token, newPassword) {
   try {
     const response = await api.post(`/auth/reset_password`, {
       token,
-      password,
+      newPassword,
     });
     return response.data;
   } catch (error) {
