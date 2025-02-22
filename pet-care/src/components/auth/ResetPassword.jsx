@@ -3,6 +3,7 @@ import { Button, Card, Container, Form } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { resetPassword, validateToken } from "./AuthService";
+import ProcessSpinner from "../common/ProcessSpinner";
 
 const ResetPassword = () => {
   const [newPwd, setNewPwd] = useState("");
