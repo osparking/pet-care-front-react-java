@@ -3,6 +3,7 @@ import { Button, Card, Container, Form } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
 import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import { requestPasswordReset } from "./AuthService";
 
 const PwdResetRequest = () => {
   const [email, setEmail] = useState("");
