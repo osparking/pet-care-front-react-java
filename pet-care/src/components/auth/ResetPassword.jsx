@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container, Form, InputGroup } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
+import ProcessSpinner from "../common/ProcessSpinner";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { resetPassword, validateToken } from "./AuthService";
-import ProcessSpinner from "../common/ProcessSpinner";
 
 const ResetPassword = () => {
   const [newPwd, setNewPwd] = useState("");
@@ -51,7 +51,10 @@ const ResetPassword = () => {
   };
 
   return (
-    <Container>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ marginTop: "100px" }}
+    >
       <Card style={{ maxWidth: "600px" }} className="w-100">
         {showSuccessAlert && (
           <AlertMessage type={"success"} message={successMsg} />
