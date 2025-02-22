@@ -18,6 +18,18 @@ const ResetPassword = () => {
     setShowErrorAlert,
   } = UseMsgAlerts();
 
+  useEffect(() => {
+    if (token) {
+      validateToken(token)
+        .then((response) => {
+          setTokenStatus(response.message);
+        })
+        .catch((error) => {
+          setErrorMsg(error.response.data.message);
+          setShowErrorAlert(true);
+        });
+    }
+  }, [token]);
   return (
     <div>        
     </div>
