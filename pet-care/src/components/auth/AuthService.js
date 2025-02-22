@@ -52,3 +52,15 @@ export async function validateToken(token) {
     throw error;
   }
 }
+
+export async function resetPassword(token, password) {
+  try {
+    const response = await api.post(`/auth/reset_password`, {
+      token,
+      password,
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
