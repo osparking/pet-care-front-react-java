@@ -77,8 +77,17 @@ const ResetPassword = () => {
               </Button>
             </Form>
           </Card.Body>
+        ) : tokenStatus === "보류" ? (
+          <Card.Body>
+            <ProcessSpinner message="토큰 검증 중, 기다리세요." />
+          </Card.Body>
         ) : (
-          ""
+          <Card.Body>
+            <AlertMessage
+              type={"danger"}
+              message="무효한 토큰입니다."
+            />
+          </Card.Body>
         )}
       </Card>
     </Container>
