@@ -23,6 +23,7 @@ const ResetPassword = () => {
   } = UseMsgAlerts();
 
   useEffect(() => {
+    console.log("token:", token);
     if (token) {
       validateToken(token)
         .then((response) => {
@@ -56,7 +57,7 @@ const ResetPassword = () => {
           <AlertMessage type={"success"} message={successMsg} />
         )}
         {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
-        {tokenStatus === "정당" ? (
+        {tokenStatus === "검증된 토큰" ? (
           <Card.Body>
             <Card.Title>패스워드 재설정</Card.Title>
             <Form onSubmit={handleSubmit}>
