@@ -34,3 +34,12 @@ export const userLogout = () => {
   localStorage.removeItem("authToken");
   window.location.href = "/";
 };
+
+export async function requestPasswordReset(email) {
+  try {
+    const response = await api.post("/auth/req_password_reset", { email });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
