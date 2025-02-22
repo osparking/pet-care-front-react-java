@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Container, Form } from "react-bootstrap";
 import AlertMessage from "../common/AlertMessage";
+import UseMsgAlerts from "../hooks/UseMsgAlerts";
 
 const ResetPassword = () => {
   const [newPwd, setNewPwd] = useState("");
@@ -44,7 +45,7 @@ const ResetPassword = () => {
       setShowErrorAlert(true);
     }
     setIsProcessing(false);
-  }
+  };
 
   return (
     <Container>
@@ -83,10 +84,7 @@ const ResetPassword = () => {
           </Card.Body>
         ) : (
           <Card.Body>
-            <AlertMessage
-              type={"danger"}
-              message="무효한 토큰입니다."
-            />
+            <AlertMessage type={"danger"} message="무효한 토큰입니다." />
           </Card.Body>
         )}
       </Card>
