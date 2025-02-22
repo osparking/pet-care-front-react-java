@@ -53,6 +53,26 @@ const ResetPassword = () => {
           <AlertMessage type={"success"} message={successMsg} />
         )}
         {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+        {tokenStatus === "정당" ? (
+          <Card.Body>
+            <Card.Title>패스워드 재설정</Card.Title>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="newPwd">
+                <Form.Label>새 비밀번호: </Form.Label>
+                <InputGroup>
+                  <Form.Control
+                    type="password"
+                    value={newPwd}
+                    onChange={(e) => setNewPwd(e.target.value)}
+                    placeholder="(새 비밀번호)"
+                  />
+                </InputGroup>
+              </Form.Group>
+            </Form>
+          </Card.Body>
+        ) : (
+          ""
+        )}
       </Card>
     </Container>
   );
