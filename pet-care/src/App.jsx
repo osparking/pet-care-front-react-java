@@ -12,6 +12,7 @@ import EmailVerification from "./components/auth/EmailVerification";
 import Login from "./components/auth/Login";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import PwdResetRequest from "./components/auth/PwdResetRequest";
+import ResetPassword from "./components/auth/ResetPassword";
 import Home from "./components/home/Home";
 import RootLayout from "./components/layouts/RootLayout";
 import UserDashboard from "./components/user/UserDashboard";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register-user" element={<UserRegist />} />
         <Route path="/email_verify" element={<EmailVerification />} />
         <Route path="/req_password_reset" element={<PwdResetRequest />} />
+        <Route path="/reset_password" element={<ResetPassword />} />
 
         {/* 인증이 필요한 루트 */}
         <Route
