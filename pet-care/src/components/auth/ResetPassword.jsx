@@ -30,6 +30,21 @@ const ResetPassword = () => {
         });
     }
   }, [token]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsProcessing(true);
+    try {
+      const response = await resetPassword(token, newPwd);
+      setSuccessMsg(response.message);
+      setShowSuccessAlert(true);
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+      setShowErrorAlert(true);
+    }
+    setIsProcessing(false);
+  }
+
   return (
     <div>        
     </div>
