@@ -43,3 +43,12 @@ export async function requestPasswordReset(email) {
     throw error;
   }
 }
+
+export async function validateToken(token) {
+  try {
+    const response = await api.get(`/verify/validate_token?token=${token}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
