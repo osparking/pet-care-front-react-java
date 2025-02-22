@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UseMsgAlerts from "../hooks/UseMsgAlerts";
+import AlertMessage from "../common/AlertMessage";
 
 const ResetPassword = () => {
   const [newPwd, setNewPwd] = useState("");
@@ -46,9 +47,15 @@ const ResetPassword = () => {
   }
 
   return (
-    <div>        
-    </div>
-  )
+    <Container>
+      <Card style={{ maxWidth: "600px" }} className="w-100">
+        {showSuccessAlert && (
+          <AlertMessage type={"success"} message={successMsg} />
+        )}
+        {showErrorAlert && <AlertMessage type={"danger"} message={errorMsg} />}
+      </Card>
+    </Container>
+  );
 };
 
 export default ResetPassword;
