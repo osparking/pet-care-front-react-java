@@ -99,7 +99,11 @@ const EmailVerification = () => {
                 size="sm"
                 onClick={requestResend}
               >
-                토큰 재발급 요청
+                {isReTokening ? (
+                  <ProcessSpinner message="토큰 재발급 요청 " />
+                ) : (
+                  "토큰 재발급 요청"
+                )}
               </Button>
             )}
           </div>
