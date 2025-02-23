@@ -195,7 +195,7 @@ const UserUpdate = () => {
                     disabled={isProcessing}
                   >
                     {isProcessing ? (
-                      <ProcessSpinner message="갱신 처리 중..." />
+                      <ProcessSpinner message="갱신 처리" />
                     ) : (
                       "갱신"
                     )}

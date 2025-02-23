@@ -215,7 +215,7 @@ const UserRegist = () => {
                     disabled={isProcessing}
                   >
                     {isProcessing ? (
-                      <ProcessSpinner message="등록 처리 중..." />
+                      <ProcessSpinner message="유저 등록" />
                     ) : (
                       "등록"
                     )}

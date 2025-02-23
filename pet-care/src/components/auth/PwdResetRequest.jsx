@@ -6,7 +6,7 @@ import UseMsgAlerts from "../hooks/UseMsgAlerts";
 import { requestPasswordReset } from "./AuthService";
 
 const PwdResetRequest = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("jbpark103@hanmail.net");
   const [isProcessing, setIsProcessing] = useState(false);
   const {
     successMsg,
@@ -60,7 +60,7 @@ const PwdResetRequest = () => {
             <Button type="submit" variant="outline-info">
               {/* className="w-100">  */}
               {isProcessing ? (
-                <ProcessSpinner message="검증 이메일 전송 중..." />
+                <ProcessSpinner message="검증 이메일 전송" />
               ) : (
                 "이메일 전송 요청"
               )}

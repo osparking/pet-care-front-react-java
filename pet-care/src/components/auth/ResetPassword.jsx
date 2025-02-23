@@ -77,7 +77,7 @@ const ResetPassword = () => {
               </Form.Group>
               <Button variant="outline-info" type="submit">
                 {isProcessing ? (
-                  <ProcessSpinner message="비밀번호 저장 중..." />
+                  <ProcessSpinner message="비밀번호 재설정" />
                 ) : (
                   "비밀번호 재설정"
                 )}
