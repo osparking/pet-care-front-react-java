@@ -73,7 +73,7 @@ const UserRegist = () => {
     setUser({
       lastName: "홍",
       firstName: "길동" + hrmnsc,
-      gender: "male",
+      gender: "남성",
       mobile: "010-1234-5678",
       email: `jbpark03@naver.com`, // ${hrmnsc}
       password: "1234",

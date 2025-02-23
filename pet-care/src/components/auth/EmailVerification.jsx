@@ -10,8 +10,13 @@ const EmailVerification = () => {
   const [tokenExpired, setTokenExpired] = useState(false);
   const [email, setEmail] = useState("");
 
+  const [isReTokening, setIsReTokening] = useState(false);
   const requestResend = async () => {
+    if (isReTokening) {
+      return;
+    }
     try {
+      setIsReTokening(true);
       await resendEmail(email);
       setVerifyMsg("이메일 재 전송이 요청되었습니다.");
       setTokenExpired(false);
@@ -19,6 +24,8 @@ const EmailVerification = () => {
     } catch (error) {
       setVerifyMsg("재 전송 요청 처리 오류 발생!");
       setAlertType("alert-danger");
+    } finally {
+      setIsReTokening(false);
     }
   };
 
