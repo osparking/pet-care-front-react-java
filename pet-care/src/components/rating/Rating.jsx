@@ -29,7 +29,7 @@ const Rating = ({ vetId, onReviewSubmit }) => {
     setComment(e.target.value);
   };
 
-  const reviewerId = 4;
+  const reviewerId = localStorage.getItem("userId");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
