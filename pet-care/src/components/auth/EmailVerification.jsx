@@ -88,7 +88,7 @@ const EmailVerification = () => {
   return (
     <div className="d-flex justify-content-center mt-lg-5">
       {isProcessing ? (
-        <ProcessSpinner message="요청을 처리 중이니 기다려 주십시오..." />
+        <ProcessSpinner message="이메일 검증 처리" />
       ) : (
         <div className="col-12 col-md-6">
           <div className={`alert ${alertType}`} role="alert">
@@ -100,7 +100,7 @@ const EmailVerification = () => {
                 onClick={requestResend}
               >
                 {isReTokening ? (
-                  <ProcessSpinner message="토큰 재발급 요청 " />
+                  <ProcessSpinner message="토큰 재발급 요청" />
                 ) : (
                   "토큰 재발급 요청"
                 )}

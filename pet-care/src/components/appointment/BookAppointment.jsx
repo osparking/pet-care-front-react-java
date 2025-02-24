@@ -246,7 +246,7 @@ const BookAppointment = () => {
                     disabled={isProcessing}
                   >
                     {isProcessing ? (
-                      <ProcessSpinner message="진료 예약 중..." />
+                      <ProcessSpinner message="진료 예약" />
                     ) : (
                       "진료 예약"
                     )}
