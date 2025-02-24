@@ -46,9 +46,9 @@ const Rating = ({ vetId, onReviewSubmit }) => {
         onReviewSubmit();
       }
     } catch (err) {
-      if ("ERR_NETWORK" === err.code) {
+      if ("ERR_NETWORK" === err.code || "ERR_BAD_REQUEST" === err.code) {
         console.error("status: ", err);
-        setErrorMsg("리뷰는 로그인 후에 가능해요.");
+        setErrorMsg("로그인 후, 리뷰할 수 있습니다.");
       } else {
         setErrorMsg(err.response.data.message);
       }
