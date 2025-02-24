@@ -220,7 +220,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
         {currFltdApps.map((apmt, index) => {
           const isWaitingForApproval = apmt.status === "승인대기";
           const statusColor = colors[apmt.status] || colors["default"];
-          const isApproved = apmt.status === "승인됨";
+          const isCancelled = apmt.status === "취소됨";
           const recipientId = apmt.veterinarian.id;
           return (
             <Accordion.Item key={apmt.id} eventKey={index} className="mb-5">
@@ -262,9 +262,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                     )}
 
                     {user.userType === UserType.PATIENT && (
-                      <Link
-                        to={`/appointments/create/${recipientId}`}
-                      >
+                      <Link to={`/appointments/create/${recipientId}`}>
                         예약 신청
                       </Link>
                     )}
@@ -314,7 +312,7 @@ const ApmtAccordion = ({ user, apmts: oldApmts, isPatient }) => {
                       isPatient={isPatient}
                     />
                   </Col>
-                  {isApproved && (
+                  {!isCancelled && !isWaitingForApproval && (
                     <UserInfo userType={user.userType} apmt={apmt} />
                   )}
                 </Row>
